@@ -24,7 +24,7 @@ from Bio import Entrez, SeqIO
 # ── CONFIGURATION ─────────────────────────────────────────────────────────────
 CSV_FILE      = "phage_host_matrix_with_ids.csv"   # must be in the same folder
 OUTPUT_DIR    = "phage_genomes"                     # folder where .fasta files are saved
-EMAIL         = "your_email@example.com"            # required by NCBI – change this!
+EMAIL         = "wke29@students.claremontmckenna.edu"            # required by NCBI – change this!
 BATCH_SIZE    = 10    # number of records to request per API call
 SLEEP_BETWEEN = 0.4  # seconds between calls (NCBI allows ~3 req/s without an API key)
 # ─────────────────────────────────────────────────────────────────────────────
