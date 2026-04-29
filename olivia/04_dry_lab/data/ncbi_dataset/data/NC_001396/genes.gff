@@ -1,0 +1,20 @@
+##gff-version  3
+# Sequence Data: seqnum=1;seqlen=7308;seqhdr="NC_001396.1"
+# Model Data: version=pyrodigal.v3.7.0;run_type=Metagenomic;model="30|Mycobacterium_leprae_TN|B|57.8|11|1";gc_cont=57.80;transl_table=11;uses_sd=1
+NC_001396.1	pyrodigal_v3.7.0	CDS	2	64	1.8	-	0	ID=NC_001396.1_1;partial=10;start_type=GTG;rbs_motif=AGGAG;rbs_spacer=3-4bp;gc_cont=0.635;conf=60.22;score=1.80;cscore=-3.14;sscore=4.94;rscore=12.36;uscore=-2.56;tscore=-0.51;
+NC_001396.1	pyrodigal_v3.7.0	CDS	107	307	12.1	+	0	ID=NC_001396.1_2;partial=00;start_type=ATG;rbs_motif=AGxAGG/AGGxGG;rbs_spacer=11-12bp;gc_cont=0.522;conf=94.13;score=12.07;cscore=5.05;sscore=7.02;rscore=3.33;uscore=0.80;tscore=2.89;
+NC_001396.1	pyrodigal_v3.7.0	CDS	313	585	27.6	+	0	ID=NC_001396.1_3;partial=00;start_type=ATG;rbs_motif=GGAG/GAGG;rbs_spacer=5-10bp;gc_cont=0.608;conf=99.82;score=27.56;cscore=15.93;sscore=11.62;rscore=6.40;uscore=1.58;tscore=3.65;
+NC_001396.1	pyrodigal_v3.7.0	CDS	662	976	2.4	+	0	ID=NC_001396.1_4;partial=00;start_type=ATG;rbs_motif=None;rbs_spacer=None;gc_cont=0.578;conf=63.49;score=2.41;cscore=3.45;sscore=-1.04;rscore=-4.20;uscore=-0.49;tscore=3.65;
+NC_001396.1	pyrodigal_v3.7.0	CDS	1096	1761	29.5	+	0	ID=NC_001396.1_5;partial=00;start_type=GTG;rbs_motif=None;rbs_spacer=None;gc_cont=0.562;conf=99.89;score=29.47;cscore=34.45;sscore=-4.98;rscore=-4.20;uscore=-0.27;tscore=-0.51;
+NC_001396.1	pyrodigal_v3.7.0	CDS	1758	2168	22.2	+	0	ID=NC_001396.1_6;partial=00;start_type=ATG;rbs_motif=None;rbs_spacer=None;gc_cont=0.560;conf=99.40;score=22.19;cscore=21.20;sscore=0.99;rscore=-4.20;uscore=1.54;tscore=3.65;
+NC_001396.1	pyrodigal_v3.7.0	CDS	2168	2422	4.5	+	0	ID=NC_001396.1_7;partial=00;start_type=ATG;rbs_motif=GGAGG;rbs_spacer=5-10bp;gc_cont=0.549;conf=74.00;score=4.55;cscore=-8.94;sscore=13.49;rscore=10.73;uscore=-0.39;tscore=3.65;
+NC_001396.1	pyrodigal_v3.7.0	CDS	2481	3647	88.9	+	0	ID=NC_001396.1_8;partial=00;start_type=ATG;rbs_motif=AGGA;rbs_spacer=5-10bp;gc_cont=0.594;conf=100.00;score=88.92;cscore=76.85;sscore=12.06;rscore=7.95;uscore=0.47;tscore=3.65;
+NC_001396.1	pyrodigal_v3.7.0	CDS	3647	4294	55.3	+	0	ID=NC_001396.1_9;partial=00;start_type=ATG;rbs_motif=GGA/GAG/AGG;rbs_spacer=5-10bp;gc_cont=0.599;conf=100.00;score=55.32;cscore=49.91;sscore=5.41;rscore=2.24;uscore=-0.48;tscore=3.65;
+NC_001396.1	pyrodigal_v3.7.0	CDS	4310	4702	15.1	+	0	ID=NC_001396.1_10;partial=00;start_type=ATG;rbs_motif=GGAG/GAGG;rbs_spacer=5-10bp;gc_cont=0.573;conf=96.97;score=15.07;cscore=7.31;sscore=7.76;rscore=6.40;uscore=-2.28;tscore=3.65;
+NC_001396.1	pyrodigal_v3.7.0	CDS	4740	5123	9.8	-	0	ID=NC_001396.1_11;partial=00;start_type=ATG;rbs_motif=GGA/GAG/AGG;rbs_spacer=5-10bp;gc_cont=0.602;conf=90.41;score=9.76;cscore=3.07;sscore=6.69;rscore=2.24;uscore=0.80;tscore=3.65;
+NC_001396.1	pyrodigal_v3.7.0	CDS	5120	5578	18.3	-	0	ID=NC_001396.1_12;partial=00;start_type=ATG;rbs_motif=None;rbs_spacer=None;gc_cont=0.597;conf=98.53;score=18.31;cscore=19.85;sscore=-1.55;rscore=-4.20;uscore=-1.00;tscore=3.65;
+NC_001396.1	pyrodigal_v3.7.0	CDS	5707	5895	13.8	+	0	ID=NC_001396.1_13;partial=00;start_type=GTG;rbs_motif=GGAGG;rbs_spacer=5-10bp;gc_cont=0.561;conf=96.01;score=13.84;cscore=5.92;sscore=7.92;rscore=7.98;uscore=0.63;tscore=-0.69;
+NC_001396.1	pyrodigal_v3.7.0	CDS	5888	6064	3.6	+	0	ID=NC_001396.1_14;partial=00;start_type=GTG;rbs_motif=GGAG/GAGG;rbs_spacer=5-10bp;gc_cont=0.571;conf=69.50;score=3.58;cscore=1.32;sscore=2.27;rscore=4.45;uscore=-1.45;tscore=-0.74;
+NC_001396.1	pyrodigal_v3.7.0	CDS	6018	6407	17.8	+	0	ID=NC_001396.1_15;partial=00;start_type=ATG;rbs_motif=None;rbs_spacer=None;gc_cont=0.595;conf=98.35;score=17.79;cscore=19.45;sscore=-1.66;rscore=-4.20;uscore=-1.10;tscore=3.65;
+NC_001396.1	pyrodigal_v3.7.0	CDS	6404	7090	25.1	+	0	ID=NC_001396.1_16;partial=00;start_type=GTG;rbs_motif=None;rbs_spacer=None;gc_cont=0.571;conf=99.69;score=25.11;cscore=29.30;sscore=-4.20;rscore=-4.20;uscore=0.51;tscore=-0.51;
+NC_001396.1	pyrodigal_v3.7.0	CDS	7087	7308	22.4	+	0	ID=NC_001396.1_17;partial=01;start_type=ATG;rbs_motif=GGA/GAG/AGG;rbs_spacer=5-10bp;gc_cont=0.572;conf=99.42;score=22.41;cscore=18.29;sscore=4.12;rscore=2.24;uscore=-1.76;tscore=3.65;

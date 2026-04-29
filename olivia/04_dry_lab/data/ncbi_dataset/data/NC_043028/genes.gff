@@ -1,0 +1,16 @@
+##gff-version  3
+# Sequence Data: seqnum=10;seqlen=7190;seqhdr="NC_043028.1"
+# Model Data: version=pyrodigal.v3.7.0;run_type=Metagenomic;model="48|Xylella_fastidiosa_Temecula1|B|51.8|11|1";gc_cont=51.80;transl_table=11;uses_sd=1
+NC_043028.1	pyrodigal_v3.7.0	CDS	1	1041	60.1	+	0	ID=NC_043028.1_1;partial=10;start_type=Edge;rbs_motif=None;rbs_spacer=None;gc_cont=0.570;conf=100.00;score=60.05;cscore=56.84;sscore=3.22;rscore=0.00;uscore=3.22;tscore=0.00;
+NC_043028.1	pyrodigal_v3.7.0	CDS	1038	1334	32.0	+	0	ID=NC_043028.1_2;partial=00;start_type=ATG;rbs_motif=GGA/GAG/AGG;rbs_spacer=5-10bp;gc_cont=0.556;conf=99.94;score=32.00;cscore=25.08;sscore=6.92;rscore=2.00;uscore=0.14;tscore=4.77;
+NC_043028.1	pyrodigal_v3.7.0	CDS	1338	1541	2.0	+	0	ID=NC_043028.1_3;partial=00;start_type=ATG;rbs_motif=None;rbs_spacer=None;gc_cont=0.598;conf=61.31;score=2.00;cscore=3.38;sscore=-1.38;rscore=-3.68;uscore=-1.54;tscore=3.84;
+NC_043028.1	pyrodigal_v3.7.0	CDS	1553	1783	32.7	+	0	ID=NC_043028.1_4;partial=00;start_type=ATG;rbs_motif=AGGAG;rbs_spacer=5-10bp;gc_cont=0.636;conf=99.95;score=32.68;cscore=16.75;sscore=15.93;rscore=11.93;uscore=-0.35;tscore=4.35;
+NC_043028.1	pyrodigal_v3.7.0	CDS	1920	3326	79.1	+	0	ID=NC_043028.1_5;partial=00;start_type=ATG;rbs_motif=GGA/GAG/AGG;rbs_spacer=5-10bp;gc_cont=0.578;conf=100.00;score=79.14;cscore=71.39;sscore=7.75;rscore=2.00;uscore=0.97;tscore=4.77;
+NC_043028.1	pyrodigal_v3.7.0	CDS	3326	3655	41.5	+	0	ID=NC_043028.1_6;partial=00;start_type=ATG;rbs_motif=AGGAG;rbs_spacer=5-10bp;gc_cont=0.573;conf=99.99;score=41.49;cscore=22.19;sscore=19.30;rscore=13.08;uscore=1.45;tscore=4.77;
+NC_043028.1	pyrodigal_v3.7.0	CDS	3655	4842	93.2	+	0	ID=NC_043028.1_7;partial=00;start_type=ATG;rbs_motif=GGAG/GAGG;rbs_spacer=5-10bp;gc_cont=0.610;conf=100.00;score=93.22;cscore=81.52;sscore=11.70;rscore=7.25;uscore=-0.32;tscore=4.77;
+NC_043028.1	pyrodigal_v3.7.0	CDS	4844	5491	51.2	+	0	ID=NC_043028.1_8;partial=00;start_type=ATG;rbs_motif=GGAG/GAGG;rbs_spacer=5-10bp;gc_cont=0.634;conf=100.00;score=51.20;cscore=38.96;sscore=12.24;rscore=7.25;uscore=0.22;tscore=4.77;
+NC_043028.1	pyrodigal_v3.7.0	CDS	5663	6046	4.5	-	0	ID=NC_043028.1_9;partial=00;start_type=ATG;rbs_motif=GGA/GAG/AGG;rbs_spacer=5-10bp;gc_cont=0.617;conf=73.84;score=4.51;cscore=-1.34;sscore=5.85;rscore=2.00;uscore=-0.42;tscore=4.77;
+NC_043028.1	pyrodigal_v3.7.0	CDS	6043	6513	12.6	-	0	ID=NC_043028.1_10;partial=00;start_type=ATG;rbs_motif=GGA/GAG/AGG;rbs_spacer=5-10bp;gc_cont=0.599;conf=94.81;score=12.64;cscore=5.63;sscore=7.01;rscore=2.00;uscore=0.24;tscore=4.77;
+NC_043028.1	pyrodigal_v3.7.0	CDS	6641	6826	17.6	+	0	ID=NC_043028.1_11;partial=00;start_type=ATG;rbs_motif=GGA/GAG/AGG;rbs_spacer=5-10bp;gc_cont=0.608;conf=98.29;score=17.62;cscore=16.22;sscore=1.40;rscore=1.46;uscore=-3.56;tscore=3.49;
+NC_043028.1	pyrodigal_v3.7.0	CDS	6826	7038	19.0	+	0	ID=NC_043028.1_12;partial=00;start_type=ATG;rbs_motif=GGAG/GAGG;rbs_spacer=5-10bp;gc_cont=0.615;conf=98.74;score=18.98;cscore=8.78;sscore=10.20;rscore=6.09;uscore=0.10;tscore=4.01;
+NC_043028.1	pyrodigal_v3.7.0	CDS	7052	7189	12.8	+	0	ID=NC_043028.1_13;partial=01;start_type=GTG;rbs_motif=GGAG/GAGG;rbs_spacer=5-10bp;gc_cont=0.522;conf=94.94;score=12.75;cscore=10.65;sscore=2.10;rscore=7.25;uscore=0.05;tscore=-5.19;

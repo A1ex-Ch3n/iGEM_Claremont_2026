@@ -1,0 +1,16 @@
+##gff-version  3
+# Sequence Data: seqnum=2;seqlen=7325;seqhdr="NC_074762.1"
+# Model Data: version=pyrodigal.v3.7.0;run_type=Metagenomic;model="30|Mycobacterium_leprae_TN|B|57.8|11|1";gc_cont=57.80;transl_table=11;uses_sd=1
+NC_074762.1	pyrodigal_v3.7.0	CDS	1	1080	61.5	+	0	ID=NC_074762.1_1;partial=10;start_type=Edge;rbs_motif=None;rbs_spacer=None;gc_cont=0.581;conf=100.00;score=61.55;cscore=58.33;sscore=3.22;rscore=0.00;uscore=3.22;tscore=0.00;
+NC_074762.1	pyrodigal_v3.7.0	CDS	1077	1373	21.8	+	0	ID=NC_074762.1_2;partial=00;start_type=ATG;rbs_motif=GGA/GAG/AGG;rbs_spacer=5-10bp;gc_cont=0.582;conf=99.34;score=21.80;cscore=16.07;sscore=5.73;rscore=2.24;uscore=-0.15;tscore=3.65;
+NC_074762.1	pyrodigal_v3.7.0	CDS	1405	1605	12.1	+	0	ID=NC_074762.1_3;partial=00;start_type=ATG;rbs_motif=AGxAGG/AGGxGG;rbs_spacer=11-12bp;gc_cont=0.522;conf=94.13;score=12.07;cscore=5.05;sscore=7.02;rscore=3.33;uscore=0.80;tscore=2.89;
+NC_074762.1	pyrodigal_v3.7.0	CDS	1611	1868	33.9	+	0	ID=NC_074762.1_4;partial=00;start_type=ATG;rbs_motif=GGAG/GAGG;rbs_spacer=5-10bp;gc_cont=0.612;conf=99.96;score=33.90;cscore=22.28;sscore=11.62;rscore=6.40;uscore=1.58;tscore=3.65;
+NC_074762.1	pyrodigal_v3.7.0	CDS	1975	3474	76.6	+	0	ID=NC_074762.1_5;partial=00;start_type=GTG;rbs_motif=None;rbs_spacer=None;gc_cont=0.564;conf=100.00;score=76.60;cscore=82.17;sscore=-5.57;rscore=-4.20;uscore=-0.86;tscore=-0.51;
+NC_074762.1	pyrodigal_v3.7.0	CDS	3474	3791	31.2	+	0	ID=NC_074762.1_6;partial=00;start_type=ATG;rbs_motif=GGAGG;rbs_spacer=5-10bp;gc_cont=0.547;conf=99.92;score=31.18;cscore=17.19;sscore=13.99;rscore=10.73;uscore=-0.39;tscore=3.65;
+NC_074762.1	pyrodigal_v3.7.0	CDS	3788	4954	88.9	+	0	ID=NC_074762.1_7;partial=00;start_type=ATG;rbs_motif=AGGA;rbs_spacer=5-10bp;gc_cont=0.594;conf=100.00;score=88.92;cscore=76.85;sscore=12.06;rscore=7.95;uscore=0.47;tscore=3.65;
+NC_074762.1	pyrodigal_v3.7.0	CDS	4954	5601	55.4	+	0	ID=NC_074762.1_8;partial=00;start_type=ATG;rbs_motif=GGA/GAG/AGG;rbs_spacer=5-10bp;gc_cont=0.599;conf=100.00;score=55.42;cscore=50.01;sscore=5.41;rscore=2.24;uscore=-0.48;tscore=3.65;
+NC_074762.1	pyrodigal_v3.7.0	CDS	5617	6009	15.1	+	0	ID=NC_074762.1_9;partial=00;start_type=ATG;rbs_motif=GGAG/GAGG;rbs_spacer=5-10bp;gc_cont=0.573;conf=96.97;score=15.07;cscore=7.31;sscore=7.76;rscore=6.40;uscore=-2.28;tscore=3.65;
+NC_074762.1	pyrodigal_v3.7.0	CDS	6047	6430	9.8	-	0	ID=NC_074762.1_10;partial=00;start_type=ATG;rbs_motif=GGA/GAG/AGG;rbs_spacer=5-10bp;gc_cont=0.602;conf=90.41;score=9.76;cscore=3.07;sscore=6.69;rscore=2.24;uscore=0.80;tscore=3.65;
+NC_074762.1	pyrodigal_v3.7.0	CDS	6427	6885	17.5	-	0	ID=NC_074762.1_11;partial=00;start_type=ATG;rbs_motif=None;rbs_spacer=None;gc_cont=0.599;conf=98.23;score=17.46;cscore=18.79;sscore=-1.33;rscore=-4.20;uscore=-0.77;tscore=3.65;
+NC_074762.1	pyrodigal_v3.7.0	CDS	7015	7203	13.8	+	0	ID=NC_074762.1_12;partial=00;start_type=GTG;rbs_motif=GGAGG;rbs_spacer=5-10bp;gc_cont=0.561;conf=96.01;score=13.83;cscore=5.92;sscore=7.91;rscore=7.98;uscore=0.62;tscore=-0.69;
+NC_074762.1	pyrodigal_v3.7.0	CDS	7196	7324	5.6	+	0	ID=NC_074762.1_13;partial=01;start_type=GTG;rbs_motif=GGAG/GAGG;rbs_spacer=5-10bp;gc_cont=0.574;conf=78.45;score=5.62;cscore=2.35;sscore=3.27;rscore=6.40;uscore=-2.62;tscore=-0.51;

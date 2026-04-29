@@ -1,0 +1,254 @@
+Accession,Organism_Name,Species,Genotype,Isolate,Length,Nuc_Completeness,Geo_Location,Host,Tissue_Specimen_Source,Submitters,Collection_Date,Release_Date,Molecule_type
+NC_128954,Xanthomonas phage XAJ2,Xajduovirus XAJ2,,,49241,complete,,Xanthomonas arboricola pv. juglandis,,"Domotor,D., Frank,T., Rakhely,G., Doffkay,Z., Schneider,G., Kovacs,T.",,2025-09-22,dsDNA
+NC_074762,Xanthomonas phage XacF1,Coriovirus Cf1c,,,7325,complete,,Xanthomonas citri,,"Ahmad,A.A., Askora,A., Kawasaki,T., Fujie,M., Yamada,T.",,2023-05-04,ssDNA(+)
+NC_073752,Xanthomonas phage Cf2,Lophivirus Cf2,,,6454,complete,"USA: Wellington and Lake Worth areas, Palm Beach County, FL",Xanthomonas citri subsp. citri Aw12879,,"Yeh,T.",,2023-04-27,ssDNA(+)
+NC_073753,Xanthomonas phage phiLf2,Lophivirus Lf2,,,6372,complete,,Xanthomonas,,"Yeh,T.",,2023-04-27,ssDNA(+)
+NC_073754,Xanthomonas phage phiLF,Lophivirus LfUK,,,6062,complete,United Kingdom,Xanthomonas campestris pv. campestris,,"Yeh,T.",,2023-04-27,ssDNA(+)
+NC_073755,Xanthomonas phage phiXv2,Lophivirus Xv2,,,6564,complete,,Xanthomonas campestris,,"Yeh,T.",,2023-04-27,ssDNA(+)
+NC_073092,Xanthomonas phage Suba,Subavirus suba,,,45510,complete,France,Xanthomonas,,"Ansaldi,M., Clavijo,F.",2017-11-29,2023-04-05,dsDNA
+NC_073093,Xanthomonas phage Langgrundblatt1,Shirevirus langgrundblatt1,,,44239,complete,Germany,Xanthomonas translucens pv. translucens DSM 18974,,"Erdrich,S.H., Sharma,V., Schurr,U., Arsova,B., Frunzke,J.",,2023-04-05,dsDNA
+NC_073094,Xanthomonas phage Langgrundblatt2,Shirevirus langgrundblatt2,,,44768,complete,Germany,Xanthomonas translucens pv. translucens DSM 18974,,"Erdrich,S.H., Sharma,V., Schurr,U., Arsova,B., Frunzke,J.",,2023-04-05,dsDNA
+NC_073095,Xanthomonas phage Pfeifenkraut,Shirevirus pfeifenkraut,,,43791,complete,Germany,Xanthomonas translucens pv. translucens DSM 18974,,"Erdrich,S.H., Sharma,V., Schurr,U., Arsova,B., Frunzke,J.",,2023-04-05,dsDNA
+NC_072499,Xanthomonas phage vB_Xar_IVIA-DoCa3,Nipunavirus Doca3,,,58107,complete,Spain,Xanthomonas arboricola,,"Domingo-Calap,M.L., Bernabeu-Gimeno,M., Aure,C.M., Marco-Noales,E., Domingo-Calap,P.",,2023-03-26,dsDNA
+NC_069744,Xanthomonas phage Samson,Septimatrevirus samson,,,43314,complete,"USA: College Station, TX",Xanthomonas sp.,,"Clark,S., Le,T., Moreland,R., Liu,M., Gonzalez,C.F., Gill,J.J., Ramsey,J.",2018,2023-01-24,dsDNA
+NC_069745,Xanthomonas phage vB_Xar_IVIA-DoCa1,Septimatrevirus DoCa1,,,43553,complete,Spain,Xanthomonas arboricola,,"Domingo-Calap,M.L., Bernabeu-Gimeno,M., Aure,C.M., Marco-Noales,E., Domingo-Calap,P.",,2023-01-24,dsDNA
+NC_062737,Vibrio phage XacF13,Xylivirus XacF13,,,7045,complete,Mexico,Xanthomonas vesicatoria,,"Solis-Sanchez,A., Quinones-Aguilar,E., Vega-Arreguin,J., Fraire-Velazquez,S., Rincon-Enriquez,G.",,2022-04-27,ssDNA(+)
+NC_055835,Xanthomonas phage FoX1,Foxunavirus fox1,,,44763,complete,Belgium,Xanthomonas campestris,,"Holtappels,D., Rombouts,S., Lavigne,R., Wagemans,J.",,2021-06-02,dsDNA
+NC_055836,Xanthomonas phage FoX2,Foxunavirus fox2,,,44086,complete,Belgium,Xanthomonas campestris,,"Holtappels,D., Rombouts,S., Lavigne,R., Wagemans,J.",,2021-06-02,dsDNA
+NC_055837,Xanthomonas phage FoX3,Foxunavirus fox3,,,44153,complete,Belgium,Xanthomonas campestris,,"Holtappels,D., Lavigne,R., Wagemans,J.",,2021-06-02,dsDNA
+NC_055838,Xanthomonas phage FoX5,Foxunavirus fox5,,,43872,complete,Belgium,Xanthomonas campestris,,"Holtappels,D., Lavigne,R., Wagemans,J.",,2021-06-02,dsDNA
+NC_055839,Xanthomonas phage FoX4,Foxquatrovirus fox4,,,60418,complete,Belgium,Xanthomonas campestris,,"Holtappels,D., Rombouts,S., Lavigne,R., Wagemans,J.",,2021-06-02,dsDNA
+NC_055055,Xanthomonas phage Xf409,Xylivirus Xf109,,,8280,complete,China: Guangxi Province,Xanthomonas oryzae pv. oryzicola,,"Niu,X., Li,K., Xu,L., Zhao,M., Jiang,W., Tang,J., He,Y.",,2021-05-27,ssDNA(+)
+NC_054458,Xanthomonas phage XPP1,Tsukubavirus XPP1,,,46195,complete,,Xanthomonas oryzae pv. oryzae,,"Varga,I., Molnar,J., Gazdag,A., Szucs,D., Doffkay,Z., Valappil,S.K., Papp,S., Pinter,R., Vera Cruz,C.M., Ricardo,O., Vizi,T., Schneider,G., Rakhely,G., Kovacs,T.",,2021-04-24,dsDNA
+NC_054459,Xanthomonas phage XPV1,Tsukubavirus XPV1,,,46503,complete,,Xanthomonas oryzae pv. oryzae,,"Varga,I., Molnar,J., Gazdag,A., Szucs,D., Doffkay,Z., Valappil,S.K., Papp,S., Pinter,R., Vera Cruz,C.M., Ricardo,O., Vizi,T., Schneider,G., Rakhely,G., Kovacs,T.",,2021-04-24,dsDNA
+NC_054460,Xanthomonas phage KPhi1,Beograduvirus KPhi1,,,46077,complete,Serbia,Xanthomonas euvesicatoria,,"Gasic,K.",2005-07-01,2021-04-24,dsDNA
+NC_054461,Xanthomonas virus phiXaf18,Beograduvirus Xaf18,,,47407,complete,Mexico,Xanthomonas vesicatoria,,"Rios-Sandoval,M., Quinones-Aguilar,E.E., Solis-Sanchez,G.A., Enriquez-Vara,J.N., Rincon-Enriquez,G.",,2021-04-24,dsDNA
+NC_052966,Xanthomonas phage Xoo-sp2,Xooduovirus Xoosp2,,,60497,complete,China,Xanthomonas oryzae pv. oryzae,,"Dong,Z., Liu,J., Peng,D.",2015-08-20,2021-02-12,dsDNA
+NC_052967,Xanthomonas phage Bosa,Bosavirus bosa,,,63828,complete,France,Xanthomonas,,"Ansaldi,M., Clavijo,F.",2017-11-29,2021-02-12,dsDNA
+NC_048703,Xanthomonas phage RiverRider,Riverridervirus riverrider,,,76335,complete,"USA: Fort Pierce, FL",Xanthomonas fragariae,,"Miller,M., Deiulio,A., Douthitt,C., McMahon,J., Holland,C., Wiersma-Koch,H., Turechek,W., D'Elia,T.",2016-02-01,2020-06-19,dsDNA
+NC_047762,Xanthomonas phage XAJ24,Pradovirus XAJ24,,,44862,complete,,Xanthomonas arboricola pv. juglandis,,"Domotor,D., Frank,T., Rakhely,G., Doffkay,Z., Schneider,G., Kovacs,T.",,2020-05-15,dsDNA
+NC_047840,Xanthomonas phage phi Xc10,Pradovirus Xc10,,,44597,complete,Taiwan,Xanthomonas sp.,,"Cheng,Y.T.",,2020-05-15,dsDNA
+NC_047962,Xanthomonas phage Carpasina,Carpasinavirus carpasina,,,61939,complete,,Xanthomonas campestris,,"Carstens,A.B., Djurhuus,A.M., Hansen,L.H.",,2020-05-15,dsDNA
+NC_048147,Xanthomonas phage XcP1,Carpasinavirus XcP1,,,61830,complete,Brazil,Xanthomonas campestris pv. campestris,,"Silva,F.P., Xavier,A.S., Vidigal,P.M.P., Alfenas-Zerbini,P.",,2020-05-15,dsDNA
+NC_043028,Xanthomonas phage Xf109,Xylivirus Xf109,,,7190,complete,,Xanthomonas oryzae ATCC 35933,,"Yeh,T.Y.",,2019-06-28,ssDNA(+)
+NC_030928,Xanthomonas phage f20-Xaj,Pradovirus f20,,,43851,complete,"Chile: VIII region, Bio-Bio",Xanthomonas arboricola,plant leaf,"Retamales,J., Vasquez,I., Santos,L., Segovia,C., Ayala,M., Alvarado,R., Nunez,P., Santander,J., Vasquez,J.I., Olave,I., Santander,J.A.",2014,2019-05-02,dsDNA
+NC_030937,Xanthomonas phage f30-Xaj,Pradovirus f30,,,44262,complete,"Chile: VIII region, Bio-Bio",Xanthomonas arboricola,plant leaf,"Retamales,J., Vasquez,I., Santos,L., Segovia,C., Ayala,M., Alvarado,R., Nunez,P., Santander,J., Vasquez,J.I., Olave,I., Santander,J.A.",2014,2019-05-02,dsDNA
+NC_020205,Xanthomonas citri phage CP2,Xanthomonas citri phage CP2,,,42963,complete,,Xanthomonas citri,,"Ahmad,A.A., Ogawa,M., Kawasaki,T., Fujie,M., Yamada,T.",,2013-02-05,dsDNA
+NC_019933,Xanthomonas phage CP1,Klementvirus CP1,,,43870,complete,,Xanthomonas citri,,"Ahmad,A.A., Ogawa,M., Kawasaki,T., Fujie,M., Yamada,T.",,2012-12-19,dsDNA
+NC_017981,Xanthomonas phage vB_XveM_DIBBI,Dibbivirus DIBBI,,,49981,complete,,Xanthomonas vesicatoria,,"Sadunishvili,T., Gaganidze,D., Kropinski,A.M., Lingohr,E.J., Ghudumidze,N., Kvesitadze,G.",,2012-05-31,dsDNA
+NC_012742,Xanthomonas phage phiL7,Eisenstarkvirus L7,,,44080,complete,,Xanthomonas campestris pv. campestris,,"Lee,C.N., Lin,J.W., Weng,S.F., Tseng,Y.H., Lee,C.-N., Tseng,Y.-H., Weng,S.-F., Lin,J.-W.",,2009-06-01,dsDNA
+NC_009543,Xanthomonas phage Xop411,Xipdecavirus Xop411,,,44520,complete,,Xanthomonas oryzae,,"Lee,C.N., Hu,R.M., Chow,T.Y., Lin,J.W., Chen,H.Y., Tseng,Y.H., Weng,S.F., Weng,S.-F., Tseng,Y.-H., Lin,J.-W., Lee,C.-N., Chen,H.-Y., Chow,T.-Y.",,2007-06-08,dsDNA
+NC_007709,Xanthomonas phage OP1,Xipdecavirus OP1,,,43785,complete,,Xanthomonas,,"Inoue,Y., Matsuura,T., Ohara,T., Azegami,K.",,2006-01-10,dsDNA
+NC_007710,Xanthomonas phage OP2,Tsukubavirus OP2,,,46643,complete,,Xanthomonas,,"Inoue,Y., Matsuura,T., Ohara,T., Azegami,K.",,2006-01-10,dsDNA
+NC_007024,Xanthomonas phage Xp15,Alachuavirus Xp15,,,55770,complete,,Xanthomonas hortorum pv. pelargonii,,"Ramadugu,C., Gabriel,D.W.",,2005-05-21,dsDNA
+NC_004902,Xanthomonas phage Xp10,Xipdecavirus Xp10,,,44373,complete,,Xanthomonas oryzae,,"Yuzenkova,J., Nechaev,S., Berlin,J., Rogulja,D., Kuznedelov,K., Inman,R., Mushegian,A., Severinov,K., Nechaev,S.Y., Yuzenkova,Y.V., Severinov,K.V.",,2003-06-20,dsDNA
+NC_001396,Xanthomonas phage Cf1c,Coriovirus Cf1c,,,7308,complete,,Xanthomonas campestris,,"Kuo,T.T., Tan,M.S., Su,M.T., Yang,M.K.",,1993-04-27,ssDNA(+)
+PX997083,Xanthomonas phage P-XH,Xanthomonas phage P-XH,,,42942,complete,,Xanthomonas citri,,"Xi,Y.",,2026-02-25,unknown
+PX630731,Xanthomonas phage XapPhi7,Xanthomonas phage XapPhi7,,,45121,complete,"USA: Jackson Springs, NC",Xanthomonas arboricola pv. pruni,,"D'Amico-Willman,K.M., Flaherty,M., Turner,D., Joglekar,P., Ritchie,D.F., Huerta,A.I.",2022-10-27,2026-02-06,dsDNA
+PX630732,Xanthomonas phage XapPhi8,Xanthomonas phage XapPhi8,,,45121,complete,"USA: Jackson Springs, NC",Xanthomonas arboricola pv. pruni,,"D'Amico-Willman,K.M., Flaherty,M., Turner,D., Joglekar,P., Ritchie,D.F., Huerta,A.I.",2022-09-01,2026-02-06,dsDNA
+PX630733,Xanthomonas phage XapPhi9,Xanthomonas phage XapPhi9,,,45678,complete,"USA: Jackson Springs, NC",Xanthomonas arboricola pv. pruni,,"D'Amico-Willman,K.M., Flaherty,M., Turner,D., Joglekar,P., Ritchie,D.F., Huerta,A.I.",2013-02-14,2026-02-06,dsDNA
+PX630734,Xanthomonas phage XapPhi15,Xanthomonas phage XapPhi15,,,45119,complete,"USA: Jackson Springs, NC",Xanthomonas arboricola pv. pruni,,"D'Amico-Willman,K.M., Flaherty,M., Turner,D., Joglekar,P., Ritchie,D.F., Huerta,A.I.",2022-09-21,2026-02-06,dsDNA
+PX630735,Xanthomonas phage XapPhi10,Xanthomonas phage XapPhi10,,,45805,complete,"USA: Jackson Springs, NC",Xanthomonas arboricola pv. pruni,,"D'Amico-Willman,K.M., Flaherty,M., Turner,D., Joglekar,P., Ritchie,D.F., Huerta,A.I.",2013-03-28,2026-02-06,dsDNA
+PX630736,Xanthomonas phage XapPhi14,Xanthomonas phage XapPhi14,,,45165,complete,"USA: Jackson Springs, NC",Xanthomonas arboricola pv. pruni,,"D'Amico-Willman,K.M., Flaherty,M., Turner,D., Joglekar,P., Ritchie,D.F., Huerta,A.I.",2022-09-21,2026-02-06,dsDNA
+PX630737,Xanthomonas phage XapPhi13,Xanthomonas phage XapPhi13,,,45142,complete,"USA: Jackson Springs, NC",Xanthomonas arboricola pv. pruni,,"D'Amico-Willman,K.M., Flaherty,M., Turner,D., Joglekar,P., Ritchie,D.F., Huerta,A.I.",2022-09-01,2026-02-06,dsDNA
+PX630738,Xanthomonas phage XapPhi12,Xanthomonas phage XapPhi12,,,45165,complete,"USA: Jackson Springs, NC",Xanthomonas arboricola pv. pruni,,"D'Amico-Willman,K.M., Flaherty,M., Turner,D., Joglekar,P., Ritchie,D.F., Huerta,A.I.",2022-09-21,2026-02-06,dsDNA
+PX630739,Xanthomonas phage XapPhi11,Xanthomonas phage XapPhi11,,,45101,complete,"USA: Jackson Springs, NC",Xanthomonas arboricola pv. pruni,,"D'Amico-Willman,K.M., Flaherty,M., Turner,D., Joglekar,P., Ritchie,D.F., Huerta,A.I.",2022-09-21,2026-02-06,dsDNA
+PX630740,Xanthomonas phage XapPhi17,Xanthomonas phage XapPhi17,,,45121,complete,Mexico,Xanthomonas arboricola pv. pruni,,"Flaherty,M., D'Amico-Willman,K.M., Flores-Lopez,L.F., Huerta,A.I.",2022,2026-02-06,dsDNA
+PX630741,Xanthomonas phage XapPhi16,Xanthomonas phage XapPhi16,,,44850,complete,Mexico,Xanthomonas arboricola pv. pruni,,"D'Amico-Willman,K.M., Flaherty,M., Flores-Lopez,L.F., Huerta,A.I.",2022,2026-02-06,dsDNA
+PX682299,Xanthomonas phage vB_Xoo_GDJ3,Xanthomonas phage vB_Xoo_GDJ3,,,43353,complete,China,Xanthomonas oryzae pv. oryzae,,"Huang,X.",,2026-02-03,unknown
+PX682300,Xanthomonas phage vB_Xoo_JH1,Xanthomonas phage vB_Xoo_JH1,,,43813,complete,China,Xanthomonas oryzae pv. oryzae,,"Huang,X.",,2026-02-03,unknown
+PX682301,Xanthomonas phage vB_Xoo_JL1LN,Xanthomonas phage vB_Xoo_JL1LN,,,42506,complete,China,Xanthomonas oryzae,,"Huang,X.",,2026-02-03,unknown
+PX682302,Xanthomonas phage vB_Xoo_NBW,Xanthomonas phage vB_Xoo_NBW,,,44862,complete,China,Xanthomonas oryzae pv. oryzae,,"Huang,X.",,2026-02-03,unknown
+PX682303,Xanthomonas phage vB_Xoo_QZ143,Xanthomonas phage vB_Xoo_QZ143,,,45818,complete,China,Xanthomonas oryzae pv. oryzae,,"Huang,X.",,2026-02-03,unknown
+PX682304,Xanthomonas phage vB_Xoo_QZ532,Xanthomonas phage vB_Xoo_QZ532,,,44733,complete,China,Xanthomonas oryzae pv. oryzae,,"Huang,X.",,2026-02-03,unknown
+PX682305,Xanthomonas phage vB_Xoo_AQ1,Xanthomonas phage vB_Xoo_AQ1,,,42448,complete,China,Xanthomonas oryzae pv. oryzae,,"Huang,X.",,2026-02-03,unknown
+PX682306,Xanthomonas phage vB_Xoo_CZ1,Xanthomonas phage vB_Xoo_CZ1,,,46142,complete,China,Xanthomonas oryzae pv. oryzae,,"Huang,X.",,2026-02-03,unknown
+PX682307,Xanthomonas phage vB_Xoo_CZ2,Xanthomonas phage vB_Xoo_CZ2,,,46168,complete,China,Xanthomonas oryzae pv. oryzae,,"Huang,X.",,2026-02-03,unknown
+PX682308,Xanthomonas phage vB_Xoo_FJ1,Xanthomonas phage vB_Xoo_FJ1,,,44507,complete,China,Xanthomonas oryzae pv. oryzae,,"Huang,X.",,2026-02-03,unknown
+PX682309,Xanthomonas phage vB_Xoo_GDJ2,Xanthomonas phage vB_Xoo_GDJ2,,,44555,complete,China,Xanthomonas oryzae pv. oryzae,,"Huang,X.",,2026-02-03,unknown
+PX682310,Xanthomonas phage vB_Xoo_GDJ1,Xanthomonas phage vB_Xoo_GDJ1,,,44681,complete,China,Xanthomonas oryzae pv. oryzae,,"Huang,X.",,2026-02-03,unknown
+PX682311,Xanthomonas phage vB_Xoo_GX1,Xanthomonas phage vB_Xoo_GX1,,,43916,complete,China,Xanthomonas oryzae,,"Huang,X.",,2026-02-03,unknown
+PX682312,Xanthomonas phage vB_Xoo_GX2,Xanthomonas phage vB_Xoo_GX2,,,44139,complete,China,Xanthomonas oryzae,,"Huang,X.",,2026-02-03,unknown
+PX682313,Xanthomonas phage vB_Xoo_GX3,Xanthomonas phage vB_Xoo_GX3,,,44381,complete,China,Xanthomonas oryzae pv. oryzae,,"Huang,X.",,2026-02-03,unknown
+PX682314,Xanthomonas phage vB_Xoo_GXN,Xanthomonas phage vB_Xoo_GXN,,,43967,complete,China,Xanthomonas oryzae,,"Huang,X.",,2026-02-03,unknown
+PX682315,Xanthomonas phage vB_Xoo_JL4LN,Xanthomonas phage vB_Xoo_JL4LN,,,46119,complete,China,Xanthomonas oryzae,,"Huang,X.",,2026-02-03,unknown
+PX682316,Xanthomonas phage vB_Xoo_JL5LN,Xanthomonas phage vB_Xoo_JL5LN,,,44811,complete,China,Xanthomonas oryzae,,"Huang,X.",,2026-02-03,unknown
+PX682317,Xanthomonas phage vB_Xoo_JLGD,Xanthomonas phage vB_Xoo_JLGD,,,44555,complete,China,Xanthomonas oryzae pv. oryzae,,"Huang,X.",,2026-02-03,unknown
+PX682318,Xanthomonas phage vB_Xoo_JLH1,Xanthomonas phage vB_Xoo_JLH1,,,45721,complete,China,Xanthomonas oryzae pv. oryzae,,"Huang,X.",,2026-02-03,unknown
+PX682319,Xanthomonas phage vB_Xoo_JLP4,Xanthomonas phage vB_Xoo_JLP4,,,46120,complete,China,Xanthomonas oryzae pv. oryzae,,"Huang,X.",,2026-02-03,unknown
+PX682320,Xanthomonas phage vB_Xoo_JLP5,Xanthomonas phage vB_Xoo_JLP5,,,44811,complete,China,Xanthomonas oryzae pv. oryzae,,"Huang,X.",,2026-02-03,unknown
+PX682321,Xanthomonas phage vB_Xoo_NB1,Xanthomonas phage vB_Xoo_NB1,,,43218,complete,China,Xanthomonas oryzae pv. oryzae,,"Huang,X.",,2026-02-03,unknown
+PX682322,Xanthomonas phage vB_Xoo_QZ531,Xanthomonas phage vB_Xoo_QZ531,,,44718,complete,China,Xanthomonas oryzae pv. oryzae,,"Huang,X.",,2026-02-03,unknown
+PX682323,Xanthomonas phage vB_Xoo_GXB,Xanthomonas phage vB_Xoo_GXB,,,46745,complete,China,Xanthomonas oryzae,,"Huang,X.",,2026-02-03,unknown
+PX682324,Xanthomonas phage vB_Xoo_TZ1,Xanthomonas phage vB_Xoo_TZ1,,,44934,complete,China,Xanthomonas oryzae,,"Huang,X.",,2026-02-03,unknown
+PX682325,Xanthomonas phage Z3D,Xanthomonas phage Z3D,,,8322,complete,China,Xanthomonas oryzae,,"Huang,X.",,2026-02-03,unknown
+PX682326,Xanthomonas phage Y5D,Xanthomonas phage Y5D,,,8459,complete,China,Xanthomonas oryzae,,"Huang,X.",,2026-02-03,unknown
+PX682327,Xanthomonas phage vB_Xoo_JLP2,Xanthomonas phage vB_Xoo_JLP2,,,46024,complete,China,Xanthomonas oryzae pv. oryzae,,"Huang,X.",,2026-02-03,unknown
+PX682328,Xanthomonas phage vB_Xoo_QZX,Xanthomonas phage vB_Xoo_QZX,,,45661,complete,China,Xanthomonas oryzae,,"Huang,X.",,2026-02-03,unknown
+PX682329,Xanthomonas phage vB_Xoo_GXBLN,Xanthomonas phage vB_Xoo_GXBLN,,,46926,complete,China,Xanthomonas oryzae,,"Huang,X.",,2026-02-03,unknown
+PX682330,Xanthomonas phage vB_Xoo_GXJS,Xanthomonas phage vB_Xoo_GXJS,,,46935,complete,China,Xanthomonas oryzae pv. oryzae,,"Huang,X.",,2026-02-03,unknown
+PX444441,Xanthomonas phage L5.2,Xanthomonas phage L5.2,,,45675,complete,Viet Nam,Xanthomonas,plant leaf,"Hoang,H.A., Nguyen,D.T., Le,T.T.T., Le,K.N.H., Ho,T.T.",2022-10-26,2026-01-20,unknown
+OP413789,Xanthomonas phage ZP3,Xanthomonas phage ZP3,,,44713,complete,China,Xanthomonas oryzae pv. oryzae,plant leaf,"Zhang,M.",,2026-01-01,unknown
+PX530551,Xanthomonas phage XOPW,Xanthomonas phage XOPW,,,42184,complete,,Xanthomonas,,"Ullah,Z., Khan,I., Alvi,I.A., Rehman,S.U., Haider,Z., Hassan,M., Rehman,M.U.",,2025-11-24,unknown
+PX310626,Xanthomonas phage GJKY_A,Xanthomonas phage GJKY_A,,,62551,complete,China,Xanthomonas citri,,"Li,Z.",2024-08-12,2025-10-05,dsDNA
+PP431385,Xanthomonas phage XAP-2,Xanthomonas phage XAP-2,,,16361,complete,Pakistan,Xanthomonas citri,,"Rehman,M.U., Khan,M.I., Alvi,I.A., Rehman,S.U., Hayat,A., Khan,I., Rizwan,M.",,2025-09-02,dsDNA
+PP431386,Xanthomonas phage XAP-1,Xanthomonas phage XAP-1,,,5572,complete,Pakistan,Xanthomonas citri,,"Rehman,M.U., Khan,M.I., Alvi,I.A., Rehman,S.U., Hayat,A., Khan,I., Rizwan,M.",,2025-09-02,dsDNA
+PV764598,Xanthomonas phage PhiXhv-5,Xanthomonas phage PhiXhv-5,,,47720,complete,France,Xanthomonas hortorum,,"Bertolla,F., Baud,A.",,2025-08-16,unknown
+PV764599,Xanthomonas phage PhiXhv-7,Xanthomonas phage PhiXhv-7,,,46786,complete,France,Xanthomonas hortorum,,"Bertolla,F., Baud,A.",,2025-08-16,unknown
+PV764600,Xanthomonas phage PhiXhv-18,Xanthomonas phage PhiXhv-18,,,47821,complete,France,Xanthomonas hortorum,,"Bertolla,F., Baud,A.",,2025-08-16,unknown
+PV764601,Xanthomonas phage PhiXhv-12,Xanthomonas phage PhiXhv-12,,,227648,complete,France,Xanthomonas hortorum,,"Bertolla,F., Baud,A.",,2025-08-16,unknown
+PV764602,Xanthomonas phage PhiXhv-15,Xanthomonas phage PhiXhv-15,,,228725,complete,France,Xanthomonas hortorum,,"Bertolla,F., Baud,A.",,2025-08-16,unknown
+PV764603,Xanthomonas phage PhiXhv-16,Xanthomonas phage PhiXhv-16,,,229154,complete,France,Xanthomonas hortorum,,"Bertolla,F., Baud,A.",,2025-08-16,unknown
+PV037726,Xanthomonas phage Valrath,Xanthomonas phage Valrath,,,43817,complete,,Xanthomonas campestris,,"Djurhuus,A.M., Carstens,A.B., Kot,W., Hansen,L.H.",,2025-08-04,unknown
+PV754127,Xanthomonas phage PhiXhv-28,Xanthomonas phage PhiXhv-28,,,46883,complete,France,Xanthomonas hortorum,,"Bertolla,F., Baud,A.",,2025-07-22,unknown
+PV702347,Xanthomonas phage PhiXhv-2,Xanthomonas phage PhiXhv-2,,,47229,complete,France,Xanthomonas hortorum,,"Bertolla,F., Baud,A.",,2025-06-09,unknown
+PV506377,Xanthomonas phage vB_XORNC02,Tsukubavirus XPP1,,,46608,complete,,Xanthomonas oryzae,,"Chin,R.A.D., Casidsid,J.Y.O., Ancla,J.B., Nada,M.A.L., Reterta,M.C.C., Encabo,J.R., Bigol,U.G., Salibay,C.C.",,2025-04-29,dsDNA
+PV408261,Xanthomonas phage PhiXhv-1,Xanthomonas phage PhiXhv-1,,,46109,complete,,Xanthomonas hortorum,,"Baud,A., Bertolla,F.",,2025-04-08,dsDNA
+PP475461,Xanthomonas phage phiXF1,Xanthomonas phage phiXF1,,,113538,complete,,Xanthomonas campestris,,"Vique,G., Blanco-Picazo,P., Muniesa,M., Rodriguez-Rubio,L., Ramos-Barbero,M.D., Quiros,P., Sala-Comorera,L.",,2025-03-12,unknown
+PQ569993,Xanthomonas phage vB_Xcc_GYRb1,Xanthomonas phage vB_Xcc_GYRb1,,,91478,complete,China: Guizhou,Xanthomonas campestris pv. campestris str. 8004,,"Yu,Q.",2024,2025-03-02,dsDNA
+PP391659,Xanthomonas phage XapPhi1,Xanthomonas phage XapPhi1,,,44947,complete,"USA: Jackson Springs, NC",Xanthomonas arboricola,,"D'Amico-Willman,K.M., Ritchie,D.F., Smith,A.M., Huerta,A.I.",2021-07-15,2025-03-01,dsDNA
+PP391660,Xanthomonas phage XapPhi2,Xanthomonas phage XapPhi2,,,44959,complete,"USA: Jackson Springs, NC",Xanthomonas arboricola,,"D'Amico-Willman,K.M., Ritchie,D.F., Smith,A.M., Huerta,A.I.",2021-10-12,2025-03-01,dsDNA
+PP391661,Xanthomonas phage XapPhi3,Xanthomonas phage XapPhi3,,,45532,complete,"USA: Jackson Springs, NC",Xanthomonas arboricola,,"D'Amico-Willman,K.M., Ritchie,D.F., Smith,A.M., Huerta,A.I.",2012-03-08,2025-03-01,dsDNA
+PP391662,Xanthomonas phage XapPhi4,Xanthomonas phage XapPhi4,,,45675,complete,"USA: Jackson Springs, NC",Xanthomonas arboricola,,"D'Amico-Willman,K.M., Ritchie,D.F., Smith,A.M., Huerta,A.I.",2012-02-23,2025-03-01,dsDNA
+PP391663,Xanthomonas phage XapPhi5,Xanthomonas phage XapPhi5,,,45529,complete,"USA: Jackson Springs, NC",Xanthomonas arboricola,,"D'Amico-Willman,K.M., Ritchie,D.F., Smith,A.M., Huerta,A.I.",1987,2025-03-01,dsDNA
+PP391664,Xanthomonas phage XapPhi6,Xanthomonas phage XapPhi6,,,45571,complete,"USA: Jackson Springs, NC",Xanthomonas arboricola,,"D'Amico-Willman,K.M., Ritchie,D.F., Smith,A.M., Huerta,A.I.",1987,2025-03-01,dsDNA
+PV012638,Xanthomonas phage SAC,Xanthomonas phage SAC,,,43900,complete,China,Xanthomonas citri,,"Xia,X., Li,R.",2023,2025-02-25,dsDNA
+PQ476032,Xanthomonas phage phiXacJX1,Xanthomonas phage phiXacJX1,,,44403,complete,,Xanthomonas citri pv. citri,,"Liu,C., Guo,M., Deng,Y., Zheng,Y., Fang,Q., Zhou,X.",,2024-10-28,dsDNA
+PQ093899,Xanthomonas phage L13.2,Xanthomonas phage L13.2,,,41106,complete,Viet Nam,Xanthomonas campestris,plant leaf,"Tu,V.Q., Hoang,H.A.",2023-02-15,2024-08-24,dsDNA
+PQ067315,Xanthomonas phage fSU1,Xanthomonas phage fSU1,,,10956,complete,,Xanthomonas campestris,,"Neoralova,M.",,2024-08-03,unknown
+PP780467,Xanthomonas phage MK21,Xanthomonas phage MK21,,,43506,complete,South Korea,Xanthomonas citri,,"Song,S.-H., Lee,A.H., Choi,K.-M., Oh,D., Park,J.-G., Kwon,M., Moon,K.",,2024-06-28,dsDNA
+PP756300,Xanthomonas phage vB_XeuM-YB23,Xanthomonas phage vB_XeuM-YB23,,,63787,complete,South Korea,Xanthomonas euvesicatoria,,"Kim,Y.B., Park,E.J., Kim,J.H.",2022-08-11,2024-05-18,dsDNA
+OQ603353,Xanthomonas phage Ep026,Xanthomonas phage Ep026,,,227420,complete,Israel,Xanthomonas,,"Winer,Y.E., Frenk,S.",2022,2024-04-01,dsDNA
+OQ603354,Xanthomonas phage Ep027,Xanthomonas phage Ep027,,,44425,complete,Israel,Xanthomonas,,"Winer,Y.E., Frenk,S.",2022,2024-04-01,dsDNA
+OQ603355,Xanthomonas phage Ep028,Xanthomonas phage Ep028,,,42944,complete,Israel,Xanthomonas,,"Winer,Y.E., Frenk,S.",2022,2024-04-01,dsDNA
+OQ603356,Xanthomonas phage Ep029,Xanthomonas phage Ep029,,,64119,complete,Israel,Xanthomonas,,"Winer,Y.E., Frenk,S.",2022,2024-04-01,dsDNA
+PP079413,Xanthomonas phage SB1,Smasvirus SB1,,,43983,complete,Czech Republic,Xanthomonas euvesicatoria,,"Petrzik,K., Brazdova,S., Sovova,L., Neoralova,M.",2020,2024-03-03,dsDNA
+PP079414,Xanthomonas phage SB3,Euvesivirus SB3,,,43093,complete,Czech Republic,Xanthomonas euvesicatoria,,"Petrzik,K., Brazdova,S., Sovova,L., Neoralova,M.",2021,2024-03-03,dsDNA
+PP079415,Xanthomonas phage SB4,Ceskevirus SB4,,,44323,complete,Czech Republic,Xanthomonas euvesicatoria,,"Petrzik,K., Brazdova,S., Sovova,L., Neoralova,M.",2022,2024-03-03,dsDNA
+PP313117,Xanthomonas phage Kintu,Xanthomonas phage Kintu,,,48985,complete,Uganda: Kampala,Xanthomonas vasicola,,"Nakayinga,R., Wagemans,J.",2021-09-27,2024-02-25,dsDNA
+OR842880,Xanthomonas phage SU1,Xanthomonas phage SU1,,,45142,complete,Czech Republic,Xanthomonas campestris pv. campestris,,"Neoralova,M.",2020,2024-02-21,dsDNA
+OR820514,Xanthomonas phage AhaSv,Xanthomonas phage AhaSv,,lake water,55576,complete,China,Xanthomonas campestris pv. campestris str. 8004,,"An,N., Weng,Q.",2022,2024-01-16,dsDNA
+OR966858,Xanthomonas phage NP1,Xanthomonas phage NP1,,,43329,complete,China,Xanthomonas oryzae pv. oryzae,plant leaf,"Xu,X.",,2024-01-03,dsDNA
+OP548052,Xanthomonas phage NED111,Pradovirus NED111,,,44424,complete,Czech Republic,Xanthomonas euvesicatoria,,"Petrzik,K., Brazdova,S.",2020,2023-10-27,dsDNA
+OP562166,Xanthomonas virus PB119,Xanthomonas virus PB119,,,76147,complete,Czech Republic,Xanthomonas euvesicatoria,,"Petrzik,K., Brazdova,S.",2020,2023-10-21,dsDNA
+OQ756160,Xanthomonas phage XAP3,Xanthomonas phage XAP3,,,61032,complete,Pakistan,Xanthomonas citri,,"Rehman,M.U., Khan,M.I., Hayat,A., Khan,I., Rizwan,M., Rehman,S., Ullah,Z., Alvi,I.A.",2021,2023-10-15,dsDNA
+OR500351,Xanthomonas phage Murka,Xanthomonas phage Murka,,,44044,complete,,Xanthomonas campestris,,"Evseev,P., Tarakanov,R., Ignatov,A., Dzhalilov,F.",,2023-10-01,dsDNA
+OR258281,Xanthomonas phage XaC1,Xanthomonas phage XaC1,,,348967,complete,Mexico,Xanthomonas vesicatoria,,"Rubi,L.M., Villicana,M.C., Amarillas,L.A., Carrillo,A., Leon,J.",,2023-09-20,dsDNA
+OQ790161,Xanthomonas phage RTH11,Xanthomonas phage RTH11,,,312199,complete,,Xanthomonas sp.,,"Bringhurst,R.M., Homer,T.E.",,2023-06-28,dsDNA
+OQ676962,Xanthomonas phage NEB7,Xanthomonas phage NEB7,,,45241,complete,,Xanthomonas sp.,,"Bringhurst,R.M., Homer,T.E.",,2023-05-17,dsDNA
+OQ446483,Xanthomonas phage NUT3,Xanthomonas phage NUT3,,,44389,complete,,Xanthomonas arboricola,,"Nunez,P., Morales,C., Apablaza,H.",,2023-04-30,unknown
+OQ446484,Xanthomonas phage NUT4,Xanthomonas phage NUT4,,,43993,complete,,Xanthomonas arboricola,,"Nunez,P., Morales,C., Apablaza,H.",,2023-04-30,unknown
+OQ446485,Xanthomonas phage NUT11,Xanthomonas phage NUT11,,,42331,complete,,Xanthomonas arboricola,,"Nunez,P., Morales,C., Apablaza,H.",,2023-04-30,unknown
+OQ446486,Xanthomonas phage NUT20,Xanthomonas phage NUT20,,,44388,complete,,Xanthomonas arboricola,,"Nunez,P., Morales,C., Apablaza,H.",,2023-04-30,unknown
+OQ446487,Xanthomonas phage NUT30,Xanthomonas phage NUT30,,,44389,complete,,Xanthomonas arboricola,,"Nunez,P., Morales,C., Apablaza,H.",,2023-04-30,unknown
+OQ446488,Xanthomonas phage NUT29,Xanthomonas phage NUT29,,,44145,complete,,Xanthomonas arboricola,,"Nunez,P., Morales,C., Apablaza,H.",,2023-04-30,unknown
+OQ622092,Xanthomonas phage 10KY502B,Xanthomonas phage 10KY502B,,,43262,complete,China,Xanthomonas citri,,"Chen,D.",2022,2023-04-25,dsDNA
+OQ435241,Xanthomonas phage NUT13,Xanthomonas phage NUT13,,,44389,complete,,Xanthomonas arboricola,,"Nunez,P., Morales,C., Apablaza,H.",,2023-03-29,unknown
+OQ436456,Xanthomonas phage JGB6,Xanthomonas phage JGB6,,,106569,complete,,Xanthomonas sp.,,"Homer,T.",,2023-03-29,dsDNA
+OQ427096,Xanthomonas phage X1,Xanthomonas phage X1,,,200058,complete,China,Xanthomonas campestris pv. campestris str. 8004,,"An,N., Weng,Q.B.",2022,2023-03-20,dsDNA
+OQ055246,Xanthomonas phage vB_XooS_NR08,Xanthomonas phage vB_XooS_NR08,,,98812,complete,"India: Durg, CG",Xanthomonas oryzae pv. oryzae,,"Jain,L., Kumar,V., Jain,S.K., Kaushal,P.",2019-07-10,2023-03-15,dsDNA
+MW435566,Xanthomonas phage X2,Xanthomonas phage X2,,,45966,complete,China: Guangzhou,Xanthomonas oryzae pv. oryzae,,"Ogunyemi,S.O., Chen,J., Wu,X., Wang,L., Masum,M.M.I., Yan,C., An,Q., Li,B., Wu,Z.",2015-12-20,2023-01-14,dsDNA
+OP948730,Xanthomonas phage L522,Xanthomonas phage L522,,,44497,complete,Viet Nam,Xanthomonas oryzae,plant leaf,"Quang,V.T., Hoamg,H.A.",2021-11-27,2023-01-11,dsDNA
+OP583591,Xanthomonas phage F5,Pradovirus F5,,,44616,complete,,Xanthomonas perforans,,"Souza,D.M., Yamada,J.K., Rosa,R.B., Janssen,L., Andrade,M., Franco,R., Nagata,A.K., Ribeiro,B.M.",,2022-12-27,dsDNA
+OP583592,Xanthomonas phage GF2,Xanthomonas phage GF2,,,45223,complete,,Xanthomonas perforans,,"Souza,D.M., Yamada,J.K., Rosa,R.B., Janssen,L., Andrade,M., Franco,R., Nagata,A.K., Ribeiro,B.M.",,2022-12-27,dsDNA
+OP583593,Xanthomonas phage GF1,Xanthomonas phage GF1,,,42522,complete,,Xanthomonas perforans,,"Souza,D.M., Yamada,J.K., Rosa,R.B., Janssen,L., Andrade,M., Franco,R., Nagata,A.K., Ribeiro,B.M.",,2022-12-27,dsDNA
+OP583594,Xanthomonas phage P4,Pradovirus P4,,,44329,complete,,Xanthomonas perforans,,"Souza,D.M., Yamada,J.K., Rosa,R.B., Janssen,L., Andrade,M., Franco,R., Nagata,A.K., Ribeiro,B.M.",,2022-12-27,dsDNA
+OP583595,Xanthomonas phage S3,Xanthomonas phage S3,,,45224,complete,,Xanthomonas perforans,,"Souza,D.M., Yamada,J.K., Rosa,R.B., Janssen,L., Andrade,M., Franco,R., Nagata,A.K., Ribeiro,B.M.",,2022-12-27,dsDNA
+OP292654,Xanthomonas phage XbC2,Xanthomonas phage XbC2,,,367901,complete,Mexico,Xanthomonas vesicatoria,,"Rubi-Rangel,L., Villicana,C., Leon-Felix,J., Amarillas,L., Carrillo-Fasio,A., Lightbourn-Rojas,L.",,2022-10-19,dsDNA
+ON932078,Xanthomonas phage vB_Xar_IVIA-DoCa4,Pradovirus IVIADoCa4,,,43007,complete,Spain,Xanthomonas arboricola,,"Domingo-Calap,M.L., Bernabeu-Gimeno,M., Aure,C.M., Marco-Noales,E., Domingo-Calap,P.",,2022-10-16,dsDNA
+ON932079,Xanthomonas phage vB_Xar_IVIA-DoCa5,Docaquintavirus doca5,,,56408,complete,Spain,Xanthomonas arboricola,,"Domingo-Calap,M.L., Bernabeu-Gimeno,M., Aure,C.M., Marco-Noales,E., Domingo-Calap,P.",,2022-10-16,dsDNA
+ON932080,Xanthomonas phage vB_Xar_IVIA-DoCa6,Bosavirus Doca6,,,62951,complete,Spain,Xanthomonas arboricola,,"Domingo-Calap,M.L., Bernabeu-Gimeno,M., Aure,C.M., Marco-Noales,E., Domingo-Calap,P.",,2022-10-16,dsDNA
+ON932081,Xanthomonas phage vB_Xar_IVIA-DoCa7,Paternavirus doca7,,,42881,complete,Spain,Xanthomonas arboricola,,"Domingo-Calap,M.L., Bernabeu-Gimeno,M., Aure,C.M., Marco-Noales,E., Domingo-Calap,P.",,2022-10-16,dsDNA
+ON932082,Xanthomonas phage vB_Xar_IVIA-DoCa8,Xanthomonas phage vB_Xar_IVIA-DoCa8,,,43697,complete,Spain,Xanthomonas arboricola,,"Domingo-Calap,M.L., Bernabeu-Gimeno,M., Aure,C.M., Marco-Noales,E., Domingo-Calap,P.",,2022-10-16,dsDNA
+ON932083,Xanthomonas phage vB_Xar_IVIA-DoCa9,Pradovirus IVIADoCa9,,,43240,complete,Spain,Xanthomonas arboricola,,"Domingo-Calap,M.L., Bernabeu-Gimeno,M., Aure,C.M., Marco-Noales,E., Domingo-Calap,P.",,2022-10-16,dsDNA
+ON932084,Xanthomonas phage vB_Xar_IVIA-DoCa10,Bosavirus Doca10,,,64024,complete,Spain,Xanthomonas arboricola,,"Domingo-Calap,M.L., Bernabeu-Gimeno,M., Aure,C.M., Marco-Noales,E., Domingo-Calap,P.",,2022-10-16,dsDNA
+ON932085,Xanthomonas phage vB_Xar_IVIA-DoCa11,Xanthomonas phage vB_Xar_IVIA-DoCa11,,,43025,complete,Spain,Xanthomonas arboricola,,"Domingo-Calap,M.L., Bernabeu-Gimeno,M., Aure,C.M., Marco-Noales,E., Domingo-Calap,P.",,2022-10-16,dsDNA
+ON911538,Xanthomonas phage vB_Xar_IVIA-DoCa1,Septimatrevirus DoCa1,,,43553,complete,Spain,Xanthomonas arboricola,,"Domingo-Calap,M.L., Bernabeu-Gimeno,M., Aure,C.M., Marco-Noales,E., Domingo-Calap,P.",,2022-10-04,dsDNA
+ON911539,Xanthomonas phage vB_Xar_IVIA-DoCa2,Pradovirus IVIADoCa2,,,42857,complete,Spain,Xanthomonas arboricola,,"Domingo-Calap,M.L., Bernabeu-Gimeno,M., Aure,C.M., Marco-Noales,E., Domingo-Calap,P.",,2022-10-04,dsDNA
+ON911540,Xanthomonas phage vB_Xar_IVIA-DoCa3,Nipunavirus Doca3,,,58107,complete,Spain,Xanthomonas arboricola,,"Domingo-Calap,M.L., Bernabeu-Gimeno,M., Aure,C.M., Marco-Noales,E., Domingo-Calap,P.",,2022-10-04,dsDNA
+ON996340,Xanthomonas phage BsXeu269p/3,Xanthomonas phage BsXeu269p/3,,,46280,complete,Bulgaria,Xanthomonas euvesicatoria,,"Kizheva,Y.K., Urshev,Z.L., Dimitrova,M.R., Hristova,P.K., Rasheva,I.K.",2018,2022-08-17,dsDNA
+ON960072,Xanthomonas phage pXoo2106,Pradovirus pXoo2106,,,43713,complete,China,Xanthomonas oryzae pv. oryzae,,"Liu,M.",,2022-08-13,dsDNA
+OP067662,Xanthomonas phage pXoo2107,Xanthomonas phage pXoo2107,,,46052,complete,China,Xanthomonas oryzae pv. oryzae,,"Liu,M.",,2022-08-13,dsDNA
+ON711490,Xanthomonas phage HXX_Dennis,Xanthomonas phage HXX_Dennis,,,44623,complete,,Xanthomonas campestris,,"McCutcheon,J.G., Dennis,J.",,2022-07-23,unknown
+ON758385,Xanthomonas phage BUDD,Xanthomonas phage BUDD,,,199233,complete,"USA: Parrish, FL",Xanthomonas sp.,,"Bringhurst,R.M., Homer,T.E.",,2022-07-06,dsDNA
+ON189042,Xanthomonas phage Langgrundblatt1,Shirevirus langgrundblatt1,,,44239,complete,Germany,Xanthomonas translucens pv. translucens DSM 18974,,"Erdrich,S.H., Sharma,V., Schurr,U., Arsova,B., Frunzke,J.",,2022-05-24,dsDNA
+ON189043,Xanthomonas phage Langgrundblatt2,Shirevirus langgrundblatt2,,,44768,complete,Germany,Xanthomonas translucens pv. translucens DSM 18974,,"Erdrich,S.H., Sharma,V., Schurr,U., Arsova,B., Frunzke,J.",,2022-05-24,dsDNA
+ON189044,Xanthomonas phage Pfeifenkraut,Shirevirus pfeifenkraut,,,43791,complete,Germany,Xanthomonas translucens pv. translucens DSM 18974,,"Erdrich,S.H., Sharma,V., Schurr,U., Arsova,B., Frunzke,J.",,2022-05-24,dsDNA
+ON189045,Xanthomonas phage Elanor,Elanorvirus elanor,,,62341,complete,Germany,Xanthomonas translucens pv. translucens DSM 18974,,"Erdrich,S.H., Sharma,V., Schurr,U., Arsova,B., Frunzke,J.",,2022-05-24,dsDNA
+ON189046,Xanthomonas phage Laurelin,Xanthomonas phage Laurelin,,,40498,complete,Germany,Xanthomonas translucens pv. translucens DSM 18974,,"Erdrich,S.H., Sharma,V., Schurr,U., Arsova,B., Frunzke,J.",,2022-05-24,dsDNA
+ON189047,Xanthomonas phage Mallos,Mallosvirus mallos,,,59242,complete,Germany,Xanthomonas translucens pv. translucens DSM 18974,,"Erdrich,S.H., Sharma,V., Schurr,U., Arsova,B., Frunzke,J.",,2022-05-24,dsDNA
+ON189048,Xanthomonas phage Seregon,Xanthomonas phage Seregon,,,55527,complete,,Xanthomonas,,"Erdrich,S.H., Sharma,V., Schurr,U., Arsova,B., Frunzke,J.",,2022-05-24,dsDNA
+OK258138,Xanthomonas phage MUD8-T1,Pradovirus MUD8T1,,,44322,complete,,Xanthomonas sp.,,"Bringhurst,R.M.",,2021-12-14,dsDNA
+OK258140,Xanthomonas phage DMF5-T1,Xanthomonas phage DMF5-T1,,,45054,complete,,Xanthomonas sp.,,"Bringhurst,R.M.",,2021-12-14,dsDNA
+OK275492,Xanthomonas phage FMYAK-P1,Bosavirus FMYAK,,,64088,complete,,Xanthomonas sp.,,"Bringhurst,R.M.",,2021-12-14,dsDNA
+OK275493,Xanthomonas phage MET13-T1,Xanthomonas phage MET13-T1,,,63593,complete,,Xanthomonas sp.,,"Bringhurst,R.M.",,2021-12-14,dsDNA
+OK275494,Xanthomonas phage MYK3,Xanthomonas phage MYK3,,,47500,complete,,Xanthomonas sp.,,"Bringhurst,R.M.",,2021-12-14,dsDNA
+OK275495,Xanthomonas phage R3-22-T1,Xanthomonas phage R3-22-T1,,,45281,complete,,Xanthomonas sp.,,"Bringhurst,R.M.",,2021-12-14,dsDNA
+OK624832,Xanthomonas phage DES1,Xanthomonas phage DES1,,,64732,complete,"USA: Des Moines, Iowa",Xanthomonas sp.,,"Bringhurst,R.M.",,2021-11-28,dsDNA
+OK913679,Xanthomonas phage JUN5,Xanthomonas phage JUN5,,,42912,complete,,Xanthomonas,,"Bringhurst,R.M.",,2021-11-22,dsDNA
+OK913680,Xanthomonas phage MET23-P3,Xanthomonas phage MET23-P3,,,43010,complete,,Xanthomonas,,"Bringhurst,R.M.",,2021-11-22,dsDNA
+MZ666965,Xanthomonas phage N3,Xanthomonas phage N3,,,38454,complete,Malaysia,Xanthomonas oryzae pv. oryzae,,"Jian,L., Tan,G.H., Chia,S.L.",2019-10-10,2021-09-27,dsDNA
+MZ666966,Xanthomonas phage N1,Xanthomonas phage N1,,,41152,complete,Malaysia,Xanthomonas oryzae pv. oryzae,,"Jian,L., Tan,G.H., Chia,S.L.",2019-10-10,2021-09-27,dsDNA
+MZ345003,Xanthomonas phage M29,Xanthomonas phage M29,,,42891,complete,Czech Republic,Xanthomonas campestris pv. campestris,,"Kocanova,M.",,2021-06-29,dsDNA
+MW825358,Xanthomonas phage vB_XciM_LucasX,Xanthomonas phage vB_XciM_LucasX,,,305651,complete,Brazil,Xanthomonas citri,,"Marquioni,V., Rossi,F.P.N., Mendonca,D.C., Martins,L.F., Behlau,F., Setubal,J.C., da Silva,A.M., Novo-Mansur,M.T.M.",,2021-05-16,dsDNA
+MW802488,Xanthomonas phage Olaya,Xanthomonas phage Olaya,,FC08,43722,complete,France,Xanthomonas albilineans,,"Ansaldi,M., Clavijo,F.",2018,2021-04-25,dsDNA
+MW822535,Xanthomonas phage Bolivar,Xanthomonas phage Bolivar,,FC15,43782,complete,France,Xanthomonas albilineans,,"Ansaldi,M., Clavijo,F.",2018,2021-04-25,dsDNA
+MW822536,Xanthomonas phage Usaquen,Xanthomonas phage Usaquen,,FC17,43741,complete,France,Xanthomonas albilineans,,"Ansaldi,M., Clavijo,F.",2018,2021-04-25,dsDNA
+MW822537,Xanthomonas phage Alcala,Xanthomonas phage Alcala,,FC25,43741,complete,France,Xanthomonas albilineans,,"Ansaldi,M., Clavijo,F.",2018,2021-04-25,dsDNA
+MW822538,Xanthomonas phage Fontebon,Xanthomonas phage Fontebon,,FC47,43824,complete,France,Xanthomonas albilineans,,"Ansaldi,M., Clavijo,F.",2018,2021-04-25,dsDNA
+MW822539,Xanthomonas phage Soumapaz,Xanthomonas phage Soumapaz,,FC57,43818,complete,France,Xanthomonas albilineans,,"Ansaldi,M., Clavijo,F.",2018,2021-04-25,dsDNA
+MT161381,Xanthomonas phage FoX1,Foxunavirus fox1,,,44763,complete,Belgium,Xanthomonas campestris,,"Holtappels,D., Rombouts,S., Lavigne,R., Wagemans,J.",,2021-04-01,dsDNA
+MT161382,Xanthomonas phage FoX2,Foxunavirus fox2,,,44086,complete,Belgium,Xanthomonas campestris,,"Holtappels,D., Rombouts,S., Lavigne,R., Wagemans,J.",,2021-04-01,dsDNA
+MT161383,Xanthomonas phage FoX3,Foxunavirus fox3,,,44153,complete,Belgium,Xanthomonas campestris,,"Holtappels,D., Lavigne,R., Wagemans,J.",,2021-04-01,dsDNA
+MT161384,Xanthomonas phage FoX5,Foxunavirus fox5,,,43872,complete,Belgium,Xanthomonas campestris,,"Holtappels,D., Lavigne,R., Wagemans,J.",,2021-04-01,dsDNA
+MT161385,Xanthomonas phage FoX4,Foxquatrovirus fox4,,,60418,complete,Belgium,Xanthomonas campestris,,"Holtappels,D., Rombouts,S., Lavigne,R., Wagemans,J.",,2021-04-01,dsDNA
+MT161386,Xanthomonas phage FoX6,Carpasinavirus FoX6,,,61077,complete,Belgium,Xanthomonas campestris,,"Fortuna,K.J., Holtappels,D., Lavigne,R., Wagemans,J.",,2021-04-01,dsDNA
+MT161387,Xanthomonas phage FoX7,Carpasinavirus FoX6,,,61010,complete,Belgium,Xanthomonas campestris,,"Holtappels,D., Fortuna,K.J., Lavigne,R., Wagemans,J.",,2021-04-01,dsDNA
+MT951568,Xanthomonas phage Xaa_vB_phi31,Pazvirus 31,,,42825,complete,Viet Nam,Xanthomonas euvesicatoria,,"Nguyen,N.T.T., Holtappels,D., Doan,T.T.K., Pham,H.K.N., Wagemans,J.",,2021-04-01,dsDNA
+MT939492,Xanthomonas phage Xoo-sp14,Xanthomonas phage Xoo-sp14,,,232104,complete,China,Xanthomonas oryzae pv. oryzae,,"Nazir,A., Dong,Z., Liu,J., Tong,Y., Peng,D.",2015-08-20,2020-09-16,dsDNA
+MT664984,Xanthomonas phage Xp12,Bosavirus Xp12,,,63783,complete,Taiwan,Xanthomonas oryzae,,"Tamanaha,E., Walsh,S.E., Anton,B.P., Fomenkov,A., Xu,S.-Y., Weigele,P.R.",1970-01-01,2020-09-08,dsDNA
+MN263053,Xanthomonas phage phiLF,Lophivirus LfUK,,,6009,complete,Taiwan,Xanthomonas campestris pv. campestris,,"Lee,M.-C., Yen,M.-R., Wang,W.-H., Fang,Y.-S., Weng,S.-F., Tseng,T.-T., Wen,F.-S.",,2020-08-07,ssDNA(+)
+MN047793,Xanthomonas phage Xoo-sp13,Xanthomonas phage Xoo-sp13,,Xoo-sp13,309023,complete,China,Xanthomonas oryzae pv. oryzae,,"Nazir,A., Dong,Z., Liu,J., Tong,Y., Peng,D.",2015-08-20,2020-06-21,dsDNA
+MT119766,Xanthomonas phage PBR31,Xanthomonas phage PBR31,,,39980,complete,Moldova,Xanthomonas campestris,,"Shneider,M.M., Evseev,P.V., Korzhenkov,A.A., Toschakov,S.V., Vo,T., Ignatov,A.N., Miroshnikov,K.A.",2015,2020-03-25,dsDNA
+MN364664,Xanthomonas phage Xoo-sp15,Xanthomonas phage Xoo-sp15,,,157091,complete,China,Xanthomonas oryzae pv. oryzae,,"Nazir,A., Dong,Z., Liu,J., Tong,Y., Peng,D.",2015-08-20,2019-12-31,dsDNA
+MN461279,Xanthomonas virus phiXaf18,Beograduvirus Xaf18,,,47407,complete,Mexico,Xanthomonas vesicatoria,,"Rios-Sandoval,M., Quinones-Aguilar,E.E., Solis-Sanchez,G.A., Enriquez-Vara,J.N., Rincon-Enriquez,G.",,2019-10-28,dsDNA
+MN335248,Xanthomonas phage XaF13,Xylivirus XacF13,,,7045,complete,Mexico,Xanthomonas vesicatoria,,"Solis-Sanchez,A., Quinones-Aguilar,E., Vega-Arreguin,J., Fraire-Velazquez,S., Rincon-Enriquez,G.",,2019-10-21,ssDNA(+)
+MK903278,Xanthomonas phage Pagan,Pradovirus pagan,,,44448,complete,"USA: Vidor, TX",Xanthomonas sp.,,"Russo,M., Le,T., Moreland,R., Gonzalez,C.F., Liu,M., Ramsey,J., Gonzalez,C.",2018-02,2019-08-25,dsDNA
+MN062187,Xanthomonas phage Samson,Septimatrevirus samson,,,43314,complete,"USA: College Station, TX",Xanthomonas sp.,,"Clark,S., Le,T., Moreland,R., Liu,M., Gonzalez,C.F., Gill,J.J., Ramsey,J.",2018,2019-08-25,dsDNA
+MK512531,Xanthomonas phage Cf2,Lophivirus Cf2,,,6454,complete,"USA: Wellington and Lake Worth areas, Palm Beach County, FL",Xanthomonas citri subsp. citri Aw12879,,"Yeh,T.",,2019-08-17,ssDNA(+)
+MG944227,Xanthomonas phage XPP1,Tsukubavirus XPP1,,,46195,complete,,Xanthomonas oryzae pv. oryzae,,"Varga,I., Molnar,J., Gazdag,A., Szucs,D., Doffkay,Z., Valappil,S.K., Papp,S., Pinter,R., Vera Cruz,C.M., Ricardo,O., Vizi,T., Schneider,G., Rakhely,G., Kovacs,T.",,2019-02-12,dsDNA
+MG944228,Xanthomonas phage XPP2,Xanthomonas phage XPP2,,,46480,complete,,Xanthomonas oryzae pv. oryzae,,"Varga,I., Molnar,J., Gazdag,A., Szucs,D., Doffkay,Z., Valappil,S.K., Papp,S., Pinter,R., Vera Cruz,C.M., Ricardo,O., Vizi,T., Schneider,G., Rakhely,G., Kovacs,T.",,2019-02-12,dsDNA
+MG944229,Xanthomonas phage XPP3,Xanthomonas phage XPP3,,,49612,complete,,Xanthomonas oryzae pv. oryzae,,"Varga,I., Molnar,J., Gazdag,A., Szucs,D., Doffkay,Z., Valappil,S.K., Papp,S., Pinter,R., Vera Cruz,C.M., Ricardo,O., Vizi,T., Schneider,G., Rakhely,G., Kovacs,T.",,2019-02-12,dsDNA
+MG944230,Xanthomonas phage XPP4,Xanthomonas phage XPP4,,,47397,complete,,Xanthomonas oryzae pv. oryzae,,"Varga,I., Molnar,J., Gazdag,A., Szucs,D., Doffkay,Z., Valappil,S.K., Papp,S., Pinter,R., Vera Cruz,C.M., Ricardo,O., Vizi,T., Schneider,G., Rakhely,G., Kovacs,T.",,2019-02-12,dsDNA
+MG944231,Xanthomonas phage XPP6,Xanthomonas phage XPP6,,,46281,complete,,Xanthomonas oryzae pv. oryzae,,"Varga,I., Molnar,J., Gazdag,A., Szucs,D., Doffkay,Z., Valappil,S.K., Papp,S., Pinter,R., Vera Cruz,C.M., Ricardo,O., Vizi,T., Schneider,G., Rakhely,G., Kovacs,T.",,2019-02-12,dsDNA
+MG944232,Xanthomonas phage XPP8,Xanthomonas phage XPP8,,,46278,complete,,Xanthomonas oryzae pv. oryzae,,"Varga,I., Molnar,J., Gazdag,A., Szucs,D., Doffkay,Z., Valappil,S.K., Papp,S., Pinter,R., Vera Cruz,C.M., Ricardo,O., Vizi,T., Schneider,G., Rakhely,G., Kovacs,T.",,2019-02-12,dsDNA
+MG944233,Xanthomonas phage XPP9,Xanthomonas phage XPP9,,,48669,complete,,Xanthomonas oryzae pv. oryzae,,"Varga,I., Molnar,J., Gazdag,A., Szucs,D., Doffkay,Z., Valappil,S.K., Papp,S., Pinter,R., Vera Cruz,C.M., Ricardo,O., Vizi,T., Schneider,G., Rakhely,G., Kovacs,T.",,2019-02-12,dsDNA
+MG944234,Xanthomonas phage XPV1,Tsukubavirus XPV1,,,46503,complete,,Xanthomonas oryzae pv. oryzae,,"Varga,I., Molnar,J., Gazdag,A., Szucs,D., Doffkay,Z., Valappil,S.K., Papp,S., Pinter,R., Vera Cruz,C.M., Ricardo,O., Vizi,T., Schneider,G., Rakhely,G., Kovacs,T.",,2019-02-12,dsDNA
+MG944235,Xanthomonas phage XPV2,Xanthomonas phage XPV2,,,45969,complete,,Xanthomonas oryzae pv. oryzae,,"Varga,I., Molnar,J., Gazdag,A., Szucs,D., Doffkay,Z., Valappil,S.K., Papp,S., Pinter,R., Vera Cruz,C.M., Ricardo,O., Vizi,T., Schneider,G., Rakhely,G., Kovacs,T.",,2019-02-12,dsDNA
+MG944236,Xanthomonas phage XPV3,Xanthomonas phage XPV3,,,47046,complete,,Xanthomonas oryzae pv. oryzae,,"Varga,I., Molnar,J., Gazdag,A., Szucs,D., Doffkay,Z., Valappil,S.K., Papp,S., Pinter,R., Vera Cruz,C.M., Ricardo,O., Vizi,T., Schneider,G., Rakhely,G., Kovacs,T.",,2019-02-12,dsDNA
+MH191395,Xanthomonas phage XcP1,Carpasinavirus FoX6,,,61830,complete,Brazil,Xanthomonas campestris pv. campestris,,"Silva,F.P., Xavier,A.S., Vidigal,P.M.P., Alfenas-Zerbini,P.",,2019-01-31,dsDNA
+KY210139,Xanthomonas phage KPhi1,Beograduvirus KPhi1,,,46077,complete,Serbia,Xanthomonas euvesicatoria,,"Gasic,K.",2005-07-01,2018-11-30,dsDNA
+MH206183,Xanthomonas phage phiXv2,Lophivirus Xv2,,,6564,complete,,Xanthomonas campestris,,"Yeh,T.",,2018-07-07,ssDNA(+)
+MH206184,Xanthomonas phage phiLf UK,Lophivirus LfUK,,,6062,complete,United Kingdom,Xanthomonas campestris pv. campestris,,"Yeh,T.",,2018-07-07,ssDNA(+)
+MH218848,Xanthomonas phage phiLf2,Lophivirus Lf2,,,6372,complete,,Xanthomonas,,"Yeh,T.",,2018-07-07,ssDNA(+)
+MH059633,Xanthomonas phage Carpasina,Carpasinavirus carpasina,,,61939,complete,,Xanthomonas campestris,,"Carstens,A.B., Djurhuus,A.M., Hansen,L.H.",,2018-05-02,dsDNA
+MG983743,Xanthomonas phage RiverRider,Riverridervirus riverrider,,,76335,complete,"USA: Fort Pierce, FL",Xanthomonas fragariae,,"Miller,M., Deiulio,A., Douthitt,C., McMahon,J., Holland,C., Wiersma-Koch,H., Turechek,W., D'Elia,T.",2016-02-01,2018-03-21,dsDNA
+AP018399,Xanthomonas phage XacN1,Xanthomonas phage XacN1,,,384670,complete,Japan,Xanthomonas citri,,"Kawasaki,T., Yoshikawa,G., Ogata,H., Yamada,T.",2013,2017-10-06,dsDNA
+MF375456,Xanthomonas phage phi Xc10,Pradovirus pagan,,,44597,complete,Taiwan,Xanthomonas sp.,,"Cheng,Y.T.",,2017-09-16,dsDNA
+KX241618,Xanthomonas phage Xoo-sp2,Xooduovirus Xoosp2,,,60497,complete,China,Xanthomonas oryzae pv. oryzae,,"Dong,Z., Liu,J., Peng,D.",2015-08-20,2017-05-31,dsDNA
+KY853667,Xanthomonas phage Xf409,Xylivirus Xf109,,,8280,complete,China: Guangxi Province,Xanthomonas oryzae pv. oryzicola,,"Niu,X., Li,K., Xu,L., Zhao,M., Jiang,W., Tang,J., He,Y.",,2017-04-29,ssDNA(+)
+KU197013,Xanthomonas phage XAJ24,Pradovirus XAJ24,,,44862,complete,,Xanthomonas arboricola pv. juglandis,,"Domotor,D., Frank,T., Rakhely,G., Doffkay,Z., Schneider,G., Kovacs,T.",,2016-11-27,dsDNA
+KU197014,Xanthomonas phage XAJ2,Xajduovirus XAJ2,,,49241,complete,,Xanthomonas arboricola pv. juglandis,,"Domotor,D., Frank,T., Rakhely,G., Doffkay,Z., Schneider,G., Kovacs,T.",,2016-11-27,dsDNA
+KX181651,Xanthomonas phage Xf109,Xylivirus Xf109,,,7190,complete,,Xanthomonas oryzae ATCC 35933,,"Yeh,T.Y.",,2016-10-20,ssDNA(+)
+KU595432,Xanthomonas phage f20-Xaj,Pradovirus f20,,,43851,complete,"Chile: VIII region, Bio-Bio",Xanthomonas arboricola,plant leaf,"Retamales,J., Vasquez,I., Santos,L., Segovia,C., Ayala,M., Alvarado,R., Nunez,P., Santander,J., Vasquez,J.I., Olave,I., Santander,J.A.",2014,2016-03-05,dsDNA
+KU595433,Xanthomonas phage f30-Xaj,Pradovirus f30,,,44262,complete,"Chile: VIII region, Bio-Bio",Xanthomonas arboricola,plant leaf,"Retamales,J., Vasquez,I., Santos,L., Segovia,C., Ayala,M., Alvarado,R., Nunez,P., Santander,J., Vasquez,J.I., Olave,I., Santander,J.A.",2014,2016-03-05,dsDNA
+AB910602,Xanthomonas phage XacF1,Coriovirus Cf1c,,,7325,complete,,Xanthomonas citri,,"Ahmad,A.A., Askora,A., Kawasaki,T., Fujie,M., Yamada,T.",,2014-07-18,ssDNA(+)
+AB720064,Xanthomonas citri phage CP2,Xanthomonas citri phage CP2,,,42963,complete,,Xanthomonas citri,,"Ahmad,A.A., Ogawa,M., Kawasaki,T., Fujie,M., Yamada,T.",,2012-11-15,dsDNA
+AB720063,Xanthomonas phage CP1,Klementvirus CP1,,,43870,complete,,Xanthomonas citri,,"Ahmad,A.A., Ogawa,M., Kawasaki,T., Fujie,M., Yamada,T.",,2012-07-10,dsDNA
+JN022534,Xanthomonas phage vB_XveM_DIBBI,Dibbivirus DIBBI,,,49981,complete,,Xanthomonas vesicatoria,,"Sadunishvili,T., Gaganidze,D., Kropinski,A.M., Lingohr,E.J., Ghudumidze,N., Kvesitadze,G.",,2012-05-25,dsDNA
+EU717894,Xanthomonas phage phiL7,Eisenstarkvirus L7,,,44080,complete,,Xanthomonas campestris pv. campestris,,"Lee,C.N., Lin,J.W., Weng,S.F., Tseng,Y.H., Lee,C.-N., Tseng,Y.-H., Weng,S.-F., Lin,J.-W.",,2009-05-31,dsDNA
+DQ777876,Xanthomonas phage Xop411,Xipdecavirus Xop411,,,44520,complete,,Xanthomonas oryzae,,"Lee,C.N., Hu,R.M., Chow,T.Y., Lin,J.W., Chen,H.Y., Tseng,Y.H., Weng,S.F., Weng,S.-F., Tseng,Y.-H., Lin,J.-W., Lee,C.-N., Chen,H.-Y., Chow,T.-Y.",,2007-05-07,dsDNA
+AP008979,Xanthomonas phage OP1,Xipdecavirus OP1,,,43785,complete,,Xanthomonas,,"Inoue,Y., Matsuura,T., Ohara,T., Azegami,K.",,2006-01-07,dsDNA
+AP008986,Xanthomonas phage OP2,Tsukubavirus OP2,,,46643,complete,,Xanthomonas,,"Inoue,Y., Matsuura,T., Ohara,T., Azegami,K.",,2006-01-07,dsDNA
+AY986977,Xanthomonas phage Xp15,Alachuavirus Xp15,,,55770,complete,,Xanthomonas,,"Ramadugu,C., Gabriel,D.W.",,2005-04-18,dsDNA
+AY299121,Xanthomonas phage Xp10,Xipdecavirus Xp10,,,44373,complete,,Xanthomonas,,"Yuzenkova,J., Nechaev,S., Berlin,J., Rogulja,D., Kuznedelov,K., Inman,R., Mushegian,A., Severinov,K., Nechaev,S.Y., Yuzenkova,Y.V., Severinov,K.V.",,2003-06-16,dsDNA

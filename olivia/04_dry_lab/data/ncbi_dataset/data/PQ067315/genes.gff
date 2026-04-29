@@ -1,0 +1,18 @@
+##gff-version  3
+# Sequence Data: seqnum=3;seqlen=10956;seqhdr="PQ067315.1"
+# Model Data: version=pyrodigal.v3.7.0;run_type=Metagenomic;model="40|Rothia_dentocariosa_ATCC_17931|B|53.7|11|1";gc_cont=53.70;transl_table=11;uses_sd=1
+PQ067315.1	pyrodigal_v3.7.0	CDS	1	2355	293.0	-	0	ID=PQ067315.1_1;partial=00;start_type=ATG;rbs_motif=AGGAG;rbs_spacer=5-10bp;gc_cont=0.621;conf=99.99;score=292.97;cscore=275.50;sscore=17.47;rscore=14.32;uscore=-0.42;tscore=3.58;
+PQ067315.1	pyrodigal_v3.7.0	CDS	2380	3006	51.7	-	0	ID=PQ067315.1_2;partial=00;start_type=ATG;rbs_motif=AGGAG;rbs_spacer=5-10bp;gc_cont=0.611;conf=100.00;score=51.71;cscore=34.98;sscore=16.73;rscore=14.32;uscore=-1.17;tscore=3.58;
+PQ067315.1	pyrodigal_v3.7.0	CDS	3406	3975	6.9	+	0	ID=PQ067315.1_3;partial=00;start_type=ATG;rbs_motif=AGxAG;rbs_spacer=3-4bp;gc_cont=0.582;conf=82.92;score=6.87;cscore=6.99;sscore=-0.12;rscore=-4.43;uscore=0.74;tscore=3.58;
+PQ067315.1	pyrodigal_v3.7.0	CDS	4042	4353	3.9	+	0	ID=PQ067315.1_4;partial=00;start_type=ATG;rbs_motif=GGxGG;rbs_spacer=3-4bp;gc_cont=0.622;conf=71.23;score=3.94;cscore=2.52;sscore=1.42;rscore=-1.37;uscore=-0.78;tscore=3.58;
+PQ067315.1	pyrodigal_v3.7.0	CDS	4373	5695	132.7	-	0	ID=PQ067315.1_5;partial=00;start_type=ATG;rbs_motif=GGA/GAG/AGG;rbs_spacer=5-10bp;gc_cont=0.615;conf=100.00;score=132.66;cscore=128.90;sscore=3.76;rscore=1.61;uscore=-1.43;tscore=3.58;
+PQ067315.1	pyrodigal_v3.7.0	CDS	5697	6017	41.3	-	0	ID=PQ067315.1_6;partial=00;start_type=ATG;rbs_motif=GGAG/GAGG;rbs_spacer=5-10bp;gc_cont=0.555;conf=99.99;score=41.33;cscore=32.72;sscore=8.62;rscore=6.02;uscore=-0.98;tscore=3.58;
+PQ067315.1	pyrodigal_v3.7.0	CDS	6028	7173	90.7	-	0	ID=PQ067315.1_7;partial=00;start_type=GTG;rbs_motif=GGA/GAG/AGG;rbs_spacer=11-12bp;gc_cont=0.599;conf=100.00;score=90.74;cscore=97.45;sscore=-6.71;rscore=-0.86;uscore=-3.07;tscore=-2.78;
+PQ067315.1	pyrodigal_v3.7.0	CDS	7201	7329	20.2	-	0	ID=PQ067315.1_8;partial=00;start_type=ATG;rbs_motif=AGGAG;rbs_spacer=5-10bp;gc_cont=0.566;conf=99.05;score=20.23;cscore=9.02;sscore=11.21;rscore=7.22;uscore=2.19;tscore=1.80;
+PQ067315.1	pyrodigal_v3.7.0	CDS	7357	7602	3.6	-	0	ID=PQ067315.1_9;partial=00;start_type=ATG;rbs_motif=3Base/5BMM;rbs_spacer=13-15bp;gc_cont=0.634;conf=69.81;score=3.65;cscore=8.26;sscore=-4.62;rscore=-4.52;uscore=-3.57;tscore=3.48;
+PQ067315.1	pyrodigal_v3.7.0	CDS	7612	7908	42.9	-	0	ID=PQ067315.1_10;partial=00;start_type=ATG;rbs_motif=AGxAGG/AGGxGG;rbs_spacer=5-10bp;gc_cont=0.586;conf=99.99;score=42.91;cscore=34.39;sscore=8.53;rscore=4.52;uscore=0.43;tscore=3.58;
+PQ067315.1	pyrodigal_v3.7.0	CDS	7905	9011	99.3	-	0	ID=PQ067315.1_11;partial=00;start_type=ATG;rbs_motif=GGAGG;rbs_spacer=5-10bp;gc_cont=0.599;conf=100.00;score=99.28;cscore=87.96;sscore=11.32;rscore=10.61;uscore=-2.87;tscore=3.58;
+PQ067315.1	pyrodigal_v3.7.0	CDS	9011	9622	28.4	-	0	ID=PQ067315.1_12;partial=00;start_type=GTG;rbs_motif=GGA/GAG/AGG;rbs_spacer=5-10bp;gc_cont=0.606;conf=99.85;score=28.37;cscore=30.15;sscore=-1.78;rscore=1.61;uscore=-0.61;tscore=-2.78;
+PQ067315.1	pyrodigal_v3.7.0	CDS	9615	9788	4.1	-	0	ID=PQ067315.1_13;partial=00;start_type=GTG;rbs_motif=GGA/GAG/AGG;rbs_spacer=5-10bp;gc_cont=0.621;conf=71.96;score=4.10;cscore=10.32;sscore=-6.22;rscore=1.10;uscore=-3.26;tscore=-4.06;
+PQ067315.1	pyrodigal_v3.7.0	CDS	9916	10380	32.0	+	0	ID=PQ067315.1_14;partial=00;start_type=ATG;rbs_motif=AGGA;rbs_spacer=5-10bp;gc_cont=0.535;conf=99.94;score=31.96;cscore=17.31;sscore=14.65;rscore=10.64;uscore=0.43;tscore=3.58;
+PQ067315.1	pyrodigal_v3.7.0	CDS	10609	10956	11.9	-	0	ID=PQ067315.1_15;partial=01;start_type=Edge;rbs_motif=None;rbs_spacer=None;gc_cont=0.537;conf=93.89;score=11.88;cscore=8.66;sscore=3.22;rscore=0.00;uscore=3.22;tscore=0.00;

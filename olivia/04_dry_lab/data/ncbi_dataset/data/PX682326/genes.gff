@@ -1,0 +1,16 @@
+##gff-version  3
+# Sequence Data: seqnum=4;seqlen=8459;seqhdr="PX682326.1"
+# Model Data: version=pyrodigal.v3.7.0;run_type=Metagenomic;model="10|Burkholderia_rhizoxinica_HKI_454|B|59.7|11|1";gc_cont=59.70;transl_table=11;uses_sd=1
+PX682326.1	pyrodigal_v3.7.0	CDS	313	759	22.6	+	0	ID=PX682326.1_1;partial=00;start_type=ATG;rbs_motif=None;rbs_spacer=None;gc_cont=0.629;conf=99.45;score=22.62;cscore=21.84;sscore=0.78;rscore=-4.02;uscore=-0.05;tscore=4.85;
+PX682326.1	pyrodigal_v3.7.0	CDS	1052	1345	16.7	-	0	ID=PX682326.1_2;partial=00;start_type=ATG;rbs_motif=GGA/GAG/AGG;rbs_spacer=5-10bp;gc_cont=0.643;conf=97.87;score=16.66;cscore=9.21;sscore=7.45;rscore=1.49;uscore=1.11;tscore=4.85;
+PX682326.1	pyrodigal_v3.7.0	CDS	1506	2153	84.3	-	0	ID=PX682326.1_3;partial=00;start_type=ATG;rbs_motif=GGAG/GAGG;rbs_spacer=5-10bp;gc_cont=0.630;conf=100.00;score=84.26;cscore=68.25;sscore=16.01;rscore=9.94;uscore=1.22;tscore=4.85;
+PX682326.1	pyrodigal_v3.7.0	CDS	2155	3348	106.5	-	0	ID=PX682326.1_4;partial=00;start_type=ATG;rbs_motif=GGAG/GAGG;rbs_spacer=5-10bp;gc_cont=0.606;conf=100.00;score=106.53;cscore=90.96;sscore=15.58;rscore=9.94;uscore=0.80;tscore=4.85;
+PX682326.1	pyrodigal_v3.7.0	CDS	3348	3677	50.9	-	0	ID=PX682326.1_5;partial=00;start_type=ATG;rbs_motif=AGGAG;rbs_spacer=5-10bp;gc_cont=0.567;conf=100.00;score=50.92;cscore=28.07;sscore=22.85;rscore=16.52;uscore=1.48;tscore=4.85;
+PX682326.1	pyrodigal_v3.7.0	CDS	3677	5083	54.7	-	0	ID=PX682326.1_6;partial=00;start_type=ATG;rbs_motif=GGA/GAG/AGG;rbs_spacer=5-10bp;gc_cont=0.576;conf=100.00;score=54.70;cscore=47.62;sscore=7.08;rscore=1.49;uscore=0.74;tscore=4.85;
+PX682326.1	pyrodigal_v3.7.0	CDS	5220	5450	33.1	-	0	ID=PX682326.1_7;partial=00;start_type=ATG;rbs_motif=AGGAG;rbs_spacer=5-10bp;gc_cont=0.658;conf=99.95;score=33.10;cscore=14.05;sscore=19.05;rscore=15.06;uscore=-0.43;tscore=4.42;
+PX682326.1	pyrodigal_v3.7.0	CDS	5462	5665	8.5	-	0	ID=PX682326.1_8;partial=00;start_type=ATG;rbs_motif=None;rbs_spacer=None;gc_cont=0.588;conf=87.60;score=8.51;cscore=9.77;sscore=-1.26;rscore=-5.00;uscore=-0.15;tscore=3.90;
+PX682326.1	pyrodigal_v3.7.0	CDS	5669	5965	12.0	-	0	ID=PX682326.1_9;partial=00;start_type=ATG;rbs_motif=GGA/GAG/AGG;rbs_spacer=5-10bp;gc_cont=0.556;conf=94.07;score=12.02;cscore=6.97;sscore=5.06;rscore=1.49;uscore=-1.28;tscore=4.85;
+PX682326.1	pyrodigal_v3.7.0	CDS	5962	7002	45.1	-	0	ID=PX682326.1_10;partial=00;start_type=ATG;rbs_motif=GGAG/GAGG;rbs_spacer=5-10bp;gc_cont=0.573;conf=100.00;score=45.14;cscore=29.34;sscore=15.80;rscore=9.94;uscore=1.02;tscore=4.85;
+PX682326.1	pyrodigal_v3.7.0	CDS	7155	7367	21.4	-	0	ID=PX682326.1_11;partial=00;start_type=ATG;rbs_motif=GGAGG;rbs_spacer=5-10bp;gc_cont=0.606;conf=99.28;score=21.40;cscore=6.29;sscore=15.11;rscore=10.98;uscore=0.06;tscore=4.07;
+PX682326.1	pyrodigal_v3.7.0	CDS	7680	8150	20.7	+	0	ID=PX682326.1_12;partial=00;start_type=ATG;rbs_motif=GGA/GAG/AGG;rbs_spacer=5-10bp;gc_cont=0.594;conf=99.15;score=20.72;cscore=13.60;sscore=7.12;rscore=1.49;uscore=0.78;tscore=4.85;
+PX682326.1	pyrodigal_v3.7.0	CDS	8147	8458	8.8	+	0	ID=PX682326.1_13;partial=01;start_type=ATG;rbs_motif=GGA/GAG/AGG;rbs_spacer=5-10bp;gc_cont=0.609;conf=88.35;score=8.81;cscore=4.38;sscore=4.44;rscore=1.49;uscore=-1.90;tscore=4.85;

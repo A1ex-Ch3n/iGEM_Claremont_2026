@@ -1,0 +1,15 @@
+##gff-version  3
+# Sequence Data: seqnum=10;seqlen=6009;seqhdr="MN263053.1"
+# Model Data: version=pyrodigal.v3.7.0;run_type=Metagenomic;model="10|Burkholderia_rhizoxinica_HKI_454|B|59.7|11|1";gc_cont=59.70;transl_table=11;uses_sd=1
+MN263053.1	pyrodigal_v3.7.0	CDS	20	328	17.4	-	0	ID=MN263053.1_1;partial=00;start_type=ATG;rbs_motif=AGxAGG/AGGxGG;rbs_spacer=3-4bp;gc_cont=0.576;conf=98.19;score=17.38;cscore=5.26;sscore=12.12;rscore=8.62;uscore=-1.34;tscore=4.85;
+MN263053.1	pyrodigal_v3.7.0	CDS	395	733	19.2	-	0	ID=MN263053.1_2;partial=00;start_type=ATG;rbs_motif=GGA/GAG/AGG;rbs_spacer=5-10bp;gc_cont=0.652;conf=98.81;score=19.23;cscore=12.65;sscore=6.58;rscore=1.49;uscore=0.24;tscore=4.85;
+MN263053.1	pyrodigal_v3.7.0	CDS	724	1191	26.7	-	0	ID=MN263053.1_3;partial=00;start_type=ATG;rbs_motif=GGAG/GAGG;rbs_spacer=5-10bp;gc_cont=0.588;conf=99.78;score=26.67;cscore=8.13;sscore=18.54;rscore=9.94;uscore=3.76;tscore=4.85;
+MN263053.1	pyrodigal_v3.7.0	CDS	1319	1486	11.1	+	0	ID=MN263053.1_4;partial=00;start_type=ATG;rbs_motif=GGA/GAG/AGG;rbs_spacer=5-10bp;gc_cont=0.655;conf=92.81;score=11.13;cscore=10.09;sscore=1.04;rscore=0.98;uscore=-3.15;tscore=3.20;
+MN263053.1	pyrodigal_v3.7.0	CDS	1479	2519	41.1	+	0	ID=MN263053.1_5;partial=00;start_type=GTG;rbs_motif=GGAG/GAGG;rbs_spacer=5-10bp;gc_cont=0.580;conf=99.99;score=41.11;cscore=38.39;sscore=2.72;rscore=9.94;uscore=0.17;tscore=-7.39;
+MN263053.1	pyrodigal_v3.7.0	CDS	2516	2812	30.9	+	0	ID=MN263053.1_6;partial=00;start_type=ATG;rbs_motif=GGA/GAG/AGG;rbs_spacer=5-10bp;gc_cont=0.593;conf=99.92;score=30.91;cscore=25.85;sscore=5.06;rscore=1.49;uscore=-1.28;tscore=4.85;
+MN263053.1	pyrodigal_v3.7.0	CDS	2816	3067	26.0	+	0	ID=MN263053.1_7;partial=00;start_type=ATG;rbs_motif=GGA/GAG/AGG;rbs_spacer=11-12bp;gc_cont=0.643;conf=99.75;score=26.03;cscore=21.66;sscore=4.37;rscore=-0.01;uscore=-0.45;tscore=4.83;
+MN263053.1	pyrodigal_v3.7.0	CDS	3095	3223	14.5	+	0	ID=MN263053.1_8;partial=00;start_type=ATG;rbs_motif=AGGAG;rbs_spacer=5-10bp;gc_cont=0.574;conf=96.53;score=14.46;cscore=2.33;sscore=12.14;rscore=8.32;uscore=1.37;tscore=2.44;
+MN263053.1	pyrodigal_v3.7.0	CDS	3801	4121	43.5	+	0	ID=MN263053.1_9;partial=00;start_type=ATG;rbs_motif=GGA/GAG/AGG;rbs_spacer=5-10bp;gc_cont=0.636;conf=100.00;score=43.50;cscore=39.29;sscore=4.21;rscore=1.49;uscore=-2.13;tscore=4.85;
+MN263053.1	pyrodigal_v3.7.0	CDS	4073	4354	14.3	+	0	ID=MN263053.1_10;partial=00;start_type=ATG;rbs_motif=GGAG/GAGG;rbs_spacer=5-10bp;gc_cont=0.564;conf=96.41;score=14.31;cscore=1.04;sscore=13.27;rscore=9.94;uscore=-1.51;tscore=4.85;
+MN263053.1	pyrodigal_v3.7.0	CDS	4365	4685	55.1	+	0	ID=MN263053.1_11;partial=00;start_type=ATG;rbs_motif=GGAG/GAGG;rbs_spacer=5-10bp;gc_cont=0.555;conf=100.00;score=55.13;cscore=39.40;sscore=15.73;rscore=9.94;uscore=0.95;tscore=4.85;
+MN263053.1	pyrodigal_v3.7.0	CDS	4687	6009	148.1	+	0	ID=MN263053.1_12;partial=00;start_type=ATG;rbs_motif=GGA/GAG/AGG;rbs_spacer=5-10bp;gc_cont=0.611;conf=100.00;score=148.08;cscore=141.54;sscore=6.54;rscore=1.49;uscore=0.20;tscore=4.85;
