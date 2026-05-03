@@ -1,0 +1,21 @@
+name: igem2026
+channels:
+  - conda-forge
+  - bioconda
+dependencies:
+  - python=3.11
+  - biopython>=1.83
+  - pandas
+  - numpy
+  - scipy
+  - scikit-learn
+  - matplotlib
+  - seaborn
+  - jupyterlab
+  - ipykernel
+  - ncbi-datasets-cli
+  - pyrodigal
+  - openpyxl
+  - requests
+  - tqdm
+  - pip

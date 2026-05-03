@@ -12,6 +12,7 @@ build/
 .venv/
 venv/
 env/
+!shared/env/
 
 # Node
 node_modules/
