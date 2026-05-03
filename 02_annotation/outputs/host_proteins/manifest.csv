@@ -1,0 +1,11 @@
+host_id,kind,assembly,organism,n_proteins,faa_path
+Xanthomonas_citri_306,host,GCF_000007165.1,Xanthomonas citri pv. citri str. 306,4239,Xanthomonas_citri_306/proteins.faa
+Xanthomonas_campestris_33913,host,GCF_000007145.1,Xanthomonas campestris pv. campestris ATCC 33913,4093,Xanthomonas_campestris_33913/proteins.faa
+Xanthomonas_oryzae_KACC10331,host,GCF_000007385.1,Xanthomonas oryzae pv. oryzae KACC 10331,3642,Xanthomonas_oryzae_KACC10331/proteins.faa
+Escherichia_coli_K12_MG1655,host,GCF_000005845.2,Escherichia coli K-12 MG1655,4300,Escherichia_coli_K12_MG1655/proteins.faa
+Bacillus_subtilis_168,neg,GCF_000009045.1,Bacillus subtilis 168,4237,Bacillus_subtilis_168/proteins.faa
+Pseudomonas_aeruginosa_PAO1,neg,GCF_000006765.1,Pseudomonas aeruginosa PAO1,5572,Pseudomonas_aeruginosa_PAO1/proteins.faa
+Staphylococcus_aureus_NCTC8325,neg,GCF_000013425.1,Staphylococcus aureus NCTC 8325,2767,Staphylococcus_aureus_NCTC8325/proteins.faa
+Mycobacterium_smegmatis_MC2155,neg,GCF_000015005.1,Mycobacterium smegmatis MC2 155,6406,Mycobacterium_smegmatis_MC2155/proteins.faa
+Salmonella_enterica_LT2,neg,GCF_000006945.2,Salmonella enterica LT2,4554,Salmonella_enterica_LT2/proteins.faa
+Vibrio_cholerae_N16961,neg,GCF_000006745.1,Vibrio cholerae N16961,3447,Vibrio_cholerae_N16961/proteins.faa
