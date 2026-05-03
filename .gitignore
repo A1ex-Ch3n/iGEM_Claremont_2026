@@ -42,3 +42,15 @@ logs/
 
 # Jupyter
 .ipynb_checkpoints/
+
+# Large bioinformatics artifacts (commit MANIFEST.csv instead)
+01_data_ground_truth/outputs/phage_genomes/
+01_data_ground_truth/outputs/host_genomes/
+02_annotation/outputs/phage_proteins/
+02_annotation/outputs/host_proteins/
+02_annotation/outputs/pharokka_runs/
+02_annotation/outputs/phage_phanotate_coords/
+04_protein_embedding/outputs/
+*.npy
+*.h5
+*.pkl
