@@ -1,0 +1,50 @@
+accession,gcf_accession,organism_name,source,matrix_interactions,notes
+NZ_CP014028,GCF_001559195.1,Achromobacter xylosoxidans,confirmed_matrix,3,
+NZ_CP140715,GCF_034555415.1,Acinetobacter johnsonii,confirmed_matrix,2,
+KY000037,,Agrobacterium sp.,accession_invalid,1,"DATA_ISSUE: accession KY000037 is a plasmid not genome, not a whole-genome assembly. Cannot download with datasets CLI. Matrix must be corrected to a proper genome accession."
+CP003873,GCF_000300175.1,Alteromonas macleodii str. Balearic Sea AD45,confirmed_matrix,,
+NZ_CP022009,GCF_002208175.1,Burkholderia gladioli,confirmed_matrix,1,
+NZ_CP172379,GCF_044336605.1,Campylobacter jejuni,confirmed_matrix,2,
+NZ_CP049154,GCF_018884125.1,Cronobacter sakazakii,confirmed_matrix,2,
+NZ_CP066006,GCF_016127415.1,Delftia acidovorans,confirmed_matrix,2,
+NZ_CP077850,GCF_027557715.1,Erwinia amylovora,confirmed_matrix,2,
+NZ_CP017928,GCF_001870185.1,Klebsiella oxytoca,confirmed_matrix,1,
+NZ_CP016892,GCF_001709315.1,Pantoea agglomerans,confirmed_matrix,2,
+NC_004547,GCF_000011605.1,Pectobacterium atrosepticum SCRI1043,confirmed_matrix,2,
+PY746849,,Pseudomonas sp.,accession_invalid,1,"DATA_ISSUE: accession PY746849 is a patent sequence not genome, not a whole-genome assembly. Cannot download with datasets CLI. Matrix must be corrected to a proper genome accession."
+NZ_CP012348,GCF_000330485.2,Salmonella enterica serovar Pullorum,confirmed_matrix,,
+NZ_CP074661,GCF_001713515.2,Salmonella enteritidis,confirmed_matrix,2,
+NZ_CP026795,GCF_002950275.1,Shigella boydii,confirmed_matrix,2,
+NZ_AP041801,GCF_055383255.1,Stenotrophomonas maltophilia,confirmed_matrix,3,
+NZ_CP013250,GCF_001879585.1,Vibrio parahaemolyticus,confirmed_matrix,2,
+NZ_JBWJFR000000000,GCF_056391455.1,Xanthomonas arboricola,confirmed_matrix,7,DUPLICATE_ACCESSION: same NZ_JBWJFR000000000 also used for X. arboricola pv. pruni in matrix — two matrix columns share one genome. WGS master record (multi-scaffold). Truth table must resolve which strain each column represents.
+NZ_CP168206,GCF_040201855.2,Xanthomonas arboricola pv. juglandis,confirmed_matrix,7,
+NZ_JBWJFR000000000,GCF_056391455.1,Xanthomonas arboricola pv. pruni,confirmed_matrix,7,DUPLICATE_ACCESSION: same NZ_JBWJFR000000000 also used for X. arboricola (generic) in matrix — see above.
+NZ_CP169751,GCF_054698555.1,Xanthomonas campestris,confirmed_matrix,3,
+NZ_CP155977,GCF_045719835.1,Xanthomonas campestris pv. campestris,confirmed_matrix,3,
+NZ_CP155948,GCF_045712965.1,Xanthomonas campestris pv. campestris str. 8004,confirmed_matrix,3,
+NZ_CP103838,GCF_033441615.1,Xanthomonas campestris pv. pelargonii,confirmed_matrix,4,
+NZ_CP118477,GCF_056096515.1,Xanthomonas citri,confirmed_matrix,9,
+NZ_CP114795,GCF_042763795.1,Xanthomonas citri pv. citri,confirmed_matrix,9,
+NZ_CP167225,GCF_041463635.1,Xanthomonas euvesicatoria,confirmed_matrix,7,
+NZ_CP082179,GCF_022117535.1,Xanthomonas fragariae,confirmed_matrix,2,
+NZ_CP150073,GCF_046105815.1,Xanthomonas oryzae,confirmed_matrix,45,DUPLICATE_ACCESSION: same NZ_CP150073 also used for X. oryzae pv. oryzae — two matrix columns share one genome.
+NZ_CP150073,GCF_046105815.1,Xanthomonas oryzae pv. oryzae,confirmed_matrix,45,DUPLICATE_ACCESSION: same NZ_CP150073 also used for X. oryzae (species level) — see above.
+NZ_CP173422,GCF_001010025.2,Xanthomonas perforans,confirmed_matrix,5,
+NZ_CP167993,GCF_040202575.2,Xanthomonas vesicatoria,confirmed_matrix,6,
+NZ_CP182287,GCF_055959565.1,Xylella fastidiosa,confirmed_matrix,8,
+CP076725,GCF_023375035.1,Xanthomonas arboricola pv. juglandis IVIA 1317-1a,newly_resolved,7,Resolved from matrix entry [No Complete Genome Found]; 16 interactions; complete 5.27Mb chromosome; Phytopathology 2022 (doi:10.1094/PHYTO-10-21-0436-A)
+LT604072,GCF_900094325.1,Xanthomonas translucens pv. translucens DSM 18974,newly_resolved,,Resolved from matrix entry [No Complete Genome Found]; 11 interactions; 4.7Mb complete genome; ENA/NCBI mirror; Genome Announc 2016 (doi:10.1128/genomeA.01334-16)
+CP090954,GCF_021733585.2,Xanthomonas arboricola pv. pruni Xcp1,newly_resolved,7,Resolved from matrix entry [No Complete Genome Found]; 6 interactions; 5.11Mb chr + 41kb plasmid; isolated 1984 NC Sandhills; MRA 2022 (doi:10.1128/mra.00209-22)
+CP045452,GCA_016864875.1,Xanthomonas oryzae pv. oryzae LN4,newly_resolved,45,Resolved from matrix entry [No Complete Genome Found]; 4 interactions; hypervirulent strain; 5.01Mb; Plant Disease 2020 (doi:10.1094/PDIS-12-19-2724-A)
+TODO,,Xanthomonas sp. (matrix label),unresolved_TODO,,17 interactions. Label too vague — no single genome. Matrix must specify which Xanthomonas strain was tested. See data_needs.md guide.
+TODO,,Xanthomonas campestris pv. campestris GBBC 1419,unresolved_TODO,,8 interactions. Lab strain from Belgian culture collection (GBBC). Used as Tn5 mutant library host in phage receptor studies. No complete genome deposited in NCBI as of 2026. Contact BCCM/LMG or original authors (PMC9151335).
+TODO,,E. coli O157:H7 R508 (phage type 14),unresolved_TODO,,7 interactions. Phage-typing designation not a sequenced genome accession. Closest reference: E. coli O157:H7 Sakai (BA000007) or EDL933 (AE005174). Matrix must clarify which sequenced strain was intended.
+TODO,,Xanthomonas albilineans CFBP 2523,unresolved_TODO,,6 interactions. CFBP strain; reference genome is GPE PC73 (FP565176). No CFBP 2523-specific genome deposited. Substitute with GPE PC73 if representative genome acceptable.
+TODO,,Xanthomonas arboricola pv. pruni strain Xcp1,unresolved_TODO,,6 interactions — NOTE: accession CP090954 now resolved above as newly_resolved. Remove this TODO once matrix is updated.
+TODO,,Xanthomonas campestris pv. campestris GBBC 1412,unresolved_TODO,,"4 interactions. Same situation as GBBC 1419 — Belgian collection strain, no deposited genome."
+TODO,,Xanthomonas euvesicatoria 1940,unresolved_TODO,,3 interactions. Strain number '1940' not matched to any NCBI genome. Search NCBI with strain name for any WGS submission.
+TODO,,Xanthomonas hortorum pv. vitians CFBP8638–8643 (6 strains),unresolved_TODO,,1–3 interactions each. CFBP collection strains for lettuce pathogen. Reference genome: CFBP 8686PT (GCA_012922135.1). Individual strain genomes not deposited. Substitute with reference if pathovar-level resolution is sufficient.
+TODO,,Xanthomonas oryzae pv. oryzae GX2-3 / GXB1-2 / LA1+ / N1 / PX079,unresolved_TODO,,1–2 interactions each. Specific Chinese/Philippine field isolates. Search NCBI BioProject for WGS submissions; likely exist as draft assemblies.
+TODO,,Xanthomonas sp. Q / SH23 / SH47 / SH48 / XC263,unresolved_TODO,,1 interaction each. Lab designations with no NCBI genome. Need strain deposit or reassignment to named species. See data_needs.md guide.
+TODO,,Xanthomonas citri 306 / 3213 / XCC27-12 / XHCZG,unresolved_TODO,,1 interaction each. Strain-level variants of X. citri; reference genome X. citri 306 is NC_003919. Confirm whether matrix intends the reference strain or specific isolates.

@@ -1,0 +1,778 @@
+accession,description,length_bp,source,host_genus,in_interaction_matrix
+AB720063.2,"Xanthomonas phage CP1 DNA, complete genome",43870,canonical_xanthomonas,Xanthomonas,yes
+AB720064.1,"Xanthomonas citri phage CP2 DNA, complete genome",42963,canonical_xanthomonas,Unknown,yes
+AE017220.1,Salmonella enterica serovar Choleraesuis SC-B67 BACTERIAL GENOME — incorrectly placed in phage pool. Must be removed from phage dataset.,4755700,CONTAMINATION,Salmonella,yes
+AP008979.1,"Xanthomonas phage OP1 DNA, complete genome",43785,canonical_xanthomonas,Xanthomonas,yes
+AP008986.1,"Xanthomonas oryzae phage OP2 DNA, complete genome",46643,canonical_xanthomonas,Unknown,yes
+AP018399.1,"Xanthomonas phage XacN1 DNA, complete genome",384670,canonical_xanthomonas,Xanthomonas,yes
+AY299121.1,"Xanthomonas phage Xp10, complete genome",44373,canonical_xanthomonas,Xanthomonas,yes
+AY374448.1,"Bacteriophage phiKO2, complete genome",51601,canonical_xanthomonas,Unknown,yes
+AY394005.1,"Pseudomonas phage D3112, complete genome",,negative_pool,Pseudomonas,no
+AY682195.1,"Lactobacillus phage LP65, complete genome",,negative_pool,Lactobacillus,no
+AY986977.1,"Xanthomonas campestris pv. pelargonii phage Xp15, complete genome",55770,canonical_xanthomonas,Unknown,yes
+DQ222855.1,"Wbetavirus gamma53 isolate 53, complete genome",,negative_pool,Unknown,no
+DQ777876.1,"Xanthomonas phage Xop411, complete genome",44520,canonical_xanthomonas,Xanthomonas,yes
+EF177456.2,"Salmonella phage SETP3, complete genome",42572,canonical_xanthomonas,Salmonella,yes
+EU710883.1,"Erwinia phage phiEa21-4, complete genome",84576,canonical_xanthomonas,Erwinia,yes
+EU717894.1,"Xanthomonas phage phiL7, complete genome",44080,canonical_xanthomonas,Xanthomonas,yes
+FJ373894.1,"Shigella phage phiSboM-AG3, complete genome",158006,canonical_xanthomonas,Shigella,yes
+FQ312032.1,Salmonella phage Vi01 complete sequence,,negative_pool,Salmonella,no
+GQ357915.1,"Delftia phage PhiW-14, complete genome",157486,canonical_xanthomonas,Delftia,yes
+GU070616.1,"Salmonella phage PVP-SE1, complete genome",145964,canonical_xanthomonas,Salmonella,yes
+GU296433.1,"Campylobacter phage NCTC12673, complete genome",135041,canonical_xanthomonas,Campylobacter,yes
+HM004124.1,"Acinetobacter phage Acj9, complete genome",169947,canonical_xanthomonas,Acinetobacter,yes
+HM246720.1,"Campylobacter phage vB_CcoM-IBB_35 clone Contig1, complete genome",53237,canonical_xanthomonas,Campylobacter,yes
+JN022534.1,"Xanthomonas phage vB_XveM_DIBBI, complete genome",49981,canonical_xanthomonas,Xanthomonas,yes
+JN882285.1,"Cronobacter phage vB_CsaM_GAP32, complete genome",358663,canonical_xanthomonas,Cronobacter,yes
+JN882298.1,"Escherichia phage phiKT, complete genome",42608,canonical_xanthomonas,Escherichia,yes
+JQ015307.1,"Pectobacterium phage phiTE, complete genome",142349,canonical_xanthomonas,Pectobacterium,yes
+KF005317.1,"Alteromonas phage vB_AmaP_AD45-P1, complete genome",103910,canonical_xanthomonas,Alteromonas,yes
+KF005318.1,"Alteromonas phage vB_AmaP_AD45-P3, complete genome",101724,canonical_xanthomonas,Alteromonas,yes
+KF005319.1,"Alteromonas phage vB_AmaP_AD45-P4, complete genome",100619,canonical_xanthomonas,Alteromonas,yes
+KF005320.1,"Alteromonas phage vB_AmaP_AD45-P2, complete genome",104036,canonical_xanthomonas,Alteromonas,yes
+KF148055.1,"Salmonella phage Jersey, complete genome",43447,canonical_xanthomonas,Salmonella,yes
+KF623293.1,"Vibrio phage SHOU24, complete genome",77837,canonical_xanthomonas,Vibrio,yes
+KF626665.1,"Phage Sano, complete genome",56147,canonical_xanthomonas,Unknown,yes
+KF626666.1,"Xylella phage Paz, complete genome",43869,canonical_xanthomonas,Xylella,yes
+KF626667.1,"Xylella phage Prado, complete genome",43940,canonical_xanthomonas,Xylella,yes
+KF626668.1,"Phage Salvo, complete genome",55601,canonical_xanthomonas,Unknown,yes
+KF771236.1,"Escherichia phage bV_EcoS_AHP24, complete genome",46719,canonical_xanthomonas,Escherichia,yes
+KF771237.1,"Escherichia phage bV_EcoS_AHP42, complete genome",46847,canonical_xanthomonas,Escherichia,yes
+KF771238.1,"Escherichia phage bV_EcoS_AHS24, complete genome",46440,canonical_xanthomonas,Escherichia,yes
+KF771239.1,"Escherichia phage bV_EcoS_AKS96, complete genome",45746,canonical_xanthomonas,Escherichia,yes
+KF787094.1,"Achromobacter phage JWDelta, complete genome",73659,canonical_xanthomonas,Achromobacter,yes
+KF787095.1,"Achromobacter phage JWAlpha, complete genome",72329,canonical_xanthomonas,Achromobacter,yes
+KJ628499.1,"Acinetobacter phage vB_AbaM_phiAbaA1, complete genome",104906,canonical_xanthomonas,Acinetobacter,yes
+KP202971.1,"Achromobacter phage JWF, complete genome",81541,canonical_xanthomonas,Achromobacter,yes
+KU197013.1,"Xanthomonas phage XAJ24, complete genome",44862,canonical_xanthomonas,Xanthomonas,yes
+KU197014.1,"Xanthomonas phage XAJ2, complete genome",49241,canonical_xanthomonas,Xanthomonas,yes
+KU595432.1,"Xanthomonas phage f20-Xaj, complete genome",43851,canonical_xanthomonas,Xanthomonas,yes
+KU595433.1,"Xanthomonas phage f30-Xaj, complete genome",44262,canonical_xanthomonas,Xanthomonas,yes
+KX241618.1,"Xanthomonas phage Xoo-sp2, complete genome",60497,canonical_xanthomonas,Xanthomonas,yes
+KX356061.1,"Staphylococcus phage BP13, complete genome",,negative_pool,Staphylococcus,no
+KX356062.1,"Staphylococcus phage BP14, complete genome",,negative_pool,Staphylococcus,no
+KX356063.1,"Staphylococcus phage J1P1, complete genome",,negative_pool,Staphylococcus,no
+KX356064.1,"Staphylococcus phage J1P2, complete genome",,negative_pool,Staphylococcus,no
+KX356065.1,"Staphylococcus phage J1P3, complete genome",,negative_pool,Staphylococcus,no
+KX356066.1,"Staphylococcus phage J2-1P1, complete genome",,negative_pool,Staphylococcus,no
+KX356067.1,"Staphylococcus phage J2-1P2, complete genome",,negative_pool,Staphylococcus,no
+KY210139.1,"Xanthomonas phage KPhi1, complete genome",46077,canonical_xanthomonas,Xanthomonas,yes
+LC890683.1,"Salmonella phage Jafari_IR2025 DNA, complete genome",,negative_pool,Salmonella,no
+LC901396.1,"Bacillus phage CM2 DNA, complete genome",,negative_pool,Bacillus,no
+MF375456.1,"Xanthomonas phage phi Xc10, complete genome",44597,canonical_xanthomonas,Xanthomonas,yes
+MF988720.1,"Pseudoalteromonas phage J2-1_QLiu-2017, complete genome",,negative_pool,Pseudoalteromonas,no
+MG944227.1,"Xanthomonas phage XPP1, complete genome",46195,canonical_xanthomonas,Xanthomonas,yes
+MG944228.1,"Xanthomonas phage XPP2, complete genome",46480,canonical_xanthomonas,Xanthomonas,yes
+MG944229.1,"Xanthomonas phage XPP3, complete genome",49612,canonical_xanthomonas,Xanthomonas,yes
+MG944230.1,"Xanthomonas phage XPP4, complete genome",47397,canonical_xanthomonas,Xanthomonas,yes
+MG944231.1,"Xanthomonas phage XPP6, complete genome",46281,canonical_xanthomonas,Xanthomonas,yes
+MG944232.1,"Xanthomonas phage XPP8, complete genome",46278,canonical_xanthomonas,Xanthomonas,yes
+MG944233.1,"Xanthomonas phage XPP9, complete genome",48669,canonical_xanthomonas,Xanthomonas,yes
+MG944234.1,"Xanthomonas phage XPV1, complete genome",46503,canonical_xanthomonas,Xanthomonas,yes
+MG944235.1,"Xanthomonas phage XPV2, complete genome",45969,canonical_xanthomonas,Xanthomonas,yes
+MG944236.1,"Xanthomonas phage XPV3, complete genome",47046,canonical_xanthomonas,Xanthomonas,yes
+MG983743.2,"Xanthomonas phage RiverRider, complete genome",76335,canonical_xanthomonas,Xanthomonas,yes
+MH059633.1,"Xanthomonas phage Carpasina, complete genome",61939,canonical_xanthomonas,Xanthomonas,yes
+MH191395.1,"Xanthomonas phage XcP1, complete genome",61830,canonical_xanthomonas,Xanthomonas,yes
+MH517022.1,"Acinetobacter phage SH-Ab 15599, complete genome",143204,canonical_xanthomonas,Acinetobacter,yes
+MK095605.1,"Pantoea phage vB_PagS_MED16, complete genome",46103,canonical_xanthomonas,Pantoea,yes
+MK095606.1,"Pantoea phage vB_PagS_AAS23, complete genome",51170,canonical_xanthomonas,Pantoea,yes
+MK388689.1,"Pantoea phage vB_PagM_LIET2, complete genome",74710,canonical_xanthomonas,Pantoea,yes
+MK580972.1,"Stenotrophomonas phage YB07, complete genome",,negative_pool,Stenotrophomonas,no
+MK903278.1,"Xanthomonas phage Pagan, complete genome",44448,canonical_xanthomonas,Xanthomonas,yes
+MN047793.1,"Xanthomonas phage Xoo-sp13, complete genome",309023,canonical_xanthomonas,Xanthomonas,yes
+MN062187.1,"Xanthomonas phage Samson, complete genome",43314,canonical_xanthomonas,Xanthomonas,yes
+MN304816.1,"MAG: Phage 67_12, complete genome",47505,canonical_xanthomonas,Unknown,yes
+MN364664.1,"UNVERIFIED_ORG: Xanthomonas phage Xoo-sp15, complete genome",157091,canonical_xanthomonas,Unknown,yes
+MN461279.1,"Xanthomonas virus phiXaf18, complete genome",47407,canonical_xanthomonas,Unknown,yes
+MT119766.1,"Xanthomonas phage PBR31, complete genome",39980,canonical_xanthomonas,Xanthomonas,yes
+MT161381.1,"Xanthomonas phage FoX1, complete genome",44763,canonical_xanthomonas,Xanthomonas,yes
+MT161382.1,"Xanthomonas phage FoX2, complete genome",44086,canonical_xanthomonas,Xanthomonas,yes
+MT161383.1,"Xanthomonas phage FoX3, complete genome",44153,canonical_xanthomonas,Xanthomonas,yes
+MT161384.1,"Xanthomonas phage FoX5, complete genome",43872,canonical_xanthomonas,Xanthomonas,yes
+MT161385.1,"Xanthomonas phage FoX4, complete genome",60418,canonical_xanthomonas,Xanthomonas,yes
+MT161386.1,"Xanthomonas phage FoX6, complete genome",61077,canonical_xanthomonas,Xanthomonas,yes
+MT161387.1,"Xanthomonas phage FoX7, complete genome",61010,canonical_xanthomonas,Xanthomonas,yes
+MT653137.1,"Salmonella phage S55, complete genome",42781,canonical_xanthomonas,Salmonella,yes
+MT664984.1,"Xanthomonas phage Xp12, complete genome",63783,canonical_xanthomonas,Xanthomonas,yes
+MT708549.1,"Burkholderia phage Maja, complete genome",68393,canonical_xanthomonas,Burkholderia,yes
+MT740307.1,"Pseudomonas phage phiK7A1, complete genome",98780,canonical_xanthomonas,Pseudomonas,yes
+MT939492.1,"Xanthomonas phage Xoo-sp14, complete genome",232104,canonical_xanthomonas,Xanthomonas,yes
+MT951568.1,"Xanthomonas phage Xaa_vB_phi31, complete genome",42825,canonical_xanthomonas,Xanthomonas,yes
+MT980839.1,"Atrivirus PS6, complete genome",,negative_pool,Unknown,no
+MW082583.1,"Serratia phage Tsm2, complete genome",39799,canonical_xanthomonas,Serratia,yes
+MW435566.1,"Xanthomonas phage X2, complete genome",45966,canonical_xanthomonas,Xanthomonas,yes
+MW802488.1,"Xanthomonas phage Olaya, complete genome",43722,canonical_xanthomonas,Xanthomonas,yes
+MW822535.1,"Xanthomonas phage Bolivar, complete genome",43782,canonical_xanthomonas,Xanthomonas,yes
+MW822536.1,"Xanthomonas phage Usaquen, complete genome",43741,canonical_xanthomonas,Xanthomonas,yes
+MW822537.1,"Xanthomonas phage Alcala, complete genome",43741,canonical_xanthomonas,Xanthomonas,yes
+MW822538.1,"Xanthomonas phage Fontebon, complete genome",43824,canonical_xanthomonas,Xanthomonas,yes
+MW822539.1,"Xanthomonas phage Soumapaz, complete genome",43818,canonical_xanthomonas,Xanthomonas,yes
+MW825358.1,"Xanthomonas phage vB_XciM_LucasX, complete genome",305651,canonical_xanthomonas,Xanthomonas,yes
+MZ089741.2,"Pseudomonas phage PSA39, complete genome",,negative_pool,Pseudomonas,no
+MZ326867.1,"Stenotrophomonas phage Silvanus, complete genome",45678,canonical_xanthomonas,Stenotrophomonas,yes
+MZ345003.1,"Xanthomonas phage M29, complete genome",42891,canonical_xanthomonas,Xanthomonas,yes
+MZ357961.1,"Bacillus phage Flasso, complete genome",,negative_pool,Bacillus,no
+MZ611865.1,"Stenotrophomonas phage StM171, complete genome",,negative_pool,Stenotrophomonas,no
+MZ666965.1,"UNVERIFIED: Xanthomonas phage N3, complete genome",38454,canonical_xanthomonas,Unknown,yes
+MZ666966.1,"UNVERIFIED: Xanthomonas phage N1, complete genome",41152,canonical_xanthomonas,Unknown,yes
+NC_003309.1,"Burkholderia phage phiE125, complete genome",,negative_pool,Burkholderia,no
+NC_004313.1,"Salmonella phage ST64B, complete genome",,negative_pool,Salmonella,no
+NC_004456.1,"Vibrio phage VHML, complete genome",,negative_pool,Vibrio,no
+NC_004902.1,"Xanthomonas phage Xp10, complete genome",44373,canonical_xanthomonas,Xanthomonas,yes
+NC_005178.1,"Bacteriophage D3112, complete genome",,negative_pool,Unknown,no
+NC_005833.1,"Escherichia phage T1, complete genome",,negative_pool,Escherichia,no
+NC_005857.1,"Klebsiella phage phiKO2, complete genome",51601,canonical_xanthomonas,Klebsiella,yes
+NC_006565.1,"Lactobacillus phage LP65, complete genome",,negative_pool,Lactobacillus,no
+NC_007024.1,"Xanthomonas phage Xp15, complete genome",55770,canonical_xanthomonas,Xanthomonas,yes
+NC_007709.1,"Xanthomonas oryzae phage OP1 DNA, complete genome",43785,canonical_xanthomonas,Unknown,yes
+NC_007710.1,"Xanthomonas oryzae phage OP2 DNA, complete genome",46643,canonical_xanthomonas,Unknown,yes
+NC_009232.2,"Salmonella phage SETP3, complete genome",42572,canonical_xanthomonas,Salmonella,yes
+NC_009543.1,"Xanthomonas phage Xop411, complete genome",44520,canonical_xanthomonas,Xanthomonas,yes
+NC_009603.1,"Microbacterium phage Min1, complete genome",,negative_pool,Microbacterium,no
+NC_011811.1,"Erwinia phage phiEa21-4, complete genome",84576,canonical_xanthomonas,Erwinia,yes
+NC_012742.1,"Xanthomonas phage phiL7, complete genome",44080,canonical_xanthomonas,Xanthomonas,yes
+NC_013420.1,"Streptomyces phage ZL12, complete genome",,negative_pool,Streptomyces,no
+NC_013599.1,"Xylella phage Xfas53, complete genome",,negative_pool,Xylella,no
+NC_013693.1,"Shigella phage phiSboM-AG3, complete genome",158006,canonical_xanthomonas,Shigella,yes
+NC_013697.1,"Delftia phage PhiW-14, complete genome",157486,canonical_xanthomonas,Delftia,yes
+NC_013971.1,BACTERIAL GENOME in phage pool: Erwinia amylovora ATCC 49946 — bacterial genome,,CONTAMINATION,Unknown,no
+NC_014663.1,"Acinetobacter phage Acj9, complete genome",169947,canonical_xanthomonas,Acinetobacter,yes
+NC_014765.1,"Bathycoccus sp. RCC1105 virus BpV1, complete genome",,negative_pool,Unknown,no
+NC_015464.1,"Campylobacter phage NCTC12673, complete genome",135041,canonical_xanthomonas,Campylobacter,yes
+NC_016071.1,"Salmonella phage PVP-SE1, complete genome",145964,canonical_xanthomonas,Salmonella,yes
+NC_017981.1,"Xanthomonas phage vB_XveM_DIBBI, complete genome",49981,canonical_xanthomonas,Xanthomonas,yes
+NC_019401.1,"Cronobacter phage vB_CsaM_GAP32, complete genome",358663,canonical_xanthomonas,Cronobacter,yes
+NC_019520.1,"Escherichia phage phiKT, complete genome",42608,canonical_xanthomonas,Escherichia,yes
+NC_019933.2,"Xanthomonas phage CP1 DNA, complete genome",43870,canonical_xanthomonas,Xanthomonas,yes
+NC_020201.1,"Pectobacterium phage phiTE, complete genome",142349,canonical_xanthomonas,Pectobacterium,yes
+NC_020205.1,"Xanthomonas citri phage CP2 DNA, complete genome",42963,canonical_xanthomonas,Unknown,yes
+NC_021532.1,"Alteromonas phage vB_AmaP_AD45-P1, complete genome",103910,canonical_xanthomonas,Alteromonas,yes
+NC_021777.1,"Salmonella phage Jersey, complete genome",43447,canonical_xanthomonas,Salmonella,yes
+NC_022982.1,"Xylella phage Paz, complete genome",43869,canonical_xanthomonas,Xylella,yes
+NC_022987.1,"Xylella phage Prado, complete genome",43940,canonical_xanthomonas,Xylella,yes
+NC_023556.1,"Achromobacter phage JWAlpha, complete genome",72329,canonical_xanthomonas,Achromobacter,yes
+NC_023569.1,"Vibrio phage SHOU24, complete genome",77837,canonical_xanthomonas,Vibrio,yes
+NC_024784.1,"Escherichia phage bV_EcoS_AHS24, complete genome",46440,canonical_xanthomonas,Escherichia,yes
+NC_024789.1,"Escherichia phage bV_EcoS_AKS96, complete genome",45746,canonical_xanthomonas,Escherichia,yes
+NC_024793.1,"Escherichia phage bV_EcoS_AHP42, complete genome",46847,canonical_xanthomonas,Escherichia,yes
+NC_027989.1,"Campylobacter phage vB_CcoM-IBB_35 clone Contig1, complete genome",53237,canonical_xanthomonas,Campylobacter,yes
+NC_029075.1,"Achromobacter phage JWF, complete genome",81541,canonical_xanthomonas,Achromobacter,yes
+NC_030928.1,"Xanthomonas phage f20-Xaj, complete genome",43851,canonical_xanthomonas,Xanthomonas,yes
+NC_030937.1,"Xanthomonas phage f30-Xaj, complete genome",44262,canonical_xanthomonas,Xanthomonas,yes
+NC_031280.1,"Acinetobacter phage vB_AbaM_phiAbaA1, complete genome",104906,canonical_xanthomonas,Acinetobacter,yes
+NC_042344.1,"Phage Sano, complete genome",56147,canonical_xanthomonas,Unknown,yes
+NC_042345.1,"Phage Salvo, complete genome",55601,canonical_xanthomonas,Unknown,yes
+NC_047762.1,"Xanthomonas phage XAJ24, complete genome",44862,canonical_xanthomonas,Xanthomonas,yes
+NC_047840.1,"Xanthomonas phage phi Xc10, complete genome",44597,canonical_xanthomonas,Xanthomonas,yes
+NC_047962.1,"Xanthomonas phage Carpasina, complete genome",61939,canonical_xanthomonas,Xanthomonas,yes
+NC_048137.1,"Pantoea phage vB_PagS_AAS23, complete genome",51170,canonical_xanthomonas,Pantoea,yes
+NC_048147.1,"Xanthomonas phage XcP1, complete genome",61830,canonical_xanthomonas,Xanthomonas,yes
+NC_048703.1,"Xanthomonas phage RiverRider, complete genome",76335,canonical_xanthomonas,Xanthomonas,yes
+NC_048751.1,"Pantoea phage vB_PagM_LIET2, complete genome",74710,canonical_xanthomonas,Pantoea,yes
+NC_048771.1,"Aeromonas phage 4_L372D, complete genome",,negative_pool,Aeromonas,no
+NC_049463.1,"Stenotrophomonas phage Pokken, complete genome",,negative_pool,Stenotrophomonas,no
+NC_052966.1,"Xanthomonas phage Xoo-sp2, complete genome",60497,canonical_xanthomonas,Xanthomonas,yes
+NC_054458.1,"Xanthomonas phage XPP1, complete genome",46195,canonical_xanthomonas,Xanthomonas,yes
+NC_054459.1,"Xanthomonas phage XPV1, complete genome",46503,canonical_xanthomonas,Xanthomonas,yes
+NC_054460.1,"Xanthomonas phage KPhi1, complete genome",46077,canonical_xanthomonas,Xanthomonas,yes
+NC_054461.1,"Xanthomonas virus phiXaf18, complete genome",47407,canonical_xanthomonas,Unknown,yes
+NC_055835.1,"Xanthomonas phage FoX1, complete genome",44763,canonical_xanthomonas,Xanthomonas,yes
+NC_055836.1,"Xanthomonas phage FoX2, complete genome",44086,canonical_xanthomonas,Xanthomonas,yes
+NC_055837.1,"Xanthomonas phage FoX3, complete genome",44153,canonical_xanthomonas,Xanthomonas,yes
+NC_055838.1,"Xanthomonas phage FoX5, complete genome",43872,canonical_xanthomonas,Xanthomonas,yes
+NC_055839.1,"Xanthomonas phage FoX4, complete genome",60418,canonical_xanthomonas,Xanthomonas,yes
+NC_069155.1,"Serratia phage Tsm2, complete genome",39799,canonical_xanthomonas,Serratia,yes
+NC_069744.1,"Xanthomonas phage Samson, complete genome",43314,canonical_xanthomonas,Xanthomonas,yes
+NC_069745.1,"Xanthomonas phage vB_Xar_IVIA-DoCa1, complete genome",43553,canonical_xanthomonas,Xanthomonas,yes
+NC_070951.1,"Stenotrophomonas phage vB_SmaM_Ps15, complete genome",,negative_pool,Stenotrophomonas,no
+NC_072499.1,"Xanthomonas phage vB_Xar_IVIA-DoCa3, complete genome",58107,canonical_xanthomonas,Xanthomonas,yes
+NC_073026.1,"Xanthomonas phage vB_Xar_IVIA-DoCa5, complete genome",56408,canonical_xanthomonas,Xanthomonas,yes
+NC_073029.1,"Xanthomonas phage Elanor, complete genome",62341,canonical_xanthomonas,Xanthomonas,yes
+NC_073030.1,"Xanthomonas phage Mallos, complete genome",59242,canonical_xanthomonas,Xanthomonas,yes
+NC_073032.1,"Xanthomonas phage FMYAK-P1, complete genome",64088,canonical_xanthomonas,Xanthomonas,yes
+NC_073033.1,"Xanthomonas phage Xp12, complete genome",63783,canonical_xanthomonas,Xanthomonas,yes
+NC_073034.1,"Stenotrophomonas phage vB_SmaS-AXL_1, complete genome",,negative_pool,Stenotrophomonas,no
+NC_073035.1,"Xanthomonas phage vB_Xar_IVIA-DoCa6, complete genome",62951,canonical_xanthomonas,Xanthomonas,yes
+NC_073036.1,"Xanthomonas phage vB_Xar_IVIA-DoCa10, complete genome",64024,canonical_xanthomonas,Xanthomonas,yes
+NC_073093.1,"Xanthomonas phage Langgrundblatt1, complete genome",44239,canonical_xanthomonas,Xanthomonas,yes
+NC_073094.1,"Xanthomonas phage Langgrundblatt2, complete genome",44768,canonical_xanthomonas,Xanthomonas,yes
+NC_073095.1,"Xanthomonas phage Pfeifenkraut, complete genome",43791,canonical_xanthomonas,Xanthomonas,yes
+NC_073205.1,"Salmonella phage LP31, complete genome",42600,canonical_xanthomonas,Salmonella,yes
+NC_101820.1,"Escherichia phage ityhuna, complete genome",,negative_pool,Escherichia,no
+NC_101840.1,"Escherichia phage orkinos, complete genome",,negative_pool,Escherichia,no
+NC_102108.1,"Salmonella phage misterkot, complete genome",,negative_pool,Salmonella,no
+NC_102127.1,"Bacillus phage vB_BcM_Sam46, complete genome",,negative_pool,Bacillus,no
+NC_102382.1,"Bacillus phage Novomoskovsk, complete genome",,negative_pool,Bacillus,no
+NC_102606.1,"Bacillus phage Bolokhovo, complete genome",,negative_pool,Bacillus,no
+NC_104261.1,"Ruminococcus phage phiRM10, complete genome",,negative_pool,Ruminococcus,no
+NC_104262.1,"Ruminococcus phage phiRg507T2_2, complete genome",,negative_pool,Ruminococcus,no
+NC_104263.1,"Ruminococcus phage phiRg507T2_3, complete genome",,negative_pool,Ruminococcus,no
+NC_104265.1,"Ruminococcus phage phiRgIBDN1, complete genome",,negative_pool,Ruminococcus,no
+NC_104266.1,"Atrivirus PS6, complete genome",,negative_pool,Unknown,no
+NC_104812.1,"Klebsiella phage B1, complete genome",,negative_pool,Klebsiella,no
+NC_105105.1,"Escherichia phage BrunoManser, complete genome",,negative_pool,Escherichia,no
+NC_105106.1,"Escherichia phage LeonhardEuler, complete genome",,negative_pool,Escherichia,no
+NC_105433.1,"Escherichia phage vB_EcoD_Poky, complete genome",,negative_pool,Escherichia,no
+NC_105436.1,"Escherichia phage JLBYU26, complete genome",,negative_pool,Escherichia,no
+NC_105617.1,"Escherichia phage vB_EcoS_SA12KD, complete genome",,negative_pool,Escherichia,no
+NC_105618.1,"Escherichia phage vB_EcoS_SA30RD, complete genome",,negative_pool,Escherichia,no
+NC_105619.1,"Escherichia phage vB_EcoS_SA32RD, complete genome",,negative_pool,Escherichia,no
+NC_105788.1,"Escherichia phage CLB_P3, complete genome",,negative_pool,Escherichia,no
+NC_107481.1,"Bacillus phage B13, complete genome",,negative_pool,Bacillus,no
+NC_107631.1,"Escherichia phage Lg3, complete genome",,negative_pool,Escherichia,no
+NC_108342.1,"Bacillus phage Chedec 11, complete genome",,negative_pool,Bacillus,no
+NC_108593.1,"Bacillus phage vB_BaeroP_SYYB1, complete genome",,negative_pool,Bacillus,no
+NC_109358.1,"Escherichia phage LHE71, complete genome",,negative_pool,Escherichia,no
+NC_111368.1,"Bacillus phage vB_BceP_LY3, complete genome",,negative_pool,Bacillus,no
+NC_111369.1,"Bacillus phage vB_BceS_LY1, complete genome",,negative_pool,Bacillus,no
+NC_111375.1,"Bacillus phage BC-5, complete genome",,negative_pool,Bacillus,no
+NC_111484.1,"Salmonella phage vB_SenS_UTK0006, complete genome",,negative_pool,Salmonella,no
+NC_112025.1,"Salmonella phage GSP032, complete genome",,negative_pool,Salmonella,no
+NC_112270.1,"Bacillus phage vB_BceS_LY5, complete genome",,negative_pool,Bacillus,no
+NC_128954.1,"Xanthomonas phage XAJ2, complete genome",49241,canonical_xanthomonas,Xanthomonas,yes
+NC_129615.1,"Enterococcus phage PEf771, complete genome",,negative_pool,Enterococcus,no
+NC_129764.1,"Escherichia phage vB_EcoS_Chapo, complete genome",,negative_pool,Escherichia,no
+NC_129888.1,"Klebsiella phage vB_KpnS_ZX2, complete genome",,negative_pool,Klebsiella,no
+NC_130781.1,"Salmonella phage vB_SenS_UTK0007, complete genome",,negative_pool,Salmonella,no
+NZ_CP007800.1,BACTERIAL GENOME in phage pool: Bacillus subtilis JH642 — bacterial genome,,CONTAMINATION,Unknown,no
+NZ_CP008698.1,BACTERIAL GENOME in phage pool: Bacillus subtilis AG1839 — bacterial genome,,CONTAMINATION,Unknown,no
+OK258138.1,"Xanthomonas phage MUD8-T1, complete genome",44322,canonical_xanthomonas,Xanthomonas,yes
+OK258140.1,"Xanthomonas phage DMF5-T1, complete genome",45054,canonical_xanthomonas,Xanthomonas,yes
+OK275492.1,"Xanthomonas phage FMYAK-P1, complete genome",64088,canonical_xanthomonas,Xanthomonas,yes
+OK275493.1,"Xanthomonas phage MET13-T1, complete genome",63593,canonical_xanthomonas,Xanthomonas,yes
+OK275494.1,"Xanthomonas phage MYK3, complete genome",47500,canonical_xanthomonas,Xanthomonas,yes
+OK275495.1,"Xanthomonas phage R3-22-T1, complete genome",45281,canonical_xanthomonas,Xanthomonas,yes
+OK513034.1,"Bacillus phage BCC348, complete genome",,negative_pool,Bacillus,no
+OK624832.1,"Xanthomonas phage DES1, complete genome",64732,canonical_xanthomonas,Xanthomonas,yes
+OK625815.1,"Bacillus phage JBA6, complete genome",,negative_pool,Bacillus,no
+OK913679.1,"Xanthomonas phage JUN5, complete genome",42912,canonical_xanthomonas,Xanthomonas,yes
+OK913680.1,"Xanthomonas phage MET23-P3, complete genome",43010,canonical_xanthomonas,Xanthomonas,yes
+OL333533.1,"Bacillus phage B13S, complete genome",,negative_pool,Bacillus,no
+OL436139.1,"Salmonella phage LP31, complete genome",42600,canonical_xanthomonas,Salmonella,yes
+OM373206.1,"Bacillus phage MAC24, complete genome",,negative_pool,Bacillus,no
+OM867526.1,"Escherichia phage GN06, complete genome",,negative_pool,Escherichia,no
+OM867527.1,"Escherichia phage GN07, complete genome",,negative_pool,Escherichia,no
+OM967031.1,"Salmonella phage vB_SPuM_SP02, complete genome",,negative_pool,Salmonella,no
+ON189042.1,"Xanthomonas phage Langgrundblatt1, complete genome",44239,canonical_xanthomonas,Xanthomonas,yes
+ON189043.1,"Xanthomonas phage Langgrundblatt2, complete genome",44768,canonical_xanthomonas,Xanthomonas,yes
+ON189044.1,"Xanthomonas phage Pfeifenkraut, complete genome",43791,canonical_xanthomonas,Xanthomonas,yes
+ON189045.1,"Xanthomonas phage Elanor, complete genome",62341,canonical_xanthomonas,Xanthomonas,yes
+ON189046.1,"Xanthomonas phage Laurelin, complete genome",40498,canonical_xanthomonas,Xanthomonas,yes
+ON189047.1,"Xanthomonas phage Mallos, complete genome",59242,canonical_xanthomonas,Xanthomonas,yes
+ON189048.1,"Xanthomonas phage Seregon, complete genome",55527,canonical_xanthomonas,Xanthomonas,yes
+ON711490.1,"Xanthomonas phage HXX_Dennis, complete genome",44623,canonical_xanthomonas,Xanthomonas,yes
+ON758385.1,"Xanthomonas phage BUDD, complete genome",199233,canonical_xanthomonas,Xanthomonas,yes
+ON911538.2,"Xanthomonas phage vB_Xar_IVIA-DoCa1, complete genome",43553,canonical_xanthomonas,Xanthomonas,yes
+ON911539.2,"Xanthomonas phage vB_Xar_IVIA-DoCa2, complete genome",42857,canonical_xanthomonas,Xanthomonas,yes
+ON911540.2,"Xanthomonas phage vB_Xar_IVIA-DoCa3, complete genome",58107,canonical_xanthomonas,Xanthomonas,yes
+ON932078.1,"Xanthomonas phage vB_Xar_IVIA-DoCa4, complete genome",43007,canonical_xanthomonas,Xanthomonas,yes
+ON932079.1,"Xanthomonas phage vB_Xar_IVIA-DoCa5, complete genome",56408,canonical_xanthomonas,Xanthomonas,yes
+ON932080.1,"Xanthomonas phage vB_Xar_IVIA-DoCa6, complete genome",62951,canonical_xanthomonas,Xanthomonas,yes
+ON932081.1,"Xanthomonas phage vB_Xar_IVIA-DoCa7, complete genome",42881,canonical_xanthomonas,Xanthomonas,yes
+ON932082.1,"Xanthomonas phage vB_Xar_IVIA-DoCa8, complete genome",43697,canonical_xanthomonas,Xanthomonas,yes
+ON932083.1,"Xanthomonas phage vB_Xar_IVIA-DoCa9, complete genome",43240,canonical_xanthomonas,Xanthomonas,yes
+ON932084.1,"Xanthomonas phage vB_Xar_IVIA-DoCa10, complete genome",64024,canonical_xanthomonas,Xanthomonas,yes
+ON932085.1,"Xanthomonas phage vB_Xar_IVIA-DoCa11, complete genome",43025,canonical_xanthomonas,Xanthomonas,yes
+ON960072.2,"Xanthomonas phage pXoo2106, complete genome",43713,canonical_xanthomonas,Xanthomonas,yes
+ON996340.1,"Xanthomonas phage BsXeu269p/3, complete genome",46280,canonical_xanthomonas,Xanthomonas,yes
+OP067662.1,"Xanthomonas phage pXoo2107, complete genome",46052,canonical_xanthomonas,Xanthomonas,yes
+OP292654.1,"Xanthomonas phage XbC2, complete genome",367901,canonical_xanthomonas,Xanthomonas,yes
+OP413789.1,"Xanthomonas phage ZP3, complete genome",44713,canonical_xanthomonas,Xanthomonas,yes
+OP548052.1,"Xanthomonas phage NED111, complete genome",44424,canonical_xanthomonas,Xanthomonas,yes
+OP583591.1,"Xanthomonas phage F5, complete genome",44616,canonical_xanthomonas,Xanthomonas,yes
+OP583592.1,"Xanthomonas phage GF2, complete genome",45223,canonical_xanthomonas,Xanthomonas,yes
+OP583593.1,"Xanthomonas phage GF1, complete genome",42522,canonical_xanthomonas,Xanthomonas,yes
+OP583594.1,"Xanthomonas phage P4, complete genome",44329,canonical_xanthomonas,Xanthomonas,yes
+OP583595.1,"Xanthomonas phage S3, complete genome",45224,canonical_xanthomonas,Xanthomonas,yes
+OP752703.1,"Stenotrophomonas phage RAS14, complete genome",,negative_pool,Stenotrophomonas,no
+OP948730.1,"Xanthomonas phage L522, complete genome",44497,canonical_xanthomonas,Xanthomonas,yes
+OQ055246.1,"Xanthomonas phage vB_XooS_NR08, complete genome",98812,canonical_xanthomonas,Xanthomonas,yes
+OQ427096.1,"Xanthomonas phage X1, complete genome",200058,canonical_xanthomonas,Xanthomonas,yes
+OQ435241.1,"UNVERIFIED: Xanthomonas phage NUT13, complete genome",44389,canonical_xanthomonas,Unknown,yes
+OQ436456.1,"Xanthomonas phage JGB6, complete genome",106569,canonical_xanthomonas,Xanthomonas,yes
+OQ446483.1,"UNVERIFIED: Xanthomonas phage NUT3, complete genome",44389,canonical_xanthomonas,Unknown,yes
+OQ446484.1,"UNVERIFIED: Xanthomonas phage NUT4, complete genome",43993,canonical_xanthomonas,Unknown,yes
+OQ446485.1,"UNVERIFIED: Xanthomonas phage NUT11, complete genome",42331,canonical_xanthomonas,Unknown,yes
+OQ446486.1,"UNVERIFIED: Xanthomonas phage NUT20, complete genome",44388,canonical_xanthomonas,Unknown,yes
+OQ446487.1,"UNVERIFIED: Xanthomonas phage NUT30, complete genome",44389,canonical_xanthomonas,Unknown,yes
+OQ446488.1,"UNVERIFIED: Xanthomonas phage NUT29, complete genome",44145,canonical_xanthomonas,Unknown,yes
+OQ603349.1,"UNVERIFIED: Pseudomonas phage Ep007, complete genome",41236,canonical_xanthomonas,Unknown,yes
+OQ603350.1,"UNVERIFIED: Pseudomonas phage Ep017, complete genome",40570,canonical_xanthomonas,Unknown,yes
+OQ603351.1,"UNVERIFIED: Pseudomonas phage Ep020, complete genome",98129,canonical_xanthomonas,Unknown,yes
+OQ603352.1,"UNVERIFIED: Pseudomonas phage Ep022, complete genome",40665,canonical_xanthomonas,Unknown,yes
+OQ603353.1,"UNVERIFIED: Xanthomonas phage Ep026, complete genome",227420,canonical_xanthomonas,Unknown,yes
+OQ603354.1,"UNVERIFIED: Xanthomonas phage Ep027, complete genome",44425,canonical_xanthomonas,Unknown,yes
+OQ603355.1,"UNVERIFIED: Xanthomonas phage Ep028, complete genome",42944,canonical_xanthomonas,Unknown,yes
+OQ603356.1,"UNVERIFIED: Xanthomonas phage Ep029, complete genome",64119,canonical_xanthomonas,Unknown,yes
+OQ622092.1,"Xanthomonas phage 10KY502B, complete genome",43262,canonical_xanthomonas,Xanthomonas,yes
+OQ676962.1,"Xanthomonas phage NEB7, complete genome",45241,canonical_xanthomonas,Xanthomonas,yes
+OQ756160.1,"Xanthomonas phage XAP3, complete genome",61032,canonical_xanthomonas,Xanthomonas,yes
+OQ790161.1,"Xanthomonas phage RTH11, complete genome",312199,canonical_xanthomonas,Xanthomonas,yes
+OQ818705.1,"Erwinia phage Pastis, complete genome",,negative_pool,Erwinia,no
+OQ863049.1,"Staphylococcus phage SapYZUs8, complete genome",,negative_pool,Staphylococcus,no
+OR122686.1,"Salmonella phage vB_SenM-AKM_CE, complete genome",41337,canonical_xanthomonas,Salmonella,yes
+OR209256.1,"Stenotrophomonas phage c9-N, complete genome",,negative_pool,Stenotrophomonas,no
+OR258281.1,"Xanthomonas phage XaC1, complete genome",348967,canonical_xanthomonas,Xanthomonas,yes
+OR500351.1,"Xanthomonas phage Murka, complete genome",44044,canonical_xanthomonas,Xanthomonas,yes
+OR529408.1,"Stenotrophomonas phage BUCTxx99, complete genome",,negative_pool,Stenotrophomonas,no
+OR529409.1,"Stenotrophomonas phage BUCTxx100, complete genome",,negative_pool,Stenotrophomonas,no
+OR540302.1,"Pseudomonas phage vB_PaeM_PKMS3, complete genome",,negative_pool,Pseudomonas,no
+OR729839.1,"Stenotrophomonas phage StenM_174, complete genome",,negative_pool,Stenotrophomonas,no
+OR797040.1,"Stenotrophomonas phage vB_SmaM_Bhz51, complete genome",,negative_pool,Stenotrophomonas,no
+OR797041.1,"Stenotrophomonas phage vB_SmaS_Bhz54, complete genome",,negative_pool,Stenotrophomonas,no
+OR797042.1,"Stenotrophomonas phage vB_SmaS_Bhz55, complete genome",,negative_pool,Stenotrophomonas,no
+OR797043.1,"Stenotrophomonas phage vB_SmaS_Bhz58, complete genome",,negative_pool,Stenotrophomonas,no
+OR797044.1,"Stenotrophomonas phage vB_SmaS_Bhz59, complete genome",,negative_pool,Stenotrophomonas,no
+OR797045.1,"Stenotrophomonas phage vB_SmaS_Bhz60, complete genome",,negative_pool,Stenotrophomonas,no
+OR797046.1,"Stenotrophomonas phage vB_SmaS_Bhz63, complete genome",,negative_pool,Stenotrophomonas,no
+OR820514.1,"Xanthomonas phage AhaSv, complete genome",55576,canonical_xanthomonas,Xanthomonas,yes
+OR838459.1,"Stenotrophomonas phage StenR_269, complete genome",,negative_pool,Stenotrophomonas,no
+OR842880.1,"Xanthomonas phage SU1, complete genome",45142,canonical_xanthomonas,Xanthomonas,yes
+OR966858.1,"Xanthomonas phage NP1, complete genome",43329,canonical_xanthomonas,Xanthomonas,yes
+OR997969.1,"Agrobacterium phage Alfirin, complete genome",46051,canonical_xanthomonas,Agrobacterium,yes
+OR997970.1,"Pseudomonas phage Athelas, complete genome",40850,canonical_xanthomonas,Pseudomonas,yes
+OZ418229.1,"Escherichia phage Josas_2H4 genome assembly, complete genome: monopartite",,negative_pool,Escherichia,no
+OZ418230.1,"Escherichia phage jv_4E6 genome assembly, complete genome: monopartite",,negative_pool,Escherichia,no
+OZ418233.1,"Escherichia phage ue_4C9 genome assembly, complete genome: monopartite",,negative_pool,Escherichia,no
+OZ418234.1,"Escherichia phage ue_4E6 genome assembly, complete genome: monopartite",,negative_pool,Escherichia,no
+OZ453044.1,"Pseudomonas phage OmaKarin genome assembly, chromosome: 1",,negative_pool,Pseudomonas,no
+PP079413.1,"Xanthomonas phage SB1, complete genome",43983,canonical_xanthomonas,Xanthomonas,yes
+PP079414.1,"Xanthomonas phage SB3, complete genome",43093,canonical_xanthomonas,Xanthomonas,yes
+PP079415.1,"Xanthomonas phage SB4, complete genome",44323,canonical_xanthomonas,Xanthomonas,yes
+PP079416.1,"Stenotrophomonas phage SB2, complete genome",43103,canonical_xanthomonas,Stenotrophomonas,yes
+PP079417.1,"Stenotrophomonas phage SB5, complete genome",43747,canonical_xanthomonas,Stenotrophomonas,yes
+PP079418.1,"Stenotrophomonas phage SOVA965, complete genome",46423,canonical_xanthomonas,Stenotrophomonas,yes
+PP179318.1,"Pseudomonas phage Nican01, complete genome",112436,canonical_xanthomonas,Pseudomonas,yes
+PP179325.1,"Pseudomonas phage Touem01, complete genome",91577,canonical_xanthomonas,Pseudomonas,yes
+PP179326.1,"Pseudomonas phage Orimi01, complete genome",,negative_pool,Pseudomonas,no
+PP179327.1,"Pseudomonas phage Orisa03, complete genome",44995,canonical_xanthomonas,Pseudomonas,yes
+PP179328.1,"Pseudomonas phage Orisa02, complete genome",45363,canonical_xanthomonas,Pseudomonas,yes
+PP179329.1,"Pseudomonas phage Orisa01, complete genome",45336,canonical_xanthomonas,Pseudomonas,yes
+PP313117.1,"Xanthomonas phage Kintu, complete genome",48985,canonical_xanthomonas,Xanthomonas,yes
+PP391659.1,"Xanthomonas phage XapPhi1, complete genome",44947,canonical_xanthomonas,Xanthomonas,yes
+PP391660.1,"Xanthomonas phage XapPhi2, complete genome",44959,canonical_xanthomonas,Xanthomonas,yes
+PP391661.1,"Xanthomonas phage XapPhi3, complete genome",45532,canonical_xanthomonas,Xanthomonas,yes
+PP391662.1,"Xanthomonas phage XapPhi4, complete genome",45675,canonical_xanthomonas,Xanthomonas,yes
+PP391663.1,"Xanthomonas phage XapPhi5, complete genome",45529,canonical_xanthomonas,Xanthomonas,yes
+PP391664.1,"Xanthomonas phage XapPhi6, complete genome",45571,canonical_xanthomonas,Xanthomonas,yes
+PP431385.1,"Xanthomonas phage XAP-2, complete genome",16361,canonical_xanthomonas,Xanthomonas,yes
+PP475461.1,"Xanthomonas phage phiXF1, complete genome",113538,canonical_xanthomonas,Xanthomonas,yes
+PP550502.1,"Stenotrophomonas phage CM2, complete genome",,negative_pool,Stenotrophomonas,no
+PP554396.1,"Stenotrophomonas phage Stm18, complete genome",,negative_pool,Stenotrophomonas,no
+PP566124.1,"Dickeya phage BIM BV-99, complete genome",40246,canonical_xanthomonas,Dickeya,yes
+PP747256.1,"Stenotrophomonas phage cm3, complete genome",,negative_pool,Stenotrophomonas,no
+PP756300.1,"Xanthomonas phage vB_XeuM-YB23, complete genome",63787,canonical_xanthomonas,Xanthomonas,yes
+PP780467.1,"Xanthomonas phage MK21, complete genome",43506,canonical_xanthomonas,Xanthomonas,yes
+PP816325.1,"Xylella phage MATE2, complete genome",,negative_pool,Xylella,no
+PP895208.1,"Xylella phage vB_Xf_IVIA-DoCa15, complete genome",,negative_pool,Xylella,no
+PP895209.1,"Xylella phage vB_Xf_IVIA-DoCa18, complete genome",,negative_pool,Xylella,no
+PP895210.1,"Xylella phage vB_Xf_IVIA-DoCa19, complete genome",,negative_pool,Xylella,no
+PP895211.1,"Xylella phage vB_Xf_IVIA-DoCa21, complete genome",,negative_pool,Xylella,no
+PP921743.1,"Stenotrophomonas phage vB_SmaS_QH1, complete genome",,negative_pool,Stenotrophomonas,no
+PP921744.1,"Stenotrophomonas phage vB_SmaS_QH16, complete genome",,negative_pool,Stenotrophomonas,no
+PP932004.1,"Stenotrophomonas phage vB_SmaS_QH3, complete genome",,negative_pool,Stenotrophomonas,no
+PP952055.1,"Staphylococcus phage d191, complete genome",,negative_pool,Staphylococcus,no
+PQ067315.1,"Xanthomonas phage fSU1, complete genome",10956,canonical_xanthomonas,Xanthomonas,yes
+PQ072796.2,"UNVERIFIED: Pseudomonas phage PAYQ66, complete genome",,negative_pool,Unknown,no
+PQ074228.1,"Stenotrophomonas phage SBP2phi2, complete genome",,negative_pool,Stenotrophomonas,no
+PQ093899.1,"Xanthomonas phage L13.2, complete genome",41106,canonical_xanthomonas,Xanthomonas,yes
+PQ111865.1,"Stenotrophomonas phage vB_SmaS_BCU1, complete genome",,negative_pool,Stenotrophomonas,no
+PQ305824.1,"Pseudomonas phage PAW33, complete genome",,negative_pool,Pseudomonas,no
+PQ338056.1,"Bacillus phage TPL-01, complete genome",,negative_pool,Bacillus,no
+PQ358089.1,"Stenotrophomonas phage TPWB-10, complete genome",,negative_pool,Stenotrophomonas,no
+PQ434692.1,"Stenotrophomonas phage ANB28, complete genome",,negative_pool,Stenotrophomonas,no
+PQ434693.1,"Stenotrophomonas phage KB824, complete genome",,negative_pool,Stenotrophomonas,no
+PQ476032.1,"Xanthomonas phage phiXacJX1, complete genome",44403,canonical_xanthomonas,Xanthomonas,yes
+PQ492157.1,"Stenotrophomonas phage S72, complete genome",,negative_pool,Stenotrophomonas,no
+PQ492158.1,"Stenotrophomonas phage S28phi1, complete genome",,negative_pool,Stenotrophomonas,no
+PQ492159.1,"Stenotrophomonas phage S28phi2, complete genome",,negative_pool,Stenotrophomonas,no
+PQ492160.1,"Stenotrophomonas phage SBP6phi1, complete genome",,negative_pool,Stenotrophomonas,no
+PQ492161.1,"Stenotrophomonas phage SBP4phi1, complete genome",,negative_pool,Stenotrophomonas,no
+PQ492162.1,"Stenotrophomonas phage SBP7phi1, complete genome",,negative_pool,Stenotrophomonas,no
+PQ498454.1,"Stenotrophomonas phage SBP1, complete genome",,negative_pool,Stenotrophomonas,no
+PQ498455.1,"Stenotrophomonas phage SBP2phi1, complete genome",,negative_pool,Stenotrophomonas,no
+PQ498456.1,"Stenotrophomonas phage SBP5phi1, complete genome",,negative_pool,Stenotrophomonas,no
+PQ498457.1,"Stenotrophomonas phage SBP3.1phi1, complete genome",,negative_pool,Stenotrophomonas,no
+PQ498458.1,"Stenotrophomonas phage SBP4phi2, complete genome",,negative_pool,Stenotrophomonas,no
+PQ498459.1,"Stenotrophomonas phage SBP5phi2, complete genome",,negative_pool,Stenotrophomonas,no
+PQ498460.1,"Stenotrophomonas phage SBP3.2phi1, complete genome",,negative_pool,Stenotrophomonas,no
+PQ498461.1,"Stenotrophomonas phage SBP3.1phi2.1, complete genome",,negative_pool,Stenotrophomonas,no
+PQ498462.1,"Stenotrophomonas phage SBP3.1phi2, complete genome",,negative_pool,Stenotrophomonas,no
+PQ569993.1,"Xanthomonas phage vB_Xcc_GYRb1, complete genome",91478,canonical_xanthomonas,Xanthomonas,yes
+PQ571267.1,"Bacteroides phage BKO1-3, complete genome",,negative_pool,Bacteroides,no
+PQ571275.1,"Bacteroides phage BS-TP2, complete genome",57555,canonical_xanthomonas,Bacteroides,yes
+PQ571276.1,"Bacteroides phage BS-TP3, complete genome",57510,canonical_xanthomonas,Bacteroides,yes
+PQ571287.1,"Enterococcus phage EA1, complete genome",,negative_pool,Enterococcus,no
+PQ571292.1,"Enterococcus phage EG-TP1, complete genome",,negative_pool,Enterococcus,no
+PQ571296.1,"Klebsiella phage KA2-1, complete genome",43668,canonical_xanthomonas,Klebsiella,yes
+PQ618007.1,"Bacillus phage PBC_MG88, complete genome",,negative_pool,Bacillus,no
+PQ628237.3,"Pseudomonas phage vanta, complete genome",,negative_pool,Pseudomonas,no
+PQ632788.4,"Pseudomonas phage Luminis, complete genome",,negative_pool,Pseudomonas,no
+PQ634339.1,"Bacillus phage PBC_MG99, complete genome",,negative_pool,Bacillus,no
+PQ758588.1,"Bacillus phage PS1, complete genome",,negative_pool,Bacillus,no
+PQ805431.1,"Pseudomonas phage MME, complete genome",,negative_pool,Pseudomonas,no
+PQ821741.1,"Escherichia phage S11, complete genome",,negative_pool,Escherichia,no
+PQ821891.1,"Pseudomonas phage WCHPA-P2, complete genome",,negative_pool,Pseudomonas,no
+PQ826431.1,"UNVERIFIED: Escherichia phage pCABI-SEA001, complete genome",,negative_pool,Unknown,no
+PQ890122.1,"Salmonella phage vB_SeT-PST5, complete genome",,negative_pool,Salmonella,no
+PV012638.1,"Xanthomonas phage SAC, complete genome",43900,canonical_xanthomonas,Xanthomonas,yes
+PV037644.1,"Bacillus phage vB_BcM_CUBc25, complete genome",,negative_pool,Bacillus,no
+PV037726.1,"Xanthomonas phage Valrath, complete genome",43817,canonical_xanthomonas,Xanthomonas,yes
+PV130723.1,"Stenotrophomonas phage Yut2, complete genome",,negative_pool,Stenotrophomonas,no
+PV130724.1,"Stenotrophomonas phage Yut3, complete genome",,negative_pool,Stenotrophomonas,no
+PV130725.1,"Stenotrophomonas phage Yut1, complete genome",,negative_pool,Stenotrophomonas,no
+PV130726.1,"Stenotrophomonas phage Yut4, complete genome",,negative_pool,Stenotrophomonas,no
+PV156121.1,"Stenotrophomonas phage vB_Srh_LBjhp91a, complete genome",,negative_pool,Stenotrophomonas,no
+PV224507.1,"Stenotrophomonas phage vB_SmaS_YA1, complete genome",,negative_pool,Stenotrophomonas,no
+PV231355.1,"Caulobacter phage RBC11, complete genome",,negative_pool,Caulobacter,no
+PV261948.1,"Bacillus phage vB_BliM_Yucatan, complete genome",,negative_pool,Bacillus,no
+PV296012.1,"Bacillus phage 0524phi7-1, complete genome",,negative_pool,Bacillus,no
+PV408261.1,"Xanthomonas phage PhiXhv-1, complete genome",46109,canonical_xanthomonas,Xanthomonas,yes
+PV426909.1,"Staphylococcus phage vB_Sep_steph3, complete genome",,negative_pool,Staphylococcus,no
+PV426910.1,"Staphylococcus phage vB_Sep_steph4, complete genome",,negative_pool,Staphylococcus,no
+PV449003.1,"Bacillus phage vB_BceH_LBC2, complete genome",,negative_pool,Bacillus,no
+PV504775.1,"Bacillus phage 268TH008, complete genome",,negative_pool,Bacillus,no
+PV504776.1,"Bacillus phage 268TH003, complete genome",,negative_pool,Bacillus,no
+PV506377.1,"Xanthomonas phage vB_XORNC02, complete genome",46608,canonical_xanthomonas,Xanthomonas,yes
+PV506378.1,"Klebsiella phage Silvester, complete genome",,negative_pool,Klebsiella,no
+PV695472.1,"Bacillus phage Bquatquinnuvirus eskimopiis B450C, complete genome",,negative_pool,Bacillus,no
+PV695473.1,"Bacillus phage Bquatquinnuvirus eskimopiis B450T, complete genome",,negative_pool,Bacillus,no
+PV702347.1,"Xanthomonas phage PhiXhv-2, complete genome",47229,canonical_xanthomonas,Xanthomonas,yes
+PV714881.1,"Stenotrophomonas phage BUCT799, complete genome",,negative_pool,Stenotrophomonas,no
+PV754127.1,"Xanthomonas phage PhiXhv-28, complete genome",46883,canonical_xanthomonas,Xanthomonas,yes
+PV764598.1,"Xanthomonas phage PhiXhv-5, complete genome",47720,canonical_xanthomonas,Xanthomonas,yes
+PV764599.1,"Xanthomonas phage PhiXhv-7, complete genome",46786,canonical_xanthomonas,Xanthomonas,yes
+PV764600.1,"Xanthomonas phage PhiXhv-18, complete genome",47821,canonical_xanthomonas,Xanthomonas,yes
+PV764601.1,"Xanthomonas phage PhiXhv-12, complete genome",227648,canonical_xanthomonas,Xanthomonas,yes
+PV764602.1,"Xanthomonas phage PhiXhv-15, complete genome",228725,canonical_xanthomonas,Xanthomonas,yes
+PV764603.1,"Xanthomonas phage PhiXhv-16, complete genome",229154,canonical_xanthomonas,Xanthomonas,yes
+PV796108.1,"Bacillus phage Edson, complete genome",,negative_pool,Bacillus,no
+PV844446.1,"Bacillus phage 279BB001, complete genome",,negative_pool,Bacillus,no
+PV915868.1,"Mycobacterium phage Snickers, complete genome",,negative_pool,Mycobacterium,no
+PV915871.1,"Mycobacterium phage Lea83, complete genome",,negative_pool,Mycobacterium,no
+PV915872.1,"Mycobacterium phage Kolhan, complete genome",,negative_pool,Mycobacterium,no
+PV915874.1,"Mycobacterium phage EGUnicorn, complete genome",,negative_pool,Mycobacterium,no
+PV915877.1,"Mycobacterium phage Bern, complete genome",,negative_pool,Mycobacterium,no
+PV915878.1,"Mycobacterium phage November, complete genome",,negative_pool,Mycobacterium,no
+PV915887.1,"Mycobacterium phage Thimble, complete genome",,negative_pool,Mycobacterium,no
+PV915889.1,"Mycobacterium phage Koan, complete genome",,negative_pool,Mycobacterium,no
+PV915890.1,"Mycobacterium phage SenorClean, complete genome",,negative_pool,Mycobacterium,no
+PV915895.1,"Mycobacterium phage Aloeri, complete genome",,negative_pool,Mycobacterium,no
+PV915896.1,"Mycobacterium phage Brushbloom, complete genome",,negative_pool,Mycobacterium,no
+PV915901.1,"Mycobacterium phage TinyTerror, complete genome",,negative_pool,Mycobacterium,no
+PV915902.1,"Mycobacterium phage MacKat, complete genome",,negative_pool,Mycobacterium,no
+PV920691.1,"Escherichia phage vB_EcoM_ED, complete genome",,negative_pool,Escherichia,no
+PV940981.1,"Mycobacterium phage SVoro, complete genome",,negative_pool,Mycobacterium,no
+PV940982.1,"Mycobacterium phage Underpass, complete genome",,negative_pool,Mycobacterium,no
+PV940985.1,"Mycobacterium phage GlutenPhree, complete genome",,negative_pool,Mycobacterium,no
+PV940986.1,"Mycobacterium phage Coletti, complete genome",,negative_pool,Mycobacterium,no
+PV940988.1,"Mycobacterium phage Alkhayr, complete genome",,negative_pool,Mycobacterium,no
+PV940996.1,"Mycobacterium phage Ablatia, complete genome",,negative_pool,Mycobacterium,no
+PV940998.1,"Mycobacterium phage JulietS, complete genome",,negative_pool,Mycobacterium,no
+PV941000.1,"Mycobacterium phage Matsumoto, complete genome",,negative_pool,Mycobacterium,no
+PV976809.1,"Pseudomonas phage phiK601, complete genome",,negative_pool,Pseudomonas,no
+PV976849.1,"Pseudomonas phage PTLB_14-5818, complete genome",,negative_pool,Pseudomonas,no
+PV985310.1,"Staphylococcus phage 29740-R20-P4, complete genome",,negative_pool,Staphylococcus,no
+PX021331.1,"Escherichia phage Serwaa, complete genome",,negative_pool,Escherichia,no
+PX021573.1,"Staphylococcus phage vB_SauP_RLup11, complete genome",,negative_pool,Staphylococcus,no
+PX021574.1,"Staphylococcus phage vB_SauP_RLup12, complete genome",,negative_pool,Staphylococcus,no
+PX021575.1,"Staphylococcus phage vB_SeqP_SEP, complete genome",,negative_pool,Staphylococcus,no
+PX023499.1,"UNVERIFIED: Bacillus phage PHZU0001, complete genome",,negative_pool,Unknown,no
+PX068454.1,"Escherichia phage ECP2306, complete genome",,negative_pool,Escherichia,no
+PX068455.1,"Escherichia phage ECP2308, complete genome",,negative_pool,Escherichia,no
+PX068456.1,"Escherichia phage ECP2402, complete genome",,negative_pool,Escherichia,no
+PX091869.1,"Salmonella phage vB_salP-bTM, complete genome",,negative_pool,Salmonella,no
+PX091870.1,"Salmonella phage vB_salP-bKK1, complete genome",,negative_pool,Salmonella,no
+PX091871.1,"Salmonella phage vB_salP-pSN, complete genome",,negative_pool,Salmonella,no
+PX091872.1,"Salmonella phage vB_salP-pYM, complete genome",,negative_pool,Salmonella,no
+PX102495.1,"Staphylococcus phage LAC-R10-P2, complete genome",,negative_pool,Staphylococcus,no
+PX132564.1,"Escherichia phage vB_Eco_ppH1, complete genome",,negative_pool,Escherichia,no
+PX237226.1,"Salmonella phage GSP060, complete genome",,negative_pool,Salmonella,no
+PX259653.1,"Pseudomonas phage PO4, complete genome",,negative_pool,Pseudomonas,no
+PX260327.1,"Pseudomonas phage vB_PaeP-27853, complete genome",,negative_pool,Pseudomonas,no
+PX260991.1,"Pseudomonas phage OmaKarin, complete genome",,negative_pool,Pseudomonas,no
+PX278216.1,"Staphylococcus phage SA1298, complete genome",,negative_pool,Staphylococcus,no
+PX310626.1,"Xanthomonas phage GJKY_A, complete genome",62551,canonical_xanthomonas,Xanthomonas,yes
+PX376716.1,"Staphylococcus phage 1306KAYMAS-S15, complete genome",,negative_pool,Staphylococcus,no
+PX377017.1,"Pseudomonas phage PFXL2-1, complete genome",,negative_pool,Pseudomonas,no
+PX380000.1,"Pseudomonas phage 41S1, complete genome",,negative_pool,Pseudomonas,no
+PX393108.1,"Escherichia phage Inksom_phi25-6, complete genome",,negative_pool,Escherichia,no
+PX393109.1,"Escherichia phage Inksom_phi25-4, complete genome",,negative_pool,Escherichia,no
+PX393110.1,"Escherichia phage Inksom_phi50-4, complete genome",,negative_pool,Escherichia,no
+PX395730.1,"Pseudomonas phage Shea, complete genome",,negative_pool,Pseudomonas,no
+PX408737.1,"Xanthomonas phage Juel629, complete genome",288866,canonical_xanthomonas,Xanthomonas,yes
+PX408738.1,"Xanthomonas phage Jill608, complete genome",93995,canonical_xanthomonas,Xanthomonas,yes
+PX408739.1,"Xanthomonas phage Carill600, complete genome",43100,canonical_xanthomonas,Xanthomonas,yes
+PX418225.1,"Pseudomonas phage ACS, complete genome",,negative_pool,Pseudomonas,no
+PX418226.1,"Pseudomonas phage XBug, complete genome",,negative_pool,Pseudomonas,no
+PX418922.1,"Escherichia phage Junood_PK_3, complete genome",,negative_pool,Escherichia,no
+PX418923.1,"Escherichia phage Junood_PK_4, complete genome",,negative_pool,Escherichia,no
+PX418924.1,"Escherichia phage Junood_PK_5, complete genome",,negative_pool,Escherichia,no
+PX418925.1,"Pseudomonas phage Junood_PK_1, complete genome",,negative_pool,Pseudomonas,no
+PX418926.1,"Pseudomonas phage Junood_PK_2, complete genome",,negative_pool,Pseudomonas,no
+PX421306.1,"UNVERIFIED: Escherichia phage ECL1, complete genome",,negative_pool,Unknown,no
+PX433293.1,"UNVERIFIED: Pseudomonas phage PA3Z1, complete genome",,negative_pool,Unknown,no
+PX441352.1,"UNVERIFIED: Salmonella phage KIT07, complete genome",,negative_pool,Unknown,no
+PX444441.1,"Xanthomonas phage L5.2, complete genome",45675,canonical_xanthomonas,Xanthomonas,yes
+PX505723.1,"Stenotrophomonas phage vB_SmaM_QH202, complete genome",,negative_pool,Stenotrophomonas,no
+PX516693.1,"Bacillus phage vB_Bl_WP7, complete genome",,negative_pool,Bacillus,no
+PX529685.1,"Salmonella phage Salfin_2, complete genome",,negative_pool,Salmonella,no
+PX530545.1,"UNVERIFIED: Staphylococcus phage NODE_1, complete genome",,negative_pool,Unknown,no
+PX530551.1,"Xanthomonas phage XOPW, complete genome",42184,canonical_xanthomonas,Xanthomonas,yes
+PX550013.1,"Staphylococcus phage EAS1, complete genome",,negative_pool,Staphylococcus,no
+PX550014.1,"Staphylococcus phage EAS2, complete genome",,negative_pool,Staphylococcus,no
+PX572931.1,"Escherichia phage Tiny, complete genome",,negative_pool,Escherichia,no
+PX585177.1,"Pseudomonas phage vB_PaeM_BonaDea, complete genome",,negative_pool,Pseudomonas,no
+PX596716.1,"Pseudomonas phage vB-PA-CH01, complete genome",,negative_pool,Pseudomonas,no
+PX630731.1,"Xanthomonas phage XapPhi7, complete genome",45121,canonical_xanthomonas,Xanthomonas,yes
+PX630732.1,"Xanthomonas phage XapPhi8, complete genome",45121,canonical_xanthomonas,Xanthomonas,yes
+PX630733.1,"Xanthomonas phage XapPhi9, complete genome",45678,canonical_xanthomonas,Xanthomonas,yes
+PX630734.1,"Xanthomonas phage XapPhi15, complete genome",45119,canonical_xanthomonas,Xanthomonas,yes
+PX630735.1,"Xanthomonas phage XapPhi10, complete genome",45805,canonical_xanthomonas,Xanthomonas,yes
+PX630736.1,"Xanthomonas phage XapPhi14, complete genome",45165,canonical_xanthomonas,Xanthomonas,yes
+PX630737.1,"Xanthomonas phage XapPhi13, complete genome",45142,canonical_xanthomonas,Xanthomonas,yes
+PX630738.1,"Xanthomonas phage XapPhi12, complete genome",45165,canonical_xanthomonas,Xanthomonas,yes
+PX630739.1,"Xanthomonas phage XapPhi11, complete genome",45101,canonical_xanthomonas,Xanthomonas,yes
+PX630740.1,"Xanthomonas phage XapPhi17, complete genome",45121,canonical_xanthomonas,Xanthomonas,yes
+PX630741.1,"Xanthomonas phage XapPhi16, complete genome",44850,canonical_xanthomonas,Xanthomonas,yes
+PX651399.1,"Salmonella phage vB_SEn_Bv0003, complete genome",,negative_pool,Salmonella,no
+PX651400.1,"Salmonella phage vB_SEn_PH353, complete genome",,negative_pool,Salmonella,no
+PX651401.1,"Salmonella phage vB_SEn_PH477, complete genome",,negative_pool,Salmonella,no
+PX651402.1,"Salmonella phage vB_STy_BV004, complete genome",,negative_pool,Salmonella,no
+PX651403.1,"Salmonella phage vB_SIn_BV005, complete genome",,negative_pool,Salmonella,no
+PX651718.1,"Escherichia phage vB_EcoM_D15, complete genome",,negative_pool,Escherichia,no
+PX654436.1,"Bacillus phage P37, complete genome",,negative_pool,Bacillus,no
+PX655697.1,"Staphylococcus phage vB_SauM_HN02, complete genome",,negative_pool,Staphylococcus,no
+PX667142.1,"Staphylococcus phage EFLK1_S, complete genome",,negative_pool,Staphylococcus,no
+PX670425.1,"UNVERIFIED: Pseudomonas phage vB_pae_dh1, complete genome",,negative_pool,Unknown,no
+PX673948.1,"Pseudomonas phage pWA51, complete genome",,negative_pool,Pseudomonas,no
+PX673949.1,"Pseudomonas phage pSO21, complete genome",,negative_pool,Pseudomonas,no
+PX674298.1,"Bacillus phage MBMR7, complete genome",,negative_pool,Bacillus,no
+PX677422.1,"Pseudomonas phage Baskent_P7, complete genome",,negative_pool,Pseudomonas,no
+PX680747.1,"Stenotrophomonas phage vB_Sma_QH17, complete genome",,negative_pool,Stenotrophomonas,no
+PX680748.1,"Stenotrophomonas phage vB_Sma_QH167, complete genome",,negative_pool,Stenotrophomonas,no
+PX682299.1,"Xanthomonas phage vB_Xoo_GDJ3, complete genome",43353,canonical_xanthomonas,Xanthomonas,yes
+PX682300.1,"Xanthomonas phage vB_Xoo_JH1, complete genome",43813,canonical_xanthomonas,Xanthomonas,yes
+PX682301.1,"Xanthomonas phage vB_Xoo_JL1LN, complete genome",42506,canonical_xanthomonas,Xanthomonas,yes
+PX682302.1,"Xanthomonas phage vB_Xoo_NBW, complete genome",44862,canonical_xanthomonas,Xanthomonas,yes
+PX682303.1,"Xanthomonas phage vB_Xoo_QZ143, complete genome",45818,canonical_xanthomonas,Xanthomonas,yes
+PX682304.1,"Xanthomonas phage vB_Xoo_QZ532, complete genome",44733,canonical_xanthomonas,Xanthomonas,yes
+PX682305.1,"Xanthomonas phage vB_Xoo_AQ1, complete genome",42448,canonical_xanthomonas,Xanthomonas,yes
+PX682306.1,"Xanthomonas phage vB_Xoo_CZ1, complete genome",46142,canonical_xanthomonas,Xanthomonas,yes
+PX682307.1,"Xanthomonas phage vB_Xoo_CZ2, complete genome",46168,canonical_xanthomonas,Xanthomonas,yes
+PX682308.1,"Xanthomonas phage vB_Xoo_FJ1, complete genome",44507,canonical_xanthomonas,Xanthomonas,yes
+PX682309.1,"Xanthomonas phage vB_Xoo_GDJ2, complete genome",44555,canonical_xanthomonas,Xanthomonas,yes
+PX682310.1,"Xanthomonas phage vB_Xoo_GDJ1, complete genome",44681,canonical_xanthomonas,Xanthomonas,yes
+PX682311.1,"Xanthomonas phage vB_Xoo_GX1, complete genome",43916,canonical_xanthomonas,Xanthomonas,yes
+PX682312.1,"Xanthomonas phage vB_Xoo_GX2, complete genome",44139,canonical_xanthomonas,Xanthomonas,yes
+PX682313.1,"Xanthomonas phage vB_Xoo_GX3, complete genome",44381,canonical_xanthomonas,Xanthomonas,yes
+PX682314.1,"Xanthomonas phage vB_Xoo_GXN, complete genome",43967,canonical_xanthomonas,Xanthomonas,yes
+PX682315.1,"Xanthomonas phage vB_Xoo_JL4LN, complete genome",46119,canonical_xanthomonas,Xanthomonas,yes
+PX682316.1,"Xanthomonas phage vB_Xoo_JL5LN, complete genome",44811,canonical_xanthomonas,Xanthomonas,yes
+PX682317.1,"Xanthomonas phage vB_Xoo_JLGD, complete genome",44555,canonical_xanthomonas,Xanthomonas,yes
+PX682318.1,"Xanthomonas phage vB_Xoo_JLH1, complete genome",45721,canonical_xanthomonas,Xanthomonas,yes
+PX682319.1,"Xanthomonas phage vB_Xoo_JLP4, complete genome",46120,canonical_xanthomonas,Xanthomonas,yes
+PX682320.1,"Xanthomonas phage vB_Xoo_JLP5, complete genome",44811,canonical_xanthomonas,Xanthomonas,yes
+PX682321.1,"Xanthomonas phage vB_Xoo_NB1, complete genome",43218,canonical_xanthomonas,Xanthomonas,yes
+PX682322.1,"Xanthomonas phage vB_Xoo_QZ531, complete genome",44718,canonical_xanthomonas,Xanthomonas,yes
+PX682323.1,"Xanthomonas phage vB_Xoo_GXB, complete genome",46745,canonical_xanthomonas,Xanthomonas,yes
+PX682324.1,"Xanthomonas phage vB_Xoo_TZ1, complete genome",44934,canonical_xanthomonas,Xanthomonas,yes
+PX682327.1,"Xanthomonas phage vB_Xoo_JLP2, complete genome",46024,canonical_xanthomonas,Xanthomonas,yes
+PX682328.1,"Xanthomonas phage vB_Xoo_QZX, complete genome",45661,canonical_xanthomonas,Xanthomonas,yes
+PX682329.1,"Xanthomonas phage vB_Xoo_GXBLN, complete genome",46926,canonical_xanthomonas,Xanthomonas,yes
+PX682330.1,"Xanthomonas phage vB_Xoo_GXJS, complete genome",46935,canonical_xanthomonas,Xanthomonas,yes
+PX725649.1,"Stenotrophomonas phage vB_Sma_QH84, complete genome",,negative_pool,Stenotrophomonas,no
+PX725670.1,"Pseudomonas phage PyoPredator-2025, complete genome",,negative_pool,Pseudomonas,no
+PX753197.1,"Xylella phage Patu, complete genome",,negative_pool,Xylella,no
+PX753198.1,"Xylella phage Porto, complete genome",,negative_pool,Xylella,no
+PX753199.1,"Xylella phage Pico, complete genome",,negative_pool,Xylella,no
+PX787798.1,"Staphylococcus phage KXI_01, complete genome",,negative_pool,Staphylococcus,no
+PX789324.1,"Pseudomonas phage MC11, complete genome",,negative_pool,Pseudomonas,no
+PX789325.1,"Pseudoxanthomonas phage PS211, complete genome",,negative_pool,Pseudoxanthomonas,no
+PX789326.1,"Pseudoxanthomonas phage PS519, complete genome",,negative_pool,Pseudoxanthomonas,no
+PX789327.1,"Pseudoxanthomonas phage PS525, complete genome",,negative_pool,Pseudoxanthomonas,no
+PX789328.1,"Pseudoxanthomonas phage PT226, complete genome",,negative_pool,Pseudoxanthomonas,no
+PX789329.1,"Pseudoxanthomonas phage PT816, complete genome",,negative_pool,Pseudoxanthomonas,no
+PX789330.1,"Pseudoxanthomonas phage PT456, complete genome",,negative_pool,Pseudoxanthomonas,no
+PX828561.1,"Stenotrophomonas phage BCVI_Sma-b23phi, complete genome",,negative_pool,Stenotrophomonas,no
+PX828562.1,"Stenotrophomonas phage BCVI_Sma-b21phi, complete genome",,negative_pool,Stenotrophomonas,no
+PX828563.1,"Stenotrophomonas phage BCVI_Sma-b22phi, complete genome",,negative_pool,Stenotrophomonas,no
+PX828564.1,"Stenotrophomonas phage BCVI_Sma-b24phi, complete genome",,negative_pool,Stenotrophomonas,no
+PX842512.1,"Bacillus phage WAH1, complete genome",,negative_pool,Bacillus,no
+PX842636.1,"Staphylococcus phage PSARa, complete genome",,negative_pool,Staphylococcus,no
+PX842708.1,"Staphylococcus phage pelagios, complete genome",,negative_pool,Staphylococcus,no
+PX843004.1,"Pseudomonas phage Junood_PK3, complete genome",,negative_pool,Pseudomonas,no
+PX843005.1,"Klebsiella phage Junood_PK6, complete genome",,negative_pool,Klebsiella,no
+PX843006.1,"Pseudomonas phage Junood_PK4, complete genome",,negative_pool,Pseudomonas,no
+PX843241.1,"Pseudomonas phage Klucen469, complete genome",,negative_pool,Pseudomonas,no
+PX843242.1,"Pseudomonas phage Onen484, complete genome",,negative_pool,Pseudomonas,no
+PX843243.1,"Pseudomonas phage Onen526, complete genome",,negative_pool,Pseudomonas,no
+PX843244.1,"Pseudomonas phage Radvan531, complete genome",,negative_pool,Pseudomonas,no
+PX843245.1,"Pseudomonas phage Lasov521, complete genome",,negative_pool,Pseudomonas,no
+PX843246.1,"Pseudomonas phage Kovar531, complete genome",,negative_pool,Pseudomonas,no
+PX848770.1,"Staphylococcus phage vB_SauM-MUHD-1, complete genome",,negative_pool,Staphylococcus,no
+PX852194.1,"Pseudomonas phage E5M1, complete genome",,negative_pool,Pseudomonas,no
+PX852245.1,"Pseudomonas phage vB_PaeP_P39, complete genome",,negative_pool,Pseudomonas,no
+PX853108.1,"Escherichia phage ML-2, complete genome",,negative_pool,Escherichia,no
+PX853812.1,"Escherichia phage SF-E4, complete genome",,negative_pool,Escherichia,no
+PX854772.1,"Pseudomonas phage vB_Psp_JHDO137a, complete genome",,negative_pool,Pseudomonas,no
+PX866597.1,"Bacillus phage Asciepus, complete genome",,negative_pool,Bacillus,no
+PX866599.1,"Priestia phage Salamander, complete genome",,negative_pool,Priestia,no
+PX866600.1,"Bacillus phage Wyvern, complete genome",,negative_pool,Bacillus,no
+PX866601.1,"Bacillus phage Nierus, complete genome",,negative_pool,Bacillus,no
+PX866603.1,"Priestia phage Wyrm, complete genome",,negative_pool,Priestia,no
+PX866605.1,"Cellulosimicrobium phage Basalisk, complete genome",,negative_pool,Cellulosimicrobium,no
+PX866611.1,"Cellulosimicrobium phage Cerberus, complete genome",,negative_pool,Cellulosimicrobium,no
+PX866612.1,"Cellulosimicrobium phage Gorgon, complete genome",,negative_pool,Cellulosimicrobium,no
+PX866998.1,"Pseudomonas phage VNP12.1, complete genome",,negative_pool,Pseudomonas,no
+PX871048.2,"Escherichia phage vB_EcoS-NB10, complete genome",,negative_pool,Escherichia,no
+PX872122.1,"Staphylococcus phage SAP15, complete genome",,negative_pool,Staphylococcus,no
+PX872532.1,"Bacillus phage HRZ04p, complete genome",,negative_pool,Bacillus,no
+PX872915.1,"Klebsiella phage CP-p-KP-22142, complete genome",,negative_pool,Klebsiella,no
+PX872916.1,"Stenotrophomonas phage CP-p-PMA-23011, complete genome",,negative_pool,Stenotrophomonas,no
+PX872917.1,"Klebsiella phage KP-D-4, complete genome",,negative_pool,Klebsiella,no
+PX872919.1,"Klebsiella phage CP-p-KP-21005, complete genome",,negative_pool,Klebsiella,no
+PX872920.1,"Klebsiella phage CP-p-KP-21065, complete genome",,negative_pool,Klebsiella,no
+PX872921.1,"Klebsiella phage CP-p-KP-21107, complete genome",,negative_pool,Klebsiella,no
+PX872922.1,"Klebsiella phage CP-p-KP-22145, complete genome",,negative_pool,Klebsiella,no
+PX872923.1,"Klebsiella phage CP-p-KP-23208, complete genome",,negative_pool,Klebsiella,no
+PX880098.1,"Escherichia phage Taldykol, complete genome",,negative_pool,Escherichia,no
+PX880099.1,"Escherichia phage Aidakhar, complete genome",,negative_pool,Escherichia,no
+PX880100.1,"Escherichia phage Samruk, complete genome",,negative_pool,Escherichia,no
+PX880101.1,"Escherichia phage Baiterek, complete genome",,negative_pool,Escherichia,no
+PX880102.1,"Escherichia phage Tulpar, complete genome",,negative_pool,Escherichia,no
+PX880103.1,"Escherichia phage Shurale, complete genome",,negative_pool,Escherichia,no
+PX884078.1,"UNVERIFIED: Pseudomonas phage PA-319, complete genome",,negative_pool,Unknown,no
+PX884079.1,"UNVERIFIED: Pseudomonas phage PA-575, complete genome",,negative_pool,Unknown,no
+PX884080.1,"UNVERIFIED: Pseudomonas phage PA-711, complete genome",,negative_pool,Unknown,no
+PX907400.1,"Escherichia phage CUTI, complete genome",,negative_pool,Escherichia,no
+PX907401.1,"Escherichia phage Char1o2, complete genome",,negative_pool,Escherichia,no
+PX907402.1,"Escherichia phage Char4.1C, complete genome",,negative_pool,Escherichia,no
+PX907403.1,"Escherichia phage Char3.1A, complete genome",,negative_pool,Escherichia,no
+PX907404.1,"Escherichia phage Arnold, complete genome",,negative_pool,Escherichia,no
+PX943558.1,"Salmonella phage P53F, complete genome",,negative_pool,Salmonella,no
+PX943615.1,"Klebsiella phage Henu16, complete genome",,negative_pool,Klebsiella,no
+PX943855.1,"Staphylococcus phage vB_Sau-RP15-TrD7, complete genome",,negative_pool,Staphylococcus,no
+PX943856.1,"Escherichia phage vB_EcoM-RPN242-TrD10, complete genome",,negative_pool,Escherichia,no
+PX944703.1,"Salmonella phage S150, complete genome",,negative_pool,Salmonella,no
+PX944704.1,"Salmonella phage S151, complete genome",,negative_pool,Salmonella,no
+PX944705.1,"Salmonella phage S152, complete genome",,negative_pool,Salmonella,no
+PX944706.1,"Salmonella phage S153, complete genome",,negative_pool,Salmonella,no
+PX944707.1,"Salmonella phage S154, complete genome",,negative_pool,Salmonella,no
+PX944708.1,"Salmonella phage S155, complete genome",,negative_pool,Salmonella,no
+PX944709.1,"Salmonella phage S156, complete genome",,negative_pool,Salmonella,no
+PX944710.1,"Salmonella phage S157, complete genome",,negative_pool,Salmonella,no
+PX946034.1,"Klebsiella phage TRK61, complete genome",,negative_pool,Klebsiella,no
+PX946180.1,"Escherichia phage EcoFZ-31, complete genome",,negative_pool,Escherichia,no
+PX946874.1,"UNVERIFIED: Pseudomonas phage ph9027, complete genome",,negative_pool,Unknown,no
+PX946875.1,"UNVERIFIED: Pseudomonass phage ph1461, complete genome",,negative_pool,Unknown,no
+PX951411.1,"Pseudomonas phage vB_Pa_AN-12, complete genome",,negative_pool,Pseudomonas,no
+PX962436.1,"Escherichia phage vB_EcS_Jnl-01, complete genome",,negative_pool,Escherichia,no
+PX963123.1,"Pseudomonas phage Spalt, complete genome",,negative_pool,Pseudomonas,no
+PX963124.1,"Pseudomonas phage Stade, complete genome",,negative_pool,Pseudomonas,no
+PX963126.1,"Stenotrophomonas phage Potsdam, complete genome",,negative_pool,Stenotrophomonas,no
+PX963128.1,"Stenotrophomonas phage Siegen, complete genome",,negative_pool,Stenotrophomonas,no
+PX963129.1,"Stenotrophomonas phage Pirna, complete genome",,negative_pool,Stenotrophomonas,no
+PX963130.1,"Stenotrophomonas phage Solingen, complete genome",,negative_pool,Stenotrophomonas,no
+PX963132.1,"Stenotrophomonas phage Passau, complete genome",,negative_pool,Stenotrophomonas,no
+PX968304.1,"Pseudomonas phage ph3678, complete genome",,negative_pool,Pseudomonas,no
+PX968319.1,"UNVERIFIED: Pseudomonas phage GX_PA_BBO1, complete genome",,negative_pool,Unknown,no
+PX969073.1,"Pseudomonas phage TIVP-31Bull2, complete genome",,negative_pool,Pseudomonas,no
+PX969074.1,"Pseudomonas phage LPS-4, complete genome",,negative_pool,Pseudomonas,no
+PX969075.1,"Escherichia phage mEp409, complete genome",,negative_pool,Escherichia,no
+PX969080.1,"Klebsiella phage PK9, complete genome",,negative_pool,Klebsiella,no
+PX969468.1,"Escherichia phage KN30, complete genome",,negative_pool,Escherichia,no
+PX974237.1,"Escherichia phage vB_EcoS_GZMU_EI9, complete genome",,negative_pool,Escherichia,no
+PX974238.1,"Pseudomonas phage vB_PaS_GZMU_PS12, complete genome",,negative_pool,Pseudomonas,no
+PX974239.1,"Klebsiella phage phi1_066047, complete genome",,negative_pool,Klebsiella,no
+PX974311.1,"Klebsiella phage SAKp26.2, complete genome",,negative_pool,Klebsiella,no
+PX974331.1,"Klebsiella phage vB_KpnP_ZCKP10, complete genome",,negative_pool,Klebsiella,no
+PX974332.1,"Klebsiella phage CP-p-KP-22185, complete genome",,negative_pool,Klebsiella,no
+PX974333.1,"Klebsiella phage CP-p-KP-23232, complete genome",,negative_pool,Klebsiella,no
+PX974340.1,"Bacillus phage GH_01, complete genome",,negative_pool,Bacillus,no
+PX974351.1,"Staphylococcus phage vB_SauL_SHZU01, complete genome",,negative_pool,Staphylococcus,no
+PX979746.1,"UNVERIFIED: Klebsiella phage vB_KpaM_pL, complete genome",,negative_pool,Unknown,no
+PX994957.1,"Escherichia phage vB_EcoM-DCSW23lw, complete genome",,negative_pool,Escherichia,no
+PX997083.1,"Xanthomonas phage P-XH, complete genome",42942,canonical_xanthomonas,Xanthomonas,yes
+PX997131.1,"Klebsiella phage Ptero, complete genome",,negative_pool,Klebsiella,no
+PZ000613.1,"Escherichia phage EcoFZ-54S4, complete genome",,negative_pool,Escherichia,no
+PZ000615.1,"Escherichia phage vB_EcoM_Ww_Az2, complete genome",,negative_pool,Escherichia,no
+PZ000751.1,"Klebsiella phage PKG, complete genome",,negative_pool,Klebsiella,no
+PZ000752.1,"Klebsiella phage PKS, complete genome",,negative_pool,Klebsiella,no
+PZ005745.1,"Pseudomonas phage Dresden, complete genome",,negative_pool,Pseudomonas,no
+PZ014354.1,"Salmonella phage vB_PhiESI, complete genome",,negative_pool,Salmonella,no
+PZ019082.1,"Escherichia phage Ayan, complete genome",,negative_pool,Escherichia,no
+PZ019083.1,"Escherichia phage Azraf, complete genome",,negative_pool,Escherichia,no
+PZ019084.1,"Escherichia phage Rayhan, complete genome",,negative_pool,Escherichia,no
+PZ019085.1,"Escherichia phage Anabia, complete genome",,negative_pool,Escherichia,no
+PZ019086.1,"Escherichia phage Wasif, complete genome",,negative_pool,Escherichia,no
+PZ019799.1,"Xanthomonas phage vXeeB-P4A, complete genome",47892,canonical_xanthomonas,Xanthomonas,yes
+PZ019800.1,"Xanthomonas phage vXeeB-P8B, complete genome",47424,canonical_xanthomonas,Xanthomonas,yes
+PZ019801.1,"Xanthomonas phage vXeeB-P10B, complete genome",47421,canonical_xanthomonas,Xanthomonas,yes
+PZ019802.1,"Xanthomonas phage vXeeB-P14B, complete genome",47410,canonical_xanthomonas,Xanthomonas,yes
+PZ019803.1,"Xanthomonas phage vXeeB-W18B, complete genome",47424,canonical_xanthomonas,Xanthomonas,yes
+PZ020097.1,"Salmonella phage S158, complete genome",,negative_pool,Salmonella,no
+PZ020098.1,"Salmonella phage S159, complete genome",,negative_pool,Salmonella,no
+PZ022450.1,"UNVERIFIED: Klebsiella phage EGYARMY-RLEUH01, complete genome",,negative_pool,Unknown,no
+PZ025973.1,"Staphylococcus phage SA-Mt1, complete genome",,negative_pool,Staphylococcus,no
+PZ026127.1,"Escherichia phage EC-2-32-1, complete genome",,negative_pool,Escherichia,no
+PZ027503.1,"UNVERIFIED: Escherichia phage ETEC-S3, complete genome",,negative_pool,Unknown,no
+PZ036784.1,"Klebsiella phage P1524, complete genome",,negative_pool,Klebsiella,no
+PZ043209.1,"Pseudomonas phage Y6096, complete genome",,negative_pool,Pseudomonas,no
+PZ048998.1,"Salmonella phage GSP011, complete genome",,negative_pool,Salmonella,no
+PZ049337.1,"Escherichia phage EC1KC, complete genome",,negative_pool,Escherichia,no
+PZ049338.1,"Escherichia phage EC3KM, complete genome",,negative_pool,Escherichia,no
+PZ049449.1,"UNVERIFIED: Salmonella phage VB-SalS-XND03, complete genome",,negative_pool,Unknown,no
+PZ049694.1,"Escherichia phage MEC7, complete genome",,negative_pool,Escherichia,no
+PZ050807.1,"Escherichia phage KBU_SV1, complete genome",,negative_pool,Escherichia,no
+PZ050808.1,"Klebsiella phage KBU_SV2, complete genome",,negative_pool,Klebsiella,no
+PZ051231.1,"Staphylococcus phage SAP02, complete genome",,negative_pool,Staphylococcus,no
+PZ051232.1,"Staphylococcus phage SAP24, complete genome",,negative_pool,Staphylococcus,no
+PZ053910.1,"Pseudomonas phage Cootes, complete genome",,negative_pool,Pseudomonas,no
+PZ053911.1,"Pseudomonas phage Kipling, complete genome",,negative_pool,Pseudomonas,no
+PZ053912.1,"Escherichia phage phiM, complete genome",,negative_pool,Escherichia,no
+PZ055531.1,"Klebsiella phage 2024.TE.12362, complete genome",,negative_pool,Klebsiella,no
+PZ055532.1,"Klebsiella phage 2024.TE.12363, complete genome",,negative_pool,Klebsiella,no
+PZ055533.1,"Klebsiella phage 2024.TE.12364, complete genome",,negative_pool,Klebsiella,no
+PZ055534.1,"Klebsiella phage 2024.TE.12365, complete genome",,negative_pool,Klebsiella,no
+PZ055535.1,"Klebsiella phage 2024.TE.12369, complete genome",,negative_pool,Klebsiella,no
+PZ055536.1,"Klebsiella phage 2024.TE.12370, complete genome",,negative_pool,Klebsiella,no
+PZ055537.1,"Klebsiella phage 2024.TE.12371, complete genome",,negative_pool,Klebsiella,no
+PZ055538.1,"Klebsiella phage 2024.TE.12372, complete genome",,negative_pool,Klebsiella,no
+PZ055573.1,"Pseudomonas phage vB_PsP_Sever, complete genome",,negative_pool,Pseudomonas,no
+PZ055574.1,"Pseudomonas phage vB_PsP_Jiug, complete genome",,negative_pool,Pseudomonas,no
+PZ055575.1,"Pseudomonas phage vB_PsP_Vostok, complete genome",,negative_pool,Pseudomonas,no
+PZ055576.1,"Pseudomonas phage vB_PsP_Zapad, complete genome",,negative_pool,Pseudomonas,no
+PZ069137.1,"Salmonella phage SZ-29, complete genome",,negative_pool,Salmonella,no
+PZ091928.1,"Klebsiella phage KPTJT11, complete genome",,negative_pool,Klebsiella,no
+PZ091942.1,"Escherichia phage vB_EcoP_P61425, complete genome",,negative_pool,Escherichia,no
+PZ099256.1,"Stenotrophomonas phage BUCT798, complete genome",,negative_pool,Stenotrophomonas,no
+PZ099670.1,"Klebsiella phage SLAM_phiKP05, complete genome",,negative_pool,Klebsiella,no
+PZ099671.1,"Klebsiella phage SLAM_phiKP14, complete genome",,negative_pool,Klebsiella,no
+PZ105927.1,"Klebsiella phage F8_1, complete genome",,negative_pool,Klebsiella,no
+PZ122515.1,"Pseudomonas phage vB_PaeS_ARP3, complete genome",,negative_pool,Pseudomonas,no
+PZ122516.1,"Pseudomonas phage vB_PaeM_ARP5, complete genome",,negative_pool,Pseudomonas,no
+PZ125038.1,"Staphylococcus phage sv_nwjns1, complete genome",,negative_pool,Staphylococcus,no
+PZ125052.1,"UNVERIFIED: Salmonella phage H31, complete genome",,negative_pool,Unknown,no
+PZ145240.1,"UNVERIFIED: Mycobacterium phage U01, complete genome",,negative_pool,Unknown,no
+PZ145241.1,"UNVERIFIED: Mycobacterium phage U02, complete genome",,negative_pool,Unknown,no
+PZ145242.1,"UNVERIFIED: Mycobacterium phage U03, complete genome",,negative_pool,Unknown,no
+PZ145244.1,"UNVERIFIED: Mycobacterium phage U05, complete genome",,negative_pool,Unknown,no
+PZ171032.1,"Escherichia phage 5537, complete genome",,negative_pool,Escherichia,no
+PZ171033.1,"Escherichia phage 5538_ALONE, complete genome",,negative_pool,Escherichia,no
+PZ171034.1,"Escherichia phage 5538_NON_ALONE, complete genome",,negative_pool,Escherichia,no
+PZ171035.1,"Escherichia phage phago12, complete genome",,negative_pool,Escherichia,no
+PZ172977.1,"Mycobacterium phage Amao, complete genome",,negative_pool,Mycobacterium,no
+PZ172978.1,"Mycobacterium phage Baoshan, complete genome",,negative_pool,Mycobacterium,no
+PZ172979.1,"Mycobacterium phage SwirlSquare, complete genome",,negative_pool,Mycobacterium,no
+PZ172980.1,"Mycobacterium phage GinPorsche, complete genome",,negative_pool,Mycobacterium,no
+PZ172981.1,"Mycobacterium phage Koduck, complete genome",,negative_pool,Mycobacterium,no
+PZ193109.1,"Pseudomonas phage XC2, complete genome",,negative_pool,Pseudomonas,no
+PZ212788.1,"Escherichia phage 5540, complete genome",,negative_pool,Escherichia,no
+PZ223989.1,"Escherichia phage vB_EcoM_QH04, complete genome",,negative_pool,Escherichia,no
+PZ223990.1,"Escherichia phage vB_EcoM_QH05, complete genome",,negative_pool,Escherichia,no
+PZ226539.1,"Pseudomonas phage phQ3, complete genome",,negative_pool,Pseudomonas,no
+PZ226540.1,"Pseudomonas phage phQ2, complete genome",,negative_pool,Pseudomonas,no
+PZ227171.1,"Klebsiella phage Kp_AHMU1, complete genome",,negative_pool,Klebsiella,no
+PZ232053.1,"Pseudomonas phage vB_PaeA-38F, complete genome",,negative_pool,Pseudomonas,no
