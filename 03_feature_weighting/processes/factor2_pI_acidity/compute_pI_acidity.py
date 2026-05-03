@@ -1,19 +1,15 @@
 """
-Factor #2 (Olivia): pI & Acidity per genome, computed from .faa files.
+Factor #2 (Olivia): pI & Acidity, computed from .faa files.
 
-Outputs are join-ready for the team's integrated feature matrix:
-- Primary key: `genome_id` (NCBI accession = folder name under ncbi_dataset/data/).
-- Feature columns are namespaced `f02_*` so they will not collide with
-  Alex/Weitao/Sarah/Angela/Carol's columns when merged.
+Inputs (new repo layout):
+  - Phage proteins: 02_annotation/outputs/pharokka_runs/<acc>/phanotate.faa
+  - Host  proteins: 02_annotation/outputs/host_proteins/<name>/proteins.faa
+  - Pairs (with y): 02_annotation/outputs/host_proteins/pairs.csv
 
-Usage:
-    python compute_pI_acidity.py \
-        --phage-dir "ncbi_dataset/data" \
-        --host-faa "Bacterial_Protein_Annotation_Project/results/real_output/proteins_annotated.faa" \
-        --out f02_pI_acidity_per_genome.csv
-
-Optional pairwise output (when the Step 1 interaction CSV is available):
-    python compute_pI_acidity.py --pairs interactions.csv
+Outputs (under 03_feature_weighting/outputs/per_factor/factor2/):
+  - f02_pI_acidity_per_genome.csv   one row per phage / host genome
+  - f02_pI_acidity_pairs.csv        one row per phage-host pair, with
+                                    x = |Acidity_phage - Acidity_host| and pI diff
 """
 
 import argparse
@@ -25,6 +21,7 @@ from Bio import SeqIO
 from Bio.SeqUtils.ProtParam import ProteinAnalysis
 
 VALID_AA = set("ACDEFGHIKLMNPQRSTVWY")
+REPO = Path(__file__).resolve().parents[3]
 
 
 def clean(seq: str) -> str:
@@ -32,11 +29,7 @@ def clean(seq: str) -> str:
 
 
 def summarize_faa(path: Path):
-    pis = []
-    total_len = 0
-    d_e = 0
-    k_r_h = 0
-    n = 0
+    pis, total_len, d_e, k_r_h, n = [], 0, 0, 0, 0
     for rec in SeqIO.parse(str(path), "fasta"):
         s = clean(str(rec.seq))
         if len(s) < 5:
@@ -53,86 +46,82 @@ def summarize_faa(path: Path):
         return None
     return {
         "n_proteins": n,
-        "f02_pI_median": statistics.median(pis),
-        "f02_pI_mean": statistics.fmean(pis),
-        "f02_acidity_pct": 100 * d_e / total_len,
-        "f02_basicity_pct": 100 * k_r_h / total_len,
+        "f02_pI_median": round(statistics.median(pis), 6),
+        "f02_pI_mean": round(statistics.fmean(pis), 6),
+        "f02_acidity_pct": round(100 * d_e / total_len, 6),
+        "f02_basicity_pct": round(100 * k_r_h / total_len, 6),
     }
 
 
 def main():
     ap = argparse.ArgumentParser(description=__doc__)
-    ap.add_argument("--phage-dir", default="ncbi_dataset/data",
-                    help="Root dir; every *.faa under it is treated as a phage genome. "
-                         "genome_id = parent folder name.")
-    ap.add_argument("--host-faa", action="append", default=[],
-                    help="Path to a host .faa; repeatable. genome_id = file stem.")
-    ap.add_argument("--out", default="f02_pI_acidity_per_genome.csv")
-    ap.add_argument("--pairs", default=None,
-                    help="Optional CSV with columns phage_id,host_id[,y]. "
-                         "Emits the pairwise feature CSV.")
-    ap.add_argument("--pairs-out", default="f02_pI_acidity_pairs.csv")
+    ap.add_argument("--phage-runs",
+                    default=str(REPO / "02_annotation/outputs/pharokka_runs"))
+    ap.add_argument("--host-dir",
+                    default=str(REPO / "02_annotation/outputs/host_proteins"))
+    ap.add_argument("--pairs",
+                    default=str(REPO / "02_annotation/outputs/host_proteins/pairs.csv"))
+    ap.add_argument("--out-dir",
+                    default=str(REPO / "03_feature_weighting/outputs/per_factor/factor2"))
     args = ap.parse_args()
 
+    out_dir = Path(args.out_dir); out_dir.mkdir(parents=True, exist_ok=True)
     rows = []
-    phage_root = Path(args.phage_dir)
-    if phage_root.is_dir():
-        for faa in sorted(phage_root.rglob("*.faa")):
-            s = summarize_faa(faa)
-            if not s:
-                continue
-            rows.append({
-                "genome_id": faa.parent.name,
-                "kind": "phage",
-                "source_path": str(faa),
-                **s,
+
+    phage_root = Path(args.phage_runs)
+    for faa in sorted(phage_root.glob("*/phanotate.faa")):
+        s = summarize_faa(faa)
+        if not s: continue
+        rows.append({"genome_id": faa.parent.name, "kind": "phage",
+                     "source_path": str(faa.relative_to(REPO)), **s})
+
+    host_root = Path(args.host_dir)
+    for faa in sorted(host_root.glob("*/proteins.faa")):
+        s = summarize_faa(faa)
+        if not s: continue
+        rows.append({"genome_id": faa.parent.name, "kind": "host",
+                     "source_path": str(faa.relative_to(REPO)), **s})
+
+    fields = ["genome_id", "kind", "source_path", "n_proteins",
+              "f02_pI_median", "f02_pI_mean", "f02_acidity_pct", "f02_basicity_pct"]
+    per_genome = out_dir / "f02_pI_acidity_per_genome.csv"
+    with open(per_genome, "w", newline="") as f:
+        w = csv.DictWriter(f, fieldnames=fields); w.writeheader(); w.writerows(rows)
+    print(f"wrote {len(rows)} genomes -> {per_genome}")
+
+    idx = {r["genome_id"]: r for r in rows}
+    pairs_path = Path(args.pairs)
+    pairs_out = out_dir / "f02_pI_acidity_pairs.csv"
+    n_pairs = 0
+    with open(pairs_path) as f, open(pairs_out, "w", newline="") as g:
+        reader = csv.DictReader(f)
+        writer = csv.DictWriter(g, fieldnames=[
+            "phage_id", "host_id",
+            "f02_phage_pI_median", "f02_host_pI_median",
+            "f02_phage_acidity_pct", "f02_host_acidity_pct",
+            "f02_x_pI", "f02_x_acidity", "y",
+        ])
+        writer.writeheader()
+        missing = set()
+        for row in reader:
+            p, h = row["phage_id"], row["host_id"]
+            if p not in idx or h not in idx:
+                missing.add(p if p not in idx else h); continue
+            rp, rh = idx[p], idx[h]
+            writer.writerow({
+                "phage_id": p, "host_id": h,
+                "f02_phage_pI_median": rp["f02_pI_median"],
+                "f02_host_pI_median":  rh["f02_pI_median"],
+                "f02_phage_acidity_pct": rp["f02_acidity_pct"],
+                "f02_host_acidity_pct":  rh["f02_acidity_pct"],
+                "f02_x_pI":      round(abs(rp["f02_pI_median"] - rh["f02_pI_median"]), 6),
+                "f02_x_acidity": round(abs(rp["f02_acidity_pct"] - rh["f02_acidity_pct"]), 6),
+                "y": row.get("y", ""),
             })
-
-    for hp in args.host_faa:
-        p = Path(hp)
-        s = summarize_faa(p)
-        if not s:
-            continue
-        rows.append({
-            "genome_id": p.stem,
-            "kind": "host",
-            "source_path": str(p),
-            **s,
-        })
-
-    fields = [
-        "genome_id", "kind", "source_path", "n_proteins",
-        "f02_pI_median", "f02_pI_mean", "f02_acidity_pct", "f02_basicity_pct",
-    ]
-    with open(args.out, "w", newline="") as f:
-        w = csv.DictWriter(f, fieldnames=fields)
-        w.writeheader()
-        w.writerows(rows)
-    print(f"wrote {len(rows)} genomes -> {args.out}")
-
-    if args.pairs:
-        idx = {r["genome_id"]: r for r in rows}
-        n_pairs = 0
-        with open(args.pairs) as f, open(args.pairs_out, "w", newline="") as g:
-            reader = csv.DictReader(f)
-            writer = csv.DictWriter(
-                g,
-                fieldnames=["phage_id", "host_id", "f02_x_pI", "f02_x_acidity", "y"],
-            )
-            writer.writeheader()
-            for row in reader:
-                p, h = row["phage_id"], row["host_id"]
-                if p not in idx or h not in idx:
-                    continue
-                writer.writerow({
-                    "phage_id": p,
-                    "host_id": h,
-                    "f02_x_pI": abs(idx[p]["f02_pI_median"] - idx[h]["f02_pI_median"]),
-                    "f02_x_acidity": abs(idx[p]["f02_acidity_pct"] - idx[h]["f02_acidity_pct"]),
-                    "y": row.get("y", ""),
-                })
-                n_pairs += 1
-        print(f"wrote {n_pairs} pairs -> {args.pairs_out}")
+            n_pairs += 1
+    print(f"wrote {n_pairs} pairs -> {pairs_out}")
+    if missing:
+        print(f"  (skipped pairs missing genome rows for: {sorted(missing)})")
 
 
 if __name__ == "__main__":
