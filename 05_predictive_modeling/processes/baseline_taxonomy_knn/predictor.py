@@ -14,6 +14,7 @@ Phage-Host Interaction Predictor
   pip install pandas numpy openpyxl matplotlib seaborn requests
 """
 
+import pathlib
 import numpy as np
 import pandas as pd
 import matplotlib
@@ -749,9 +750,9 @@ if __name__ == "__main__":
     # matrix = create_example_data()
 
     # ── 选项 B：从文件读取（取消注释使用）────────────────
-    # matrix = load_from_file("/Users/mac/Documents/Mudd/iGEM/dataCleaningCode/phage_host_matrix_with_ids.csv")
+    # matrix = load_from_file(pathlib.Path(__file__).parents[4] / "01_data_ground_truth/outputs/interaction_matrix/phage_host_matrix_with_ids.csv")
     # matrix = matrix[~matrix.index.duplicated(keep='first')]  # 去重
-    df_raw = pd.read_csv("/Users/mac/Documents/Mudd/iGEM/dataCleaningCode/phage_host_matrix_with_ids.csv")
+    df_raw = pd.read_csv(pathlib.Path(__file__).parents[4] / "01_data_ground_truth/outputs/interaction_matrix/phage_host_matrix_with_ids.csv")
     df_raw = df_raw[df_raw['Host_Name'].notna() & ~df_raw['Host_Name'].isin(['Unknown', 'ERROR', 'No Complete Genome Found', 'N/A'])]
     df_raw['Affinity'] = pd.to_numeric(df_raw['Affinity'], errors='coerce')
     df_raw = df_raw.dropna(subset=['Affinity'])
@@ -762,7 +763,7 @@ if __name__ == "__main__":
     results = run_analysis(
         interaction_matrix=matrix,
         distance_scale=0.5,       # 可调节：越小越依赖近邻
-        out_dir="/Users/mac/Documents/Mudd/iGEM/dataCleaningCode/results_26-4-12",
+        out_dir=str(pathlib.Path(__file__).parents[3] / "outputs/baseline_taxonomy_knn"),
         use_ncbi=False,           # 改为 True 则真实查询 NCBI
     )
 
