@@ -1,0 +1,16 @@
+genome_id,kind,gc_whole,length_bp
+AB720063.2,phage,0.533098,43870
+AB720064.1,phage,0.670181,42963
+AP008979.1,phage,0.510757,43785
+EU717894.1,phage,0.556397,44080
+JN882298.1,phage,0.515889,42608
+Xanthomonas_citri_306,host,0.647117,5274174
+Xanthomonas_campestris_33913,host,0.650686,5076188
+Xanthomonas_oryzae_KACC10331,host,0.636933,4941439
+Escherichia_coli_K12_MG1655,host,0.507907,4641652
+Bacillus_subtilis_168,neg,0.435144,4215606
+Pseudomonas_aeruginosa_PAO1,neg,0.665557,6264404
+Staphylococcus_aureus_NCTC8325,neg,0.328683,2821361
+Mycobacterium_smegmatis_MC2155,neg,0.674028,6988209
+Salmonella_enterica_LT2,neg,0.522389,4951383
+Vibrio_cholerae_N16961,neg,0.474875,4033464
