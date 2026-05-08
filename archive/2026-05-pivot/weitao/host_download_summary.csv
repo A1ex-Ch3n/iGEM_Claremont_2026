@@ -1,0 +1,37 @@
+accession,genome_status,genome_file,genome_note,cds_status,cds_file,cds_note
+NZ_CP167225,success,host_genomes/NZ_CP167225.fasta,76379 bp,success,host_cds/NZ_CP167225.faa,76 CDS
+NZ_CP155948,success,host_genomes/NZ_CP155948.fasta,5150550 bp,success,host_cds/NZ_CP155948.faa,4334 CDS
+NZ_CP167241,success,host_genomes/NZ_CP167241.fasta,37303 bp,success,host_cds/NZ_CP167241.faa,42 CDS
+NZ_CP150073,success,host_genomes/NZ_CP150073.fasta,4927243 bp,success,host_cds/NZ_CP150073.faa,4426 CDS
+NZ_CP168206,success,host_genomes/NZ_CP168206.fasta,5163130 bp,success,host_cds/NZ_CP168206.faa,4337 CDS
+NZ_CP118477,success,host_genomes/NZ_CP118477.fasta,5133398 bp,error,,IncompleteRead(2505784 bytes read)
+NZ_CP169751,success,host_genomes/NZ_CP169751.fasta,30079 bp,error,,IncompleteRead(2505784 bytes read)
+NZ_CP114795,success,host_genomes/NZ_CP114795.fasta,5053938 bp,error,,IncompleteRead(2505784 bytes read)
+NZ_CP166095,success,host_genomes/NZ_CP166095.fasta,5226816 bp,error,,IncompleteRead(2505784 bytes read)
+NZ_CP155977,success,host_genomes/NZ_CP155977.fasta,5062811 bp,error,,IncompleteRead(2505784 bytes read)
+PQ650120,success,host_genomes/PQ650120.fasta,1542 bp,not_found,,No CDS returned
+KY000037,success,host_genomes/KY000037.fasta,139561 bp,success,host_cds/KY000037.faa,125 CDS
+NZ_CP167993,success,host_genomes/NZ_CP167993.fasta,5007668 bp,success,host_cds/NZ_CP167993.faa,4180 CDS
+Unknown,not_found,,Not returned by NCBI,not_found,,No CDS returned
+NZ_CP172379,success,host_genomes/NZ_CP172379.fasta,1691848 bp,success,host_cds/NZ_CP172379.faa,1736 CDS
+NZ_CP082179,success,host_genomes/NZ_CP082179.fasta,20157 bp,success,host_cds/NZ_CP082179.faa,29 CDS
+NZ_CP016892,success,host_genomes/NZ_CP016892.fasta,173592 bp,success,host_cds/NZ_CP016892.faa,154 CDS
+NZ_CP182287,success,host_genomes/NZ_CP182287.fasta,2619904 bp,success,host_cds/NZ_CP182287.faa,2353 CDS
+NZ_CP014028,success,host_genomes/NZ_CP014028.fasta,6268754 bp,success,host_cds/NZ_CP014028.faa,5696 CDS
+NZ_CP013250,success,host_genomes/NZ_CP013250.fasta,101545 bp,success,host_cds/NZ_CP013250.faa,109 CDS
+CP003873,success,host_genomes/CP003873.fasta,4629479 bp,success,host_cds/CP003873.faa,3912 CDS
+NC_004547,success,host_genomes/NC_004547.fasta,5064019 bp,success,host_cds/NC_004547.faa,4466 CDS
+NC_017933,success,host_genomes/NC_017933.fasta,4268675 bp,success,host_cds/NC_017933.faa,3922 CDS
+NZ_CP074661,success,host_genomes/NZ_CP074661.fasta,4668867 bp,success,host_cds/NZ_CP074661.faa,4431 CDS
+NZ_CP140715,success,host_genomes/NZ_CP140715.fasta,3366742 bp,success,host_cds/NZ_CP140715.faa,3124 CDS
+NZ_CP026795,success,host_genomes/NZ_CP026795.fasta,4575738 bp,success,host_cds/NZ_CP026795.faa,4687 CDS
+NZ_CP066006,success,host_genomes/NZ_CP066006.fasta,6796677 bp,success,host_cds/NZ_CP066006.faa,6099 CDS
+NZ_CP077850,success,host_genomes/NZ_CP077850.fasta,3804080 bp,success,host_cds/NZ_CP077850.faa,3355 CDS
+NZ_CP103838,success,host_genomes/NZ_CP103838.fasta,5214777 bp,success,host_cds/NZ_CP103838.faa,4298 CDS
+NZ_CP017928,success,host_genomes/NZ_CP017928.fasta,6155924 bp,success,host_cds/NZ_CP017928.faa,5769 CDS
+NZ_CP173422,success,host_genomes/NZ_CP173422.fasta,5089733 bp,success,host_cds/NZ_CP173422.faa,4310 CDS
+NZ_AP041801,success,host_genomes/NZ_AP041801.fasta,4765121 bp,success,host_cds/NZ_AP041801.faa,4343 CDS
+NZ_CP012348,success,host_genomes/NZ_CP012348.fasta,86650 bp,success,host_cds/NZ_CP012348.faa,111 CDS
+NZ_CP022009,success,host_genomes/NZ_CP022009.fasta,26479 bp,success,host_cds/NZ_CP022009.faa,42 CDS
+NZ_CP167870,success,host_genomes/NZ_CP167870.fasta,15249 bp,success,host_cds/NZ_CP167870.faa,19 CDS
+NZ_CP150119,success,host_genomes/NZ_CP150119.fasta,4696918 bp,success,host_cds/NZ_CP150119.faa,4051 CDS

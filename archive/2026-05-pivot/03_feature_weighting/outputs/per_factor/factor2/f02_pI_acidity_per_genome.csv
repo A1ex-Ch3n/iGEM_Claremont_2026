@@ -1,0 +1,16 @@
+genome_id,kind,source_path,n_proteins,f02_pI_median,f02_pI_mean,f02_acidity_pct,f02_basicity_pct
+AB720063.2,phage,02_annotation/outputs/pharokka_runs/AB720063.2/phanotate.faa,73,7.788571,7.69033,10.628506,13.059111
+AB720064.1,phage,02_annotation/outputs/pharokka_runs/AB720064.1/phanotate.faa,58,6.242933,7.230579,12.022956,12.503587
+AP008979.1,phage,02_annotation/outputs/pharokka_runs/AP008979.1/phanotate.faa,72,6.490069,7.318039,10.902788,12.926277
+EU717894.1,phage,02_annotation/outputs/pharokka_runs/EU717894.1/phanotate.faa,80,8.231984,7.863213,10.84218,13.694268
+JN882298.1,phage,02_annotation/outputs/pharokka_runs/JN882298.1/phanotate.faa,60,7.705606,7.488902,11.56216,12.714752
+Bacillus_subtilis_168,host,02_annotation/outputs/host_proteins/Bacillus_subtilis_168/proteins.faa,4237,6.097824,6.842199,12.439846,13.426687
+Escherichia_coli_K12_MG1655,host,02_annotation/outputs/host_proteins/Escherichia_coli_K12_MG1655/proteins.faa,4300,6.199508,6.946118,10.90988,12.206238
+Mycobacterium_smegmatis_MC2155,host,02_annotation/outputs/host_proteins/Mycobacterium_smegmatis_MC2155/proteins.faa,6406,5.486122,6.265831,11.70464,11.628256
+Pseudomonas_aeruginosa_PAO1,host,02_annotation/outputs/host_proteins/Pseudomonas_aeruginosa_PAO1/proteins.faa,5572,6.207636,6.919794,11.411945,12.658165
+Salmonella_enterica_LT2,host,02_annotation/outputs/host_proteins/Salmonella_enterica_LT2/proteins.faa,4554,6.349137,7.041419,10.81046,12.259348
+Staphylococcus_aureus_NCTC8325,host,02_annotation/outputs/host_proteins/Staphylococcus_aureus_NCTC8325/proteins.faa,2767,6.089241,6.913674,12.363042,13.320337
+Vibrio_cholerae_N16961,host,02_annotation/outputs/host_proteins/Vibrio_cholerae_N16961/proteins.faa,3447,5.980678,6.596411,11.320969,12.186145
+Xanthomonas_campestris_33913,host,02_annotation/outputs/host_proteins/Xanthomonas_campestris_33913/proteins.faa,4093,6.412996,7.193659,10.578404,12.255121
+Xanthomonas_citri_306,host,02_annotation/outputs/host_proteins/Xanthomonas_citri_306/proteins.faa,4239,6.539406,7.254572,10.571425,12.29019
+Xanthomonas_oryzae_KACC10331,host,02_annotation/outputs/host_proteins/Xanthomonas_oryzae_KACC10331/proteins.faa,3642,6.8076,7.478859,10.532599,12.889224
