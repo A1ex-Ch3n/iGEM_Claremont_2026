@@ -1,0 +1,14 @@
+# Module 02 — annotation dependencies
+# 模块 02 — 注释依赖
+
+# Phage annotation / 噬菌体注释
+phanotate>=1.6.7
+
+# Bacterial annotation (Python binding to Prodigal) / 细菌注释（Prodigal 的 Python 绑定）
+pyrodigal>=3.0.0
+
+# Sequence parsing / 序列解析
+biopython>=1.80
+
+# Testing
+pytest>=7.0

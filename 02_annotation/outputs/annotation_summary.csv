@@ -1,0 +1,3 @@
+acc,type,n_orfs,mean_orf_len,tool,tool_version,runtime_s
+EU717894.1,phage,80,176.62,PHANOTATE,1.6.7,47.55
+NZ_CP155948.1,host,4344,336.54,pyrodigal,3.7.1,28.48
