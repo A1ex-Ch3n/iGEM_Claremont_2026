@@ -1,0 +1,16 @@
+# Module 05 — structure_prediction dependencies
+# 模块05 — 结构预测依赖包
+#
+# Install with: pip3 install -r requirements.txt
+# Note: boltz requires Python >=3.9 and PyTorch >=2.2
+
+boltz==2.0.3       # Boltz-2: structure + binding-confidence prediction (Passaro 2025)
+biopython==1.84    # Sequence I/O, PDB parsing
+gemmi==0.6.5       # mmCIF/CIF structure parsing
+mashumaro==3.14    # Serialization for boltz internal types
+modelcif==1.2      # mmCIF model output
+ihm               # IHM data model for mmCIF
+chembl-structure-pipeline>=1.2.2  # Structure cleanup used by boltz
+
+# Already expected in shared env (do not pin here):
+#   numpy, pandas, torch, pytorch-lightning, hydra-core, rdkit, requests

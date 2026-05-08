@@ -1,0 +1,2 @@
+rbp_id,receptor_id,model,predicted_dG_kcal_mol,predicted_pKd,confidence,interface_ipTM,pTM,pLDDT_mean,run_success,runtime_s,partial
+EU717894.1_rbp_01,GCF_000007145.1_tonB,boltz2_2.0.3,,,,,,,False,,True

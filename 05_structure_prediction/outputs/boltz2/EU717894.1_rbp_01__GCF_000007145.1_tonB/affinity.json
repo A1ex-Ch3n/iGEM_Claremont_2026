@@ -1,0 +1,9 @@
+{
+  "predicted_dG_kcal_mol": NaN,
+  "predicted_pKd": NaN,
+  "confidence": NaN,
+  "interface_ipTM": NaN,
+  "model_version": "boltz2_2.0.3",
+  "note": "protein-protein pair: dG/pKd not available from affinity head; ipTM used as confidence proxy",
+  "status": "pending_laguna_run"
+}

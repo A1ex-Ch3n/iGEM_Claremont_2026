@@ -1,0 +1,3 @@
+filename,sha256,bytes,n_records,created_utc,source_acc,source_module,notes
+affinity_priors.csv,afd1d765f9ba8f60b16547cf96619a468f4f659d5eb8d161990978fbdfbe19dc,202,1.0,2026-05-08T05:47:02Z,EU717894.1,05_structure_prediction,Boltz-2 affinity priors; placeholder pending Laguna GPU run
+boltz2/EU717894.1_rbp_01__GCF_000007145.1_tonB/affinity.json,27e73b5f78d005881ee47c226e29e4fdd08020bd0b0bedfde4965a4a579fdf2f,279,,2026-05-08T05:47:02Z,EU717894.1,05_structure_prediction,Boltz-2 confidence stub; to be replaced after GPU run
