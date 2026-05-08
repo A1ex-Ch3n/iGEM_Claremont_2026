@@ -1,0 +1,20 @@
+# Module 06 — deep ensemble uncertainty model
+# 模块 06 — 深度集成不确定性模型
+# Install: pip install -r 06_uncertainty_model/requirements.txt
+#
+# All packages below are in addition to shared/env/environment.yml
+# 以下所有包是对 shared/env/environment.yml 的补充
+#
+# Tested on: system Python 3.14.0, macOS 25.4.0
+# conda environment igem2026 not yet provisioned as of 2026-05-07
+
+torch>=2.0.0
+numpy>=1.24.0
+pandas>=1.5.0
+matplotlib>=3.6.0
+scikit-learn>=1.0.0
+scipy>=1.10.0      # for calibration coverage curve (scipy.stats.norm.ppf)
+
+# Optional (not required for core pipeline):
+# 可选（核心 pipeline 不需要）:
+# gpytorch>=1.9.0  # Gaussian Process baseline for future comparison
