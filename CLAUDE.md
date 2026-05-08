@@ -12,11 +12,12 @@ We are building a **closed-loop active-learning pipeline** that integrates a mac
 
 **Core engineer:** Alex Chen. **Wet lab:** Sarah, Olivia, Weitao. **Other contributors:** Ryan, Leah. **PI:** Prof. J. Cesar Ignacio-Espinoza. **Faculty advisor:** Prof. Ran Libeskind-Hadas.
 
-Project planning documents:
-- `docs/iGEM_2026_Project_Plan.md` — full PI-facing English plan
-- `docs/iGEM_2026_项目大纲_中文版.md` — Chinese version with deep dry-lab module mechanics + 6-layer data-scarcity strategy
-- `docs/iGEM_2026_Project_Flow.png` — full pipeline flow chart
-- `docs/glossary.md` — technical vocabulary reference
+Project planning documents (see `docs/README.md` for the full index):
+- `docs/planning/iGEM_2026_Project_Plan.md` — full PI-facing English plan
+- `docs/planning/iGEM_2026_项目大纲_中文版.md` — Chinese version with deep dry-lab module mechanics + 6-layer data-scarcity strategy
+- `docs/planning/iGEM_2026_Project_Flow.png` — full pipeline flow chart
+- `docs/reference/glossary.md` — technical vocabulary reference
+- `docs/protocols/` — wet lab Benchling SOPs (cultivation, transformation, plaque, infection curves, lysate amp)
 
 ---
 
@@ -69,6 +70,17 @@ iGEM_Claremont_2026/
     └── tasks/                        ← old planning docs (e.g. 0428 6-factor regression spec)
 ```
 
+`docs/` is organized into 4 sub-folders (see `docs/README.md` for full index):
+
+```
+docs/
+├── README.md                ← navigation index
+├── planning/                ← project plans, pivot summary, flow chart
+├── reference/               ← glossary, tool manuals
+├── protocols/               ← Benchling wet lab SOPs (5 PDFs)
+└── archive/                 ← pre-pivot artifacts (workflow chart, integrated guide)
+```
+
 Each step folder has its own `README.md` describing inputs, processes, outputs, and current status.
 
 ---
@@ -109,9 +121,22 @@ Each step folder has its own `README.md` describing inputs, processes, outputs, 
 
 ## Conventions
 
-- **No hard-coded absolute paths.** Use `pathlib.Path(__file__).parents[N]` to anchor at the repo root or step folder.
+### Code authoring (notebook-first workflow / 笔记本优先开发)
+
+All new code is written as **Jupyter notebooks first** for exploratory development, then frozen as `.py` modules once the logic is stable. Comments are **bilingual** (English + 中文) so the entire team can read them.
+
+- **Notebook location:** `<step_folder>/processes/<NN>_<short_name>.ipynb` (numbered sequentially within each module's `processes/`).
+- **Bilingual comment style:**
+  - Markdown cells: one English paragraph followed by a Chinese paragraph (or vice versa) — see `01_data_ground_truth/processes/fetch_reference_genomes.ipynb` for the canonical example.
+  - Inline code comments: `# English / 中文` on the same line for short comments; separate lines for longer ones.
+- **Freeze trigger:** Once a notebook (a) runs end-to-end without manual intervention and (b) its outputs match a verification cell, freeze it as `<NN>_<short_name>.py` in the same folder. Mark the original notebook in its filename: `<NN>_<short_name>__frozen.ipynb` and add a top-cell pointer to the `.py`.
+- **Module 07 exception:** The cycle-orchestration code in `07_acquisition_function/` is a production pipeline, not exploratory analysis — write directly as `.py` from day 1.
+- **Notebook git hygiene:** Install `nbstripout` (`pip install nbstripout && nbstripout --install`) so cell outputs don't pollute git diffs. Already added to `shared/env/environment.yml`.
+
+### General
+
+- **No hard-coded absolute paths.** Use `pathlib.Path(__file__).parents[N]` (in `.py`) or `Path.cwd().resolve().parents[N]` (in notebooks) to anchor at the repo root or step folder.
 - **Output filenames:** use descriptive prefixes (`cycle_<N>_*`, `<phage_acc>_*`, etc.) so files self-document their lineage.
-- **Code comments:** English only.
 - **Docs:** bilingual EN + ZH (Simplified or Traditional Chinese acceptable depending on intended audience).
 - **Large artifacts:** gitignored. Add accession/filename to a `MANIFEST.csv` in the same `outputs/` folder so the set is reproducible.
 - **Tool split:** PHANOTATE for phage ORF calling; Prodigal / pyrodigal for bacterial hosts. Never swap.
@@ -122,37 +147,27 @@ Each step folder has its own `README.md` describing inputs, processes, outputs, 
 ## Quick start
 
 ```bash
-# 1. Create environment
+# 1. Create environment + install notebook hygiene tool
+# 创建环境 + 安装 notebook diff 净化工具
 conda env create -f shared/env/environment.yml
 conda activate igem2026
+pip install nbstripout && nbstripout --install   # one-time per clone
 
-# 2. Step 1 — build interaction matrix (positive pairs)  [legacy reference data]
-python 01_data_ground_truth/processes/fetch_positive_pairs.py
+# 2. Launch JupyterLab and open the reference fetch notebook
+# 启动 JupyterLab 并打开参考基因组抓取 notebook
+jupyter lab
+# Then open: 01_data_ground_truth/processes/fetch_reference_genomes.ipynb
+# 打开: 01_data_ground_truth/processes/fetch_reference_genomes.ipynb
 
-# 3. Step 2 — annotate reference genomes (phiL7 + Xcc)
-python 02_annotation/processes/phage_phanotate/batch_phanotate.py
-python 02_annotation/processes/host_prodigal/batch_prodigal.py
-
-# 4. Step 3 — identify RBP candidates with PhageRBPdetect  [TBD: Alex sprint]
-python 03_rbp_identification/processes/run_phagerbpdetect.py \
-    --input 02_annotation/outputs/phage_proteins/EU717894.faa \
-    --out 03_rbp_identification/outputs/
-
-# 5. Step 4 — ESM-2 embeddings  [in development]
-python 04_protein_embedding/processes/embed_esm2.py \
-    --input 03_rbp_identification/outputs/EU717894_rbp_sequences.faa \
-    --model esm2_t33_650M_UR50D \
-    --out 04_protein_embedding/outputs/
-
-# 6. Step 5 — Structure + affinity prior
-python 05_structure_prediction/processes/run_af3.py    # Laguna HPC
-python 05_structure_prediction/processes/run_boltz2.py # Laguna HPC
-
-# 7. Step 6 — Train deep ensemble  [TBD: Alex sprint]
-python 06_uncertainty_model/processes/train_ensemble.py --cycle 0
-
-# 8. Step 7 — BALD recommendations for next wet-lab batch  [TBD: Alex sprint]
-python 07_acquisition_function/processes/run_bald.py --cycle 0
+# Pipeline progression (each step has a notebook in its processes/ folder):
+# Pipeline 流程 (每个 step 在自己的 processes/ 里有对应 notebook):
+#   01 → fetch_reference_genomes.ipynb              (DONE — example notebook)
+#   02 → phage_phanotate/  +  host_prodigal/        (existing scripts; will rewrite as notebooks)
+#   03 → run_phagerbpdetect.ipynb                   (TBD — Alex sprint)
+#   04 → embed_esm2.ipynb                           (in progress — ESM teammate)
+#   05 → run_af3.ipynb  +  run_boltz2.ipynb         (TBD — Laguna HPC)
+#   06 → train_ensemble.ipynb                       (TBD — Alex sprint)
+#   07 → run_bald.py                                (TBD — write as .py from day 1, see Conventions)
 ```
 
 ---
