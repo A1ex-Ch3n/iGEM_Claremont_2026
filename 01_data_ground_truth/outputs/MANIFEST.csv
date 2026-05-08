@@ -1,0 +1,11 @@
+filename,sha256,bytes,n_records,created_utc,source_acc,source_module,notes
+bacteria/GCF_000007145.1/genome.fna,68456fd80a2d1a7dd781403f5c32e0af4dce8782a26fb9a45998c4cdfff2fbd7,5139727,1,2026-05-08T05:28:48Z,GCF_000007145.1,01_data_ground_truth,Xcc ATCC 33913 (host reference)
+bacteria/GCF_000007145.1/cds.fna,935dd8459948f9cbb02cab07af209aa9acb388e2bc173ff91569d0e644e318c1,5196419,4276,2026-05-08T05:28:48Z,GCF_000007145.1,01_data_ground_truth,Xcc ATCC 33913 (host reference)
+bacteria/GCF_000007145.1/proteins.faa,cb7fe247c73e3bf6122303eddf02b3e5b4c56a860a39b33bd319f90e83cdc9c3,1725195,4093,2026-05-08T05:28:48Z,GCF_000007145.1,01_data_ground_truth,Xcc ATCC 33913 (host reference)
+phage/NC_001604.1/genome.fna,14764a32887906715de6e7de34319aefdc71177a4f620cb6dc5e5d097912aa1c,40562,1,2026-05-08T05:28:48Z,NC_001604.1,01_data_ground_truth,Bacteriophage T7 (control phage E. coli)
+phage/NC_001604.1/cds.fna,bf8d3af4c6526f10c3e0c2aee0a5929d0b8b6b50e7b4fdecdbafdfe3c7debcfe,48429,60,2026-05-08T05:28:48Z,NC_001604.1,01_data_ground_truth,Bacteriophage T7 (control phage E. coli)
+phage/NC_001604.1/proteins.faa,688fc2238975b75410ffd0f978b5ab67190dd06a8d282a3cf3f59c577a4b7468,22555,60,2026-05-08T05:28:48Z,NC_001604.1,01_data_ground_truth,Bacteriophage T7 (control phage E. coli)
+phage/EU717894.1/genome.fna,865ce68d5e2c8ad237a74da7dafc2651fe817a695e9093f8fc8f4f38a79cd03c,44763,1,2026-05-08T05:28:48Z,EU717894.1,01_data_ground_truth,phiL7 Xanthomonas campestris phage (main scaffold)
+phage/EU717894.1/cds.fna,70fb8804645339d2a502da5de79e3789a420425fb6b7812dfc6e69c66db2e3a0,43089,58,2026-05-08T05:28:48Z,EU717894.1,01_data_ground_truth,phiL7 Xanthomonas campestris phage (main scaffold)
+phage/EU717894.1/proteins.faa,cc15d5ae489c68338138c3c32458956c8b37e7856c5ae64f7808697a70b2acb6,19312,58,2026-05-08T05:28:48Z,EU717894.1,01_data_ground_truth,phiL7 Xanthomonas campestris phage (main scaffold)
+interaction_matrix.csv,c5fa719c6f095a86f322e93b612e0e19d778a6d691bd45cec20ec3ec6846f34c,279505,2236,2026-05-08T05:31:11Z,,01_data_ground_truth,phage-host interaction matrix: 2236 pairs

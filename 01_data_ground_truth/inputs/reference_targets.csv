@@ -1,0 +1,4 @@
+category,assembly_acc,nucleotide_acc,label,subdir,priority
+bacteria,GCF_000007145.1,AE008922.1,Xcc ATCC 33913 (host reference),GCF_000007145.1,1
+phage,,NC_001604.1,Bacteriophage T7 (control phage E. coli),NC_001604.1,1
+phage,,EU717894.1,phiL7 Xanthomonas campestris phage (main scaffold),EU717894.1,1

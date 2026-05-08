@@ -1,0 +1,4 @@
+label,accession,target_dir,status,sha256_genome
+Xcc ATCC 33913 (host reference),GCF_000007145.1,00_raw_data/bacteria/GCF_000007145.1,verified,68456fd80a2d1a7dd781403f5c32e0af4dce8782a26fb9a45998c4cdfff2fbd7
+Bacteriophage T7 (control phage E. coli),NC_001604.1,00_raw_data/phage/NC_001604.1,verified,14764a32887906715de6e7de34319aefdc71177a4f620cb6dc5e5d097912aa1c
+phiL7 Xanthomonas campestris phage (main scaffold),EU717894.1,00_raw_data/phage/EU717894.1,verified,865ce68d5e2c8ad237a74da7dafc2651fe817a695e9093f8fc8f4f38a79cd03c
