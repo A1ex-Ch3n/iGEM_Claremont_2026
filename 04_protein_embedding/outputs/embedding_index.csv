@@ -1,0 +1,10 @@
+seq_id,source_file,model,n_residues,embed_dim,npz_file
+EU717894.1_rbp_01,inputs/mock_phiL7_rbp_sequences.faa,esm2_t6_8M_UR50D,412,320,embeddings_esm2_t6_8M_phiL7_rbps.npz
+EU717894.1_rbp_02,inputs/mock_phiL7_rbp_sequences.faa,esm2_t6_8M_UR50D,287,320,embeddings_esm2_t6_8M_phiL7_rbps.npz
+EU717894.1_rbp_03,inputs/mock_phiL7_rbp_sequences.faa,esm2_t6_8M_UR50D,198,320,embeddings_esm2_t6_8M_phiL7_rbps.npz
+EU717894.1_rbp_04,inputs/mock_phiL7_rbp_sequences.faa,esm2_t6_8M_UR50D,95,320,embeddings_esm2_t6_8M_phiL7_rbps.npz
+EU717894.1_rbp_05,inputs/mock_phiL7_rbp_sequences.faa,esm2_t6_8M_UR50D,334,320,embeddings_esm2_t6_8M_phiL7_rbps.npz
+GCF_000007145.1_tonB,inputs/xcc_receptors.faa,esm2_t6_8M_UR50D,223,320,embeddings_esm2_t6_8M_xcc_receptors.npz
+GCF_000007145.1_exbB,inputs/xcc_receptors.faa,esm2_t6_8M_UR50D,253,320,embeddings_esm2_t6_8M_xcc_receptors.npz
+GCF_000007145.1_exbD1,inputs/xcc_receptors.faa,esm2_t6_8M_UR50D,140,320,embeddings_esm2_t6_8M_xcc_receptors.npz
+GCF_000007145.1_exbD2,inputs/xcc_receptors.faa,esm2_t6_8M_UR50D,136,320,embeddings_esm2_t6_8M_xcc_receptors.npz

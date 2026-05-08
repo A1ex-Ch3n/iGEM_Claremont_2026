@@ -1,0 +1,5 @@
+filename,sha256,bytes,n_records,created_utc,source_acc,source_module,notes
+embeddings_esm2_t6_8M_phiL7_rbps.npz,6041528ef0d606c72560b2dd562b2a7071abefcddfdfd295a9daf0397639f42a,8313,5,2026-05-08T05:26:03.511275+00:00,EU717894.1,04_protein_embedding,mock phiL7 RBP sequences (module 03 not yet complete)
+embeddings_esm2_t6_8M_xcc_receptors.npz,e9570b5f4df5bca75bb53df64e314354a74dcea15404bff6930d48338312edcc,7023,4,2026-05-08T05:26:03.511275+00:00,GCF_000007145.1,04_protein_embedding,Xcc TonB/ExbB/ExbD1/ExbD2 receptors
+mock_phiL7_rbp_sequences.faa,602aa33e43e5830e53d1a87c4ec83d1c5ed6e56aed0a7a0d7541ad4545fc1f35,1864,5,2026-05-08T05:26:03.511275+00:00,EU717894.1,04_protein_embedding,Mock RBP FASTA (fallback)
+xcc_receptors.faa,6033ccf00411c8886cd60c8d6113887046e2a4db5abb9fd1bb5236d1bee87603,1129,4,2026-05-08T05:26:03.511275+00:00,GCF_000007145.1,04_protein_embedding,Xcc receptor FASTA

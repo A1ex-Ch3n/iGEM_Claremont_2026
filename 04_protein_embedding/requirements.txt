@@ -1,0 +1,12 @@
+# Module 04 — protein_embedding dependencies
+# 模块 04 — 蛋白质嵌入依赖
+# Install via: pip install -r 04_protein_embedding/requirements.txt
+
+fair-esm==2.0.0
+biopython>=1.81
+numpy>=1.24
+pandas>=1.5
+torch>=2.0
+
+# For GPU builds on Laguna (CUDA 12.1) / Laguna GPU 构建：
+# pip install torch --index-url https://download.pytorch.org/whl/cu121
