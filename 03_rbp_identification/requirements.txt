@@ -1,0 +1,17 @@
+# Module 03 — RBP Identification
+# 模块 03 — RBP 鉴定
+# Install: pip install -r 03_rbp_identification/requirements.txt
+# HMMER must be installed separately: brew install hmmer  OR  conda install -c bioconda hmmer
+
+biopython>=1.83
+pandas>=1.5
+numpy>=1.23
+xgboost>=1.6          # bundled v2 XGBoost model (requires ProtTrans for embeddings)
+nbformat>=5.0         # for make_notebook.py
+pytest>=7.0           # for tests
+
+# NOT included (install blocked):
+# bio_embeddings — requires gensim which fails on Python 3.13+ (build error)
+# Workaround: ml_score = NaN throughout; combined_score relies on HMM track only
+# bio_embeddings — 需要 gensim，在 Python 3.13+ 上构建失败
+# 解决方案：整体 ml_score = NaN；combined_score 仅依赖 HMM 轨道

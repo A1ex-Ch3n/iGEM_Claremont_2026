@@ -1,0 +1,3 @@
+filename,sha256,bytes,n_records,created_utc,source_acc,source_module,notes
+EU717894.1_rbp_candidates.csv,44b33b3c2b0667af76df175c55ced03fe13ef8b7db65d5f5b89a211e8208ee0b,3083,58,2026-05-08T05:32:14Z,EU717894.1,03_rbp_identification,3 HMM-positive RBPs
+EU717894.1_rbp_sequences.faa,6e688b3f504e3c1b5e7652461b23cbfbbca4099c91c5d27216badd1498ff7e41,2207,3,2026-05-08T05:32:14Z,EU717894.1,03_rbp_identification,top-5 RBP sequences

@@ -1,0 +1,11 @@
+# Large HMM database files — regenerate with setup_inputs.sh
+# 大型 HMM 数据库文件 — 通过 setup_inputs.sh 重新生成
+phagerbpdetect_data/*.hmm
+phagerbpdetect_data/*.hmm.h3f
+phagerbpdetect_data/*.hmm.h3i
+phagerbpdetect_data/*.hmm.h3m
+phagerbpdetect_data/*.hmm.h3p
+
+# Large fallback FASTA — fetched from 00_raw_data or 02_annotation
+# 大型回退 FASTA — 从 00_raw_data 或 02_annotation 获取
+EU717894.1_fallback_proteins.faa
