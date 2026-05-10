@@ -18,8 +18,21 @@ class ESMEmbedder:
         self.model = EsmForMaskedLM.from_pretrained(model_name)  
         
 
+
     def _get_mean_embedding(self, sequence: str) -> np.ndarray:
-        pass
+
+        """
+        Generates the mean embeddings of a protein sequence
+        """
+
+
+        inputs = self.tokenizer(sequence, return_tensors="pt", padding=True, truncation=True)
+        with torch.no_grad():
+            outputs = self.model(**inputs, output_hidden_states=True)
+            last_hidden_state = outputs.hidden_states[-1]
+            attention_mask = inputs["attention_mask"]
+            embedding = (last_hidden_state * attention_mask.unsqueeze(-1)).sum(1) / attention_mask.sum(1).unsqueeze(-1)
+            return embedding.squeeze(0).numpy()
 
     def proccess_dataframe(self, df: pd.DataFrame) -> pd.DataFrame:
         pass
