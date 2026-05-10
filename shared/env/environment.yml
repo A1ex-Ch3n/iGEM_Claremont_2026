@@ -38,7 +38,9 @@ dependencies:
 
   - pip
   - pip:
-    - "setuptools<70"        # phanotate requires pkg_resources (removed in setuptools 70+)
+    # Note (macOS only): phanotate needs pkg_resources which was removed in setuptools 70+.
+    # After creating the env on macOS, run: pip install "setuptools<70"
+    # On Linux this is NOT needed — trifast (boltz dep) requires setuptools>=75.
     # ── Module 02: phage annotation ──────────────────────────────────
     - phanotate>=1.6.7       # phage ORF caller (not on conda)
 
