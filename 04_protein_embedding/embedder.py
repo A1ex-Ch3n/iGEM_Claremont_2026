@@ -20,13 +20,13 @@ class ESMEmbedder:
         
 
 
-    def _get_mean_embedding(self, sequences: list[str]) -> np.ndarray:
+    def _get_mean_embedding(self, sequences: list[str], max_amino_acids: int = 1024) -> np.ndarray:
 
         """
         Generates the mean embeddings of a protein sequence
         """
 
-        inputs = self.tokenizer(sequences, return_tensors="pt", padding=True, truncation=True)
+        inputs = self.tokenizer(sequences, return_tensors="pt", padding=True, truncation=True, max_length= max_amino_acids) #
         with torch.no_grad():
             outputs = self.model(**inputs, output_hidden_states=True)
             last_hidden_state = outputs.hidden_states[-1]
@@ -36,7 +36,7 @@ class ESMEmbedder:
             embedding = (last_hidden_state * attention_mask.unsqueeze(-1)).sum(1) / attention_mask.sum(1).unsqueeze(-1)
             return embedding.cpu().numpy()
 
-    def proccess_dataframe(self, df: pd.DataFrame, seq_col: str, batch_size: int = 32) -> pd.DataFrame:
+    def proccess_dataframe(self, df: pd.DataFrame, seq_col: str, batch_size: int = 4) -> pd.DataFrame:
 
 
         """
