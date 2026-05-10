@@ -1,23 +1,33 @@
 # LAGUNA.md — HPC Operation Cheat Sheet
 
-For running heavy GPU jobs (ESM-2 3B embedding, AlphaFold 3 batch, Boltz-2 large screens) on the Laguna HPC cluster at Claremont. CPU-only smoke tests stay local.
+For running heavy GPU jobs (ESM-2 3B embedding, AlphaFold 3 batch, Boltz-2 large screens) on **USC CARC** (Center for Advanced Research Computing). CPU-only smoke tests stay local.
 
-> ⚠️ This file contains generic SLURM templates. Institution-specific details (login node hostname, GPU partition names, project allocation code) must be filled in by Alex / Laguna-trained teammate based on actual cluster docs.
+**Cluster:** USC CARC Discovery  
+**Portal:** https://hpcaccount.usc.edu  
+**Account:** CChen29@students.claremontmckenna.edu  
+**SSH key:** deployed 2026-05-10 (deployment takes ~1 hour after submission)
 
 ---
 
 ## 1. Access
 
 ```bash
-# SSH (assumes Claremont SSO + key configured per institutional onboarding)
-ssh <username>@laguna.<institution>.edu
+# SSH into USC CARC Discovery
+ssh CChen29@discovery.usc.edu
 
 # First-time setup: confirm allocation
 sinfo                    # see partitions / GPU nodes
-sshare -A <project>      # see your group's SU allocation
+squeue -u CChen29        # see your running/pending jobs
+sacct -u CChen29         # see job history
 ```
 
-If access fails, contact Claremont HPC support ([email protected] presumably; verify with PI Cesar Ignacio-Espinoza).
+> **First login:** SSH key deploys ~1 hour after submission at hpcaccount.usc.edu.
+> If still failing after 1 hour, email [email protected] or check the CARC user portal.
+
+**Useful CARC links:**
+- User guide: https://www.carc.usc.edu/user-guides
+- GPU partitions: `gpu`, `gpu_requeue` (preemptable, cheaper SUs)
+- Storage: `$SCRATCH` = `/scratch/<username>` (large, not backed up)
 
 ---
 
