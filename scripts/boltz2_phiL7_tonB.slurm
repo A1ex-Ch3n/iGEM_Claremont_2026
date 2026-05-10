@@ -16,25 +16,25 @@ cd /project/jespinoza_1541/CChen29/iGEM_Claremont_2026
 mkdir -p logs
 
 echo "[$(date)] Job started on $(hostname)"
-echo "[$(date)] GPU info:"
-nvidia-smi | head -10
+nvidia-smi | head -12
 
-# Detect CUDA version and install matching PyTorch if needed
-CUDA_VER=$(nvidia-smi | grep "CUDA Version" | awk '{print $9}' | cut -d'.' -f1)
-echo "[$(date)] Detected CUDA major version: $CUDA_VER"
+# Load CUDA runtime so PyTorch can find libcuda.so
+echo "[$(date)] Loading CUDA module..."
+module load cuda 2>/dev/null || \
+module load cuda/12.4 2>/dev/null || \
+module load cuda/12.1 2>/dev/null || \
+echo "WARNING: no cuda module found — trying anyway"
 
-if ! python -c "import torch; assert torch.cuda.is_available()" 2>/dev/null; then
-    echo "[$(date)] PyTorch has no CUDA — reinstalling GPU build..."
-    if [ "$CUDA_VER" -ge 12 ]; then
-        pip install torch --index-url https://download.pytorch.org/whl/cu121 -q
-    else
-        pip install torch --index-url https://download.pytorch.org/whl/cu118 -q
-    fi
-    echo "[$(date)] PyTorch reinstalled. CUDA available: $(python -c 'import torch; print(torch.cuda.is_available())')"
-fi
+echo "[$(date)] CUDA_HOME=$CUDA_HOME  LD_LIBRARY_PATH (first 3): $(echo $LD_LIBRARY_PATH | tr ':' '\n' | head -3 | tr '\n' ':')"
+
+# Reinstall GPU PyTorch (CUDA 12.1 wheel works with CUDA 12.4 runtime)
+echo "[$(date)] Installing GPU PyTorch..."
+pip install torch --index-url https://download.pytorch.org/whl/cu121 -q --force-reinstall
+
+echo "[$(date)] CUDA available: $(python -c 'import torch; print(torch.cuda.is_available())')"
+echo "[$(date)] GPU count: $(python -c 'import torch; print(torch.cuda.device_count())')"
 
 echo "[$(date)] Running Boltz-2..."
-
 boltz predict \
   05_structure_prediction/inputs/boltz_input_EU717894.1_rbp_01__GCF_000007145.1_tonB.fasta \
   --out_dir 05_structure_prediction/outputs/boltz2/EU717894.1_rbp_01__GCF_000007145.1_tonB \
