@@ -45,6 +45,10 @@ logs/
 .ipynb_checkpoints/
 
 # Large bioinformatics artifacts (commit MANIFEST.csv instead)
+# Reproduce with: python 00_raw_data/processes/fetch_phages.py
+#                 python 00_raw_data/processes/fetch_bacteria.py
+00_raw_data/phage/*/
+00_raw_data/bacteria/*/
 01_data_ground_truth/outputs/phage_genomes/
 01_data_ground_truth/outputs/host_genomes/
 02_annotation/outputs/phage_proteins/
