@@ -1,7 +1,7 @@
 accession,gcf_accession,organism_name,source,matrix_interactions,notes
 NZ_CP014028,GCF_001559195.1,Achromobacter xylosoxidans,confirmed_matrix,3,
 NZ_CP140715,GCF_034555415.1,Acinetobacter johnsonii,confirmed_matrix,2,
-KY000037,,Agrobacterium sp.,accession_invalid,1,"DATA_ISSUE: accession KY000037 is a plasmid not genome, not a whole-genome assembly. Cannot download with datasets CLI. Matrix must be corrected to a proper genome accession."
+GCF_000092025.1,GCF_000092025.1,Agrobacterium fabrum str. C58,confirmed_matrix,1,replaced KY000037 (was plasmid); C58 is canonical Agrobacterium reference genome
 CP003873,GCF_000300175.1,Alteromonas macleodii str. Balearic Sea AD45,confirmed_matrix,,
 NZ_CP022009,GCF_002208175.1,Burkholderia gladioli,confirmed_matrix,1,
 NZ_CP172379,GCF_044336605.1,Campylobacter jejuni,confirmed_matrix,2,
@@ -11,7 +11,7 @@ NZ_CP077850,GCF_027557715.1,Erwinia amylovora,confirmed_matrix,2,
 NZ_CP017928,GCF_001870185.1,Klebsiella oxytoca,confirmed_matrix,1,
 NZ_CP016892,GCF_001709315.1,Pantoea agglomerans,confirmed_matrix,2,
 NC_004547,GCF_000011605.1,Pectobacterium atrosepticum SCRI1043,confirmed_matrix,2,
-PY746849,,Pseudomonas sp.,accession_invalid,1,"DATA_ISSUE: accession PY746849 is a patent sequence not genome, not a whole-genome assembly. Cannot download with datasets CLI. Matrix must be corrected to a proper genome accession."
+GCF_000006765.1,GCF_000006765.1,Pseudomonas aeruginosa PAO1,confirmed_matrix,0,replaced PY746849 (was patent sequence); PAO1 is canonical Pseudomonas reference genome
 NZ_CP012348,GCF_000330485.2,Salmonella enterica serovar Pullorum,confirmed_matrix,,
 NZ_CP074661,GCF_001713515.2,Salmonella enteritidis,confirmed_matrix,2,
 NZ_CP026795,GCF_002950275.1,Shigella boydii,confirmed_matrix,2,
