@@ -1,33 +1,41 @@
 # LAGUNA.md — HPC Operation Cheat Sheet
 
-For running heavy GPU jobs (ESM-2 3B embedding, AlphaFold 3 batch, Boltz-2 large screens) on **USC CARC** (Center for Advanced Research Computing). CPU-only smoke tests stay local.
+For running heavy GPU jobs (ESM-2 3B embedding, AlphaFold 3 batch, Boltz-2 large screens) on **CARC Laguna** (USC Center for Advanced Research Computing regional cluster). CPU-only smoke tests stay local.
 
-**Cluster:** USC CARC Discovery  
-**Portal:** https://hpcaccount.usc.edu  
-**Account:** CChen29@students.claremontmckenna.edu  
-**SSH key:** deployed 2026-05-10 (deployment takes ~1 hour after submission)
+**Cluster:** CARC Laguna  
+**OnDemand portal:** https://laguna-ood.carc.usc.edu (browser-based, no VPN needed)  
+**Account registration:** https://hpcaccount.usc.edu  
+**User:** CChen29@cmc.edu  
+**Project account (SLURM --account):** `jespinoza@kgi.edu_1541`  
+**SSH key:** deployed 2026-05-10
 
 ---
 
 ## 1. Access
 
-```bash
-# SSH into USC CARC Discovery
-ssh CChen29@discovery.usc.edu
+**Recommended (no VPN needed):** Use the OnDemand web portal
 
-# First-time setup: confirm allocation
-sinfo                    # see partitions / GPU nodes
-squeue -u CChen29        # see your running/pending jobs
-sacct -u CChen29         # see job history
+1. Go to https://laguna-ood.carc.usc.edu
+2. Log in with CMC credentials
+3. Click **Clusters → Laguna Shell Access** for a browser terminal
+4. Or click **JupyterLab** in the left sidebar for a notebook interface
+
+**SSH (requires being on campus or USC VPN):**
+```bash
+# Exact hostname TBD — check laguna-ood.carc.usc.edu → Help for SSH details
+ssh CChen29@<laguna-login-node>
 ```
 
-> **First login:** SSH key deploys ~1 hour after submission at hpcaccount.usc.edu.
-> If still failing after 1 hour, email [email protected] or check the CARC user portal.
+**First-time checks in terminal:**
+```bash
+sinfo -p gpu                          # see GPU partition availability
+sshare -A jespinoza@kgi.edu_1541      # see PI's allocation balance
+squeue -u CChen29                     # see your jobs
+```
 
-**Useful CARC links:**
+**Useful links:**
 - User guide: https://www.carc.usc.edu/user-guides
-- GPU partitions: `gpu`, `gpu_requeue` (preemptable, cheaper SUs)
-- Storage: `$SCRATCH` = `/scratch/<username>` (large, not backed up)
+- Storage: `$SCRATCH` = `/scratch/CChen29` (large, not backed up)
 
 ---
 
@@ -71,8 +79,8 @@ python -c "import torch; print(torch.cuda.is_available(), torch.cuda.device_coun
 ```bash
 #!/bin/bash
 #SBATCH --job-name=esm2_3b
-#SBATCH --account=<your_project>
-#SBATCH --partition=<gpu_partition>           # e.g., gpu, gpu-a100
+#SBATCH --account=jespinoza@kgi.edu_1541
+#SBATCH --partition=gpu           # verify with: sinfo -p gpu           # e.g., gpu, gpu-a100
 #SBATCH --gres=gpu:a100:1                     # adjust to available GPU
 #SBATCH --cpus-per-task=4
 #SBATCH --mem=48G
@@ -107,8 +115,8 @@ Monitor: `squeue -u $USER` · `tail -f logs/esm2_3b_<jobid>.out`
 ```bash
 #!/bin/bash
 #SBATCH --job-name=af3_batch
-#SBATCH --account=<your_project>
-#SBATCH --partition=<gpu_partition>
+#SBATCH --account=jespinoza@kgi.edu_1541
+#SBATCH --partition=gpu           # verify with: sinfo -p gpu
 #SBATCH --gres=gpu:a100:2
 #SBATCH --cpus-per-task=8
 #SBATCH --mem=96G
@@ -139,8 +147,8 @@ python 05_structure_prediction/processes/run_af3.py \
 ```bash
 #!/bin/bash
 #SBATCH --job-name=boltz2_screen
-#SBATCH --account=<your_project>
-#SBATCH --partition=<gpu_partition>
+#SBATCH --account=jespinoza@kgi.edu_1541
+#SBATCH --partition=gpu           # verify with: sinfo -p gpu
 #SBATCH --gres=gpu:a100:1
 #SBATCH --cpus-per-task=4
 #SBATCH --mem=32G
@@ -169,10 +177,10 @@ python 05_structure_prediction/processes/run_boltz2.py \
 ```bash
 # Local → Laguna: push the latest code
 rsync -avz --exclude='00_raw_data/phage' --exclude='00_raw_data/bacteria' \
-    "$(pwd)/" "<username>@laguna.<institution>.edu:$SCRATCH/igem_2026/"
+    "$(pwd)/" "CChen29@<laguna-login-node>:$SCRATCH/igem_2026/"
 
 # Laguna → local: pull computed outputs
-rsync -avz "<username>@laguna.<institution>.edu:$SCRATCH/igem_2026/04_protein_embedding/outputs/" \
+rsync -avz "CChen29@<laguna-login-node>:$SCRATCH/igem_2026/04_protein_embedding/outputs/" \
     04_protein_embedding/outputs/
 ```
 
