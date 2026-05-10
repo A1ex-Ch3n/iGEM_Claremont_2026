@@ -2,21 +2,68 @@ name: igem2026
 channels:
   - conda-forge
   - bioconda
+  - defaults
 dependencies:
-  - python=3.11
+  - python=3.11          # pinned: 3.13+ breaks bio_embeddings (Module 03 ML track)
+
+  # ── Data science core ──────────────────────────────────────────────
+  - numpy>=1.24
+  - pandas>=1.5
+  - scipy>=1.10
+  - scikit-learn>=1.0
+  - matplotlib>=3.6
+  - seaborn>=0.12
+
+  # ── Bioinformatics ─────────────────────────────────────────────────
   - biopython>=1.83
-  - pandas
-  - numpy
-  - scipy
-  - scikit-learn
-  - matplotlib
-  - seaborn
+  - pyrodigal>=3.0       # Module 02: bacterial ORF calling (Prodigal binding)
+  - hmmer>=3.4           # Module 03: hmmscan for PhageRBPdetect HMM track
+  - xgboost>=1.6         # Module 03: XGBoost classifier (ML track)
+
+  # ── Deep learning ──────────────────────────────────────────────────
+  - pytorch>=2.0         # Modules 04, 06: ESM-2 + deep ensemble (CPU/MPS on Mac; GPU on Laguna)
+
+  # ── Dev / notebook tools ───────────────────────────────────────────
   - jupyterlab
   - ipykernel
-  - ncbi-datasets-cli
-  - pyrodigal
-  - openpyxl
-  - requests
+  - nbstripout           # strips notebook outputs from git diffs
+  - nbformat>=5.0
+  - pytest>=7.0
   - tqdm
-  - nbstripout
+  - requests
+  - openpyxl
+
+  # ── NCBI data fetching ─────────────────────────────────────────────
+  - ncbi-datasets-cli    # Module 01: genome download (Bio.Entrez SSL workaround)
+
   - pip
+  - pip:
+    - "setuptools<70"        # phanotate requires pkg_resources (removed in setuptools 70+)
+    # ── Module 02: phage annotation ──────────────────────────────────
+    - phanotate>=1.6.7       # phage ORF caller (not on conda)
+
+    # ── Module 04: protein language model ────────────────────────────
+    - fair-esm==2.0.0        # Meta ESM-2 (not on conda)
+
+    # ── Module 05: structure prediction ──────────────────────────────
+    # Install boltz without deps first, then its pinned deps below
+    - boltz==2.0.3
+    - pytorch-lightning==2.5.0
+    - hydra-core==1.3.2
+    - einops==0.8.0
+    - einx==0.3.0
+    - fairscale==0.4.13
+    - dm-tree
+    - gemmi==0.6.5
+    - mashumaro==3.14
+    - modelcif==1.2
+    - ihm
+    - chembl-structure-pipeline>=1.2.2
+    - wandb==0.18.7
+    - click==8.1.7
+    - rdkit
+
+    # ── Module 06: uncertainty model extras ──────────────────────────
+    # (torch, numpy, pandas, scikit-learn, scipy, matplotlib already above)
+    # Optional GP baseline:
+    # - gpytorch>=1.9.0
