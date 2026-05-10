@@ -4,6 +4,7 @@ import torch
 import csv
 import pandas as pd
 import numpy as np
+import tqdm
 
 
 class ESMEmbedder:
@@ -34,8 +35,11 @@ class ESMEmbedder:
             embedding = (last_hidden_state * attention_mask.unsqueeze(-1)).sum(1) / attention_mask.sum(1).unsqueeze(-1)
             return embedding.squeeze(0).numpy()
 
-    def proccess_dataframe(self, df: pd.DataFrame) -> pd.DataFrame:
-        pass
+    def proccess_dataframe(self, df: pd.DataFrame, seq_col: str) -> pd.DataFrame:
+        
+        df["embedding"] = df[seq_col].apply(self._get_mean_embedding)
+
+        return df
 
 
 if __name__ == "__main__":
