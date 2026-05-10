@@ -2,8 +2,38 @@
 # 流水線建設報告（2026-05-08 隔夜平行構建）
 
 **Generated:** 2026-05-09  
+**Last updated:** 2026-05-10 (post-build fixes applied)  
 **Branch:** `active-learning-pipeline`  
 **Author:** Alex Chen + 7 Claude agents (parallel overnight build)
+
+---
+
+## Post-Build Status (2026-05-10) / 建構後修復狀態
+
+Issues from the overnight build that have since been resolved or are still pending:
+
+| Issue | Status | Fix Applied |
+|-------|--------|-------------|
+| `phiL7/proteins.faa` contaminated headers | ✅ RESOLVED | Re-downloaded from NCBI; now shows `[organism=Xanthomonas phage phiL7]` |
+| KY000037 (plasmid, not genome) | ✅ RESOLVED | Replaced with `GCF_000092025.1` (*A. fabrum* C58) in bacteria_list.csv |
+| PY746849 (patent sequence) | ✅ RESOLVED | Replaced with `GCF_000006765.1` (*P. aeruginosa* PAO1) in bacteria_list.csv |
+| 630 MB genome data tracked in git | ✅ RESOLVED | Gitignored; re-downloadable via `fetch_phages.py` / `fetch_bacteria.py` |
+| Module 04 used mock RBP sequences | ⏳ PENDING | Re-run `01_embed_esm2.ipynb` with real Module 03 output (~5 min) |
+| Boltz-2 CPU timeout (no 3D structure) | ⏳ PENDING | Submit `sbatch` to Laguna GPU — command ready in Module 05 AGENT_REPORT |
+| AF3 model weights not approved | ⏳ PENDING | Alex/PI to apply via Google form |
+| Module 06 uses synthetic data | ⏳ PENDING | By design; swaps to ELISA ~June 1 (only 2 lines to change) |
+
+**Current test summary (2026-05-10):**
+
+| Module | Tests | Status | Notes |
+|--------|-------|--------|-------|
+| 00 raw_data | 9/18 pass | ⚠️ 3 fail (expected) | Tests assume all 777 genomes on disk — no longer valid after gitignore. 6 skip (missing genome dirs). Audit logic itself works correctly. |
+| 01 data_ground_truth | 22/22 | ✅ | |
+| 02 annotation | 26/26 | ✅ | |
+| 03 rbp_identification | 25/27 | ⚠️ 2 fail | HMM binary needs `hmmpress` — run once locally |
+| 04 protein_embedding | 17/17 | ✅ | (mock sequences still in place — re-run needed) |
+| 05 structure_prediction | 28/28 (1 skip) | ✅ | |
+| 06 uncertainty_model | 9/9 | ✅ | |
 
 ---
 
@@ -67,8 +97,8 @@ The pipeline runs in cycles. Each cycle: model recommends experiments → wet la
 NC_013971.1, NZ_CP007800.1, NZ_CP008698.1. These can be re-downloaded; they don't block any current work.
 
 **Other issues found / 其他發現的問題:**
-- Two bacteria list entries (KY000037, PY746849) are not valid genome assemblies — Sarah/Weitao need to resolve
-- `00_raw_data/phage/EU717894.1/proteins.faa` has wrong organism labels in headers (says "Salmonella phage PVPSE1" but accession numbers belong to phiL7 — likely a metadata bug in the original NCBI download)
+- ~~Two bacteria list entries (KY000037, PY746849) are not valid genome assemblies~~ → **✅ RESOLVED 2026-05-10**: Replaced with GCF_000092025.1 (*A. fabrum* C58) and GCF_000006765.1 (*P. aeruginosa* PAO1)
+- ~~`00_raw_data/phage/EU717894.1/proteins.faa` has wrong organism labels~~ → **✅ RESOLVED 2026-05-10**: Re-downloaded from NCBI; headers now correct
 
 ---
 
@@ -256,17 +286,17 @@ Everything else — the architecture, training loop, calibration code, tests —
 
 These are issues that span multiple modules and need attention before Cycle 0 data arrives.
 
-**1. Module 04 embeddings need to be regenerated**
-Module 04 ran before Module 03 finished, so it used 5 random mock protein sequences instead of the 3 real phiL7 RBP candidates. Now that Module 03 is merged, the embeddings should be regenerated from the real sequences. This takes ~30 seconds on CPU.
+**1. Module 04 embeddings need to be regenerated** ⏳ PENDING
+Module 04 ran before Module 03 finished, so it used 5 random mock protein sequences instead of the 3 real phiL7 RBP candidates. Re-run `01_embed_esm2.ipynb` Cell 8 with path pointing to `03_rbp_identification/outputs/EU717894.1_rbp_sequences.faa`. Takes ~30 seconds.
 
-**2. Boltz-2 needs GPU time on Laguna**
-The CPU run timed out. The MSA files are already computed and saved. On Laguna with a GPU, the actual structure prediction should take ~15 minutes. The exact `sbatch` command is in `05_structure_prediction/AGENT_REPORT.md`.
+**2. Boltz-2 needs GPU time on Laguna** ⏳ PENDING
+The CPU run timed out. The MSA files are already computed and saved. On Laguna with a GPU, the actual structure prediction should take ~15 minutes. The exact `sbatch` command is in `05_structure_prediction/AGENT_REPORT.md`. Submitting this will produce the first 3D structure image — compelling for PI.
 
-**3. AF3 model weight access**
-AlphaFold 3 requires manual approval from Google DeepMind (apply at the link in the AGENT_REPORT). Once approved, AF3 structures are higher quality than Boltz-2 for static complex structures (though Boltz-2's affinity proxy is still useful). Alex or PI should apply.
+**3. AF3 model weight access** ⏳ PENDING
+AlphaFold 3 requires manual approval from Google DeepMind. Alex or PI should apply.
 
-**4. phiL7 proteins.faa metadata bug**
-The file `00_raw_data/phage/EU717894.1/proteins.faa` has headers saying "Salmonella phage PVPSE1" but the protein accession numbers (ADP02444.1 etc.) are phiL7 sequences. The protein sequences themselves appear correct — this looks like a metadata error in the original NCBI download. Module 03 used this file as fallback input; its results (the 3 RBP candidates) are likely correct since the domain hits are based on the sequence content, not the organism label.
+**4. phiL7 proteins.faa metadata bug** ✅ RESOLVED 2026-05-10
+Re-downloaded from NCBI using `fetch_phages.py --accession EU717894.1`. Headers now correctly show `[organism=Xanthomonas phage phiL7]`.
 
 ---
 
