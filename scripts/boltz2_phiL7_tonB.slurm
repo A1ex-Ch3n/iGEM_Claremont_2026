@@ -1,0 +1,49 @@
+#!/bin/bash
+#SBATCH --job-name=boltz2_phiL7_tonB
+#SBATCH --account=jespinoza@kgi.edu_1541
+#SBATCH --partition=gpu
+#SBATCH --gres=gpu:1
+#SBATCH --cpus-per-task=4
+#SBATCH --mem=32G
+#SBATCH --time=01:00:00
+#SBATCH --output=/project/jespinoza_1541/CChen29/iGEM_Claremont_2026/logs/boltz2_%j.out
+#SBATCH --mail-user=CChen29@cmc.edu
+#SBATCH --mail-type=END,FAIL
+
+source ~/.bashrc
+conda activate igem2026
+cd /project/jespinoza_1541/CChen29/iGEM_Claremont_2026
+mkdir -p logs
+
+echo "[$(date)] Job started on $(hostname)"
+echo "[$(date)] GPU info:"
+nvidia-smi | head -10
+
+# Detect CUDA version and install matching PyTorch if needed
+CUDA_VER=$(nvidia-smi | grep "CUDA Version" | awk '{print $9}' | cut -d'.' -f1)
+echo "[$(date)] Detected CUDA major version: $CUDA_VER"
+
+if ! python -c "import torch; assert torch.cuda.is_available()" 2>/dev/null; then
+    echo "[$(date)] PyTorch has no CUDA — reinstalling GPU build..."
+    if [ "$CUDA_VER" -ge 12 ]; then
+        pip install torch --index-url https://download.pytorch.org/whl/cu121 -q
+    else
+        pip install torch --index-url https://download.pytorch.org/whl/cu118 -q
+    fi
+    echo "[$(date)] PyTorch reinstalled. CUDA available: $(python -c 'import torch; print(torch.cuda.is_available())')"
+fi
+
+echo "[$(date)] Running Boltz-2..."
+
+boltz predict \
+  05_structure_prediction/inputs/boltz_input_EU717894.1_rbp_01__GCF_000007145.1_tonB.fasta \
+  --out_dir 05_structure_prediction/outputs/boltz2/EU717894.1_rbp_01__GCF_000007145.1_tonB \
+  --accelerator gpu \
+  --recycling_steps 3 \
+  --sampling_steps 200 \
+  --model boltz2 \
+  --use_msa_server \
+  --seed 42 \
+  --output_format pdb
+
+echo "[$(date)] Done. Exit code: $?"
