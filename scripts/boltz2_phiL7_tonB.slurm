@@ -16,23 +16,27 @@ cd /project/jespinoza_1541/CChen29/iGEM_Claremont_2026
 mkdir -p logs
 
 echo "[$(date)] Job started on $(hostname)"
-nvidia-smi | head -12
+nvidia-smi | grep -E "NVIDIA-SMI|GPU Name|CUDA Version" | head -5
 
-# Load CUDA runtime so PyTorch can find libcuda.so
-echo "[$(date)] Loading CUDA module..."
-module load cuda 2>/dev/null || \
-module load cuda/12.4 2>/dev/null || \
-module load cuda/12.1 2>/dev/null || \
-echo "WARNING: no cuda module found — trying anyway"
+# Load CUDA runtime (CARC Laguna: cuda-12.6.3 module)
+module load cuda 2>/dev/null
+echo "[$(date)] CUDA_HOME=${CUDA_HOME:-NOT SET}"
 
-echo "[$(date)] CUDA_HOME=$CUDA_HOME  LD_LIBRARY_PATH (first 3): $(echo $LD_LIBRARY_PATH | tr ':' '\n' | head -3 | tr '\n' ':')"
+# Root cause: wrap_triton requires torch>=2.7.0 (not 2.6.x).
+# CARC has CUDA 12.6 so we use the cu126 PyTorch wheel index.
+echo "[$(date)] Installing torch>=2.7.0 (cu126 wheels, compatible with CUDA 12.6)..."
+pip install "torch>=2.7.0" \
+    --index-url https://download.pytorch.org/whl/cu126 \
+    --force-reinstall -q
 
-# trifast 0.1.13 requires torch>=2.6.0 (wrap_triton added in 2.6)
-echo "[$(date)] Installing GPU PyTorch >=2.6.0..."
-pip install "torch>=2.6.0" --index-url https://download.pytorch.org/whl/cu121 -q --force-reinstall
+TORCH_VER=$(python -c "import torch; print(torch.__version__)")
+CUDA_OK=$(python -c "import torch; print(torch.cuda.is_available())")
+echo "[$(date)] torch=$TORCH_VER  CUDA=$CUDA_OK"
 
-echo "[$(date)] CUDA available: $(python -c 'import torch; print(torch.cuda.is_available())')"
-echo "[$(date)] GPU count: $(python -c 'import torch; print(torch.cuda.device_count())')"
+# Verify wrap_triton exists (the actual root cause of previous failures)
+python -c "from torch.library import wrap_triton; print('[$(date)] wrap_triton: OK')" || \
+    echo "[$(date)] wrap_triton MISSING — trying Fix B: downgrade trifast to 0.1.10"
+    pip install "trifast==0.1.10" --force-reinstall -q
 
 echo "[$(date)] Running Boltz-2..."
 boltz predict \
