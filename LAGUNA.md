@@ -24,12 +24,15 @@ For running heavy GPU jobs (ESM-2 3B embedding, AlphaFold 3 batch, Boltz-2 struc
 ssh CChen29@laguna1.carc.usc.edu
 ```
 
-> SSH key fix: if portal didn't deploy key automatically, run in OnDemand terminal:
-> ```bash
-> mkdir -p ~/.ssh && chmod 700 ~/.ssh
-> echo "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIMEL3Fen+nBOJ8RHWK4ybEbAbGzXR2pSBEphodDU8CtU alex0071228@gmail.com" >> ~/.ssh/authorized_keys
-> chmod 600 ~/.ssh/authorized_keys
-> ```
+> SSH key fix: if portal didn't deploy key automatically, run in OnDemand terminal.
+> Use `printf` (not echo) to avoid line-break issues when pasting:
+
+```bash
+mkdir -p ~/.ssh && chmod 700 ~/.ssh
+printf 'ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIMEL3Fen+nBOJ8RHWK4ybEbAbGzXR2pSBEphodDU8CtU alex0071228@gmail.com\n' > ~/.ssh/authorized_keys
+chmod 600 ~/.ssh/authorized_keys
+cat ~/.ssh/authorized_keys
+```
 
 **After opening terminal:**
 ```bash
@@ -189,12 +192,12 @@ Use the OnDemand Files browser, OR set up SSH key and rsync:
 ```bash
 # Laguna → local: pull Boltz-2 structure results
 rsync -avz \
-  "CChen29@<laguna-login-node>:/project/jespinoza_1541/CChen29/iGEM_Claremont_2026/05_structure_prediction/outputs/" \
+  "CChen29@laguna1.carc.usc.edu:/project/jespinoza_1541/CChen29/iGEM_Claremont_2026/05_structure_prediction/outputs/" \
   05_structure_prediction/outputs/
 
 # Laguna → local: pull embedding results
 rsync -avz \
-  "CChen29@<laguna-login-node>:/project/jespinoza_1541/CChen29/iGEM_Claremont_2026/04_protein_embedding/outputs/" \
+  "CChen29@laguna1.carc.usc.edu:/project/jespinoza_1541/CChen29/iGEM_Claremont_2026/04_protein_embedding/outputs/" \
   04_protein_embedding/outputs/
 ```
 
