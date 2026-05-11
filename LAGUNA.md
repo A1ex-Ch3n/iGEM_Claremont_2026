@@ -26,10 +26,17 @@ For running heavy GPU jobs (ESM-2 3B embedding, AlphaFold 3 batch, Boltz-2 struc
 
 **Every session: activate env and go to project directory**
 ```bash
-source ~/.bashrc
-conda activate igem2026
-cd /project/jespinoza_1541/CChen29/iGEM_Claremont_2026
-git pull
+source ~/.bashrc && conda activate boltz2 && cd /project/jespinoza_1541/CChen29/iGEM_Claremont_2026 && git pull
+```
+
+**Fix numpy/einops if needed (run once after setup_boltz2_env.sh):**
+```bash
+/home1/CChen29@cmc.edu/.conda/envs/boltz2/bin/pip install "numpy>=1.26,<2.0" "einops==0.8.0" "pyyaml==6.0.2" --force-reinstall -q
+```
+
+**Verify boltz2 env (skip trifast — it needs GPU to import):**
+```bash
+/home1/CChen29@cmc.edu/.conda/envs/boltz2/bin/python -c "import torch; print('torch:', torch.__version__); import optree; print('optree:', optree.__version__); import numpy; print('numpy:', numpy.__version__); import boltz; print('boltz: OK')"
 ```
 
 **Useful status checks:**
