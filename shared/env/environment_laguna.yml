@@ -1,39 +1,116 @@
-# Laguna HPC — boltz2 conda env
-# ─────────────────────────────
-# Target: CARC Laguna (NVIDIA L40S, CUDA driver 550.90.07 = CUDA 12.4)
-# Env name: boltz2
-# Python: 3.11 (pip-only after conda create — DO NOT mix conda+pip for deps)
+# Laguna HPC — boltz2 Conda Environment
+# CARC Laguna HPC — boltz2 Conda 環境
+# ════════════════════════════════════════════════════════════════════════
 #
-# CARC Laguna 專用 env，對應 GPU 節點 CUDA driver 12.4。
-# 注意：此 env 完全用 pip 管理（不用 conda install 裝套件）。
-# conda+pip 混裝在 Laguna 會造成 .so ABI 衝突（scipy 案例為例）。
+# Target platform: CARC Laguna cluster, NVIDIA L40S, CUDA driver 550.90.07 (= CUDA 12.4)
+# 目標平台：USC CARC Laguna 叢集，NVIDIA L40S，CUDA driver 550.90.07（= CUDA 12.4）
 #
-# ── 重建步驟（在 Code Server terminal 執行，一次即可）──────────────────
+# Environment name: boltz2
+# 環境名稱：boltz2
 #
-# Step 1: 建立空 env
+# IMPORTANT — pip-only after conda create. Do NOT use "conda install" for any package
+# after the env is created. Mixing conda and pip on Laguna causes .so ABI conflicts
+# (verified: scipy broke when installed via conda into a pip-heavy env).
+# 重要提醒：建立 env 後所有套件一律用 pip 安裝，不要再用 conda install。
+# 在 Laguna 上 conda+pip 混裝會導致 .so ABI 衝突（已驗證：scipy 透過 conda 裝進
+# 以 pip 為主的 env 後會壞掉）。
+#
+# Verified: 2026-05-10, job 59949, NVIDIA L40S, 47 seconds end-to-end.
+# 驗證記錄：2026-05-10，job 59949，NVIDIA L40S，全程 47 秒跑完。
+# ════════════════════════════════════════════════════════════════════════
+
+
+# ── Section 1: One-time Setup (run in Code Server terminal) ──────────────
+# ── 第一節：一次性設置（在 Code Server terminal 中執行）─────────────────
+#
+# Run these steps once per Laguna account. The env persists across sessions in
+# /home1/CChen29@cmc.edu/.conda/envs/boltz2/
+# 每個 Laguna 帳號只需執行一次。env 會永久保存在
+# /home1/CChen29@cmc.edu/.conda/envs/boltz2/
+
+# Step 1 — Create empty env with Python 3.11
+# 步驟一：建立 Python 3.11 的空 env
+#
 #   conda create -n boltz2 python=3.11 -y
 #   conda activate boltz2
+
+# Step 2 — Install optree BEFORE torch (critical ordering)
+# 步驟二：在 torch 之前先裝 optree（順序非常重要）
 #
-# Step 2: 安裝 optree 先（必須在 torch 之前，否則 boltz 會拉新版）
+# optree must be pinned to 0.14.1 (manylinux_2_17, GCC-7 ABI). Newer versions
+# (e.g. 0.19.1) are built with GCC-14 and require CXXABI_1.3.15, which is not
+# available on Laguna's GCC-13 runtime. If boltz installs optree first, it pulls
+# the wrong version — install early so pip's dependency resolver locks it.
+# optree 必須鎖定 0.14.1（manylinux_2_17，GCC-7 ABI）。更新版（如 0.19.1）以
+# GCC-14 編譯，需要 CXXABI_1.3.15，但 Laguna 的 GCC-13 執行環境沒有這個符號。
+# 若讓 boltz 自動安裝 optree 會拉到錯誤版本，所以要搶先裝好讓 pip resolver 鎖住。
+#
 #   pip install "optree==0.14.1"
+
+# Step 3 — Install torch cu121 (CUDA 12.1 wheel, backward-compatible with driver 12.4)
+# 步驟三：安裝 torch cu121（CUDA 12.1 wheel，向下相容 driver 12.4）
 #
-# Step 3: 安裝 torch cu121（CUDA 12.1 wheel，向下相容 driver 12.4）
+# cu126 and cu130 wheels require driver 560+ and 570+ respectively — NOT available
+# on Laguna (driver 550.90.07). Always use cu121 wheels here.
+# cu126 和 cu130 wheel 分別需要 driver 560+ 和 570+，Laguna 的 driver 550.90.07
+# 不支援。請固定使用 cu121 wheel。
+#
 #   pip install "torch==2.5.1" --index-url https://download.pytorch.org/whl/cu121
+
+# Step 4 — Install boltz (will silently upgrade torch to cu130 — fix in Step 5)
+# 步驟四：安裝 boltz（它會偷偷把 torch 升級到 cu130 — 下一步修回來）
 #
-# Step 4: 安裝 boltz（會把 torch 升到 cu130 — 下一步修回來）
+# "pip install boltz" always upgrades torch to the latest cu130. This is expected
+# behavior; we deliberately fix it in the next step.
+# pip install boltz 必定會把 torch 升到最新 cu130，這是預期行為，下一步會修正。
+#
 #   pip install "boltz==2.0.3"
+
+# Step 5 — Force-reinstall torch cu121 (undoes Step 4's upgrade)
+# 步驟五：強制重裝 torch cu121（撤銷步驟四的升級）
 #
-# Step 5: 強制修回 torch cu121（boltz 安裝後 torch 被升到 cu130，driver 12.4 不相容）
-#   pip install "torch==2.5.1" --index-url https://download.pytorch.org/whl/cu121 \
+# --no-deps ensures only torch is reinstalled, not its entire dependency tree.
+# --no-deps 確保只重裝 torch 本身，不影響其依賴樹。
+#
+#   pip install "torch==2.5.1" \
+#       --index-url https://download.pytorch.org/whl/cu121 \
 #       --force-reinstall -q --no-deps
+
+# Step 6 — Fix numpy / einops / pyyaml (boltz may have shifted these)
+# 步驟六：修正 numpy / einops / pyyaml（boltz 安裝後版本可能跑掉）
 #
-# Step 6: 修 numpy / einops / pyyaml（boltz 安裝後版本可能跑掉）
+# boltz's dependency resolver sometimes downgrades or upgrades these to incompatible
+# versions. Pin them explicitly after boltz is installed.
+# boltz 的 dependency resolver 有時會把這些套件降版或升版到不相容的版本。
+# 在 boltz 安裝完成後明確鎖定。
+#
 #   pip install "numpy>=1.26,<2.0" "einops==0.8.0" "pyyaml==6.0.2" --force-reinstall -q
+
+# Step 7 — Install trifast 0.1.10 (pure-Python, no wrap_triton dependency)
+# 步驟七：安裝 trifast 0.1.10（純 Python，無 wrap_triton 依賴）
 #
-# Step 7: 安裝 trifast（使用 0.1.10 純 Python 版 — 0.1.13 需要 wrap_triton / torch>=2.7）
+# trifast 0.1.13+ uses torch.library.wrap_triton, which requires torch>=2.7.0.
+# trifast 0.1.10 is a py3-none-any wheel (pure Python) with no such dependency.
+# NOTE: trifast calls torch.cuda.get_device_capability() at import time, which
+# fails on non-GPU nodes (compute partition). This is benign — it works correctly
+# when boltz calls it inside an sbatch job on the gpu partition.
+# trifast 0.1.13+ 使用 torch.library.wrap_triton，需要 torch>=2.7.0。
+# trifast 0.1.10 是 py3-none-any wheel（純 Python），沒有這個依賴。
+# 注意：trifast 在 import 時會呼叫 torch.cuda.get_device_capability()，在
+# 非 GPU 節點（compute partition）執行時會失敗。這是正常現象，在 sbatch job
+# 的 gpu partition 節點上 boltz 呼叫它時會正常運作。
+#
 #   pip install "trifast==0.1.10" --force-reinstall
+
+
+# ── Section 2: Verification (run on compute node — GPU shows False, that's OK) ──
+# ── 第二節：驗證（在 compute 節點執行 — CUDA 顯示 False 是正常的）──────────────
 #
-# ── 驗證（非 GPU 節點執行，trifast 跳過）──────────────────────────────
+# Run this after setup to confirm the env is correct. CUDA will show False on the
+# compute (login) node — it becomes True only inside an sbatch job on gpu partition.
+# 設置完成後執行以確認 env 正確。在 compute（登入）節點 CUDA 會顯示 False，
+# 只有在 gpu partition 的 sbatch job 內才會是 True。
+#
 #   python -c "
 #   import torch, optree
 #   print(f'torch={torch.__version__}  CUDA={torch.cuda.is_available()}')
@@ -41,22 +118,36 @@
 #   import numpy; print(f'numpy={numpy.__version__}')
 #   import boltz; print('boltz: OK')
 #   "
-#   # Expected: torch=2.5.1+cu121  CUDA=False (False on compute node, True on GPU node)
+#   # Expected output / 預期輸出:
+#   # torch=2.5.1+cu121  CUDA=False
+#   # optree=0.14.1
+#   # numpy=1.2x.x
+#   # boltz: OK
+
+
+# ── Section 3: Job Submission ────────────────────────────────────────────────
+# ── 第三節：Job 提交 ────────────────────────────────────────────────────────
 #
-# ── 為什麼這些版本 ────────────────────────────────────────────────────
-#   - torch cu121:   CUDA 12.1 wheels，向下相容 driver 12.4；cu126/cu130 需要 driver 560+
-#   - optree 0.14.1: manylinux_2_17（GCC-7）ABI，避免 CXXABI_1.3.15 缺失錯誤
-#   - trifast 0.1.10: py3-none-any（純 Python），無 wrap_triton 依賴；
-#                     0.1.13 需要 torch.library.wrap_triton（torch>=2.7.0 才有）
-#   - numpy <2.0:    boltz 內部依賴 numpy 1.x API
+# Do NOT run pip installs inside the SLURM job script. The env is pre-configured;
+# installing inside the job wastes GPU node time and risks breaking the env mid-run.
+# 不要在 SLURM job script 裡面跑 pip install。env 已預先配置完成，
+# 在 job 裡安裝既浪費 GPU 節點時間，也可能在執行到一半時破壞環境。
 #
-# ── 已鎖定版本（2026-05-10 驗證，job 59949，NVIDIA L40S，47s）────────
+#   sbatch scripts/boltz2_phiL7_tonB.slurm
+#
+# Monitor / 監控:
+#   bash scripts/watch_job.sh <jobid>
+#   tail -f logs/boltz2_<jobid>.out
+
+
+# ── Section 4: Pinned Versions (verified 2026-05-10, job 59949) ─────────────
+# ── 第四節：鎖定版本（已驗證：2026-05-10，job 59949）────────────────────────
 pinned:
   python: "3.11"
-  torch: "2.5.1+cu121"
-  optree: "0.14.1"
+  torch: "2.5.1+cu121"      # CUDA 12.1 wheel — compatible with Laguna driver 12.4
+  optree: "0.14.1"           # GCC-7 ABI (manylinux_2_17) — avoids CXXABI_1.3.15 error
   boltz: "2.0.3"
-  trifast: "0.1.10"
+  trifast: "0.1.10"          # pure Python — no wrap_triton dependency
   einops: "0.8.0"
   pyyaml: "6.0.2"
-  numpy: ">=1.26,<2.0"
+  numpy: ">=1.26,<2.0"       # boltz requires numpy 1.x API
