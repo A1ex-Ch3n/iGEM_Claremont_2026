@@ -247,7 +247,7 @@ iGEM 评审第一个会问：「你怎么知道你的 acquisition function 真�
 |---|---|---|
 | **Host strain** | *Xanthomonas campestris* pv. *campestris*  ATCC 33913 (= DSM 3586, NCPPB 528, LMG 568, type strain) | BSL-1，模式菌株，全基因组已测 (NCBI: AE008922)，2002 年起广泛用于学术 plant pathology research，Brassica 黑腐病的 causal agent — 跟「Best Agriculture」叙事完美契合（加州 brassica 产业大） |
 | **Phage** | phiL7 (NCBI: **EU717894**, 44 kb) | T7-like Siphoviridae **lytic phage**（对的，不是 podovirus；icosahedral capsid + long noncontractile tail），感染 Xcc 的 reference phage，2009 年由 Academia Sinica (Taiwan) 完整测序与功能注释 |
-| **Receptor** | **TonB + ExbB + ExbD1D2** operon | 这是 **本研究的金子** — phiL7 的 receptor 已经由 Tn5 mutagenesis 鉴定（Wang et al. 2003, PMID 12646254），TonB 是 inner membrane protein，TonB-dependent receptor system 是 well-defined target，**Step 8 受体敲除直接知道要 KO 哪个基因** |
+| **Receptor** | **TonB + ExbB + ExbD1D2** operon | 这是 **本研究的金子** — phiL7 的 receptor 已经由 Tn5 mutagenesis 鉴定（Hung et al. 2003, *BBRC* 302:878–884, PMID 12646254），TonB 是 inner membrane protein，TonB-dependent receptor system 是 well-defined target，**Step 8 受体敲除直接知道要 KO 哪个基因** |
 
 **为什么这个组合是 winning combo**：
 
@@ -293,7 +293,7 @@ PI Cesar Ignacio-Espinoza 的研究就是环境微生物 + phage，他实验室 
 
 **Path C（fallback 2）：直接联系 phiL7 原作者**
 
-phiL7 paper 的通讯作者是 Academia Sinica（Taiwan）的研究员（Wang et al. 2003 + 2009）。学术 phage 通常作者会乐意 share。
+phiL7 paper 的通讯作者是 NCHU（台灣國立中興大學）Tseng lab 的研究员（Hung et al. 2003, BBRC + Lee et al. 2009, AEM）。学术 phage 通常作者会乐意 share。
 
 问题：
 - 国际 transfer 仍需 USDA permit（material 从台湾入境美国）
@@ -506,7 +506,7 @@ Alex 自己的判断：原 proposal 中很多 dry lab assumption 都是用比较
 
 ### **本项目核心 references（v1.2 strain/phage 选择依据）**
 - **Lee et al. (2009)** Genomic Characterization of the Intron-Containing T7-Like Phage phiL7 of Xanthomonas campestris. *Applied and Environmental Microbiology* 75(24):7828. — phiL7 完整测序，NCBI EU717894
-- **Wang et al. (2003)** Involvement of tonB-exbBD1D2 operon in infection of Xanthomonas campestris phage phiL7. PMID 12646254 — **phiL7 receptor 鉴定为 TonB-dependent system**
+- **Hung, C.-H. et al. (2003)** Involvement of tonB-exbBD1D2 operon in infection of Xanthomonas campestris phage phiL7. *Biochem Biophys Res Commun* 302(4):878–884. PMID 12646254 — **phiL7 receptor 鉴定为 TonB-dependent system**
 - **da Silva et al. (2002)** Comparison of the genomes of two Xanthomonas pathogens with differing host specificities. *Nature* 417:459. — Xcc ATCC 33913 全基因组（NCBI AE008922）
 - **Holtappels et al. (2022)** The potential of bacteriophages to control Xanthomonas campestris pv. campestris at different stages of disease development. *Microbial Biotechnology*. — Xcc + phage biocontrol 综述
 - **Nakayinga et al. (2021)** Xanthomonas bacteriophages: a review of their biology and biocontrol applications in agriculture. *BMC Microbiology* 21:291. — Xanthomonas phage 全面综述

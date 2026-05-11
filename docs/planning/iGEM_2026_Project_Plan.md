@@ -13,7 +13,7 @@ We are building a **closed-loop active-learning pipeline** that integrates a mac
 
 To our knowledge, no published system applies closed-loop active learning to phage RBP – receptor binding prediction, although the underlying methodology is well-established in adjacent domains: directed antibody evolution (Hie et al., 2022, *Cell*), enzyme engineering (Yang et al., 2025, *Nat Commun* — "Active Learning-assisted Directed Evolution", ALDE), and Bayesian optimization for protein design (Romero & Arnold, 2009, *Nat Chem Biol*).
 
-The agricultural target is *Xanthomonas*, a genus causing major losses in brassicas, citrus, and solanaceous crops worldwide. **Per PI consultation, we will self-isolate the host strain and a paired lytic phage from California symptomatic plant tissue**, bypassing dependency on commercial culture collections (which require multi-month USDA APHIS PPQ-526 permits). Dry-lab development proceeds in parallel on public reference genomes — *X. campestris* pv. *campestris* (Xcc) ATCC 33913 (NCBI: AE008922) and phage phiL7 (NCBI: EU717894), whose receptor was experimentally identified as a TonB-dependent system (Wang et al., 2003, *Mol Microbiol*).
+The agricultural target is *Xanthomonas*, a genus causing major losses in brassicas, citrus, and solanaceous crops worldwide. **Per PI consultation, we will self-isolate the host strain and a paired lytic phage from California symptomatic plant tissue**, bypassing dependency on commercial culture collections (which require multi-month USDA APHIS PPQ-526 permits). Dry-lab development proceeds in parallel on public reference genomes — *X. campestris* pv. *campestris* (Xcc) ATCC 33913 (NCBI: AE008922) and phage phiL7 (NCBI: EU717894), whose receptor was experimentally identified as a TonB-dependent system (Hung et al., 2003, *BBRC* 302:878–884, PMID 12646254).
 
 The deliverable is a system, not a single model: a quantitative motif-level RBP–receptor binding atlas, a benchmarked active-learning framework, and a small library of in-house *Xanthomonas* isolates and phages contributed back to the research community via the iGEM Registry.
 
@@ -257,7 +257,7 @@ A reproducible data pipeline that:
 
 **Approach:** Markerless gene deletion of candidate receptor genes in our Xanthomonas isolates using the pK18mobsacB suicide-vector system (Schäfer et al., 1994, *Gene*; Addgene #87097).
 
-**Receptor targets:** Based on phiL7 reference biology (Wang et al., 2003, *Mol Microbiol*) — *tonB*, *exbB*, *exbD1*, *exbD2*. If our isolated phage targets a different receptor, we will identify it via comparative genomics of phage-resistant escape mutants.
+**Receptor targets:** Based on phiL7 reference biology (Hung et al., 2003, *BBRC* 302:878–884) — *tonB*, *exbB*, *exbD1*, *exbD2*. If our isolated phage targets a different receptor, we will identify it via comparative genomics of phage-resistant escape mutants.
 
 **Protocol:**
 1. Construct deletion plasmid: ~500 bp upstream + ~500 bp downstream homology arms flanking the target gene, cloned into pK18mobsacB (kanamycin resistance + sacB sucrose counter-selection).
@@ -495,7 +495,7 @@ Each cycle is approximately 2 weeks:
 ### *Xanthomonas* and phiL7 (our reference system)
 - **da Silva, A.C.R. et al. (2002).** "Comparison of the genomes of two *Xanthomonas* pathogens." *Nature* 417:459. — Xcc ATCC 33913 genome (NCBI AE008922).
 - **Lee, C.N. et al. (2009).** "Genomic characterization of the intron-containing T7-like phage phiL7." *Appl Environ Microbiol* 75:7828. — phiL7 genome (NCBI EU717894).
-- **Wang, W.-T. et al. (2003).** "Involvement of *tonB-exbBD1D2* operon in infection of *X. campestris* phage phiL7." *Mol Microbiol*. — Receptor system identification.
+- **Hung, C.-H. et al. (2003).** "Involvement of *tonB-exbBD1D2* operon in infection of *Xanthomonas campestris* phage ϕL7." *Biochem Biophys Res Commun* 302(4):878–884. PMID: 12646254. — Receptor system identification.
 
 ### Plant-pathology and isolation methods
 - **EPPO Bulletin (2013).** PM 7/110: "*Xanthomonas* spp. causing bacterial spot of tomato and sweet pepper." — Standard isolation protocol.

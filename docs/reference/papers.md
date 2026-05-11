@@ -33,7 +33,7 @@ NCBI accession: EU717894.
 **"Comparison of the genomes of two *Xanthomonas* pathogens with differing host specificities"**
 *Nature* 417:459–463.
 
-**Why read / 為什麼讀：** Xcc ATCC 33913（GCF_000007145.1）的基因組原始文章。TonB-ExbB-ExbD 操縱子在這裡被定序，是 Wang et al. 2003 受體研究的前提。
+**Why read / 為什麼讀：** Xcc ATCC 33913（GCF_000007145.1）的基因組原始文章。TonB-ExbB-ExbD 操縱子在這裡被定序，是 Hung et al. 2003（BBRC）受體研究的前提。
 
 **Role in our system / 在我們系統中的角色：**
 - Module 00：確認 GCF_000007145.1 / AE008922 是 Xcc ATCC 33913（注意：GCF_000007145.1 是新版 assembly accession，AE008922 是原始 GenBank 登錄號，指向同一基因組）
@@ -42,26 +42,29 @@ NCBI accession: EU717894.
 
 ---
 
-### 🔴 Wang, W.-T. et al. (2003)
-**"Involvement of the *tonB-exbBD1D2* operon of *Xanthomonas campestris* pv. *campestris* in infection by the ϕL7 phage"**
-*Molecular Microbiology* 50(2):507–519.
+### 🔴 Hung, C.-H. et al. (2003)
+**"Involvement of *tonB-exbBD1D2* operon in infection of *Xanthomonas campestris* phage φL7"**
+*Biochemical and Biophysical Research Communications* 302(4):878–884.
+DOI: 10.1016/S0006-291X(03)00255-9 · Zotero: U9UAWZWZ
 
-**Why read / 為什麼讀：** 實驗確認 phiL7 的受體系統是 TonB-ExbB-ExbD1-ExbD2 四個蛋白。這是整個 Layer 2 因果驗證模組的生物學依據。
+> ⚠️ **Note on citation history:** An earlier version of this document (and CLAUDE.md) cited a "Wang, W.-T. et al. (2003) *Mol. Microbiol.* 50(2):507–519" as the primary receptor paper. After exhaustive search (CrossRef full DOI scan of Mol. Microbiol. vol. 50, PubMed, Semantic Scholar, and reference lists of Lee 2009 AEM and this BBRC paper itself), **that paper cannot be verified to exist** — it is likely a hallucinated citation from a prior AI session. The Hung 2003 BBRC paper is the only published primary source for phiL7 receptor identification in the Tseng lab (NCHU Taiwan).
+
+**Why read / 為什麼讀：** **實驗確認 phiL7 的受體系統是 TonB-ExbB-ExbD1-ExbD2 四個蛋白**——這是整個 Layer 2 因果驗證模組的生物學依據，也是 CLAUDE.md 中 "Wang et al. 2003" 所指向的研究。
 
 **Role in our system / 在我們系統中的角色：**
 - Module 05：決定 Boltz-2 要跑的 receptor 是哪幾個（TonB、ExbB、ExbD1、ExbD2）
 - Module 08（wet lab）：ΔtonB / ΔexbB / ΔexbD 敲除實驗的目標基因直接來自這篇
-- 這篇是「phiL7 走 TonB 通道」這個 claim 的唯一一手來源，**一定要讀**
+- 這篇是「phiL7 走 TonB 通道」這個 claim 的**唯一已知一手來源**，**一定要讀**
 
-**Key section to annotate:** Methods（哪個敲除導致抗性）、Figure 3-4（plaque assay 結果）。
+**Key section to annotate:** Methods（哪個基因敲除導致噬菌體抗性）、Figure 2–3（plaque assay 及 complementation 結果）.
 
 ---
 
 ## 📁 Module 01 — Ground Truth / Interaction Matrix
 
 ### 🟡 Boeckaerts, D. et al. (2024)
-**"Predicting bacteriophage hosts based on sequences of annotated receptor-binding proteins"**
-*Nature Communications* 15:4768.
+**"Prediction of *Klebsiella* phage-host specificity at the strain level"**
+*Nature Communications* 15, art. 48675. DOI: 10.1038/s41467-024-48675-6 · Zotero: I8BNK5ST
 
 **Why read / 為什麼讀：** PhageHostLearn——目前 phage-host interaction 預測的 SOTA 模型。我們的 interaction matrix（Module 01 的 positive/negative pair 格式）直接模仿這篇的數據結構。
 
@@ -200,9 +203,9 @@ NCBI accession: EU717894.
 
 ---
 
-### 🟡 Liu, Y. et al. (2025)
-**"PLM-interact: learning the language of protein-protein interactions"**
-*Nature Communications* 16:XXXX.
+### 🟡 Liu, D. et al. (2025)
+**"PLM-interact: extending protein language models to predict protein-protein interactions"**
+*Nature Communications* 16, art. 64512. DOI: 10.1038/s41467-025-64512-w · Zotero: 9NA25WF7
 
 **Why read / 為什麼讀：** 把 ESM-2 在人類 PPI 數據上 fine-tune，遷移到 mouse / fly / worm / yeast / *E. coli* PPI 預測，AUPR 提升 16–28%。我們是第一個試著把這個遷移用到 phage-bacteria 這個 niche 的。
 
@@ -263,8 +266,8 @@ NCBI accession: EU717894.
 ---
 
 ### 🔴 Greenman, K.P. et al. (2025)
-**"Benchmarking uncertainty quantification methods for protein fitness prediction"**
-*NAR Genomics and Bioinformatics* (advance access).
+**"Benchmarking uncertainty quantification for protein engineering"**
+*PLOS Computational Biology* 21(1):e1012639. DOI: 10.1371/journal.pcbi.1012639 · Zotero: R3GF97TU
 
 **Why read / 為什麼讀：** 在蛋白質工程這個 exact domain 上系統 benchmark 了 UQ 方法（deep ensemble vs MC dropout vs GP vs conformal prediction）。Deep ensemble 在 protein fitness landscape 上被認定為最佳選擇之一。
 
@@ -301,8 +304,8 @@ NCBI accession: EU717894.
 ---
 
 ### 🔴 Yang, J. et al. (2025)
-**"Active Learning-Assisted Directed Evolution (ALDE)"**
-*Nature Communications* 16:XXXX.
+**"Active learning-assisted directed evolution"**
+*Nature Communications* 16, art. 55987. DOI: 10.1038/s41467-025-55987-8 · Zotero: QUXVIK56
 
 **Why read / 為什麼讀：** 最新的、直接 comparable 的工作——在酶工程上系統比較了 BALD / UCB / Thompson sampling / greedy，用 deep ensemble 作為 UQ 方法。
 
@@ -315,15 +318,16 @@ NCBI accession: EU717894.
 
 ---
 
-### 🔴 Hie, B.L. et al. (2022)
-**"Efficient evolution of human antibodies from general protein language models and their application to SARS-CoV-2"**
-*Cell* 185(9):2038–2048.
+### 🔴 Hie, B.L. et al. (2024) *(同 Module 04)*
+**"Efficient evolution of human antibodies from general protein language models"**
+*Nature Biotechnology* 42:275–283. *(preprinted Apr 2022; published Jan 2024 — **not** Cell)* · Zotero: GWXNEVWA
 
 **Why read / 為什麼讀：** 這是我們整個 project framing 的 published precedent——用 PLM + active learning 高效進化蛋白。他們用 ~50 個測量點在 antibody optimization 上超過 random sampling。
 
 **Role in our system / 在我們系統中的角色：**
 - 這篇是 wiki Motivation section 的核心 cite（「phage RBP 工程版的 Hie et al.」）
 - 他們的 ESM embed → regression → acquisition → wet lab 閉環，跟我們的 pipeline 結構幾乎一一對應
+- *(詳細 annotation guide 見 Module 04 條目)*
 
 ---
 
@@ -427,12 +431,12 @@ NCBI accession: EU717894.
 
 | Priority | Papers to print first |
 |----------|----------------------|
-| 🔴 Must-print | Wang 2003 · Houlsby 2011 · Yang 2025 ALDE · Lakshminarayanan 2017 · Hie 2022 Cell · Boeckaerts 2022 Viruses · Lin 2023 ESM-2 |
+| 🔴 Must-print | **Hung 2003 BBRC** · Houlsby 2011 · Yang 2025 ALDE · Lakshminarayanan 2017 · Hie 2024 NatBiotech · Boeckaerts 2022 Viruses · Lin 2023 ESM-2 |
 | 🔴 Module-specific | Lee 2009 (phiL7) · McNair 2019 (PHANOTATE) · Passaro 2025 (Boltz-2) · Abramson 2024 (AF3) |
-| 🟡 Recommended | Boeckaerts 2024 NatComms · Greenman 2025 · Hie 2024 NatBiotech · Liu 2025 PLM-interact · Latka 2021 |
+| 🟡 Recommended | Boeckaerts 2024 NatComm · Greenman 2025 · Liu 2025 PLM-interact · Latka 2021 |
 | ⚪ Reference | Settles 2009 · Hyatt 2010 · Gibson 2009 · Schäfer 1994 · Ryan 2011 |
 
 ---
 
-*Document version: 1.0 · Last updated: 2026-05-11*
+*Document version: 1.1 · Last updated: 2026-05-11*
 *配套文件：`docs/planning/iGEM_2026_项目大纲_中文版.md` § 附錄 A*

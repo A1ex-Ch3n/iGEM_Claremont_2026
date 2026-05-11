@@ -54,7 +54,7 @@ We are building an **active learning pipeline** for phage-host binding predictio
 **Reference system / 參考系統:**
 - **Phage / 噬菌體:** phiL7 (NCBI accession EU717894.1) — infects *Xanthomonas campestris* pv. *campestris* (Xcc)
 - **Host / 宿主:** Xcc ATCC 33913 (GCF_000007145.1) — causes black rot in brassica crops
-- **Known receptor / 已知受體:** TonB-ExbB-ExbD system (Wang et al. 2003, *Mol Microbiol*)
+- **Known receptor / 已知受體:** TonB-ExbB-ExbD system (Hung et al. 2003, *BBRC* 302:878–884, PMID 12646254)
 
 **Why phiL7 and Xcc? / 為什麼選 phiL7 和 Xcc？**
 phiL7's receptor is experimentally confirmed (Wang et al. knocked out *tonB*, *exbB*, *exbD1*, *exbD2* and showed phage can no longer infect). This gives us a ground-truth positive interaction to validate everything against. Our wet lab will self-isolate Xanthomonas and lytic phages from California brassica crops, bypassing USDA import permits.
@@ -110,7 +110,7 @@ NC_013971.1, NZ_CP007800.1, NZ_CP008698.1. These can be re-downloaded; they don'
 - Produced `interaction_matrix.csv` with 2,236 phage-host pairs:
   - 315 positive interactions (known to infect)
   - 1,920 negative interactions (known NOT to infect)
-  - 1 ground-truth row: phiL7 × Xcc (confirmed by Wang 2003)
+  - 1 ground-truth row: phiL7 × Xcc (confirmed by Hung et al. 2003, PMID 12646254)
 - Downloaded reference genomes to `00_raw_data/`:
   - Xcc ATCC 33913 (GCF_000007145.1) — 5.1 MB, 5,076,188 bp ✓
   - T7 phage (NC_001604.1) — 39,937 bp ✓ (used as a pipeline test control, not our target)
@@ -345,7 +345,7 @@ These are the foundational references cited across all modules. You don't need t
 
 | **Paper**                               | **What it established**         | **Why we cite it**             |
 | --------------------------------------- | ------------------------------- | ------------------------------ |
-| Wang et al. 2003, _Mol Microbiol_       | TonB-ExbBD is phiL7's receptor  | Our entire target selection    |
+| Hung et al. 2003, _BBRC_ 302:878–884 (PMID 12646254) | TonB-ExbBD is phiL7’s receptor | Our entire target selection    |
 | Lin et al. 2023, _Science_              | ESM-2 protein language model    | Module 04 embedding method     |
 | Lakshminarayanan et al. 2017, _NeurIPS_ | Deep ensembles for uncertainty  | Module 06 architecture         |
 | Houlsby et al. 2011, _arXiv_            | BALD acquisition function       | Module 07 method (next sprint) |

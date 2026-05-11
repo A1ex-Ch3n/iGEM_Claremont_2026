@@ -89,7 +89,7 @@
 **Where we are:** ⬜ Not started. **Highest wet-lab risk:** ELISA optimization (positive control = T7 gp17 with published binding data) must be locked before Cycle 0 launches.
 
 ### 4.6 Receptor knockout for causal validation
-**Methods:** Markerless deletion of *tonB* / *exbB* / *exbD1* / *exbD2* using pK18mobsacB suicide vector (Schäfer et al., 1994, *Gene*; Addgene #87097). KanR + sucrose counter-selection. Targets follow phiL7 receptor biology (Wang et al., 2003, *Mol Microbiol*).
+**Methods:** Markerless deletion of *tonB* / *exbB* / *exbD1* / *exbD2* using pK18mobsacB suicide vector (Schäfer et al., 1994, *Gene*; Addgene #87097). KanR + sucrose counter-selection. Targets follow phiL7 receptor biology (Hung et al., 2003, *BBRC* 302:878–884, PMID 12646254).
 
 **Where we are:** ⬜ Not started. Existing Benchling Xcc transformation protocol (electroporation, 14 kV/cm, 10 µF) provides the required tool. Plasmid order needed.
 
