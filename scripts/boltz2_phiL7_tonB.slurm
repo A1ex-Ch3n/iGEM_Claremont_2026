@@ -21,11 +21,12 @@ nvidia-smi | grep -E "GPU Name|CUDA Version" | head -3
 module load cuda 2>/dev/null
 echo "[$(date)] CUDA_HOME=${CUDA_HOME:-NOT SET}"
 
-# Quick sanity check (no env modification — boltz2 env is pre-configured)
+# Sanity check — skip trifast (it calls get_device_capability() at import,
+# which fails outside GPU node; it will work fine when boltz calls it)
 python -c "
-import torch, optree, trifast
+import torch, optree
 print(f'torch={torch.__version__}  CUDA={torch.cuda.is_available()}')
-print(f'optree={optree.__version__}  trifast={trifast.__version__}')
+print(f'optree={optree.__version__}')
 "
 
 echo "[$(date)] Running Boltz-2..."
