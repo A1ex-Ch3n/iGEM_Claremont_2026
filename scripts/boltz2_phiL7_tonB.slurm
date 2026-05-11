@@ -27,9 +27,9 @@ echo "WARNING: no cuda module found — trying anyway"
 
 echo "[$(date)] CUDA_HOME=$CUDA_HOME  LD_LIBRARY_PATH (first 3): $(echo $LD_LIBRARY_PATH | tr ':' '\n' | head -3 | tr '\n' ':')"
 
-# Reinstall GPU PyTorch (CUDA 12.1 wheel works with CUDA 12.4 runtime)
-echo "[$(date)] Installing GPU PyTorch..."
-pip install torch --index-url https://download.pytorch.org/whl/cu121 -q --force-reinstall
+# trifast 0.1.13 requires torch>=2.6.0 (wrap_triton added in 2.6)
+echo "[$(date)] Installing GPU PyTorch >=2.6.0..."
+pip install "torch>=2.6.0" --index-url https://download.pytorch.org/whl/cu121 -q --force-reinstall
 
 echo "[$(date)] CUDA available: $(python -c 'import torch; print(torch.cuda.is_available())')"
 echo "[$(date)] GPU count: $(python -c 'import torch; print(torch.cuda.device_count())')"
