@@ -1,0 +1,62 @@
+# Laguna HPC — boltz2 conda env
+# ─────────────────────────────
+# Target: CARC Laguna (NVIDIA L40S, CUDA driver 550.90.07 = CUDA 12.4)
+# Env name: boltz2
+# Python: 3.11 (pip-only after conda create — DO NOT mix conda+pip for deps)
+#
+# CARC Laguna 專用 env，對應 GPU 節點 CUDA driver 12.4。
+# 注意：此 env 完全用 pip 管理（不用 conda install 裝套件）。
+# conda+pip 混裝在 Laguna 會造成 .so ABI 衝突（scipy 案例為例）。
+#
+# ── 重建步驟（在 Code Server terminal 執行，一次即可）──────────────────
+#
+# Step 1: 建立空 env
+#   conda create -n boltz2 python=3.11 -y
+#   conda activate boltz2
+#
+# Step 2: 安裝 optree 先（必須在 torch 之前，否則 boltz 會拉新版）
+#   pip install "optree==0.14.1"
+#
+# Step 3: 安裝 torch cu121（CUDA 12.1 wheel，向下相容 driver 12.4）
+#   pip install "torch==2.5.1" --index-url https://download.pytorch.org/whl/cu121
+#
+# Step 4: 安裝 boltz（會把 torch 升到 cu130 — 下一步修回來）
+#   pip install "boltz==2.0.3"
+#
+# Step 5: 強制修回 torch cu121（boltz 安裝後 torch 被升到 cu130，driver 12.4 不相容）
+#   pip install "torch==2.5.1" --index-url https://download.pytorch.org/whl/cu121 \
+#       --force-reinstall -q --no-deps
+#
+# Step 6: 修 numpy / einops / pyyaml（boltz 安裝後版本可能跑掉）
+#   pip install "numpy>=1.26,<2.0" "einops==0.8.0" "pyyaml==6.0.2" --force-reinstall -q
+#
+# Step 7: 安裝 trifast（使用 0.1.10 純 Python 版 — 0.1.13 需要 wrap_triton / torch>=2.7）
+#   pip install "trifast==0.1.10" --force-reinstall
+#
+# ── 驗證（非 GPU 節點執行，trifast 跳過）──────────────────────────────
+#   python -c "
+#   import torch, optree
+#   print(f'torch={torch.__version__}  CUDA={torch.cuda.is_available()}')
+#   print(f'optree={optree.__version__}')
+#   import numpy; print(f'numpy={numpy.__version__}')
+#   import boltz; print('boltz: OK')
+#   "
+#   # Expected: torch=2.5.1+cu121  CUDA=False (False on compute node, True on GPU node)
+#
+# ── 為什麼這些版本 ────────────────────────────────────────────────────
+#   - torch cu121:   CUDA 12.1 wheels，向下相容 driver 12.4；cu126/cu130 需要 driver 560+
+#   - optree 0.14.1: manylinux_2_17（GCC-7）ABI，避免 CXXABI_1.3.15 缺失錯誤
+#   - trifast 0.1.10: py3-none-any（純 Python），無 wrap_triton 依賴；
+#                     0.1.13 需要 torch.library.wrap_triton（torch>=2.7.0 才有）
+#   - numpy <2.0:    boltz 內部依賴 numpy 1.x API
+#
+# ── 已鎖定版本（2026-05-10 驗證，job 59949，NVIDIA L40S，47s）────────
+pinned:
+  python: "3.11"
+  torch: "2.5.1+cu121"
+  optree: "0.14.1"
+  boltz: "2.0.3"
+  trifast: "0.1.10"
+  einops: "0.8.0"
+  pyyaml: "6.0.2"
+  numpy: ">=1.26,<2.0"
