@@ -25,12 +25,12 @@ Project planning documents (see `docs/README.md` for the full index):
 
 | Step | Folder | Description | Owner(s) | Status |
 |------|--------|-------------|----------|--------|
-| 0 | `00_raw_data/` | Raw genome dump (777 phages + 34 bacteria) | — | ✅ Done |
+| 0 | `00_raw_data/` | Raw genome dump (phages + bacteria, gitignored binaries) | — | ✅ Done |
 | 1 | `01_data_ground_truth/` | NCBI download scripts + reference interaction matrix | Sarah, Weitao | ✅ Partial |
 | 2 | `02_annotation/` | PHANOTATE (phages) + Prodigal (hosts) + pharokka | Weitao, Olivia | 🟡 Partial |
-| 3 | `03_rbp_identification/` | PhageRBPdetect (HMM + XGBoost) on phage proteomes | TBD | ⏳ Sprint deliverable |
+| 3 | `03_rbp_identification/` | PhageRBPdetect (HMM + XGBoost) on phage proteomes | Alex | ✅ 3 RBP candidates (rbp_01 = 712aa tail spike) |
 | 4 | `04_protein_embedding/` | ESM-2 650M / 3B embeddings (+ optional PLM-interact transfer) | ESM-experienced teammate | 🔄 In progress |
-| 5 | `05_structure_prediction/` | AlphaFold 3 (structures) + Boltz-2 (zero-shot affinity prior) | Laguna-trained teammate | ⏳ Sprint deliverable |
+| 5 | `05_structure_prediction/` | AlphaFold 3 (structures) + Boltz-2 (zero-shot affinity prior) | Alex | 🔄 First Boltz-2 run done (wrong protein — re-run needed with rbp_01 712aa) |
 | 6 | `06_uncertainty_model/` | Deep ensemble (5 MLPs) over ESM-2 → calibrated UQ | Alex | ⏳ Sprint deliverable |
 | 7 | `07_acquisition_function/` | BALD acquisition + 48-hour cycle infrastructure | Alex | ⏳ Sprint deliverable |
 | 8 | `08_cycle_data/` | Per-cycle wet-lab data + model checkpoints + retrospective replay | All | ⏳ Cycle 0 starts ~6/1 |
@@ -93,7 +93,7 @@ Each step folder has its own `README.md` describing inputs, processes, outputs, 
 
 **Canonical files:**
 - Reference phage genome: `00_raw_data/phage_genomes/<accession>.fna` (phiL7 = EU717894)
-- Reference host genome: `00_raw_data/bacteria/<accession>.fna` (Xcc = AE008922)
+- Reference host genome: `00_raw_data/bacteria/<accession>.fna` (Xcc ATCC 33913 = GCF_000007145.1)
 - Per-cycle ELISA data: `08_cycle_data/outputs/cycle_<N>/elisa_processed.csv`
 - Per-cycle BALD recommendations: `07_acquisition_function/outputs/cycle_<N>/recommendations.csv`
 
@@ -141,6 +141,11 @@ All new code is written as **Jupyter notebooks first** for exploratory developme
 - **Large artifacts:** gitignored. Add accession/filename to a `MANIFEST.csv` in the same `outputs/` folder so the set is reproducible.
 - **Tool split:** PHANOTATE for phage ORF calling; Prodigal / pyrodigal for bacterial hosts. Never swap.
 - **Cycle versioning:** every model checkpoint, prediction CSV, and ELISA dataset is tagged with `cycle_<N>` and tracked via MLflow.
+- **Genome binaries gitignored:** `00_raw_data/phage/*/` and `00_raw_data/bacteria/*/` are not in git (630MB). Re-download: `python 00_raw_data/processes/fetch_phages.py && python 00_raw_data/processes/fetch_bacteria.py`
+- **Boltz-2 reference pair:** Use `EU717894.1_rbp_01` (712aa tail spike, not P25 85aa) × `GCF_000007145.1_tonB`. Script: `scripts/boltz2_phiL7_tonB.slurm`. HPC config: see `LAGUNA.md`.
+- **HPC jobs (Boltz-2, ESM-2 3B):** See `LAGUNA.md` for full cluster setup, CUDA compatibility, and SLURM templates.
+- **Merging agent branches:** Use `git checkout <branch> -- <dir>` (additive) not `git merge` — merge creates large deletion diffs when branch histories diverge.
+- **setuptools platform split:** macOS: `pip install "setuptools<70"` for phanotate (pkg_resources). Linux/Laguna: keep default (≥75) for trifast. Do NOT put the macOS pin in `environment.yml`.
 
 ---
 
@@ -182,3 +187,16 @@ jupyter lab
 | `docs/glossary.md` | Technical vocabulary (ELISA, BALD, ESM-2, etc.) |
 | `docs/project_pivot_summary_for_team.md` | Chinese team-sync explaining the May 2026 pivot |
 | `Proposal_General.pdf` | Original iGEM 2026 proposal |
+
+---
+
+## Changelog
+
+| Date | Who | What |
+|------|-----|------|
+| 2026-05-10 | Alex (Claude session) | 7 overnight agent branches cherry-picked into `active-learning-pipeline`; cleaned up worktrees |
+| 2026-05-10 | Alex (Claude session) | Fixed 6 `00_raw_data` issues: contaminated phiL7 proteins.faa, invalid bacteria accessions (KY000037→GCF_000092025.1, PY746849→GCF_000006765.1), gitignored 630MB genome binaries |
+| 2026-05-10 | Alex (Claude session) | Set up CARC Laguna: OnDemand, Code Server, `boltz2` conda env (torch 2.5.1+cu121 — 8 attempts to resolve CUDA/trifast/optree version conflicts) |
+| 2026-05-10 | Alex (Claude session) | First Boltz-2 3D structure (phiL7 P25 85aa × Xcc TonB, ipTM=0.345) — wrong protein; re-run with rbp_01 712aa pending |
+| 2026-05-10 | Alex (Claude session) | Generated `GETTING_STARTED.md`, `docs/alex_project_guide.md`, `docs/pipeline_build_report.md` |
+| 2026-05-11 | Alex (Claude session) | CLAUDE.md: fixed Xcc accession (AE008922→GCF_000007145.1), updated pipeline table, added HPC/git/setuptools gotchas |
