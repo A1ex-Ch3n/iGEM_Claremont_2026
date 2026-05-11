@@ -29,15 +29,24 @@ For running heavy GPU jobs (ESM-2 3B embedding, AlphaFold 3 batch, Boltz-2 struc
 source ~/.bashrc && conda activate boltz2 && cd /project/jespinoza_1541/CChen29/iGEM_Claremont_2026 && git pull
 ```
 
-**Fix numpy/einops if needed (run once after setup_boltz2_env.sh):**
+**Fix torch after boltz install upgrades it (run once — boltz pip always upgrades torch to cu130 which is INCOMPATIBLE with cluster driver 12.4):**
+```bash
+/home1/CChen29@cmc.edu/.conda/envs/boltz2/bin/pip install "torch==2.5.1" --index-url https://download.pytorch.org/whl/cu121 --force-reinstall -q --no-deps
+```
+
+**Fix numpy/einops/pyyaml (run once after setup):**
 ```bash
 /home1/CChen29@cmc.edu/.conda/envs/boltz2/bin/pip install "numpy>=1.26,<2.0" "einops==0.8.0" "pyyaml==6.0.2" --force-reinstall -q
 ```
 
-**Verify boltz2 env (skip trifast — it needs GPU to import):**
+**Verify boltz2 env — must show torch 2.5.1+cu121 (trifast skipped, needs GPU):**
 ```bash
 /home1/CChen29@cmc.edu/.conda/envs/boltz2/bin/python -c "import torch; print('torch:', torch.__version__); import optree; print('optree:', optree.__version__); import numpy; print('numpy:', numpy.__version__); import boltz; print('boltz: OK')"
 ```
+
+> ⚠️ CUDA compatibility: cluster GPU nodes have driver 550.90.07 = CUDA 12.4.
+> torch cu121 (12.1) ✅ compatible — torch cu126/cu130 ❌ NOT compatible.
+> Always verify torch is 2.5.1+cu121 before submitting jobs.
 
 **Useful status checks:**
 ```bash
