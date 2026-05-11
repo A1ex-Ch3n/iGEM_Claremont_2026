@@ -12,109 +12,91 @@ For running heavy GPU jobs (ESM-2 3B embedding, AlphaFold 3 batch, Boltz-2 struc
 
 ---
 
-## 1. Access (no VPN needed)
+## 1. Access via OnDemand (primary method — no VPN needed)
 
-1. Go to https://laguna-ood.carc.usc.edu
+1. Go to **https://laguna-ood.carc.usc.edu**
 2. Log in with CMC credentials (CChen29@cmc.edu)
-3. Click **Clusters → Laguna Shell Access** for terminal
-   OR click **Code Server** → Launch → open terminal with Ctrl+`
+3. Click **Code Server** in the left sidebar
+4. Set parameters:
+   - **Project account:** `jespinoza@kgi.edu_1541`
+   - **Partition:** `compute` (for setup/job submission — does NOT need GPU)
+   - **CPUs:** 2, **Memory:** 8 GB, **Hours:** 4
+5. Click **Launch** → wait for session to start → click **Connect**
+6. Inside VS Code: open terminal with **Ctrl+`**
 
-**SSH login node (once key is working):**
-```bash
-ssh CChen29@laguna1.carc.usc.edu
-```
-
-> SSH key fix: if portal didn't deploy key automatically, run in OnDemand terminal.
-> Use `printf` (not echo) to avoid line-break issues when pasting:
-
-```bash
-mkdir -p ~/.ssh && chmod 700 ~/.ssh
-printf 'ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIMEL3Fen+nBOJ8RHWK4ybEbAbGzXR2pSBEphodDU8CtU alex0071228@gmail.com\n' > ~/.ssh/authorized_keys
-chmod 600 ~/.ssh/authorized_keys
-cat ~/.ssh/authorized_keys
-```
-
-**After opening terminal:**
+**Every session: activate env and go to project directory**
 ```bash
 source ~/.bashrc
 conda activate igem2026
 cd /project/jespinoza_1541/CChen29/iGEM_Claremont_2026
+git pull
 ```
 
-**Useful checks:**
+**Useful status checks:**
 ```bash
-sinfo -p gpu                       # see GPU nodes (partition name: gpu)
-squeue -u CChen29                  # your jobs
-sshare -A jespinoza@kgi.edu_1541   # allocation balance
+sinfo -p gpu                        # GPU partition availability (idle = ready)
+squeue -j <jobid>                   # specific job status
+sshare -A jespinoza@kgi.edu_1541    # allocation balance
+sacct -u CChen29 --format=JobID,JobName,Elapsed,State   # job history
 ```
 
 ---
 
-## 2. Submitting jobs (write script to file first, then sbatch)
+## 2. Submitting GPU jobs
 
-> ⚠️ Do NOT use heredoc (`<< 'EOF'`) with leading spaces — the closing EOF must be at
-> column 0. Easiest fix: write the script to a file first, then submit.
+> ⚠️ Always write the script to a file first, then submit.
+> Do NOT paste heredoc (`<< 'EOF'`) with any leading spaces — the closing `EOF`
+> must be at column 0 or it won't close.
 
-**Pattern:**
+**Standard pattern:**
+```bash
+sbatch scripts/boltz2_phiL7_tonB.slurm
+```
+
+Scripts are in `scripts/` and already configured. For custom jobs:
 ```bash
 cat > /tmp/myjob.sh << 'EOF'
 #!/bin/bash
-#SBATCH ...
-...your commands...
+#SBATCH --account=jespinoza@kgi.edu_1541
+#SBATCH --partition=gpu
+#SBATCH --gres=gpu:1
+...
 EOF
 sbatch /tmp/myjob.sh
 ```
 
-**Monitor:**
+**Monitor a running job:**
 ```bash
-squeue -u CChen29                                    # job status
-tail -f logs/boltz2_<jobid>.out                      # live log
-scancel <jobid>                                      # cancel a job
+bash scripts/watch_job.sh <jobid>     # updates every 30s with log tail
+tail -f logs/boltz2_<jobid>.out       # raw log
+scancel <jobid>                       # cancel
 ```
 
 ---
 
 ## 3. Job templates
 
-### Template A — Boltz-2 single pair (phiL7 P25 × Xcc TonB)
+### Boltz-2 single pair — phiL7 tail spike × Xcc TonB (USE THIS FIRST)
+
+Script already committed: `scripts/boltz2_phiL7_tonB.slurm`
 
 ```bash
-cat > /tmp/boltz2_phiL7_tonB.sh << 'EOF'
-#!/bin/bash
-#SBATCH --job-name=boltz2_phiL7_tonB
-#SBATCH --account=jespinoza@kgi.edu_1541
-#SBATCH --partition=gpu
-#SBATCH --gres=gpu:1
-#SBATCH --cpus-per-task=4
-#SBATCH --mem=32G
-#SBATCH --time=01:00:00
-#SBATCH --output=/project/jespinoza_1541/CChen29/iGEM_Claremont_2026/logs/boltz2_%j.out
-#SBATCH --mail-user=CChen29@cmc.edu
-#SBATCH --mail-type=END,FAIL
-
-source ~/.bashrc
-conda activate igem2026
-cd /project/jespinoza_1541/CChen29/iGEM_Claremont_2026
-mkdir -p logs
-
-boltz predict \
-  05_structure_prediction/inputs/boltz_input_EU717894.1_rbp_01__GCF_000007145.1_tonB.fasta \
-  --out_dir 05_structure_prediction/outputs/boltz2/EU717894.1_rbp_01__GCF_000007145.1_tonB \
-  --accelerator gpu \
-  --recycling_steps 3 \
-  --sampling_steps 200 \
-  --model boltz2 \
-  --use_msa_server \
-  --seed 42 \
-  --output_format pdb
-EOF
-sbatch /tmp/boltz2_phiL7_tonB.sh
+git pull
+sbatch scripts/boltz2_phiL7_tonB.slurm
 ```
 
-Expected runtime: ~15-30 min on GPU. Output PDB at:
-`05_structure_prediction/outputs/boltz2/EU717894.1_rbp_01__GCF_000007145.1_tonB/`
+The script automatically:
+- Loads CUDA module (cuda-12.6.3)
+- Installs torch>=2.7.0 from cu126 wheels (fixes `wrap_triton` issue)
+- Falls back to trifast==0.1.10 if needed
+- Runs Boltz-2 with 3 recycling steps, 200 sampling steps
 
-### Template B — Boltz-2 batch screen (all RBP × receptor pairs)
+Expected runtime: **15-30 min** on NVIDIA L40S. Output PDB:
+```
+05_structure_prediction/outputs/boltz2/EU717894.1_rbp_01__GCF_000007145.1_tonB/
+```
+
+### Boltz-2 batch screen (all RBP × receptor pairs)
 
 ```bash
 cat > /tmp/boltz2_screen.sh << 'EOF'
@@ -134,24 +116,21 @@ source ~/.bashrc
 conda activate igem2026
 cd /project/jespinoza_1541/CChen29/iGEM_Claremont_2026
 mkdir -p logs
+module load cuda 2>/dev/null
+pip install "torch>=2.7.0" --index-url https://download.pytorch.org/whl/cu126 --force-reinstall -q
 
 for fasta in 05_structure_prediction/inputs/boltz_input_*.fasta; do
     pair=$(basename "$fasta" .fasta | sed 's/boltz_input_//')
     boltz predict "$fasta" \
         --out_dir "05_structure_prediction/outputs/boltz2/$pair" \
-        --accelerator gpu \
-        --recycling_steps 3 \
-        --sampling_steps 200 \
-        --model boltz2 \
-        --use_msa_server \
-        --seed 42 \
-        --output_format pdb
+        --accelerator gpu --recycling_steps 3 --sampling_steps 200 \
+        --model boltz2 --use_msa_server --seed 42 --output_format pdb
 done
 EOF
 sbatch /tmp/boltz2_screen.sh
 ```
 
-### Template C — ESM-2 650M embedding (production quality)
+### ESM-2 650M embedding (production quality)
 
 ```bash
 cat > /tmp/esm2_650m.sh << 'EOF'
@@ -176,8 +155,7 @@ python 04_protein_embedding/processes/embed_esm2.py \
     --input 03_rbp_identification/outputs/EU717894.1_rbp_sequences.faa \
     --model esm2_t33_650M_UR50D \
     --output 04_protein_embedding/outputs/embeddings_esm2_t33_650M_phiL7_rbps.npz \
-    --batch-size 4 \
-    --pooling mean
+    --batch-size 4 --pooling mean
 EOF
 sbatch /tmp/esm2_650m.sh
 ```
@@ -186,23 +164,18 @@ sbatch /tmp/esm2_650m.sh
 
 ## 4. Pulling results back to local
 
-After job completes, pull outputs from Laguna to your local machine.
-Use the OnDemand Files browser, OR set up SSH key and rsync:
+**Recommended: OnDemand Files browser**
+1. Go to https://laguna-ood.carc.usc.edu
+2. Click **Files** in the top menu
+3. Navigate to `/project/jespinoza_1541/CChen29/iGEM_Claremont_2026/`
+4. Select files → Download
 
+**Alternative: rsync (once SSH is working)**
 ```bash
-# Laguna → local: pull Boltz-2 structure results
 rsync -avz \
   "CChen29@laguna1.carc.usc.edu:/project/jespinoza_1541/CChen29/iGEM_Claremont_2026/05_structure_prediction/outputs/" \
   05_structure_prediction/outputs/
-
-# Laguna → local: pull embedding results
-rsync -avz \
-  "CChen29@laguna1.carc.usc.edu:/project/jespinoza_1541/CChen29/iGEM_Claremont_2026/04_protein_embedding/outputs/" \
-  04_protein_embedding/outputs/
 ```
-
-> SSH login hostname: check laguna-ood.carc.usc.edu → Help for the exact login node address.
-> Alternatively use the OnDemand Files browser to download files directly.
 
 ---
 
@@ -210,26 +183,27 @@ rsync -avz \
 
 | Issue | Cause | Fix |
 |-------|-------|-----|
-| `CondaError: Run 'conda init'` | Shell not initialized | Run `source ~/.bashrc` first |
-| `CUDA: False` in interactive session | compute partition has no GPU | Expected — GPU only available inside sbatch GPU jobs |
-| Heredoc `EOF` not closing | Leading spaces before `EOF` | Write script to file with `cat > /tmp/job.sh << 'EOF'` then `sbatch /tmp/job.sh` |
-| Job stuck in queue | GPU nodes busy | Check `sinfo -p gpu` for idle nodes; try `gpu_requeue` partition for preemptable jobs |
-| `CUDA out of memory` | Batch too large | Drop `--batch-size` to 2; or use ESM-2 150M instead of 650M |
-| Boltz-2 MSA timeout | MMSeqs2 server slow | Pre-computed MSAs already in `05_structure_prediction/outputs/boltz2/*/msa/` |
+| `CondaError: Run 'conda init'` | Shell not initialized | `source ~/.bashrc` first |
+| `CUDA: False` in Code Server terminal | compute partition has no GPU | Expected — GPU only in sbatch jobs on `gpu` partition |
+| Heredoc `EOF` not closing | Leading spaces before `EOF` | Use `cat > /tmp/job.sh << 'EOF'` with `EOF` at column 0 |
+| `wrap_triton` ImportError | torch<2.7.0 — trifast 0.1.13 needs 2.7.0 | Use `scripts/boltz2_phiL7_tonB.slurm` which fixes this automatically |
+| Job stuck in queue (`PD`) | GPU nodes busy | `sinfo -p gpu` — wait for idle nodes, or try `gpu_requeue` partition |
+| `CUDA out of memory` | Batch too large | Reduce `--batch-size` to 2; or use ESM-2 150M |
+| Permission denied on `/scratch/CChen29` | Wrong scratch path | Use `/project/jespinoza_1541/CChen29/` instead |
 
 ---
 
-## 6. Project storage
+## 6. Storage
 
-| Location | Purpose | Size limit |
-|----------|---------|-----------|
-| `/home1/CChen29@cmc.edu/` | conda envs, personal configs | ~100 GB |
-| `/project/jespinoza_1541/CChen29/` | repo + outputs (use this) | Shared with PI group |
+| Location | Purpose |
+|----------|---------|
+| `/home1/CChen29@cmc.edu/` | conda envs, `.bashrc` — persists forever |
+| `/project/jespinoza_1541/CChen29/` | repo + outputs — use this for all work |
 
-Keep raw genome data OUT of the repo (gitignored). Re-download on Laguna with:
+Keep raw genome data gitignored. Re-download on Laguna:
 ```bash
-python 00_raw_data/processes/fetch_phages.py     # all 777 phages
-python 00_raw_data/processes/fetch_bacteria.py   # all 34 bacteria
+python 00_raw_data/processes/fetch_phages.py
+python 00_raw_data/processes/fetch_bacteria.py
 ```
 
 ---
@@ -239,5 +213,7 @@ python 00_raw_data/processes/fetch_bacteria.py   # all 34 bacteria
 After every GPU job, log to `08_cycle_data/outputs/hpc_log.csv`:
 `date, job_name, jobid, gpu_hours, status, output_path, notes`
 
-PI account `jespinoza@kgi.edu_1541` has limited SUs — don't waste them on test runs.
-Use `sacct -u CChen29 --format=JobID,JobName,Elapsed,State` to review usage.
+Check usage:
+```bash
+sacct -u CChen29 --format=JobID,JobName,Elapsed,State
+```
