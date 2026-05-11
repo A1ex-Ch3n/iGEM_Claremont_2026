@@ -19,6 +19,18 @@ For running heavy GPU jobs (ESM-2 3B embedding, AlphaFold 3 batch, Boltz-2 struc
 3. Click **Clusters → Laguna Shell Access** for terminal
    OR click **Code Server** → Launch → open terminal with Ctrl+`
 
+**SSH login node (once key is working):**
+```bash
+ssh CChen29@laguna1.carc.usc.edu
+```
+
+> SSH key fix: if portal didn't deploy key automatically, run in OnDemand terminal:
+> ```bash
+> mkdir -p ~/.ssh && chmod 700 ~/.ssh
+> echo "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIMEL3Fen+nBOJ8RHWK4ybEbAbGzXR2pSBEphodDU8CtU alex0071228@gmail.com" >> ~/.ssh/authorized_keys
+> chmod 600 ~/.ssh/authorized_keys
+> ```
+
 **After opening terminal:**
 ```bash
 source ~/.bashrc
