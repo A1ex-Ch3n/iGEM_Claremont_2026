@@ -29,10 +29,27 @@ print(f'torch={torch.__version__}  CUDA={torch.cuda.is_available()}')
 print(f'optree={optree.__version__}')
 "
 
-echo "[$(date)] Running Boltz-2..."
+# Verify input sequence lengths before running
+python -c "
+seqs = {}; curr = None
+for line in open('05_structure_prediction/inputs/boltz_input_EU717894.1_rbp_01__GCF_000007145.1_tonB.fasta'):
+    if line.startswith('>'): curr = line.strip(); seqs[curr] = ''
+    elif curr: seqs[curr] += line.strip()
+for h, s in seqs.items():
+    print(f'{h}: {len(s)} aa')
+# Chain A must be 712 aa (rbp_01 tail spike), not 85 aa (P25)
+"
+
+# Clear processed cache so Boltz-2 re-reads the updated FASTA.
+# --override only overrides predictions, NOT the processed/ directory.
+# Without this, Boltz-2 reuses the old cached sequence (P25 85aa).
+OUT_DIR=05_structure_prediction/outputs/boltz2/EU717894.1_rbp_01__GCF_000007145.1_tonB
+rm -rf "${OUT_DIR}/processed"
+echo "[$(date)] Cleared processed cache. Running Boltz-2 with fresh input..."
+
 boltz predict \
   05_structure_prediction/inputs/boltz_input_EU717894.1_rbp_01__GCF_000007145.1_tonB.fasta \
-  --out_dir 05_structure_prediction/outputs/boltz2/EU717894.1_rbp_01__GCF_000007145.1_tonB \
+  --out_dir "${OUT_DIR}" \
   --accelerator gpu \
   --recycling_steps 3 \
   --sampling_steps 200 \
