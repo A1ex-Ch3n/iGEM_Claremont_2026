@@ -3,6 +3,18 @@
 
 ---
 
+> **To view all outputs referenced in this document, you must be on the correct branch.**
+>
+> ```bash
+> git clone https://github.com/A1ex-Ch3n/iGEM_Claremont_2026.git
+> cd iGEM_Claremont_2026
+> git checkout active-learning-pipeline
+> ```
+>
+> All pipeline outputs (PDB structure, predictions, BALD recommendations, calibration plots) are committed on `active-learning-pipeline`. The `main` branch does not contain the latest dry-lab work.
+
+---
+
 # ENGLISH VERSION
 
 ## TL;DR
@@ -111,7 +123,7 @@ Four additional corrections from the 19-paper audit:
 1. Boltz-2 affinity head = small molecule–protein only. Protein-protein pairs output NaN. We use ipTM as structural confidence proxy — NOT a binding affinity.
 2. Greenman 2025 journal = *PLoS Comput Biol* 21(1):e1012639 (not NAR Genomics); conclusion: "no single best UQ method."
 3. Hie 2024 uses ESM-1b/1v (not ESM-2); ~20 variants per antibody (not ~50).
-4. Lee 2009 never names a tail spike — rbp_01 identified computationally by PhageRBPdetect (Tail_spike_N HMM domain).
+4. Lee 2009 explicitly searched for and was **unable to find** a homolog of OP1's tail fiber (ORF25) in phiL7. This is stronger than "didn't name a tail spike" — they actively looked and found nothing by sequence homology. Our rbp_01 identification via Tail_spike_N HMM is consistent: HMMs detect structurally similar proteins too diverged for BLAST to find.
 
 ---
 
@@ -469,7 +481,7 @@ These files document the pre-May-2026 approach. Kept for reference; superseded b
 1. Boltz-2 affinity head 只支持小分子-蛋白。蛋白-蛋白对输出 NaN。用 ipTM 作结构信心 proxy——**不是**结合亲和力。
 2. Greenman 2025 期刊是 *PLoS Comput Biol* 21(1):e1012639（不是 NAR Genomics）；结论：「没有单一最佳 UQ 方法」。
 3. Hie 2024 用的是 ESM-1b/1v（不是 ESM-2）；每个抗体 ~20 个 variant（不是 ~50）。
-4. Lee 2009 从未指定哪个蛋白是 tail spike——rbp_01 由 PhageRBPdetect HMM（Tail_spike_N 结构域）计算识别。
+4. Lee 2009 主动搜索并**明确找不到** OP1 tail fiber（ORF25）在 phiL7 中的同源物。这比「没提到 tail spike」更强——他们找了，但序列相似性方法找不到。我们的 rbp_01 用 Tail_spike_N HMM 识别，与此一致：HMM 能检测序列已分歧到 BLAST 看不见的蛋白。
 
 ---
 

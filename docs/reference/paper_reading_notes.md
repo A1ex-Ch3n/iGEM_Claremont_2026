@@ -79,18 +79,23 @@ Training data：PubChem、ChEMBL、BindingDB——全是**小分子資料庫**�
 
 ---
 
-#### Error 5 — Lee 2009 從未明確指出任何蛋白是 tail spike（Lee 2009）
+#### Error 5 — Lee 2009 主動搜索並明確找不到 tail fiber，不是「沒提到」
 
 **Build report 說：** 「Lee et al. 2009 identified gp25 as phiL7's tail spike」
 
-**論文實際說：**
-- p20（tail protein III，**1105 aa**）——「sequence analysis suggested that **p20 instead has the potential to play this role**」（host range determination）
-- p25（85 aa）——Table 1 標記「No similarity」
-- 論文明確指出 phiL7 **lacks** OP1 的 ORF25 tail fiber homologue
+**論文實際說（原文）：**
+> "We were unable to identify a homolog of the OP1 tail fiber protein (ORF25) thought to be involved in host range determination achieved by variation in the combinations of domain duplications at the N terminus."
 
-**我們的 rbp_01（712 aa）：** 不對應 p20（1105 aa）或 p25（85 aa）。這是 PHANOTATE 找到的 orf_00001，命中 Tail_spike_N HMM domain（PhageRBPdetect 的 HMM 結果），跟 Lee 2009 的注釋是平行的獨立證據。
+- Lee 2009 **不是「沒提到 tail spike」**，而是**主動搜索 OP1 ORF25 的同源物，並明確說找不到**。
+- p20（tail protein III，**1105 aa**）——建議可能與 host range determination 有關，但不是 tail spike。
+- p25（85 aa）——Table 1 標記「No similarity」。
 
-**結論：** rbp_01 是 tail spike 候選的依據是 PhageRBPdetect HMM（Tail_spike_N domain hit），不是 Lee 2009 的注釋。Build report 的說法需要修正。
+**關鍵區別（HMM vs. 序列同源）：**
+Lee 2009 用的是序列同源搜索（BLAST 類方法）。我們用 PhageRBPdetect 的 **Tail_spike_N HMM profile**，可以識別序列已高度分歧但保留 domain 結構的蛋白——這正是 HMM 優於 BLAST 的場景。
+
+**我們的 rbp_01（712 aa）：** 不是 OP1 ORF25 的同源物（Lee 的搜索本來就找不到），但命中 Tail_spike_N HMM domain。兩者結論不衝突——phiL7 可能有一個序列已分歧到 BLAST 看不見、但 HMM 能識別的 tail spike 候選。
+
+**結論：** rbp_01 的識別依據是 PhageRBPdetect HMM（Tail_spike_N domain hit），是 Lee 2009 找不到同源物之後的**更敏感工具的補充識別**，不是矛盾。文檔應說「Lee 2009 explicitly searched and found no OP1 ORF25 homolog」，而非籠統說「沒有提到 tail spike」。
 
 ---
 
@@ -202,9 +207,10 @@ Equation (2)：argmax H[y|x,D] − E_{θ~p(θ|D)}[H[y|x,θ]]
 - **59 個 ORF**（PHANOTATE 1.6.7 找到 80 個，因為更新版模型識別更多重疊 ORF）
 - 10 個 virion 蛋白（SDS-PAGE + LC-MS/MS）
 - **p20（tail protein III，1105 aa）**——建議可能與 host range determination 有關
-- phiL7 **lacks** OP1 的 ORF25 tail fiber homologue
+- **主動搜索並找不到** OP1 ORF25 tail fiber 的同源物（"We were unable to identify a homolog of the OP1 tail fiber protein"）
 - p25（85 aa）——"No similarity"
-- **從未說任何蛋白是 tail spike**
+- 從未命名任何蛋白為 tail spike；p20（1105 aa）建議與 host range 有關
+- 注意：找不到 OP1 ORF25 同源物 ≠ phiL7 沒有 tail spike；我們的 rbp_01 是 HMM 識別，不依賴序列同源
 
 ### Hung 2003 (*BBRC* 302:878, PMID 12646254)
 - ϕL7 感染 *Xcc* P20H（不是 ATCC 33913）
