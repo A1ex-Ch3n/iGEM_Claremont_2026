@@ -1,7 +1,7 @@
 # Paper Reading Notes — iGEM Claremont 2026
 # 論文閱讀筆記
 
-**讀完時間：** 2026-05-11  
+**讀完時間：** 2026-05-11 | **最後更新：** 2026-05-12
 **讀了哪些：** 19 篇核心論文（docs/reference/papers/ 全部）  
 **目的：** 交叉驗證所有 project documents 中的 assumptions 和引用數字是否正確
 
@@ -322,7 +322,7 @@ Equation (2)：argmax H[y|x,D] − E_{θ~p(θ|D)}[H[y|x,θ]]
 | P1 🔴 | Boltz-2 affinity = NaN for protein-protein | planning docs 的 synthetic prior claim |
 | P1 🔴 | Greenman 2025 期刊錯誤 | 所有 reference lists |
 | P2 🟡 | Hie 2024 用 ESM-1b/1v 不是 ESM-2 | papers.md、planning docs |
-| P2 🟡 | Lee 2009 不說 gp25 是 tail spike | build report |
+| P2 🟡 | Lee 2009 主動搜索並找不到 OP1 ORF25 同源物（非「沒提到」）；rbp_01 是 HMM 補充識別 | build report、papers.md |
 | P2 🟡 | ALDE 用 Thompson sampling 不是 BALD | planning docs |
 | P3 ⚪ | AUC "0.82" → "up to 81.8%" | planning docs |
 | P3 ⚪ | BALD 原始是 GPC，我們是 extension | descriptions |

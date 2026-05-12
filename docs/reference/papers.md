@@ -18,14 +18,16 @@
 *Applied and Environmental Microbiology* 75(24):7828–7838.
 NCBI accession: EU717894.
 
-**Why read / 為什麼讀：** phiL7 是我們整個 dry lab pipeline 的參考噬菌體。這篇是 phiL7 基因組的原始定性文章，包含 59 個 ORF 的注釋、group I intron 結構、tail spike 候選基因位置。
+**Why read / 為什麼讀：** phiL7 是我們整個 dry lab pipeline 的參考噬菌體。這篇是 phiL7 基因組的原始定性文章，包含 59 個 ORF 的注釋、group I intron 結構，以及對 host range determinant 的搜索記錄。
+
+> ⚠️ **關鍵更正（2026-05-12）：** 這篇**不能**當作「告訴我們 tail spike 在哪裡」的來源。Lee 2009 主動搜索了 OP1 tail fiber（ORF25）的同源物，並明確說找不到（"We were unable to identify a homolog of the OP1 tail fiber protein"）。p20（1105 aa）被建議與 host range 有關，p25（85 aa）標記「No similarity」——兩者都不是 tail spike 的確認。**我們的 rbp_01（712 aa）是 PhageRBPdetect Tail_spike_N HMM 的獨立識別，不依賴 Lee 的注釋。** HMM 能識別序列已高度分歧、BLAST 找不到的蛋白家族成員——這正是 Lee 2009 找不到同源物、而我們 HMM 找到候選的原因。
 
 **Role in our system / 在我們系統中的角色：**
 - Module 00：確認 EU717894 是正確的 phiL7 accession
-- Module 03：告訴我們 phiL7 的 tail spike（P25 homolog）在哪裡——但注意這篇報的是 85 aa P25，真正的 712 aa tail spike（rbp_01）是後來 PhageRBPdetect 抓出來的，**兩者不同**
-- Module 05：給 Boltz-2 跑的 FASTA 序列來源背景
+- Module 03：**不是**告訴我們 tail spike 在哪——而是告訴我們 BLAST 層級的同源搜索找不到 OP1 ORF25 homolog，這恰好說明我們為什麼需要 HMM 方法（PhageRBPdetect）
+- Module 05：給 Boltz-2 跑的 FASTA 序列來源背景（Chain A = rbp_01 712 aa，來自 PhageRBPdetect，不是 Lee 注釋）
 
-**Key figure to annotate:** Figure 1（基因組圖）、Table 1（ORF 列表）——找到 tail spike / RBP 候選的位置。
+**Key figure to annotate:** Figure 1（基因組圖）、Table 1（ORF 列表）——注意 p20 和 p25 的位置，以及 Lee 如何描述搜索 tail fiber 的失敗。
 
 ---
 
@@ -446,5 +448,6 @@ DOI: 10.1016/S0006-291X(03)00255-9 · Zotero: U9UAWZWZ
 
 ---
 
-*Document version: 1.1 · Last updated: 2026-05-11*
+*Document version: 1.2 · Last updated: 2026-05-12*
+*Changes in v1.2: Lee 2009 entry corrected — actively searched and failed to find OP1 ORF25 homolog (not "didn't name a tail spike"); rbp_01 identified by HMM, independent of Lee annotation.*
 *配套文件：`docs/planning/iGEM_2026_项目大纲_中文版.md` § 附錄 A*
