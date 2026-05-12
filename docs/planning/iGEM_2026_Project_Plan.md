@@ -593,3 +593,116 @@ Based on full reading of 19 core papers (see `docs/reference/paper_reading_notes
 2. **Cycle 0 variant design** — open PDB, analyze interface residues, design 4–6 variants + primer sequences
 3. **AF3 model weights application** — 1–7 day review, apply immediately
 4. **Laguna supplementary runs**: ESM-2 650M embeddings for 777 phage RBPs; Boltz-2 exbB pair
+
+---
+
+## 13. Dry Lab ↔ Wet Lab Interface Protocol
+
+> This section describes the operational handoff between dry and wet lab — what gets exchanged each cycle, in what format, and who is responsible.
+
+### The Two-Way Handoff
+
+Each cycle has exactly two handoff events:
+
+```
+DRY LAB OUTPUT                      WET LAB OUTPUT
+────────────────                     ──────────────
+07_acquisition_function/             08_cycle_data/
+outputs/cycle_N/                     outputs/cycle_N/
+  recommendations.csv    ──────▶       elisa_processed.csv
+  primer_sequences.txt                 plaque_results.csv
+  uncertainty_bands.png                qc_report.md
+  random_control.csv
+  (hidden from wet lab)
+```
+
+### Dry Lab → Wet Lab Deliverables (48-hour SLA)
+
+After receiving ELISA data from wet lab, dry lab must within **48 hours** produce:
+
+| File | Content | Used by |
+|------|---------|---------|
+| `recommendations.csv` | Ranked list: variant ID, mutation, BALD score, predicted EC50 ± uncertainty | Wet lab cloning lead |
+| `primer_sequences.txt` | NEB Q5-compatible SDM primers for each variant (auto-generated via NEBaseChanger API) | Wet lab orders from IDT |
+| `uncertainty_bands.png` | Calibration plot: predicted vs measured from previous cycle | PI review |
+| `safe_pick_list.csv` | Pre-approved fallback variants (expert intuition, no model needed) | Used ONLY if dry lab misses 48h SLA |
+
+**Cycle 0 exception:** No ELISA data yet → variant design is structure-based (Boltz-2 ipTM + expert picks) + gene synthesis order (not SDM).
+
+### Wet Lab → Dry Lab Deliverables (end of each cycle)
+
+| File | Format | Required columns |
+|------|--------|-----------------|
+| `elisa_processed.csv` | CSV | variant_id, receptor_id, ec50_nM, hill_slope, r2, plate_id, date |
+| `plaque_results.csv` | CSV | variant_id, strain_id, pfu_per_ml, plaque_morphology, date |
+| `qc_report.md` | Markdown | SDS-PAGE image path, Bradford concentration, expression issues |
+
+**Minimum for model retraining:** At least 3 valid EC50 measurements (R² > 0.9) per new variant. Failed variants are marked `ec50_nM = NaN` with a `failed_reason` column — the model handles missing data gracefully.
+
+### SDM as Physical Execution of Dry Lab Recommendations
+
+Cycles 1+ use site-directed mutagenesis instead of gene synthesis:
+
+```
+Dry lab recommends:           Wet lab executes:
+"Mutate K450A in rbp_01"  →  NEB Q5 SDM (4 days)
++ primer sequences               ↓
+                              BL21 expression (18°C overnight)
+                                 ↓
+                              Ni-NTA purification (1 day)
+                                 ↓
+                              ELISA + plaque assay (2 days)
+                                 ↓
+                              Data delivered to dry lab
+```
+
+**Wet lab cycle time:** ~10–14 days from receiving recommendations to delivering ELISA data.
+**Dry lab response time:** 48 hours (Laguna retraining × 5 ensemble members + BALD + recommendations output).
+
+**Why SDM instead of gene synthesis after Cycle 0:**
+- Cost: ~$50/variant vs ~$150/variant (3× cheaper)
+- Time: 4 days vs 14 days (3.5× faster)
+- BALD selects point mutations on existing constructs — SDM is the natural execution method
+- Wet lab can produce multiple variants in parallel from the same template
+
+### Control Arm: The Hidden Random Pick
+
+Every batch includes 1 randomly-selected variant that is:
+- **NOT** the highest BALD score
+- Drawn by uniform random sampling from the unmeasured pool
+- Listed in `recommendations.csv` **without** being labeled as random (wet lab doesn't know which one is the control)
+- Separately recorded in `random_control.csv` (dry lab only)
+
+This enables retrospective comparison: "if we had always picked randomly, would we have learned as fast?"
+
+### Quality Gates and Failure Modes
+
+| Scenario | Action |
+|----------|--------|
+| Dry lab misses 48h SLA | Wet lab uses `safe_pick_list.csv` (pre-approved by PI, no model needed) |
+| Variant fails expression (insoluble) | Mark NaN, wet lab attempts backup truncation variant |
+| ELISA R² < 0.9 (noisy data) | Mark as low-confidence; model down-weights this data point |
+| All 5 BALD recommendations fail QC | Wet lab runs 1 expert pick + 2 random; dry lab retrains on partial data |
+| Model calibration ECE > 0.1 | Apply temperature scaling before next BALD run |
+
+### File Path Conventions
+
+```
+08_cycle_data/
+├── outputs/
+│   ├── cycle_0/
+│   │   ├── elisa_processed.csv     ← from wet lab
+│   │   ├── plaque_results.csv      ← from wet lab
+│   │   └── qc_report.md            ← from wet lab
+│   └── cycle_1/
+│       └── ...
+├── recommendations/
+│   ├── cycle_1/
+│   │   ├── recommendations.csv     ← from dry lab
+│   │   ├── primer_sequences.txt    ← dry lab auto-generated
+│   │   ├── uncertainty_bands.png   ← from dry lab
+│   │   └── random_control.csv      ← dry lab only (hidden)
+│   └── cycle_2/
+│       └── ...
+└── hpc_log.csv                     ← GPU usage log
+```

@@ -259,3 +259,87 @@ There are three practical validation tiers. Here is an honest comparison:
 ---
 
 *Report generated: 2026-05-11 | Branch: active-learning-pipeline*
+
+---
+
+## Dry Lab ↔ Wet Lab Interface Protocol
+
+### The Two-Way Handoff
+
+Each cycle has exactly two handoff events:
+
+```
+DRY LAB OUTPUT                      WET LAB OUTPUT
+────────────────                     ──────────────
+07_acquisition_function/             08_cycle_data/
+outputs/cycle_N/                     outputs/cycle_N/
+  recommendations.csv    ──────▶       elisa_processed.csv
+  primer_sequences.txt                 plaque_results.csv
+  uncertainty_bands.png                qc_report.md
+  random_control.csv
+  (hidden from wet lab)
+```
+
+### Dry Lab → Wet Lab Deliverables (48h SLA)
+
+After receiving wet lab ELISA data, dry lab must within 48 hours produce:
+
+| File | Content | Who uses it |
+|------|---------|------------|
+| `recommendations.csv` | Ranked list: variant ID, mutation, BALD score, predicted EC50 ± uncertainty | Wet lab cloning lead |
+| `primer_sequences.txt` | NEB Q5-compatible primers for each SDM variant (auto-generated via NEBaseChanger API) | Wet lab orders from IDT |
+| `uncertainty_bands.png` | Calibration plot: predicted vs measured from previous cycle | PI review |
+| `safe_pick_list.csv` | Pre-selected fallback variants (expert intuition, no model needed) | Used ONLY if dry lab misses 48h SLA |
+
+**Cycle 0 exception:** No ELISA data yet → variant design is structure-based (Boltz-2 ipTM + expert picks) + gene synthesis order (not SDM).
+
+### Wet Lab → Dry Lab Deliverables (end of each cycle)
+
+| File | Format | Required columns |
+|------|--------|-----------------|
+| `elisa_processed.csv` | CSV | variant_id, receptor_id, ec50_nM, hill_slope, r2, plate_id, date |
+| `plaque_results.csv` | CSV | variant_id, strain_id, pfu_per_ml, plaque_morphology, date |
+| `qc_report.md` | Markdown | SDS-PAGE image path, Bradford concentration, notes on expression issues |
+
+**Minimum for model retraining:** At least 3 valid EC50 measurements (R² > 0.9) per new variant. If a variant failed expression or ELISA, wet lab marks `ec50_nM = NaN` with a `failed_reason` column — the model handles missing data gracefully.
+
+### SDM as the Physical Execution of Dry Lab Recommendations
+
+Cycles 1+ use site-directed mutagenesis instead of gene synthesis:
+
+```
+Dry lab recommends:           Wet lab executes:
+"Mutate K450A in rbp_01"  →  NEB Q5 SDM (4 days)
++ primer sequences               ↓
+                              Expression in BL21 (overnight, 18°C)
+                                 ↓
+                              Ni-NTA purification (1 day)
+                                 ↓
+                              ELISA + plaque assay (2 days)
+                                 ↓
+                              Data back to dry lab
+```
+
+**Total wet lab cycle time:** ~10–14 days from receiving recommendations to delivering ELISA data.
+
+**Total dry lab response time:** 48 hours (retraining 5 ensemble members on Laguna + acquisition function + generating recommendations).
+
+### Control Arm: The Hidden Random Pick
+
+Every batch includes 1 randomly-selected variant that is:
+- **NOT** the highest BALD score
+- Selected by uniform random draw from the unmeasured pool
+- Added to `recommendations.csv` without marking it as random (wet lab doesn't know which one is random)
+- Recorded separately in `random_control.csv` (dry lab eyes only)
+
+This design allows retrospective comparison: "if we had always picked randomly, would we have learned as fast?"
+
+### Quality Gates and Failure Modes
+
+| Scenario | Action |
+|----------|--------|
+| Dry lab misses 48h SLA | Wet lab uses `safe_pick_list.csv` (pre-approved by PI, no model needed) |
+| Variant fails expression (insoluble) | Mark NaN, wet lab attempts backup truncation variant |
+| ELISA R² < 0.9 (noisy data) | Mark as low-confidence, model down-weights this point |
+| All 5 BALD recommendations fail QC | Wet lab runs 1 expert pick + 2 random; dry lab retrains on partial data |
+| Model calibration ECE > 0.1 | Apply temperature scaling before next BALD run |
