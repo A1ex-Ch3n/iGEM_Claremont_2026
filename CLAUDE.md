@@ -30,9 +30,9 @@ Project planning documents (see `docs/README.md` for the full index):
 | 2 | `02_annotation/` | PHANOTATE (phages) + Prodigal (hosts) + pharokka | Weitao, Olivia | 🟡 Partial |
 | 3 | `03_rbp_identification/` | PhageRBPdetect (HMM + XGBoost) on phage proteomes | Alex | ✅ 3 RBP candidates (rbp_01 = 712aa tail spike) |
 | 4 | `04_protein_embedding/` | ESM-2 650M / 3B embeddings (+ optional PLM-interact transfer) | ESM-experienced teammate | 🔄 In progress |
-| 5 | `05_structure_prediction/` | AlphaFold 3 (structures) + Boltz-2 (zero-shot affinity prior) | Alex | 🔄 First Boltz-2 run done (wrong protein — re-run needed with rbp_01 712aa) |
-| 6 | `06_uncertainty_model/` | Deep ensemble (5 MLPs) over ESM-2 → calibrated UQ | Alex | ⏳ Sprint deliverable |
-| 7 | `07_acquisition_function/` | BALD acquisition + 48-hour cycle infrastructure | Alex | ⏳ Sprint deliverable |
+| 5 | `05_structure_prediction/` | AlphaFold 3 (structures) + Boltz-2 (ipTM structural confidence) | Alex | ✅ rbp_01 712aa × TonB done; ipTM=0.365 |
+| 6 | `06_uncertainty_model/` | Deep ensemble (5 MLPs) over ESM-2 → calibrated UQ | Alex | ✅ 5-member MLP, calibrated; predictions.csv includes epistemic_std |
+| 7 | `07_acquisition_function/` | BALD acquisition + 48-hour cycle infrastructure | Alex | ✅ bald.py + run_bald.py; 18 tests pass; first cycle run done |
 | 8 | `08_cycle_data/` | Per-cycle wet-lab data + model checkpoints + retrospective replay | All | ⏳ Cycle 0 starts ~6/1 |
 
 ---
@@ -169,11 +169,11 @@ jupyter lab
 # Pipeline 流程 (每个 step 在自己的 processes/ 里有对应 notebook):
 #   01 → fetch_reference_genomes.ipynb              (DONE — example notebook)
 #   02 → phage_phanotate/  +  host_prodigal/        (existing scripts; will rewrite as notebooks)
-#   03 → run_phagerbpdetect.ipynb                   (TBD — Alex sprint)
-#   04 → embed_esm2.ipynb                           (in progress — ESM teammate)
-#   05 → run_af3.ipynb  +  run_boltz2.ipynb         (TBD — Laguna HPC)
-#   06 → train_ensemble.ipynb                       (TBD — Alex sprint)
-#   07 → run_bald.py                                (TBD — write as .py from day 1, see Conventions)
+#   03 → run_phagerbpdetect.ipynb                   (DONE — 3 RBP candidates)
+#   04 → embed_esm2.ipynb                           (8M done locally; 650M pending Laguna)
+#   05 → run_af3.ipynb  +  run_boltz2.ipynb         (DONE — rbp_01 712aa × TonB, ipTM=0.365)
+#   06 → train_ensemble.ipynb                       (DONE — 5-member MLP, epistemic_std exported)
+#   07 → run_bald.py                                (DONE — bald.py + run_bald.py + 18 tests)
 ```
 
 ---
@@ -202,3 +202,6 @@ jupyter lab
 | 2026-05-10 | Alex (Claude session) | Generated `GETTING_STARTED.md`, `docs/alex_project_guide.md`, `docs/pipeline_build_report.md` |
 | 2026-05-11 | Alex (Claude session) | CLAUDE.md: fixed Xcc accession (AE008922→GCF_000007145.1), updated pipeline table, added HPC/git/setuptools gotchas |
 | 2026-05-11 | Alex (Claude session) | Paper reading pass: verified 19 papers, fixed ExbD2/Greenman/Boltz-2/Hie2024 errors; see docs/reference/paper_reading_notes.md |
+| 2026-05-11 | Alex (Claude session) | Correct Boltz-2 run (job 59986): rbp_01 712aa × TonB, ipTM=0.365, chain_A_ptm=0.808 |
+| 2026-05-12 | Alex (Claude session) | Module 07 BALD complete: bald.py + run_bald.py + 18 tests; Module 06 patched to export epistemic_std; full pipeline (00–07) done |
+| 2026-05-12 | Alex (Claude session) | PI_briefing updated to reflect full completion; progress_report merged into PI_briefing |

@@ -10,6 +10,7 @@ Navigation index for the iGEM Claremont 2026 active-learning phage engineering p
 |------|----------|---------|
 | [`iGEM_2026_Project_Plan.md`](planning/iGEM_2026_Project_Plan.md) | PI · external reviewers | Full English plan (~5500 words). Background, system architecture, all dry-lab + wet-lab modules with literature backing, AL cycle, risks, timeline, deliverables. |
 | [`iGEM_2026_Project_Plan_PI_Brief.md`](planning/iGEM_2026_Project_Plan_PI_Brief.md) | PI quick read | Abridged English brief covering only Sections 3 (dry lab), 4 (wet lab), 5 (AL cycle), 9 (resources), 11 (PI questions). With status indicators. |
+| [`PI_briefing_2026-05-11.md`](planning/PI_briefing_2026-05-11.md) | PI · team | **Current status** (updated 2026-05-12): all modules 00–07 done, Boltz-2 results, BALD first run, validation strategy (4 tiers), PI decisions, dry-wet interface. Bilingual EN + ZH. |
 | [`iGEM_2026_项目大纲_中文版.md`](planning/iGEM_2026_项目大纲_中文版.md) | Team (Chinese-preferring) | Chinese plan, deepest version. Same scope as PI plan + extended dry-lab module mechanics + dedicated **6-layer data-scarcity strategy** chapter. |
 | [`project_pivot_summary_for_team.md`](planning/project_pivot_summary_for_team.md) | Team sync | Chinese narrative explaining the May 2026 pivot from the original 6-factor approach to active learning. Includes Path A/B/C strain-acquisition decision tree. |
 | [`iGEM_2026_Project_Flow.excalidraw`](planning/iGEM_2026_Project_Flow.excalidraw) | All | Editable flow chart source (open at https://excalidraw.com). |

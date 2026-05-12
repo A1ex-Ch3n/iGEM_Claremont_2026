@@ -564,8 +564,8 @@ Each cycle is approximately 2 weeks:
 | 03 RBP ID | ✅ Done | rbp_01 (712 aa, HMM score=1.0) primary candidate | 25/27 tests pass |
 | 04 Embedding | ✅ Done | 3 RBPs × 320 dim (ESM-2 8M local) | Production needs ESM-2 650M on Laguna |
 | 05 Structure | ✅ Phase 1 done | rbp_01 × TonB: ipTM=0.365, chain A ptm=0.808 | AF3 weights pending; exbB FASTA ready |
-| 06 Ensemble | 🟡 Architecture done | cycle_0/predictions.csv | Synthetic data; swap to ELISA ~June 1 |
-| 07 BALD | ❌ Not started | — | **Highest priority; needed before May 17** |
+| 06 Ensemble | ✅ Done | cycle_0/predictions.csv (incl. epistemic_std) | Synthetic data; swap to ELISA ~June 1 |
+| 07 BALD | ✅ Done | cycle_1/recommendations.csv | bald.py + run_bald.py; 18 tests pass |
 | 08 Cycle Data | ⏳ Pending | — | Cycle 0 launches ~June 1 |
 
 ### Wet Lab Readiness
@@ -589,10 +589,10 @@ Based on full reading of 19 core papers (see `docs/reference/paper_reading_notes
 
 ### Next Steps (prioritized)
 
-1. **Module 07 BALD implementation** (highest) — needed before wet lab launches May 17
-2. **Cycle 0 variant design** — open PDB, analyze interface residues, design 4–6 variants + primer sequences
-3. **AF3 model weights application** — 1–7 day review, apply immediately
-4. **Laguna supplementary runs**: ESM-2 650M embeddings for 777 phage RBPs; Boltz-2 exbB pair
+1. **Cycle 0 variant design** — open rbp_01 × TonB PDB, analyze interface residues, design 4–6 variants + primer sequences (gene synthesis order before May 17)
+2. **AF3 model weights application** — 1–7 day review, apply immediately
+3. **Laguna supplementary runs**: ESM-2 650M embeddings for 777 phage RBPs; Boltz-2 exbB pair
+4. **Wet lab launch May 17**: brassica sampling, pK18mobsacB knockout construction, Cycle 0 variant gene synthesis order
 
 ---
 
