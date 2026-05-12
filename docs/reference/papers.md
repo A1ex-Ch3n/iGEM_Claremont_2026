@@ -301,7 +301,9 @@ DOI: 10.1016/S0006-291X(03)00255-9 · Zotero: U9UAWZWZ
 - Module 07 就是實現 BALD：對每個 unmeasured (RBP variant, receptor) 組合算 BALD score，取 top 4–5
 - 讀完你才能理解：為什麼 BALD 比 greedy（直接選預測值最高）更適合冷啟動？（greedy 在 small data regime 容易 local optimum）
 
-**Key equation to annotate:** Equation 1（BALD 的 mutual information formulation）——你需要能用一句話解釋給 PI 聽。
+> ⚠️ **Extension note / 延伸說明：** Houlsby 2011 原始論文把 BALD 應用於 **Gaussian Process Classifier（分類任務）**，不是 deep ensemble regression。我們把 BALD 的 information-theoretic objective（Equation 2：argmax H[y|x,D] − E_θ[H[y|x,θ]]）延伸到 **deep ensemble regression**（binding score 是連續值），這是合理的延伸，但**不在原始論文的範疇內**。跟 PI 解釋時應注明這是延伸應用，不是直接引用。
+
+**Key equation to annotate:** Equation 2（BALD 的 mutual information formulation，argmax I[θ; y | x, D]）——你需要能用一句話解釋給 PI 聽。
 
 ---
 
@@ -309,10 +311,12 @@ DOI: 10.1016/S0006-291X(03)00255-9 · Zotero: U9UAWZWZ
 **"Active learning-assisted directed evolution"**
 *Nature Communications* 16, art. 55987. DOI: 10.1038/s41467-025-55987-8 · Zotero: QUXVIK56
 
-**Why read / 為什麼讀：** 最新的、直接 comparable 的工作——在酶工程上系統比較了 BALD / UCB / Thompson sampling / greedy，用 deep ensemble 作為 UQ 方法。
+**Why read / 為什麼讀：** 最新的、直接 comparable 的工作——active learning + DNN ensemble 在酶工程（cyclopropanation）上大幅提升 yield（12% → 93%，2 輪 wet lab）。示範了 active learning + uncertainty quantification 在蛋白質工程中可行。
+
+> ⚠️ **Acquisition function correction / 正確性說明：** ALDE 使用的 acquisition function 是 **Thompson sampling**（不是 BALD），特征是 **one-hot encoding**（不是 ESM-2 embedding）。因此 ALDE 驗證的是「active learning + UQ 在蛋白質工程有效」這個大框架，**不是**直接驗證 BALD acquisition function 的優越性。BALD 的依據需另外引用（Houlsby 2011 原始論文 + 其延伸應用文獻）。
 
 **Role in our system / 在我們系統中的角色：**
-- 驗證我們的 design choice（BALD + deep ensemble）在 protein engineering 場景下是合理的
+- 驗證「active learning + deep ensemble UQ 在 protein engineering 場景下可行」這個 claim（不是驗證 BALD 本身）
 - 他們的 control arm 設計（每輪保留 random 選擇的虛擬 list，最後做 retrospective replay）——我們直接複製這個設計
 - 讀完記錄：他們的 AL vs random 在多少個 data point 後開始分叉？我們可以用這個設定期望值
 
@@ -384,6 +388,8 @@ DOI: 10.1016/S0006-291X(03)00255-9 · Zotero: U9UAWZWZ
 ### 🟡 Latka, A. et al. (2021) *(同 Module 03)*
 *(引用同上)* — **Module 08 角度的補充：**
 他們的 ELISA binding assay 格式（His6-RBP + HRP-anti-His6 二抗）和我們的設計完全一樣，可以直接拿他們的 antibody concentration / wash buffer / blocking 條件當起始點。
+
+> ⚠️ **Biology scope / 適用範圍：** 上述 ELISA assay 格式可借鑑，但 Latka 2021 的 RBP 是 CPS depolymerase（降解莢膜多醣），與 phiL7 RBP 結合 TonB 的機制不同（見 Module 03 警語）。assay 格式遷移可行，生化機制解讀需謹慎對應。
 
 ---
 

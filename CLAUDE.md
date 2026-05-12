@@ -143,6 +143,7 @@ All new code is written as **Jupyter notebooks first** for exploratory developme
 - **Cycle versioning:** every model checkpoint, prediction CSV, and ELISA dataset is tagged with `cycle_<N>` and tracked via MLflow.
 - **Genome binaries gitignored:** `00_raw_data/phage/*/` and `00_raw_data/bacteria/*/` are not in git (630MB). Re-download: `python 00_raw_data/processes/fetch_phages.py && python 00_raw_data/processes/fetch_bacteria.py`
 - **Boltz-2 reference pair:** Use `EU717894.1_rbp_01` (712aa tail spike, not P25 85aa) × `GCF_000007145.1_tonB`. Script: `scripts/boltz2_phiL7_tonB.slurm`. HPC config: see `LAGUNA.md`.
+- **Boltz-2 affinity head = small molecule only:** For protein–protein pairs (e.g., RBP × TonB receptor), the affinity head outputs NaN. Use **ipTM** (0–1 interface confidence score) as a structural confidence proxy — it is NOT a quantitative binding affinity. Do not describe Boltz-2 as providing a "zero-shot affinity prior" for protein–protein interactions.
 - **HPC jobs (Boltz-2, ESM-2 3B):** See `LAGUNA.md` for full cluster setup, CUDA compatibility, and SLURM templates.
 - **Merging agent branches:** Use `git checkout <branch> -- <dir>` (additive) not `git merge` — merge creates large deletion diffs when branch histories diverge.
 - **setuptools platform split:** macOS: `pip install "setuptools<70"` for phanotate (pkg_resources). Linux/Laguna: keep default (≥75) for trifast. Do NOT put the macOS pin in `environment.yml`.
@@ -200,3 +201,4 @@ jupyter lab
 | 2026-05-10 | Alex (Claude session) | First Boltz-2 3D structure (phiL7 P25 85aa × Xcc TonB, ipTM=0.345) — wrong protein; re-run with rbp_01 712aa pending |
 | 2026-05-10 | Alex (Claude session) | Generated `GETTING_STARTED.md`, `docs/alex_project_guide.md`, `docs/pipeline_build_report.md` |
 | 2026-05-11 | Alex (Claude session) | CLAUDE.md: fixed Xcc accession (AE008922→GCF_000007145.1), updated pipeline table, added HPC/git/setuptools gotchas |
+| 2026-05-11 | Alex (Claude session) | Paper reading pass: verified 19 papers, fixed ExbD2/Greenman/Boltz-2/Hie2024 errors; see docs/reference/paper_reading_notes.md |
