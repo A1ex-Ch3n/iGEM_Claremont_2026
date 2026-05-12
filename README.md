@@ -53,7 +53,7 @@ Then open **[`GETTING_STARTED.md`](GETTING_STARTED.md)** for a step-by-step modu
 ## Team
 
 **Core engineer (dry lab):** Alex Chen  
-**Wet lab:** Sarah, Olivia, Weitao  
+**Wet lab:** Sarah, Olivia, Weitao, Carol  
 **Contributors:** Ryan, Leah  
 **PI:** Prof. J. Cesar Ignacio-Espinoza  
 **Faculty advisor:** Prof. Ran Libeskind-Hadas

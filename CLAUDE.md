@@ -10,7 +10,7 @@ We are building a **closed-loop active-learning pipeline** that integrates a mac
 
 **Targeting:** iGEM Best Agriculture Project · Best Model · Best Composite Part.
 
-**Core engineer:** Alex Chen. **Wet lab:** Sarah, Olivia, Weitao. **Other contributors:** Ryan, Leah. **PI:** Prof. J. Cesar Ignacio-Espinoza. **Faculty advisor:** Prof. Ran Libeskind-Hadas.
+**Core engineer:** Alex Chen. **Wet lab:** Sarah, Olivia, Weitao, Carol. **Other contributors:** Ryan, Leah. **PI:** Prof. J. Cesar Ignacio-Espinoza. **Faculty advisor:** Prof. Ran Libeskind-Hadas.
 
 Project planning documents (see `docs/README.md` for the full index):
 - `docs/planning/iGEM_2026_Project_Plan.md` — full PI-facing English plan
@@ -112,10 +112,10 @@ Each step folder has its own `README.md` describing inputs, processes, outputs, 
 | 6 — UQ Model | Deep ensemble | Alex | `06_uncertainty_model/outputs/cycle_<N>/predictions.csv` |
 | 7 — Acquisition | BALD + cycle infra | Alex | `07_acquisition_function/outputs/cycle_<N+1>/recommendations.csv` |
 | 8 — Wet/dry sync | Cycle data ingestion | All | `08_cycle_data/outputs/cycle_<N>/` |
-| Wet — Strain isolation | Self-isolate from CA brassicas | Sarah, Olivia, Weitao | In-house Xanthomonas isolates + WGS |
-| Wet — Phage isolation | Co-isolation + plaque purification | Sarah, Olivia, Weitao | In-house lytic phage + WGS |
-| Wet — Cloning + ELISA | Gibson + BL21 + Ni-NTA + ELISA | Sarah, Olivia, Weitao | Per-cycle binding curves |
-| Wet — Receptor KO | pK18mobsacB markerless deletion | Sarah, Olivia, Weitao | ΔtonB / ΔexbB / ΔexbD strains |
+| Wet — Strain isolation | Self-isolate from CA brassicas | Sarah, Olivia, Weitao, Carol | In-house Xanthomonas isolates + WGS |
+| Wet — Phage isolation | Co-isolation + plaque purification | Sarah, Olivia, Weitao, Carol | In-house lytic phage + WGS |
+| Wet — Cloning + ELISA | Gibson + BL21 + Ni-NTA + ELISA | Sarah, Olivia, Weitao, Carol | Per-cycle binding curves |
+| Wet — Receptor KO | pK18mobsacB markerless deletion | Sarah, Olivia, Weitao, Carol | ΔtonB / ΔexbB / ΔexbD strains |
 
 ---
 
