@@ -38,7 +38,7 @@ jupyter lab
 04_protein_embedding/ Protein sequences → numbers (ESM-2)
 05_structure_prediction/ Predict 3D binding complex + affinity
 06_uncertainty_model/ Train model that knows what it doesn't know
-07_acquisition_function/ Pick the next experiment (BALD) ← next sprint
+07_acquisition_function/ Pick the next experiment (BALD) ✅ Done
 08_cycle_data/        Store wet-lab results each cycle ← starts ~June 1
 ```
 
@@ -249,13 +249,52 @@ pytest 06_uncertainty_model/processes/tests/ -v
 
 **Checklist:**
 - [ ] 5 `.pt` model files saved in `outputs/cycle_0/`
-- [ ] `predictions.csv` has `std > 0` for all rows
+- [ ] `predictions.csv` has `std > 0` and `epistemic_std > 0` for all rows
 - [ ] `calibration.png` generated (ECE reported in `model_meta.json`)
 - [ ] 9/9 tests pass
 - [ ] `model_meta.json` has `data_source: synthetic_fallback_random` ← will change to `elisa_cycle_0` when real data arrives
 
 > **When ELISA data arrives (~June 1):** See `06_uncertainty_model/AGENT_REPORT.md`
 > "When ELISA Arrives" section — only 2 lines of notebook change.
+
+---
+
+## Module 07 — BALD Acquisition Function / BALD 採集函數
+
+**What it does:** Reads Module 06 predictions, ranks all unmeasured (variant, receptor) pairs
+by epistemic uncertainty (BALD score = Std of ensemble member means), and outputs the
+next batch for wet lab. Includes a mandatory random-control pick for retrospective comparison.
+
+**Prerequisite:** Module 06 `predictions.csv` must exist (with `epistemic_std` column).
+
+**Run (Cycle 0 — no ELISA data yet):**
+```bash
+python 07_acquisition_function/processes/run_bald.py --cycle 1 --n_bald 4 --n_random 1
+```
+
+**Run (Cycle N — with ELISA data):**
+```bash
+python 07_acquisition_function/processes/run_bald.py \
+  --cycle N \
+  --measured_csv 08_cycle_data/outputs/cycle_<N-1>/elisa_processed.csv
+```
+
+**Produces:**
+- `07_acquisition_function/outputs/cycle_<N>/recommendations.csv` — variants to test next
+- `07_acquisition_function/outputs/cycle_<N>/safe_pick_backup.csv` — manual fallback
+- `07_acquisition_function/outputs/cycle_<N>/random_replay.csv` — retrospective baseline
+- `07_acquisition_function/outputs/cycle_<N>/run_meta.json`
+
+**Run tests:**
+```bash
+pytest 07_acquisition_function/processes/tests/ -v
+```
+
+**Checklist:**
+- [ ] 18/18 tests pass
+- [ ] `recommendations.csv` has `n_bald + n_random` rows with `selection_reason` column
+- [ ] Top pick has highest `bald_score` (= `epistemic_std`) in the pool
+- [ ] `run_meta.json` contains `repo_commit_sha` and `timestamp_utc`
 
 ---
 
@@ -266,6 +305,7 @@ For batch jobs (all 777 phages, ESM-2 650M, Boltz-2 GPU):
 ```bash
 ssh <username>@laguna.hpc.institution.edu
 cd $SCRATCH && git clone https://github.com/A1ex-Ch3n/iGEM_Claremont_2026.git
+git checkout active-learning-pipeline   # ← all pipeline code is on this branch
 conda env create -f shared/env/environment.yml
 conda activate igem2026
 
@@ -289,10 +329,10 @@ Full SLURM templates with correct partition/account flags: see **`LAGUNA.md`**.
 | `CLAUDE.md` | Project conventions, team roles, data flow rules |
 | `INTERFACE.md` | Data contracts between modules (column schemas, file formats) |
 | `LAGUNA.md` | HPC setup, SLURM job templates |
-| `docs/pipeline_build_report_2026-05-08.md` | Full build report from overnight parallel build |
-| `docs/alex_project_guide.md` | Tech stack per module + file navigation guide |
+| `docs/planning/PI_briefing_2026-05-11.md` | Current status briefing — all outputs, work log, attachments (bilingual) |
 | `docs/planning/iGEM_2026_Project_Plan.md` | Full project plan (English, PI-facing) |
 | `docs/planning/iGEM_2026_项目大纲_中文版.md` | Full project plan (Chinese, team-facing) |
+| `docs/reference/papers.md` | Per-module reading guide (19 papers, annotation protocol) |
 
 ---
 
