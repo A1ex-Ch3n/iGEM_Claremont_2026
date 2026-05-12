@@ -40,12 +40,13 @@ for h, s in seqs.items():
 # Chain A must be 712 aa (rbp_01 tail spike), not 85 aa (P25)
 "
 
-# Clear processed cache so Boltz-2 re-reads the updated FASTA.
-# --override only overrides predictions, NOT the processed/ directory.
-# Without this, Boltz-2 reuses the old cached sequence (P25 85aa).
+# Clear the ENTIRE output directory (processed/ + msa/ + predictions/).
+# Boltz-2 rebuilds processed/ from msa/ cache, so deleting only processed/
+# still produces stale results. Full directory wipe forces fresh MSA download
+# (~2 min) and fresh prediction.
 OUT_DIR=05_structure_prediction/outputs/boltz2/EU717894.1_rbp_01__GCF_000007145.1_tonB
-rm -rf "${OUT_DIR}/processed"
-echo "[$(date)] Cleared processed cache. Running Boltz-2 with fresh input..."
+rm -rf "${OUT_DIR}"
+echo "[$(date)] Cleared all cached output. Running Boltz-2 from scratch..."
 
 boltz predict \
   05_structure_prediction/inputs/boltz_input_EU717894.1_rbp_01__GCF_000007145.1_tonB.fasta \
