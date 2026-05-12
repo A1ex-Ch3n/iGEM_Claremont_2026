@@ -261,27 +261,30 @@ All files below exist on branch `active-learning-pipeline`. All paths relative t
 
 ### Module 05 — 3D Structure (Boltz-2, job 59986) ⭐ Primary visual output
 
-All files are under:
-`05_structure_prediction/outputs/boltz2/EU717894.1_rbp_01__GCF_000007145.1_tonB/boltz_results_.../`
+> **Note on path depth:** Boltz-2 creates a deeply nested output directory. All key files are inside:
+> `05_structure_prediction/outputs/boltz2/EU717894.1_rbp_01__GCF_000007145.1_tonB/`
+> The sub-path `boltz_results_boltz_input_EU717894.1_rbp_01__GCF_000007145.1_tonB/predictions/boltz_input_EU717894.1_rbp_01__GCF_000007145.1_tonB/` is Boltz-2's internal naming convention. Full paths are given below.
 
-| File | Description |
+| File (full path from repo root) | Description |
 |------|-------------|
-| `predictions/.../boltz_input_..._model_0.pdb` | **3D atomic structure.** Chain A = rbp_01 (712 aa), Chain B = TonB (604 aa). Open in PyMOL or ChimeraX. B-factor column encodes per-residue pLDDT. |
-| `predictions/.../pae_..._model_0.npz` | **PAE matrix (heatmap).** 1316×1316 float32 array. Entry [i,j] = predicted aligned error (Å) between residue i and residue j. Low value = high confidence in relative position. Interface region (rows 712–1316 × cols 0–712) is most informative. Load: `np.load(path)['pae']`. |
-| `predictions/.../plddt_..._model_0.npz` | Per-residue pLDDT confidence. 1316 values, range 0.30–0.98, mean 0.76. Plot as bar chart to see which residues are well-resolved. Load: `np.load(path)['plddt']`. |
-| `predictions/.../confidence_..._model_0.json` | Per-chain confidence scores. Key values: `iptm=0.365`, `chains_ptm={'0': 0.808, '1': 0.494}`. |
-| `affinity.json` | Summary affinity JSON. `interface_ipTM=0.365`, `chain_A_ptm=0.808`, `confidence_score=0.683`. `predicted_dG=null` — protein-protein pairs not supported by Boltz-2 affinity head (small molecule-only). |
+| `05_structure_prediction/outputs/boltz2/EU717894.1_rbp_01__GCF_000007145.1_tonB/boltz_results_boltz_input_EU717894.1_rbp_01__GCF_000007145.1_tonB/predictions/boltz_input_EU717894.1_rbp_01__GCF_000007145.1_tonB/boltz_input_EU717894.1_rbp_01__GCF_000007145.1_tonB_model_0.pdb` | **3D atomic structure.** Chain A = rbp_01 (712 aa), Chain B = TonB (604 aa). Open in PyMOL or ChimeraX. |
+| `05_structure_prediction/outputs/boltz2/EU717894.1_rbp_01__GCF_000007145.1_tonB/boltz_results_boltz_input_EU717894.1_rbp_01__GCF_000007145.1_tonB/predictions/boltz_input_EU717894.1_rbp_01__GCF_000007145.1_tonB/pae_boltz_input_EU717894.1_rbp_01__GCF_000007145.1_tonB_model_0.npz` | **PAE matrix (heatmap data).** 1316×1316 float32. Entry [i,j] = predicted aligned error (Å) between residue i and j. Low = high confidence. Interface block (rows 712–1315 × cols 0–711) = rbp_01 vs TonB. Load: `np.load(path)['pae']`. |
+| `05_structure_prediction/outputs/boltz2/EU717894.1_rbp_01__GCF_000007145.1_tonB/boltz_results_boltz_input_EU717894.1_rbp_01__GCF_000007145.1_tonB/predictions/boltz_input_EU717894.1_rbp_01__GCF_000007145.1_tonB/plddt_boltz_input_EU717894.1_rbp_01__GCF_000007145.1_tonB_model_0.npz` | Per-residue pLDDT. 1316 values, range 0.30–0.98, mean 0.76. Load: `np.load(path)['plddt']`. |
+| `05_structure_prediction/outputs/boltz2/EU717894.1_rbp_01__GCF_000007145.1_tonB/boltz_results_boltz_input_EU717894.1_rbp_01__GCF_000007145.1_tonB/predictions/boltz_input_EU717894.1_rbp_01__GCF_000007145.1_tonB/confidence_boltz_input_EU717894.1_rbp_01__GCF_000007145.1_tonB_model_0.json` | Per-chain confidence. Key: `iptm=0.365`, `chains_ptm={'0': 0.808, '1': 0.494}`. |
+| `05_structure_prediction/outputs/boltz2/EU717894.1_rbp_01__GCF_000007145.1_tonB/affinity.json` | Summary scores. `interface_ipTM=0.365`, `chain_A_ptm=0.808`, `confidence_score=0.683`. `predicted_dG=null` — affinity head is small-molecule only. |
 
-**How to generate the PAE heatmap image:**
+**How to generate the PAE heatmap image (run from repo root):**
 ```python
 import numpy as np, matplotlib.pyplot as plt
-pae = np.load("pae_..._model_0.npz")['pae']
+BASE = "05_structure_prediction/outputs/boltz2/EU717894.1_rbp_01__GCF_000007145.1_tonB"
+PRED = f"{BASE}/boltz_results_boltz_input_EU717894.1_rbp_01__GCF_000007145.1_tonB/predictions/boltz_input_EU717894.1_rbp_01__GCF_000007145.1_tonB"
+pae = np.load(f"{PRED}/pae_boltz_input_EU717894.1_rbp_01__GCF_000007145.1_tonB_model_0.npz")['pae']
 plt.figure(figsize=(8, 8))
 plt.imshow(pae, cmap='bwr_r', vmin=0, vmax=30)
 plt.axhline(712, color='k', lw=1); plt.axvline(712, color='k', lw=1)
 plt.colorbar(label='PAE (Å)'); plt.title('rbp_01 × TonB — Predicted Aligned Error')
-plt.xlabel('Residue (Chain A: 0-711 = rbp_01, Chain B: 712-1315 = TonB)')
-plt.savefig('pae_heatmap.png', dpi=150)
+plt.xlabel('Residue (Chain A: 0–711 = rbp_01 / Chain B: 712–1315 = TonB)')
+plt.savefig('pae_heatmap.png', dpi=150); print("Saved pae_heatmap.png")
 ```
 
 ---
@@ -574,26 +577,30 @@ Module 04 在本地用真实的 3 个 RBP 序列（rbp_01、rbp_02、rbp_03）�
 
 ### Module 05 — 3D 结构（Boltz-2，job 59986）⭐ 主要可视化输出
 
-所有文件位于：`05_structure_prediction/outputs/boltz2/EU717894.1_rbp_01__GCF_000007145.1_tonB/boltz_results_.../`
+> **路径说明：** Boltz-2 会生成深层嵌套目录。所有关键文件都在：
+> `05_structure_prediction/outputs/boltz2/EU717894.1_rbp_01__GCF_000007145.1_tonB/`
+> 其中子路径 `boltz_results_boltz_input_EU717894.1_rbp_01__GCF_000007145.1_tonB/predictions/boltz_input_EU717894.1_rbp_01__GCF_000007145.1_tonB/` 是 Boltz-2 内部命名规则自动生成的。完整路径如下。
 
-| 文件 | 说明 |
+| 文件（从仓库根目录的完整路径） | 说明 |
 |------|------|
-| `predictions/.../boltz_input_..._model_0.pdb` | **3D 原子结构。** Chain A = rbp_01（712 aa），Chain B = TonB（604 aa）。用 PyMOL 或 ChimeraX 打开。B-factor 列编码逐残基 pLDDT。 |
-| `predictions/.../pae_..._model_0.npz` | **PAE 矩阵（热图）。** 1316×1316 float32 数组。元素 [i,j] = 残基 i 与 j 相对位置的预测对齐误差（Å）。低值 = 高置信度。界面区域（行 712–1316 × 列 0–712）最有参考价值。加载：`np.load(path)['pae']`。 |
-| `predictions/.../plddt_..._model_0.npz` | 逐残基 pLDDT 置信度。1316 个值，范围 0.30–0.98，均值 0.76。可绘制为柱状图观察哪些残基置信度高。加载：`np.load(path)['plddt']`。 |
-| `predictions/.../confidence_..._model_0.json` | 逐链置信度分数。关键值：`iptm=0.365`，`chains_ptm={'0': 0.808, '1': 0.494}`。 |
-| `affinity.json` | 汇总 JSON。`interface_ipTM=0.365`，`chain_A_ptm=0.808`，`confidence_score=0.683`。`predicted_dG=null`——Boltz-2 亲和力头仅支持小分子-蛋白，不支持蛋白-蛋白对。 |
+| `05_structure_prediction/outputs/boltz2/EU717894.1_rbp_01__GCF_000007145.1_tonB/boltz_results_boltz_input_EU717894.1_rbp_01__GCF_000007145.1_tonB/predictions/boltz_input_EU717894.1_rbp_01__GCF_000007145.1_tonB/boltz_input_EU717894.1_rbp_01__GCF_000007145.1_tonB_model_0.pdb` | **3D 原子结构。** Chain A = rbp_01（712 aa），Chain B = TonB（604 aa）。用 PyMOL 或 ChimeraX 打开。 |
+| `05_structure_prediction/outputs/boltz2/EU717894.1_rbp_01__GCF_000007145.1_tonB/boltz_results_boltz_input_EU717894.1_rbp_01__GCF_000007145.1_tonB/predictions/boltz_input_EU717894.1_rbp_01__GCF_000007145.1_tonB/pae_boltz_input_EU717894.1_rbp_01__GCF_000007145.1_tonB_model_0.npz` | **PAE 矩阵（热图数据）。** 1316×1316 float32。元素 [i,j] = 残基 i 与 j 相对位置的预测对齐误差（Å）。低值 = 高置信度。界面块（行 712–1315 × 列 0–711）= rbp_01 vs TonB。加载：`np.load(path)['pae']`。 |
+| `05_structure_prediction/outputs/boltz2/EU717894.1_rbp_01__GCF_000007145.1_tonB/boltz_results_boltz_input_EU717894.1_rbp_01__GCF_000007145.1_tonB/predictions/boltz_input_EU717894.1_rbp_01__GCF_000007145.1_tonB/plddt_boltz_input_EU717894.1_rbp_01__GCF_000007145.1_tonB_model_0.npz` | 逐残基 pLDDT。1316 个值，范围 0.30–0.98，均值 0.76。加载：`np.load(path)['plddt']`。 |
+| `05_structure_prediction/outputs/boltz2/EU717894.1_rbp_01__GCF_000007145.1_tonB/boltz_results_boltz_input_EU717894.1_rbp_01__GCF_000007145.1_tonB/predictions/boltz_input_EU717894.1_rbp_01__GCF_000007145.1_tonB/confidence_boltz_input_EU717894.1_rbp_01__GCF_000007145.1_tonB_model_0.json` | 逐链置信度。关键值：`iptm=0.365`，`chains_ptm={'0': 0.808, '1': 0.494}`。 |
+| `05_structure_prediction/outputs/boltz2/EU717894.1_rbp_01__GCF_000007145.1_tonB/affinity.json` | 汇总分数。`interface_ipTM=0.365`，`chain_A_ptm=0.808`，`confidence_score=0.683`。`predicted_dG=null`——亲和力头仅支持小分子-蛋白。 |
 
-**生成 PAE 热图的代码：**
+**生成 PAE 热图的代码（从仓库根目录运行）：**
 ```python
 import numpy as np, matplotlib.pyplot as plt
-pae = np.load("pae_..._model_0.npz")['pae']
+BASE = "05_structure_prediction/outputs/boltz2/EU717894.1_rbp_01__GCF_000007145.1_tonB"
+PRED = f"{BASE}/boltz_results_boltz_input_EU717894.1_rbp_01__GCF_000007145.1_tonB/predictions/boltz_input_EU717894.1_rbp_01__GCF_000007145.1_tonB"
+pae = np.load(f"{PRED}/pae_boltz_input_EU717894.1_rbp_01__GCF_000007145.1_tonB_model_0.npz")['pae']
 plt.figure(figsize=(8, 8))
 plt.imshow(pae, cmap='bwr_r', vmin=0, vmax=30)
 plt.axhline(712, color='k', lw=1); plt.axvline(712, color='k', lw=1)
 plt.colorbar(label='PAE (Å)'); plt.title('rbp_01 × TonB — Predicted Aligned Error')
-plt.xlabel('残基（Chain A: 0-711 = rbp_01，Chain B: 712-1315 = TonB）')
-plt.savefig('pae_heatmap.png', dpi=150)
+plt.xlabel('残基（Chain A: 0–711 = rbp_01 / Chain B: 712–1315 = TonB）')
+plt.savefig('pae_heatmap.png', dpi=150); print("Saved pae_heatmap.png")
 ```
 
 ---
