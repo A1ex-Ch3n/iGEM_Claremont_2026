@@ -49,7 +49,7 @@ DOI: 10.1016/S0006-291X(03)00255-9 · Zotero: U9UAWZWZ
 
 > ⚠️ **Note on citation history:** An earlier version of this document (and CLAUDE.md) cited a "Wang, W.-T. et al. (2003) *Mol. Microbiol.* 50(2):507–519" as the primary receptor paper. After exhaustive search (CrossRef full DOI scan of Mol. Microbiol. vol. 50, PubMed, Semantic Scholar, and reference lists of Lee 2009 AEM and this BBRC paper itself), **that paper cannot be verified to exist** — it is likely a hallucinated citation from a prior AI session. The Hung 2003 BBRC paper is the only published primary source for phiL7 receptor identification in the Tseng lab (NCHU Taiwan).
 
-**Why read / 為什麼讀：** **實驗確認 phiL7 的受體系統是 TonB-ExbB-ExbD1-ExbD2 四個蛋白**——這是整個 Layer 2 因果驗證模組的生物學依據，也是 CLAUDE.md 中 "Wang et al. 2003" 所指向的研究。
+**Why read / 為什麼讀：** **實驗確認 phiL7 的受體系統：TonB、ExbB、ExbD1 三個 essential；ExbD2 co-transcribed 但非必需（負對照）**——這是整個 Layer 2 因果驗證模組的生物學依據，也是 CLAUDE.md 中 "Wang et al. 2003" 所指向的研究。
 
 **Role in our system / 在我們系統中的角色：**
 - Module 05：決定 Boltz-2 要跑的 receptor 是哪幾個（TonB、ExbB、ExbD1、ExbD2）
@@ -157,6 +157,8 @@ DOI: 10.1016/S0006-291X(03)00255-9 · Zotero: U9UAWZWZ
 - Module 08（variant design）：truncation series 的設計原則直接借這篇。N 端錨定 capsid，C 端決定受體特異性——切對地方才能保留結合能力
 - 注意：這篇是 *Klebsiella* phage，跟我們的 Xanthomonas phage 有物種差異；annotate 時記錄哪些部分可能不 transfer
 
+> ⚠️ **Biology warning / 生化機制警語：** Latka 2021 的 RBP 是 *Klebsiella* capsule **depolymerase（降解多醣酶）**，其 C 端酶活性域降解莢膜多醣（CPS）來接觸受體。這與 phiL7 的機制**完全不同**——phiL7 RBP 結合的是 TonB（內膜鐵攝取蛋白），不涉及多醣降解。**N/C 端模塊化的結構原則**（anchor + specificity head）可以作為通用概念借鑑，但 Latka 2021 的具體生化機制（depolymerase activity、CPS substrate）**不能直接套用**到 phiL7 系統。
+
 ---
 
 ### 🟡 Yehl, K. et al. (2019)
@@ -193,7 +195,7 @@ DOI: 10.1016/S0006-291X(03)00255-9 · Zotero: U9UAWZWZ
 **"Efficient evolution of human antibodies from general protein language models"**
 *Nature Biotechnology* 42:275–283.
 
-**Why read / 為什麼讀：** 直接示範「用 ESM-2 embedding + ~50 個測量點就能做 active learning 推進抗體進化」。這是我們整個 project framing 最直接的 precedent。
+**Why read / 為什麼讀：** 示範「用 ESM-1b/1v（不是 ESM-2）語言模型 likelihood 過濾抗體突變，每個抗體 ~20 個或更少 variant，兩輪篩選」——注意：這不是 BALD-style closed-loop，而是語言模型引導的突變篩選。這是我們整個 project framing 最直接的 precedent。
 
 **Role in our system / 在我們系統中的角色：**
 - Module 04 + 06 + 07 的組合參考。他們的 pipeline（ESM embed → fitness model → acquisition）就是我們的藍本
@@ -237,12 +239,12 @@ DOI: 10.1016/S0006-291X(03)00255-9 · Zotero: U9UAWZWZ
 **"Boltz-2: towards accurate and efficient binding affinity prediction"**
 *bioRxiv* (preprint).
 
-**Why read / 為什麼讀：** Boltz-2 是我們唯一能算 zero-shot affinity prior 的工具（AF3 沒有 affinity head）。在 PDBbind 上訓練的 affinity head 能直接從序列輸出 binding affinity 估計。
+**Why read / 為什麼讀：** Boltz-2 是唯一有顯式 affinity head 的結構預測工具，但該 head 的訓練資料是小分子–蛋白（PubChem、ChEMBL、BindingDB）；對蛋白–蛋白 pair 輸出 NaN。我們實際使用的是 ipTM（結構信心分數）作為 binding proxy，而非 affinity 數值。
 
 **Role in our system / 在我們系統中的角色：**
-- Module 05：phiL7 rbp_01 × TonB 的 Boltz-2 affinity → 第 4 層數據稀缺策略的 synthetic prior
+- Module 05：phiL7 rbp_01 × TonB 的 Boltz-2 **ipTM**（≠ affinity；affinity head 對蛋白-蛋白 pair 輸出 NaN）作為結構信心 proxy
 - 第一次 run（job 59949）用的是 85 aa P25（錯誤），ipTM = 0.345，需要用 712 aa rbp_01 重跑
-- 讀這篇理解 affinity head 的訓練數據分佈（PDBbind 主要是小分子，蛋白複合體有限）——這是 prior bias 的風險來源
+- 讀這篇理解 affinity head 的訓練數據（PubChem、ChEMBL、BindingDB——**全是小分子資料庫**）。**關鍵事實：protein-protein pair 的 affinity head 輸出 NaN**；我們能用的是 ipTM（結構信心分數，0-1），不是 affinity。
 
 **Key figure to annotate:** Figure 2（affinity prediction performance on PDBbind test set）、Table 1（benchmark vs AF3 / RoseTTAFold）。
 
@@ -269,7 +271,7 @@ DOI: 10.1016/S0006-291X(03)00255-9 · Zotero: U9UAWZWZ
 **"Benchmarking uncertainty quantification for protein engineering"**
 *PLOS Computational Biology* 21(1):e1012639. DOI: 10.1371/journal.pcbi.1012639 · Zotero: R3GF97TU
 
-**Why read / 為什麼讀：** 在蛋白質工程這個 exact domain 上系統 benchmark 了 UQ 方法（deep ensemble vs MC dropout vs GP vs conformal prediction）。Deep ensemble 在 protein fitness landscape 上被認定為最佳選擇之一。
+**Why read / 為什麼讀：** 在蛋白質工程的 FLIP benchmark 上比較了 7 種 UQ 方法。**結論：沒有單一最佳方法**；ensemble 在 accuracy 上常最高但 calibration 最差；uncertainty-based 選擇在 Bayesian optimization 中不一定優於 greedy。
 
 **Role in our system / 在我們系統中的角色：**
 - 選 deep ensemble 而不是 GP 或 MC Dropout 的直接依據

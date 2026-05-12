@@ -41,7 +41,7 @@
 **Where we are:** 🔄 **ESM embedding pipeline actively in development by team member with prior ESM experience.** Module 3.4 is our most-advanced dry-lab component.
 
 ### 3.5 Uncertainty-aware regression model
-**Methods:** Deep ensemble of 5 MLPs over ESM-2 embeddings (Lakshminarayanan et al., 2017, *NeurIPS*). Recently benchmarked as the best-calibrated UQ method for protein engineering (Greenman et al., 2025, *NAR Genom Bioinform*).
+**Methods:** Deep ensemble of 5 MLPs over ESM-2 embeddings (Lakshminarayanan et al., 2017, *NeurIPS*). Benchmarked across multiple protein fitness landscapes (Greenman et al., 2025, *PLoS Comput Biol* 21(1):e1012639); no single UQ method dominates all scenarios.
 
 **Where we are:** ⬜ Architecture designed; implementation begins after Module 3.4 outputs are stable.
 
@@ -89,7 +89,7 @@
 **Where we are:** ⬜ Not started. **Highest wet-lab risk:** ELISA optimization (positive control = T7 gp17 with published binding data) must be locked before Cycle 0 launches.
 
 ### 4.6 Receptor knockout for causal validation
-**Methods:** Markerless deletion of *tonB* / *exbB* / *exbD1* / *exbD2* using pK18mobsacB suicide vector (Schäfer et al., 1994, *Gene*; Addgene #87097). KanR + sucrose counter-selection. Targets follow phiL7 receptor biology (Hung et al., 2003, *BBRC* 302:878–884, PMID 12646254).
+**Methods:** Markerless deletion of *tonB* / *exbB* / *exbD1* / *exbD2* using pK18mobsacB suicide vector (Schäfer et al., 1994, *Gene*; Addgene #87097). KanR + sucrose counter-selection. Targets: *tonB*, *exbB*, *exbD1* (all essential per Hung et al. 2003) + *exbD2* as negative control (not required for infection per Hung et al., 2003, *BBRC* 302:878–884, PMID 12646254).
 
 **Where we are:** ⬜ Not started. Existing Benchling Xcc transformation protocol (electroporation, 14 kV/cm, 10 µF) provides the required tool. Plasmid order needed.
 

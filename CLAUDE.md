@@ -4,7 +4,7 @@
 
 We are building a **closed-loop active-learning pipeline** that integrates a machine-learning model of phage receptor-binding-protein (RBP) — host receptor interactions with iterative wet-lab validation. The system uses Bayesian Optimal Experimental Design (BOED) to let the model nominate the next-most-informative experiment, addressing the central pain point of phage-host prediction: data scarcity.
 
-**Reference scaffold (dry lab):** *Xanthomonas campestris* pv. *campestris* (Xcc) ATCC 33913 + phage phiL7 (NCBI EU717894) — phiL7's receptor system (TonB-ExbB-ExbD1D2) is experimentally identified (Wang et al. 2003).
+**Reference scaffold (dry lab):** *Xanthomonas campestris* pv. *campestris* (Xcc) ATCC 33913 + phage phiL7 (NCBI EU717894) — phiL7's receptor system (TonB-ExbB-ExbD1 is experimentally identified as essential (ExbD2 NOT required per Hung et al. 2003, BBRC 302:878–884).
 
 **Wet lab strategy:** Self-isolate Xanthomonas + lytic phage from California symptomatic crops (per PI consultation, 2026-05-07; bypasses USDA APHIS PPQ-526 permit).
 

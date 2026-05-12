@@ -247,11 +247,11 @@ iGEM 评审第一个会问：「你怎么知道你的 acquisition function 真�
 |---|---|---|
 | **Host strain** | *Xanthomonas campestris* pv. *campestris*  ATCC 33913 (= DSM 3586, NCPPB 528, LMG 568, type strain) | BSL-1，模式菌株，全基因组已测 (NCBI: AE008922)，2002 年起广泛用于学术 plant pathology research，Brassica 黑腐病的 causal agent — 跟「Best Agriculture」叙事完美契合（加州 brassica 产业大） |
 | **Phage** | phiL7 (NCBI: **EU717894**, 44 kb) | T7-like Siphoviridae **lytic phage**（对的，不是 podovirus；icosahedral capsid + long noncontractile tail），感染 Xcc 的 reference phage，2009 年由 Academia Sinica (Taiwan) 完整测序与功能注释 |
-| **Receptor** | **TonB + ExbB + ExbD1D2** operon | 这是 **本研究的金子** — phiL7 的 receptor 已经由 Tn5 mutagenesis 鉴定（Hung et al. 2003, *BBRC* 302:878–884, PMID 12646254），TonB 是 inner membrane protein，TonB-dependent receptor system 是 well-defined target，**Step 8 受体敲除直接知道要 KO 哪个基因** |
+| **Receptor** | **TonB + ExbB + ExbD1**（ExbD2 co-transcribed 但非必需）operon | 这是 **本研究的金子** — phiL7 的 receptor 已经由 Tn5 mutagenesis 鉴定（Hung et al. 2003, *BBRC* 302:878–884, PMID 12646254），TonB 是 inner membrane protein，TonB-dependent receptor system 是 well-defined target，**Step 8 受体敲除直接知道要 KO 哪个基因**（Hung 2003 確認 TonB、ExbB、ExbD1 三個 essential；exbD2 突變保留 phiL7 敏感性——是負對照） |
 
 **为什么这个组合是 winning combo**：
 
-1. **Receptor 已知** → 整个 pipeline 不用瞎猜。Layer 1 ELISA target 用 TonB-dependent OMP。Layer 2 KO 直接 targeted to tonB / exbBD1D2
+1. **Receptor 已知** → 整个 pipeline 不用瞎猜。Layer 1 ELISA target 用 TonB-dependent OMP。Layer 2 KO 直接 targeted to tonB / exbB / exbD1（exbD2 作為負對照）
 2. **Strain + phage 都是 reference standards** → reviewer 不会 question host range 之类基础问题
 3. **Phage 是 lytic, T7-like** → 跟蛋白质工程 literature（T7 gp17 family）有 cross-reference 可用
 4. **ATCC 33913 + EU717894 都在 NCBI/PubMed 全公开** → dry lab Phase 0 可以立即开始，不用等 wet lab
@@ -310,7 +310,7 @@ phiL7 paper 的通讯作者是 NCHU（台灣國立中興大學）Tseng lab 的�
 2. ✅ **Xcc ATCC 33913 完整基因组** — 已在 NCBI AE008922，立即可下载（含 tonB, exbB, exbD1, exbD2 序列）
 3. ✅ **phiL7 RBP 候选基因** — 用 PHANOTATE 在 EU717894 上识别 tail spike / tail fiber gene
 4. ✅ **AlphaFold 预测 RBP 3D 结构** — 没有 PDB structure for phiL7 RBP，必须靠 AF
-5. ✅ **TonB-dependent receptor 3D 结构** — Xcc 自身 TonB / ExbB / ExbD1D2 也可以 AF 预测
+5. ✅ **TonB-dependent receptor 3D 结构** — Xcc 自身 TonB / ExbB / ExbD1 也可以 AF 预测（ExbD2 作為負對照一並預測）
 
 → Alex 1 周 dry lab sprint 可以全部基于上述公开数据完成，**5/17 wet lab 启动延迟不影响 dry lab 进度**。
 
@@ -441,7 +441,7 @@ Proposal Step 7（directed mutagenesis）跟 Step 8（receptor KO）是 Active L
 4. ☐ 下载 phiL7 完整基因组（NCBI EU717894）跟 Xcc ATCC 33913 基因组（AE008922）
 5. ☐ 用 PHANOTATE 注释 phiL7，识别 tail spike / tail fiber RBP 候选基因
 6. ☐ AlphaFold 跑 phiL7 RBP 3D 结构预测（Laguna 上跑，跟 ESM 顾问 sync）
-7. ☐ AlphaFold 跑 Xcc TonB / ExbB / ExbD1 / ExbD2 结构预测（receptor side）
+7. ☐ AlphaFold 跑 Xcc TonB / ExbB / ExbD1 结构预测（ExbD2 保留作為負對照）
 8. ☐ 写 baseline ML pipeline：ESM-2 embedding + deep ensemble + BALD acquisition function（先简化版）
 9. ☐ Design seed variants（4-6 个 truncations + 2 chimeras + 2 point mutants）—— 这次基于 phiL7 RBP 真实序列设计
 

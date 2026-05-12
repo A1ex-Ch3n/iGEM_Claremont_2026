@@ -57,9 +57,9 @@ We are building an **active learning pipeline** for phage-host binding predictio
 - **Known receptor / 已知受體:** TonB-ExbB-ExbD system (Hung et al. 2003, *BBRC* 302:878–884, PMID 12646254)
 
 **Why phiL7 and Xcc? / 為什麼選 phiL7 和 Xcc？**
-phiL7's receptor is experimentally confirmed (Wang et al. knocked out *tonB*, *exbB*, *exbD1*, *exbD2* and showed phage can no longer infect). This gives us a ground-truth positive interaction to validate everything against. Our wet lab will self-isolate Xanthomonas and lytic phages from California brassica crops, bypassing USDA import permits.
+phiL7's receptor is experimentally confirmed (Hung et al. 2003 showed: **tonB**, **exbB**, **exbD1** knockouts completely block infection; exbD2 knockout does NOT affect infection — confirmed negative). This gives us a ground-truth positive interaction to validate everything against. Our wet lab will self-isolate Xanthomonas and lytic phages from California brassica crops, bypassing USDA import permits.
 
-phiL7 的受體已通過實驗確認（Wang et al. 敲除了 *tonB*、*exbB*、*exbD1*、*exbD2* 並顯示噬菌體無法再侵染）。這給了我們一個基準真實的正相互作用來驗證一切。我們的濕實驗室將從加利福尼亞州的十字花科作物中自行分離 Xanthomonas 和裂解性噬菌體，從而繞過 USDA 進口許可。
+phiL7 的受體已通過實驗確認（Hung et al. 2003：tonB、exbB、exbD1 敲除完全阻斷感染；exbD2 敲除**不影響**感染——是陰性對照）。這給了我們一個基準真實的正相互作用來驗證一切。我們的濕實驗室將從加利福尼亞州的十字花科作物中自行分離 Xanthomonas 和裂解性噬菌體，從而繞過 USDA 進口許可。
 
 ---
 
@@ -243,7 +243,7 @@ Standard neural networks are overconfident — they give confident predictions e
 標準神經網絡過於自信——即使對與訓練數據非常不同的輸入也會給出自信的預測。對於主動學習，我們*需要*模型在真正不知道時說「我不知道」。這個不確定性信號正是 BALD 採集函數（模組 07）用來選擇實驗的。
 
 **Method: Deep Ensemble (Lakshminarayanan et al. 2017, NeurIPS)**
-Train 5 independent neural networks on the same data. If they all agree → confident. If they disagree → uncertain. This is the simplest and most reliable uncertainty quantification method (validated for protein engineering by Greenman et al. 2025, *NAR Genomics & Bioinformatics*).
+Train 5 independent neural networks on the same data. If they all agree → confident. If they disagree → uncertain. This is the simplest and most reliable uncertainty quantification method (benchmarked for protein engineering by Greenman et al. 2025, *PLoS Comput Biol* (no single best UQ method; ensembles competitive on accuracy)).
 
 訓練 5 個獨立的神經網絡在相同的數據上。如果它們都同意 → 自信。如果它們不同意 → 不確定。這是最簡單且最可靠的不確定性量化方法（由 Greenman et al. 2025 針對蛋白質工程驗證）。
 
@@ -349,7 +349,7 @@ These are the foundational references cited across all modules. You don't need t
 | Lin et al. 2023, _Science_              | ESM-2 protein language model    | Module 04 embedding method     |
 | Lakshminarayanan et al. 2017, _NeurIPS_ | Deep ensembles for uncertainty  | Module 06 architecture         |
 | Houlsby et al. 2011, _arXiv_            | BALD acquisition function       | Module 07 method (next sprint) |
-| Greenman et al. 2025, _NAR Genomics_    | Ensembles best for protein UQ   | Validates our Module 06 choice |
+| Greenman et al. 2025, _PLoS Comput Biol_ | UQ benchmarked; no single best  | Informs Module 06 choice       |
 | Boeckaerts et al. 2022, _Viruses_       | PhageRBPdetect HMM+ML           | Module 03 method               |
 | Passaro et al. 2025, _bioRxiv_          | Boltz-2 structure+affinity      | Module 05 primary tool         |
 | Yang et al. 2025, _Nat Commun_          | ALDE: AL for directed evolution | Validates our whole approach   |

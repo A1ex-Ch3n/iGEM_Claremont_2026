@@ -23,7 +23,7 @@ The deliverable is a system, not a single model: a quantitative motif-level RBP�
 
 ### What is already known
 
-- phiL7 infects *Xcc* through the TonB-ExbB-ExbD1-ExbD2 receptor system (Hung et al., 2003, *BBRC* 302:878–884).
+- phiL7 infects *Xcc* through the TonB-ExbB-ExbD1 receptor system (TonB, ExbB, ExbD1 are essential; ExbD2 is co-expressed in the same operon but not required for infection) (Hung et al., 2003, *BBRC* 302:878–884).
 - The phiL7 tail spike protein (rbp_01, 712 aa) is the receptor-binding protein responsible for host recognition (Lee et al., 2009, *AEM*; Module 03 HMM result).
 - Mutating RBP C-terminal domains can redirect phage host range (Latka et al., 2021, *mBio*; Yehl et al., 2019, *Cell*).
 - The best existing phage-host prediction model reaches AUC 0.82 within one genus but degrades to 0.67 across genera — because labeled binding data is extremely scarce (Boeckaerts et al., 2024, *Nat Commun*; PAML benchmark, 2025).
@@ -34,7 +34,7 @@ The deliverable is a system, not a single model: a quantitative motif-level RBP�
 
 This is a *fitness landscape* problem: the space of possible rbp_01 variants has 20^712 points, and we have essentially zero quantitative measurements. No one has systematically mapped RBP–receptor binding affinity for any *Xanthomonas* phage system.
 
-The deeper open question: **can computational priors (Boltz-2 zero-shot affinity, ESM-2 protein language model embeddings, PLM-interact PPI transfer learning) meaningfully accelerate learning this landscape from a small number of wet-lab measurements?** This has never been tested in phage biology.
+The deeper open question: **can computational priors (Boltz-2 ipTM structural confidence proxy, ESM-2 protein language model embeddings, PLM-interact PPI transfer learning) meaningfully accelerate learning this landscape from a small number of wet-lab measurements?** This has never been tested in phage biology.
 
 ### What we learn through this pipeline
 
@@ -143,9 +143,9 @@ The two-layer design (binding prediction → infection calibration) explicitly a
 
 **Methods:**
 - **AlphaFold 3** (Abramson et al., 2024, *Nature*) — for predicting both phage RBP trimer structures and host receptor (TonB / ExbB / ExbD1 / ExbD2) structures.
-- **Boltz-2** (Passaro et al., 2025, bioRxiv) — for batched zero-shot affinity prediction of RBP variants against receptors. Includes an explicit affinity head trained on protein-protein binding data, which AlphaFold 3 lacks.
+- **Boltz-2** (Passaro et al., 2025, bioRxiv) — for batched zero-shot structural confidence estimation of RBP variants against receptors. Includes an explicit affinity head trained on small molecule–protein binding data (ChEMBL, BindingDB); outputs NaN for protein-protein pairs — we use ipTM as structural confidence proxy, which AlphaFold 3 does not expose per-complex.
 
-**Why both:** AF3 provides higher-quality static structures; Boltz-2 provides differentiable affinity scores usable as informative priors during the cold-start phase. This dual-model strategy follows the Toronto iGEM 2025 PHORAGER team's design philosophy.
+**Why both:** AF3 provides higher-quality static structures; Boltz-2 provides ipTM structural confidence scores as a binding quality proxy during the cold-start phase. This dual-model strategy follows the Toronto iGEM 2025 PHORAGER team's design philosophy.
 
 **Output:** PDB-format predictions; per-variant predicted ΔΔG estimates (used as soft labels for Layer 0 prior).
 
@@ -153,7 +153,7 @@ The two-layer design (binding prediction → infection calibration) explicitly a
 
 **Methods:** ESM-2 (Lin et al., 2023, *Science*), specifically the 650M-parameter variant for routine use and the 3B variant for final benchmarking. Embeddings are mean-pooled over residues for sequence-level prediction, or extracted per-residue for motif-level analysis.
 
-**Why ESM-2:** Trained on 65M unique protein sequences with masked-language-modeling objective; demonstrated state-of-the-art on protein function prediction tasks. Critically, ESM-2 embeddings transfer to phage proteins despite phage proteins being underrepresented in training data (Hie et al., 2024, *Nat Biotechnol*).
+**Why ESM-2:** Trained on 65M unique protein sequences with masked-language-modeling objective; demonstrated state-of-the-art on protein function prediction tasks. Critically, protein language model embeddings transfer to phage proteins despite phage proteins being underrepresented in training data (phage protein transfer demonstrated in Hie et al., 2024, *Nat Biotechnol* using ESM-1b).
 
 **Optional layer:** PLM-interact (Liu et al., 2025, *Nat Commun*) — fine-tuned ESM-2 on human PPI data, demonstrated AUPR improvement of 16–28% when transferred to virus-host PPI in mouse, fly, worm, yeast, and *E. coli*. We will benchmark whether this transfer extends to phage-bacteria binding.
 
@@ -168,7 +168,7 @@ The two-layer design (binding prediction → infection calibration) explicitly a
 **Why deep ensembles over Gaussian Processes:**
 - Better calibration than MC Dropout (Beluch et al., 2018, *CVPR*; Ovadia et al., 2019, *NeurIPS*).
 - Handles ESM-2's 1280-D inputs without GP scaling issues.
-- Recently benchmarked as the best UQ method for protein engineering (Greenman et al., 2025, *NAR Genom Bioinform*: "Benchmarking uncertainty quantification for protein engineering").
+- Competitive UQ method for protein engineering across multiple fitness landscapes (Greenman et al., 2025, *PLoS Comput Biol*: "Benchmarking uncertainty quantification for protein engineering").
 - ALDE (Yang et al., 2025) used deep ensembles + Gaussian Processes; we will start with ensembles for simplicity and add GPs as a comparative.
 
 **Output:** Predicted binding score + uncertainty per (RBP variant, receptor) pair.
@@ -291,7 +291,7 @@ A reproducible data pipeline that:
 
 **Approach:** Markerless gene deletion of candidate receptor genes in our Xanthomonas isolates using the pK18mobsacB suicide-vector system (Schäfer et al., 1994, *Gene*; Addgene #87097).
 
-**Receptor targets:** Based on phiL7 reference biology (Hung et al., 2003, *BBRC* 302:878–884) — *tonB*, *exbB*, *exbD1*, *exbD2*. If our isolated phage targets a different receptor, we will identify it via comparative genomics of phage-resistant escape mutants.
+**Receptor targets:** Based on phiL7 reference biology (Hung et al., 2003, *BBRC* 302:878–884) — *tonB*, *exbB*, *exbD1* (all three essential); *exbD2* is also tested as a negative control (Hung 2003 shows it is NOT required for phiL7 penetration). If our isolated phage targets a different receptor, we will identify it via comparative genomics of phage-resistant escape mutants.
 
 **Protocol:**
 1. Construct deletion plasmid: ~500 bp upstream + ~500 bp downstream homology arms flanking the target gene, cloned into pK18mobsacB (kanamycin resistance + sacB sucrose counter-selection).
