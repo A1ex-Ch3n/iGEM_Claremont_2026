@@ -88,7 +88,7 @@ The pipeline integrates three layers running in parallel:
    ┌─────────────────────────────────────────────────────────────┐
    │  LAYER 0 — Reference Initialization (Pre-cycle, public data)│
    │  • Public phage RBP corpora (PhageRBPdetect; ~5K sequences)│
-   │  • Boltz-2 zero-shot affinity simulation                   │
+   │  • Boltz-2 ipTM structural confidence (binding proxy)      │
    │  • PLM-interact transfer-learning prior (human PPI)        │
    └─────────────────────────────────────────────────────────────┘
                               │ informative prior
@@ -339,7 +339,7 @@ Each cycle is approximately 2 weeks:
 **Goal:** Generate the first batch of training data with maximally informative seed variants.
 
 **Variant selection:** 4-6 variants chosen by:
-- **Prior-driven:** Boltz-2 zero-shot affinity predictions (Module 3.3) flag variants with widely-divergent predicted binding (encourages information spread).
+- **Prior-driven:** Boltz-2 ipTM structural confidence scores (Module 3.3) flag variants with widely-divergent predicted binding geometry (encourages information spread).
 - **Expert-driven:** team selects 1-2 "biological intuition" picks for sanity-checking the model.
 - **Coverage-driven:** distribute across truncation / mutation / chimera variant classes.
 
