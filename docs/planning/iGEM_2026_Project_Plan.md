@@ -19,6 +19,40 @@ The deliverable is a system, not a single model: a quantitative motif-level RBP�
 
 ---
 
+## 0. What We Know, What We Don't Know, and What We Learn
+
+### What is already known
+
+- phiL7 infects *Xcc* through the TonB-ExbB-ExbD1-ExbD2 receptor system (Hung et al., 2003, *BBRC* 302:878–884).
+- The phiL7 tail spike protein (rbp_01, 712 aa) is the receptor-binding protein responsible for host recognition (Lee et al., 2009, *AEM*; Module 03 HMM result).
+- Mutating RBP C-terminal domains can redirect phage host range (Latka et al., 2021, *mBio*; Yehl et al., 2019, *Cell*).
+- The best existing phage-host prediction model reaches AUC 0.82 within one genus but degrades to 0.67 across genera — because labeled binding data is extremely scarce (Boeckaerts et al., 2024, *Nat Commun*; PAML benchmark, 2025).
+
+### What is not known — the core research gap
+
+**For rbp_01 (712 amino acids), which positions determine binding strength to TonB? How does changing those positions affect affinity?**
+
+This is a *fitness landscape* problem: the space of possible rbp_01 variants has 20^712 points, and we have essentially zero quantitative measurements. No one has systematically mapped RBP–receptor binding affinity for any *Xanthomonas* phage system.
+
+The deeper open question: **can computational priors (Boltz-2 zero-shot affinity, ESM-2 protein language model embeddings, PLM-interact PPI transfer learning) meaningfully accelerate learning this landscape from a small number of wet-lab measurements?** This has never been tested in phage biology.
+
+### What we learn through this pipeline
+
+| Question | How we answer it |
+|----------|-----------------|
+| Which rbp_01 variants bind TonB better or worse? | ELISA binding curves, ~30–60 variants across 2–3 cycles |
+| Does active learning (BALD) outperform random selection? | Retrospective replay: same data, two selection policies |
+| Do computational priors (Boltz-2, ESM-2) transfer to phage-bacteria? | Compare model performance with vs without each prior layer |
+| How much of phage infection is receptor-specific vs defense-dependent? | Layer 2: ΔtonB / ΔexbB knockout causal decomposition |
+
+The core scientific contribution is **methodological**: a validated framework for efficiently exploring phage RBP fitness landscapes with limited wet-lab budget. If active learning provides 2–5× efficiency gain (as shown in antibody and enzyme engineering), Cycle 0–2 with ~30 ELISA measurements is equivalent in information to 60–150 random measurements — at a fraction of the cost.
+
+### Why wet-lab cost stays manageable
+
+Cycle 0 (4–6 variants) requires gene synthesis (~$500). Subsequent cycles primarily use site-directed mutagenesis (~$50/variant, 4 days), not new gene synthesis, because BALD selects point mutations on existing constructs. Total wet-lab spend across all cycles: ~$2,000–2,500.
+
+---
+
 ## 1. Background and Motivation
 
 ### 1.1 *Xanthomonas* impact and current control limitations
