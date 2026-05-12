@@ -147,7 +147,7 @@ The two-layer design (binding prediction → infection calibration) explicitly a
 
 **Why both:** AF3 provides higher-quality static structures; Boltz-2 provides ipTM structural confidence scores as a binding quality proxy during the cold-start phase. This dual-model strategy follows the Toronto iGEM 2025 PHORAGER team's design philosophy.
 
-**Output:** PDB-format predictions; per-variant predicted ΔΔG estimates (used as soft labels for Layer 0 prior).
+**Output:** PDB-format predictions; per-variant ipTM structural confidence scores (used as binding quality proxy for Layer 0 prior). Note: Boltz-2 affinity head is trained on small molecule–protein data — outputs NaN for protein-protein pairs; ipTM is the usable signal.
 
 ### Module 3.4 — Protein language model embeddings
 
@@ -547,3 +547,49 @@ Each cycle is approximately 2 weeks:
 
 **Document prepared for review by Prof. J. Cesar Ignacio-Espinoza and Prof. Ran Libeskind-Hadas.**
 **Available for discussion at the team's earliest convenience.**
+
+---
+
+## 12. Current Progress (as of 2026-05-11)
+
+> This section is updated after each working session.
+
+### Pipeline Build Status
+
+| Module | Status | Key Output | Notes |
+|--------|--------|-----------|-------|
+| 00 Raw Data | ✅ Done | 777 phage + 34 bacteria genomes | Binaries gitignored; re-fetchable |
+| 01 Ground Truth | ✅ Done | interaction_matrix.csv: 2,236 pairs | 22/22 tests pass |
+| 02 Annotation | ✅ Done | phiL7: 80 ORFs; Xcc: 4,344 ORFs | 26/26 tests pass |
+| 03 RBP ID | ✅ Done | rbp_01 (712 aa, HMM score=1.0) primary candidate | 25/27 tests pass |
+| 04 Embedding | ✅ Done | 3 RBPs × 320 dim (ESM-2 8M local) | Production needs ESM-2 650M on Laguna |
+| 05 Structure | ✅ Phase 1 done | rbp_01 × TonB: ipTM=0.365, chain A ptm=0.808 | AF3 weights pending; exbB FASTA ready |
+| 06 Ensemble | 🟡 Architecture done | cycle_0/predictions.csv | Synthetic data; swap to ELISA ~June 1 |
+| 07 BALD | ❌ Not started | — | **Highest priority; needed before May 17** |
+| 08 Cycle Data | ⏳ Pending | — | Cycle 0 launches ~June 1 |
+
+### Wet Lab Readiness
+
+| Task | Status | Owner | Deadline |
+|------|--------|-------|----------|
+| California brassica field sampling | ⏳ Not started | Sarah, Olivia, Weitao | May 17 |
+| Cycle 0 variant design (4–6 variants) | ❌ Not done | Alex (dry lab) | May 17 |
+| Gene synthesis order | ❌ Not ordered | Alex + wet lab | May 17 (~2 weeks to delivery) |
+| pET-28a / pK18mobsacB ordering | ⏳ Unconfirmed | Lab purchasing | ASAP |
+| AF3 model weights application | ❌ Not applied | Alex or PI | ASAP (1–7 day review) |
+
+### Confirmed Key Facts (Literature audit 2026-05-11)
+
+Based on full reading of 19 core papers (see `docs/reference/paper_reading_notes.md`):
+
+- **ExbD2 is NOT essential**: Hung 2003 confirms only TonB, ExbB, ExbD1 are required; ΔexbD2 does not affect infection — serves as built-in negative control.
+- **rbp_01 (712 aa) is the tail spike candidate**: Identified by PhageRBPdetect HMM (Tail_spike_N domain hit), not Lee 2009 annotation (Lee 2009 never explicitly names a tail spike).
+- **Boltz-2 affinity head = small molecule–protein only**: Outputs NaN for protein-protein pairs; we use ipTM as structural confidence proxy.
+- **Current Boltz-2 result (job 59986)**: rbp_01 712 aa × TonB 604 aa; ipTM=0.365 (low but expected); chain A ptm=0.808 (high — rbp_01 monomer well-predicted).
+
+### Next Steps (prioritized)
+
+1. **Module 07 BALD implementation** (highest) — needed before wet lab launches May 17
+2. **Cycle 0 variant design** — open PDB, analyze interface residues, design 4–6 variants + primer sequences
+3. **AF3 model weights application** — 1–7 day review, apply immediately
+4. **Laguna supplementary runs**: ESM-2 650M embeddings for 777 phage RBPs; Boltz-2 exbB pair
