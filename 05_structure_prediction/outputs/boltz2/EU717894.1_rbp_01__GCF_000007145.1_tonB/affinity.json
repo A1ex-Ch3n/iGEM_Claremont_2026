@@ -1,9 +1,14 @@
 {
-  "predicted_dG_kcal_mol": NaN,
-  "predicted_pKd": NaN,
-  "confidence": NaN,
-  "interface_ipTM": NaN,
-  "model_version": "boltz2_2.0.3",
-  "note": "protein-protein pair: dG/pKd not available from affinity head; ipTM used as confidence proxy",
-  "status": "pending_laguna_run"
+    "predicted_dG_kcal_mol": null,
+    "predicted_pKd": null,
+    "confidence_score": 0.6825761795043945,
+    "interface_ipTM": 0.3649718463420868,
+    "complex_plddt": 0.7619772553443909,
+    "chain_A_ptm": 0.8078771233558655,
+    "chain_B_ptm": 0.4938570261001587,
+    "model_version": "boltz2_2.0.3",
+    "job_id": "59986",
+    "input_chain_A": "EU717894.1_rbp_01 (712 aa tail spike)",
+    "input_chain_B": "GCF_000007145.1_tonB (604 aa)",
+    "note": "protein-protein pair: dG/pKd not available (affinity head is small-molecule only); use interface_ipTM as structural confidence proxy. Chain A ptm=0.808 indicates high-quality monomer prediction."
 }

@@ -147,8 +147,8 @@ ema_decay: 0.999
 min_dist: 2.0
 max_dist: 22.0
 predict_args:
-  recycling_steps: 1
-  sampling_steps: 50
+  recycling_steps: 3
+  sampling_steps: 200
   diffusion_samples: 1
   max_parallel_samples: 5
   write_confidence_summary: true
@@ -177,4 +177,4 @@ predict_bfactor: true
 log_loss_every_steps: 50
 checkpoint_diffusion_conditioning: true
 use_templates_v2: true
-use_trifast: false
+use_trifast: true
