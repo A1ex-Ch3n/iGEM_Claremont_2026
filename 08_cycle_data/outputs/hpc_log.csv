@@ -1,0 +1,2 @@
+date,job_name,jobid,gpu_hours,status,output_path,notes
+2026-05-11,boltz2_phiL7_tonB,59986,0.1,COMPLETED,05_structure_prediction/outputs/boltz2/EU717894.1_rbp_01__GCF_000007145.1_tonB/,rbp_01 712aa x TonB 604aa; ipTM=0.365; chain_A_ptm=0.808; fixed cache bug (wipe full output dir before run)
