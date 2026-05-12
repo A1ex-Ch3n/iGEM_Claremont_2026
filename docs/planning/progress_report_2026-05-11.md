@@ -131,6 +131,82 @@ There are three practical validation tiers. Here is an honest comparison:
 
 **Bottom line:** Start the receptor knockouts on May 17. If they succeed by early July, you have a five-star story. If they fail, you fall back to Tier 2 and still have a strong submission. The ELISA + plaque + receptor knockout combination is exactly what Hung 2003 did — and that paper was published in *Biochemical and Biophysical Research Communications*, which validates the experimental feasibility.
 
+
+---
+
+## Discussion-Ready Outputs (as of 2026-05-11)
+
+> For use in PI meetings, team reviews, or paper planning.
+> All files listed are committed on branch `active-learning-pipeline`.
+
+### 1. rbp_01 × TonB 3D Complex Structure
+**File:** `05_structure_prediction/outputs/boltz2/EU717894.1_rbp_01__GCF_000007145.1_tonB/boltz_results_*/predictions/*.pdb`
+**View with:** PyMOL or ChimeraX (free)
+**What to discuss:**
+- Chain A (rbp_01, 712 aa): Boltz-2 predicts a well-folded monomer (chain A ptm = **0.808**)
+- Interface confidence (ipTM = **0.365**): low, meaning the model is uncertain HOW the two proteins dock — not that they don't interact. This is expected for a novel phage-host pair with no PDB template.
+- Key question for PI: does the predicted interface region match the known TonB-ExbB binding face from *E. coli* literature?
+
+### 2. Structural Confidence Numbers
+**File:** `05_structure_prediction/outputs/boltz2/.../affinity.json`
+```
+confidence_score: 0.683   (overall complex quality)
+interface_ipTM:  0.365    (binding interface confidence — low but expected)
+chain_A_ptm:     0.808    (rbp_01 monomer prediction — high)
+chain_B_ptm:     0.494    (TonB monomer prediction — medium)
+```
+**What to discuss:** The low ipTM is not a failure — it tells us we need wet lab data. The high chain A ptm means rbp_01 is structurally well-constrained, making it a reliable starting point for variant design.
+
+### 3. RBP Candidate List with Confidence Scores
+**File:** `03_rbp_identification/outputs/EU717894.1_rbp_candidates.csv`
+
+| Rank | Protein | Length | Evidence | Score |
+|------|---------|--------|----------|-------|
+| 1 | EU717894.1_rbp_01 | **712 aa** | HMM: Tail_spike_N + unknown_C54 | 1.0 |
+| 2 | EU717894.1_rbp_02 | 918 aa | HMM: collagen-like repeat | 1.0 |
+| 3 | EU717894.1_rbp_03 | 224 aa | HMM: unknown_C294 | 1.0 |
+
+**What to discuss:** rbp_01 is the primary candidate (Tail_spike_N domain = canonical tail spike anchor). rbp_02 and rbp_03 are backup candidates. Do we want to also express rbp_02 in Cycle 0 as a chimera source?
+
+### 4. Interaction Matrix (Ground Truth)
+**File:** `01_data_ground_truth/outputs/interaction_matrix.csv`
+- **2,236 phage-host pairs** total (315 positive, 1,920 negative)
+- **1 ground-truth row** for our reference system: phiL7 × Xcc (confirmed by Hung 2003, PMID 12646254)
+- This is the training data baseline before any wet lab data comes in
+**What to discuss:** The 1 confirmed pair is thin. The Boltz-2 ipTM and ESM-2 embeddings provide the "synthetic prior" to compensate before Cycle 0 data arrives.
+
+### 5. Protein Embeddings (Module 04)
+**File:** `04_protein_embedding/outputs/embeddings_esm2_t6_8M_phiL7_rbps.npz`
+- 3 RBPs × 320-dim vectors (ESM-2 8M, local version)
+- Production version (1280-dim, ESM-2 650M) to be run on Laguna
+**What to discuss:** These vectors are the input to the deep ensemble model. The 8M version is a proof-of-concept; before Cycle 0, Laguna should run the 650M version.
+
+### 6. Validation Strategy Recommendation
+**Reference:** "Validation Strategy Analysis" section above + `docs/planning/progress_report_2026-05-11.md`
+**What to discuss with PI:**
+- Recommend **Tier 3**: ELISA + Plaque + ΔtonB/ΔexbB/ΔexbD1 knockouts
+- Start pK18mobsacB knockouts on **May 17** alongside strain isolation
+- ΔexbD2 is NOT required for phiL7 infection (Hung 2003) — a free built-in negative control
+- If knockouts fail, fall back to Tier 2 (ELISA + plaque, no knockouts)
+
+### 7. Literature Audit Corrections (PI Should Know)
+**File:** `docs/reference/paper_reading_notes.md`
+Five errors corrected in project documents after reading 19 papers:
+1. ExbD2 NOT essential — only TonB/ExbB/ExbD1 (Hung 2003)
+2. Boltz-2 affinity head is small molecule-only (protein-protein → NaN)
+3. Greenman 2025 is PLoS Comput Biol, not NAR; "no single best UQ method"
+4. Hie 2024 uses ESM-1b/1v, not ESM-2
+5. Lee 2009 never names a tail spike — rbp_01 identified computationally
+
+### 8. Open Questions Requiring PI Input
+| Question | Urgency | Why it matters |
+|----------|---------|----------------|
+| pK18mobsacB vs CRISPRi for receptor knockouts? | 🔴 Before May 17 | Affects which reagents to order this week |
+| AF3 model weights application — PI or Alex? | 🔴 This week | 1–7 day review; needed for variant design |
+| Sewage/runoff source for phage enrichment? | 🟡 Before June 1 | Broader phage diversity → better chance of lytic phage isolation |
+| Parallel manuscript submission target? | 🟡 Before Cycle 0 | Affects data documentation granularity from the start |
+| Is *exbD2* data sufficient to claim "negative control"? | 🟡 PI judgment | Hung 2003 is a single study; PI may want confirmatory experiment |
+
 ---
 ---
 

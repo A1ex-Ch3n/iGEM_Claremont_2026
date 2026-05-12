@@ -12,12 +12,10 @@
   "noise_std": 0.5,
   "embed_dim_per_protein": 320,
   "data_source": "synthetic_fallback_random",
-  "repo_commit_sha": "e04bba5",
-  "timestamp_utc": "2026-05-08T05:32:47.743341Z",
-  "train_time_s": 25.6,
+  "repo_commit_sha": "aa99d51",
+  "timestamp_utc": "2026-05-12T06:53:38.403660Z",
+  "train_time_s": 2.7,
   "torch_version": "2.11.0",
-  "numpy_version": "2.3.4",
-  "python_version": "3.14.0",
-  "calibration_ece_synthetic": 0.269685,
-  "calibration_n_val": 16
+  "numpy_version": "2.3.5",
+  "python_version": "3.13.9"
 }

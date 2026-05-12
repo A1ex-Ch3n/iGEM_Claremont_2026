@@ -202,7 +202,7 @@ def main(
     # Step 6: Generate predictions CSV on ALL pairs (train + val)
     # 步骤 6: 在全部 pair 上生成 predictions.csv（训练集 + 验证集）
     # -----------------------------------------------------------------------
-    all_mean, all_std = ens.predict(X)
+    all_mean, all_std, all_epistemic_std = ens.predict(X, return_epistemic=True)
     repo_sha = _get_repo_commit()
     model_version = f"{repo_sha}_cycle_0"
 
@@ -212,6 +212,9 @@ def main(
             "receptor_id":     meta["receptor_id"].tolist(),
             "predicted_score": np.round(all_mean, 6).tolist(),
             "std":             np.round(all_std, 6).tolist(),
+            # epistemic_std = Std_k[mu_k] = BALD score for Module 07
+            # epistemic_std = 各成员均值标准差 = Module 07 的 BALD 打分依据
+            "epistemic_std":   np.round(all_epistemic_std, 6).tolist(),
             "lower_95":        np.round(all_mean - 1.96 * all_std, 6).tolist(),
             "upper_95":        np.round(all_mean + 1.96 * all_std, 6).tolist(),
             "model_version":   model_version,

@@ -1,0 +1,44 @@
+{
+  "cycle": 1,
+  "n_bald": 4,
+  "n_random": 1,
+  "seed": 42,
+  "n_candidates": 80,
+  "n_unmeasured": 80,
+  "n_measured_excl": 0,
+  "bald_score_col": "epistemic_std",
+  "bald_score_max": 0.218265,
+  "bald_score_min": 0.032235,
+  "bald_score_mean": 0.100736,
+  "top_bald_picks": [
+    {
+      "rbp_id": "rbp_07",
+      "receptor_id": "rec_02",
+      "bald_score": 0.2182649970054626,
+      "predicted_score": 5.177332878112793
+    },
+    {
+      "rbp_id": "rbp_03",
+      "receptor_id": "rec_01",
+      "bald_score": 0.1967329978942871,
+      "predicted_score": 4.810198783874512
+    },
+    {
+      "rbp_id": "rbp_05",
+      "receptor_id": "rec_02",
+      "bald_score": 0.1964740008115768,
+      "predicted_score": 4.906466007232666
+    },
+    {
+      "rbp_id": "rbp_01",
+      "receptor_id": "rec_02",
+      "bald_score": 0.1899279952049255,
+      "predicted_score": 5.128352165222168
+    }
+  ],
+  "repo_commit_sha": "aa99d51",
+  "timestamp_utc": "2026-05-12T07:03:35.140532Z",
+  "python_version": "3.13.9",
+  "pandas_version": "2.3.3",
+  "numpy_version": "2.3.5"
+}

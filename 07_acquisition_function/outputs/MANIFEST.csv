@@ -1,0 +1,6 @@
+filename,sha256,bytes,n_records,created_utc,source_module,notes
+.gitkeep,e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855,0,,2026-05-12T07:04:13.937707Z,07_acquisition_function,cycle_1 synthetic BALD acquisition; first live run
+cycle_1/random_replay.csv,da358f7653fc704e2ed4c5a71deda02a7ebb44c8d07e451ecb115cf4eb200b9a,916,5,2026-05-12T07:04:13.938359Z,07_acquisition_function,cycle_1 synthetic BALD acquisition; first live run
+cycle_1/recommendations.csv,9521b39e27ad853accb8999c5de8cb6d07817cec9cf8352da7b4871021843483,896,5,2026-05-12T07:04:13.938537Z,07_acquisition_function,cycle_1 synthetic BALD acquisition; first live run
+cycle_1/run_meta.json,65e76840bcd03a2189d12021679ce08b2b9bed3c2be839cfdf9a9ae12bf26769,1065,,2026-05-12T07:04:13.938642Z,07_acquisition_function,cycle_1 synthetic BALD acquisition; first live run
+cycle_1/safe_pick_backup.csv,0fc7bad1c446c385f1045cd0c50f2f1f41cde8734d41a63f77a32609bbb4e84d,1769,10,2026-05-12T07:04:13.938788Z,07_acquisition_function,cycle_1 synthetic BALD acquisition; first live run

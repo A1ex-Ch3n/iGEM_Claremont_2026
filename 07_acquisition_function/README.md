@@ -19,7 +19,7 @@ Equivalent to mutual information between observation and model parameters. Selec
 ### Why BALD over greedy / UCB
 - In small-data regime, greedy gets stuck in local optima
 - BALD maximizes information gain regardless of predicted value
-- Validated for protein engineering by Yang et al. 2025 (*Nat Commun*, ALDE)
+- Active learning for protein engineering shown effective by Yang et al. 2025 (*Nat Commun*, ALDE) — note ALDE uses Thompson sampling, not BALD; we adopt BALD for its theoretical grounding in mutual information
 
 ## Control arm (mandatory)
 
@@ -52,4 +52,22 @@ If SLA missed: wet lab proceeds from a pre-prepared "safe pick" backup list (PI 
 
 ## Status
 
-⏳ Not started — sprint deliverable for 5/7–5/17.
+✅ **Done** — implemented 2026-05-11.
+
+Files:
+- `processes/bald.py` — core BALD scoring + batch selection
+- `processes/run_bald.py` — CLI cycle orchestrator (48 h SLA)
+- `processes/tests/` — 18 tests (all pass)
+
+First live run (synthetic data): `outputs/cycle_1/` — see `recommendations.csv`.
+
+To run for Cycle N (replace N with actual cycle number):
+```bash
+python 07_acquisition_function/processes/run_bald.py \
+  --cycle N \
+  --measured_csv 08_cycle_data/outputs/cycle_<N-1>/elisa_processed.csv \
+  --n_bald 4 --n_random 1
+```
+
+Module 06 schema change: `predictions.csv` now includes `epistemic_std` column
+(Std of ensemble member means — true BALD score, not proxied by total std).
