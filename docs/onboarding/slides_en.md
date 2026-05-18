@@ -76,6 +76,18 @@ Demo (≈15 min) is independent; run `DEMO.md` after slide 48 or at the end.
 
 # Part 1 — The science · `[WET LAB] [PI]`
 
+## Key vocabulary — for this part
+
+\small
+
+- **Phage / lytic phage** — virus that infects bacteria; *lytic* = kills the host after replicating (what we want for biocontrol).
+- **RBP (receptor-binding protein)** — the protein on a phage's tail that latches onto a specific bacterial surface receptor. The "lock-and-key" step.
+- **Pathovar (pv.)** — a strain of a plant-pathogenic bacterium defined by which plant it infects.
+- **AUC** — single score from 0.5 (random guess) to 1.0 (perfect) summarising binary-classification quality.
+- **BLAST** — sequence-similarity search. Misses proteins that have diverged so much that the letters no longer match.
+- **HMM (Hidden Markov Model)** — sequence-profile search that catches what BLAST misses by learning a family's conserved *pattern*.
+- **TonB / ExbB / ExbD1** — bacterial outer-membrane import complex; phiL7's entry point (Hung 2003).
+
 ## *Xanthomonas* — what & why we care
 
 - Genus of plant-pathogenic gamma-proteobacteria; >400 host plant species (Ryan 2011, *Nat Rev Microbiol*).
@@ -170,6 +182,18 @@ Best Composite Part      & Registered RBP-His6 expression library \\
 Plus: in-house *Xanthomonas* + phage isolates, sequenced + deposited.
 
 # Part 2 — Pipeline architecture · `[DRY LAB] [PI]`
+
+## Key vocabulary — for this part
+
+\small
+
+- **Module** — a numbered subdirectory (`00_…` through `08_…`). Each does one job; outputs feed the next.
+- **ORF (open reading frame)** — a stretch of DNA coding for a single protein (start codon → stop codon).
+- **Gitignored** — listed in `.gitignore` so git won't track it. Large binaries (genomes, weights) are excluded but recorded in `MANIFEST.csv` so the set stays reproducible.
+- **MANIFEST.csv** — per-folder ledger (filename · SHA-256 · size · record count) that makes gitignored outputs verifiable.
+- **Conda env** — project-specific Python install with every library pinned to an exact version. `conda activate igem2026`.
+- **Notebook-first** — author exploratory code as `.ipynb`; freeze stable logic to `.py`.
+- **Bilingual comments** — every code comment in this repo is written in English AND Chinese.
 
 ## The three layers
 
@@ -310,6 +334,29 @@ Variant & Dim & Where it runs \\
 
 # Part 3 — The ML core · `[DRY LAB] [PI]`
 
+## Key vocabulary — neural-net basics
+
+\small
+
+- **Neural network** — a chain of mathematical functions arranged in "layers" that turns one number-vector into another. Trained by adjusting the numbers inside each layer to minimise a *loss* on training examples.
+- **MLP (multilayer perceptron)** — the simplest architecture: fully-connected layers separated by a nonlinearity. What our Module 06 uses.
+- **Layer / hidden layer** — one matrix multiplication + offset. "Hidden" = intermediate representation, not the final prediction. Our MLP has 3 hidden layers of widths 256 / 256 / 128.
+- **ReLU** — keeps positive numbers unchanged, replaces negatives with zero. Without nonlinearity, stacked layers collapse to one linear function.
+- **Dropout** — randomly turn off connections each training step. Forces the network to spread information rather than memorise.
+- **Gaussian** — bell curve; described by mean (centre) and σ (spread). Our model outputs $(\mu, \sigma)$ per input.
+- **NLL loss** — penalises low predicted probability on the truth. Wrong-but-uncertain hurts less than wrong-and-confident.
+
+## Key vocabulary — uncertainty + active learning
+
+\small
+
+- **Deep ensemble** — train the *same* architecture multiple times with different random initialisations. Members agree where data is informative; disagree where it isn't.
+- **Epistemic vs aleatoric** — *epistemic* = model ignorance, shrinks with more data. *Aleatoric* = irreducible measurement noise (ELISA pipetting variance). BALD targets epistemic only.
+- **Calibration / ECE** — does a "90 % credible interval" actually contain the truth 90 % of the time? Expected Calibration Error measures the gap.
+- **Mutual information** — "how much does knowing $X$ tell me about $Y$?" Zero if they're independent.
+- **BALD** — picks the experiment whose result gives the most mutual information about the model's parameters.
+- **Acquisition function** — any rule that ranks unmeasured candidates and recommends which to test next. BALD is one; Thompson sampling (ALDE) is another.
+
 ## Module 06 — Deep ensemble for predictive uncertainty
 
 - **Lakshminarayanan 2017** (*NeurIPS*) — 5 MLPs, independently trained, predictive mean + uncertainty.
@@ -447,7 +494,7 @@ rbp\_03 & rec\_03 & 5.128 & 0.127 & 19 & random\_control \\
 \end{tabular}
 
 \normalsize
-- 4 BALD picks + 1 random control (Hie 2022 control-arm pattern).
+- 4 BALD picks + 1 random control (Hie 2024 control-arm pattern).
 - These are **synthetic placeholders**. Real Cycle 1 = rbp_01 variants × TonB after Cycle 0 ELISA.
 
 ## ALDE caveat — Yang 2025 ≠ BALD validation
@@ -458,6 +505,17 @@ rbp\_03 & rec\_03 & 5.128 & 0.127 & 19 & random\_control \\
 - BALD specifically still needs its own citation chain (Houlsby 2011 + our extension).
 
 # Part 4 — The current Boltz-2 result
+
+## Key vocabulary — for this part
+
+\small
+
+- **Structure prediction** — given an amino-acid sequence (or two), predict the protein's 3D shape — where each atom sits. Replaces months of crystallography with a "good-enough" starting point.
+- **PDB file** — the standard plain-text format for atomic 3D structures (one line per atom). Open with PyMOL (free) or ChimeraX (free) to visualise.
+- **ipTM** — interface predicted TM-score (0–1). Confidence about *how* two chains dock. ≥ 0.6 trustworthy; 0.4–0.6 ambiguous; < 0.4 the model is essentially guessing.
+- **chain pTM** — TM-score for a *single chain alone*. Tells you the monomer is well-predicted, independent of docking. Our `chain_A_ptm = 0.808` says rbp_01 monomer is reliable.
+- **PAE (predicted aligned error)** — 2D matrix. Entry $[i,j]$ = expected Å error in residue $j$'s position if I align my prediction at residue $i$. Low off-diagonal = confident interface.
+- **pLDDT** — per-residue confidence in the local backbone geometry. High = the model is sure about that residue's local position.
 
 ## What we ran (job 59986)
 
@@ -519,6 +577,20 @@ Full paths in `docs/planning/PI_briefing_2026-05-11.md` (no abbreviations).
 **Boltz-2 reminder:** `predicted_dG = null` because the affinity head is small-molecule only.
 
 # Part 5 — The 48-hour cycle · `[WET LAB] [DRY LAB]`
+
+## Key vocabulary — for this part
+
+\scriptsize
+
+- **Gibson assembly** — one-pot reaction (5′ exonuclease + polymerase + ligase) that joins overlapping DNA fragments into a circular plasmid. Cycle 0 cloning.
+- **SDM (site-directed mutagenesis)** — a single targeted change on an existing plasmid (e.g., K450A). ~$50 / 4 days; what we use Cycle 1+.
+- **BL21(DE3) / pET-28a / IPTG** — *E. coli* expression strain + plasmid backbone + the inducer that flips on the gene.
+- **His6 + Ni-NTA** — six histidines on the N-terminus stick to a nickel column → one-step purification (IMAC).
+- **SDS-PAGE** — gel electrophoresis that separates proteins by size; verifies purity.
+- **EC50 / 4PL fit** — half-max concentration from a 4-parameter logistic fit on the binding curve. Our quantitative "binding strength" — the model's target variable.
+- **Plaque / PFU** — a clear spot on a bacterial lawn = one infectious phage; PFU/mL = stock potency.
+- **pK18mobsacB / sacB selection** — suicide plasmid for clean gene deletions in *Xanthomonas*; `sacB` makes cells die in sucrose, so we can select cells that *lost* the plasmid via a second crossover.
+- **Electroporation** — brief electric pulse to permeabilise bacterial walls so plasmid DNA can enter.
 
 ## Cycle structure
 
@@ -631,6 +703,18 @@ Calibration ECE $> 0.1$   & Apply temperature scaling before next BALD \\
 \end{tabular}
 
 # Part 6 — Reproducing & demoing · `[DRY LAB] [WET LAB]`
+
+## Key vocabulary — for this part
+
+\small
+
+- **Branch** — parallel line of git history. All code on `active-learning-pipeline`; `main` is intentionally empty.
+- **Conda env** — pinned-version Python install. `conda activate igem2026` before anything else, or imports will fail.
+- **pytest** — Python's standard test runner. Each module ships a small suite; passing = contract intact.
+- **JupyterLab** — browser-based interface for `.ipynb` notebooks.
+- **Laguna (CARC)** — USC's GPU cluster. For jobs too big for a laptop (Boltz-2, ESM-2 650M, AF3).
+- **SLURM** — Laguna's job scheduler. `sbatch script.slurm` submits a job to a free GPU node.
+- **CUDA** — Nvidia's GPU compute platform. We pin CUDA 12.1 / `torch==2.5.1+cu121` to match the cluster driver.
 
 ## Quick-start
 
@@ -901,6 +985,71 @@ Aleatoric  & Irreducible measurement noise \\
 
 \vspace{0.4em}
 \small Full glossary: `docs/reference/glossary.md`.
+
+## Citation list — receptor biology + *Xanthomonas* pathology
+
+\scriptsize
+
+1. **da Silva 2002** — *Nature* 417:459–463. Xcc ATCC 33913 reference genome (`GCF_000007145.1` / GenBank `AE008922`).
+2. **Lee 2009** — *Appl Environ Microbiol* 75(24):7828–7838. phiL7 genome (NCBI `EU717894`). *Audit:* actively searched for and could not find an OP1 ORF25 tail-fiber homolog.
+3. **Hung 2003** — *BBRC* 302(4):878–884, PMID 12646254. TonB / ExbB / ExbD1 essential for phiL7; ExbD2 NOT required. *Audit:* the previously-cited "Wang 2003" was a hallucinated reference.
+4. **Ryan 2011** — *Nat Rev Microbiol* 9:344–355. >400-species host range; economic context.
+5. **Aiello 2019** — *Plant Dis*. Copper resistance in *Xanthomonas* spp.
+6. **Iriarte 2018** — *Front Plant Sci* 9. Phage biocontrol field trial on tomato.
+7. **Holtappels 2022** — *Microb Biotechnol* 15(3):597–610. Phage biocontrol in integrated plant protection.
+8. **Farquharson 2021** — T4 × *E. coli*: binding ≠ infection (RBP binds 85 % of strains, plaques on 11 %).
+
+## Citation list — host-range prediction + annotation
+
+\scriptsize
+
+9. **Boeckaerts 2022** — *Viruses* 14(6):1329. PhageRBPdetect HMM + XGBoost (precision-recall AUC 93.8 %, F1 84.0 %).
+10. **Boeckaerts 2024** — *Nat Commun* 15:4768/48675. PhageHostLearn (strain-level). *Audit:* AUC "0.82" = up to 81.8 % at 100 % identity threshold; cross-strain ~0.70.
+11. **Mutalik 2025** — *bioRxiv* (preprint). PAML benchmark: cross-genus AUC 0.67–0.70.
+12. **McNair 2019** — *Bioinformatics* 35(22):4537–4542. PHANOTATE (dynamic-programming phage ORF caller).
+13. **Hyatt 2010** — *BMC Bioinformatics* 11:119. Prodigal (used via pyrodigal).
+14. **Bouras 2023** — *Bioinformatics* 39(1):btac776. Pharokka phage annotation pipeline.
+
+## Citation list — protein language models, structure, UQ
+
+\scriptsize
+
+15. **Lin 2023** — *Science* 379(6637):1123–1130. ESM-2 (~65 M sequences; 650M → 1280-D, 3B → 2560-D).
+16. **Liu 2025** — *Nat Commun* 16:64512, DOI 10.1038/s41467-025-64512-w. PLM-interact PPI transfer (+16–28 % AUPR). *Audit:* untested on phage–bacteria.
+17. **Abramson 2024** — *Nature* 630:493–500, DOI 10.1038/s41586-024-07487-w. AlphaFold 3.
+18. **Passaro 2025** — *bioRxiv* (preprint). Boltz-2. *Audit:* affinity head is small-molecule only (PubChem/ChEMBL/BindingDB); outputs NaN for protein-protein pairs. Use ipTM as structural confidence proxy.
+19. **Lakshminarayanan 2017** — *NeurIPS* 30, arXiv:1612.01474. Deep ensembles + Gaussian NLL.
+20. **Ovadia 2019** — *NeurIPS* 32. UQ under dataset shift.
+21. **Greenman 2025** — *PLoS Comput Biol* 21(1):e1012639, DOI 10.1371/journal.pcbi.1012639. *Audit:* journal is *PLoS Comput Biol* (NOT *NAR Genomics*); conclusion: "no single best UQ method."
+
+## Citation list — active learning + wet lab methods
+
+\scriptsize
+
+22. **Lindley 1956** — *Ann Math Stat* 27:986–1005. Bayesian optimal experimental design.
+23. **Settles 2009** — CS Tech Rep 1648, U. Wisconsin–Madison. *Active Learning Literature Survey*.
+24. **Houlsby 2011** — arXiv:1112.5745. BALD. *Audit:* original GPC classification; deep-ensemble regression is our extension.
+25. **Hie 2024** — *Nat Biotechnol* 42:275–283 (preprinted 2022). *Audit:* ESM-1b/1v (NOT ESM-2); ~20 variants per antibody; language-model-likelihood filtering, not BALD closed loop. Earlier docs that cite "Hie 2022 *Cell*" refer to this same paper.
+26. **Yang 2025** — *Nat Commun* 16:55987, DOI 10.1038/s41467-025-55987-8. ALDE. *Audit:* uses Thompson sampling + one-hot (NOT BALD + ESM-2).
+27. **Wittmann 2021** — *Cell Syst* 12(11):1026–1045. ML-assisted directed evolution; exploration vs exploitation.
+28. **Schäfer 1994** — *Gene* 145(1):69–73. pK18mobsacB (Addgene #87097).
+29. **Gibson 2009** — *Nat Methods* 6:343–345. Gibson assembly.
+30. **Studier & Moffatt 1986** — *J Mol Biol* 189(1):113–130. pET / BL21(DE3) expression system.
+31. **Latka 2021** — *mBio* 12(6):e02329-21. RBP modular truncation. *Audit:* depolymerase mechanism; structural principle transfers, biochemistry doesn't.
+
+## Document log
+
+\scriptsize
+
+| Date | Change |
+|------|--------|
+| 2026-05-17 | Initial draft: ~71 slides + guide + DEMO runbook + 4 figures. Pandoc + Beamer + xelatex + xeCJK / `Hiragino Sans GB`. |
+| 2026-05-17 | Path-verification pass; added Module 04 to demo plan (slide 48 + `DEMO.md`); corrected `phage_genomes/` → `phage/<acc>/`; HMM setup via `setup_inputs.sh`. Committed as `5304f69`. |
+| 2026-05-18 | Added "Key vocabulary" slide at the start of Parts 1–6 (Part 3 gets two — neural-net basics + UQ/AL). Aligned with the equivalent `guide_en.md` callouts. |
+| 2026-05-18 | Drive-by fix: "Hie 2022" → "Hie 2024" (same paper). Added the 4-slide citation appendix (31 entries with audit notes) and this log. |
+
+\vspace{0.4em}
+\footnotesize Author for all entries: Claude (onboarding agent), reviewed by Alex Chen. Fuller version of this log lives in `docs/onboarding/guide_en.md`.
 
 ## Thank you / 谢谢
 

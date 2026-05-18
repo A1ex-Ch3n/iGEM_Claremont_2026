@@ -74,6 +74,18 @@ header-includes:
 
 # 第 1 部分 —— 科学背景 · `[湿实验室] [PI]`
 
+## 本部分关键术语
+
+\small
+
+- **噬菌体（phage）/ 裂解性噬菌体（lytic phage）** —— 感染细菌的病毒；*裂解性* = 复制后让宿主细胞破裂（我们要的那种）。
+- **RBP（受体结合蛋白）** —— 噬菌体尾部的蛋白，与细菌表面某个特定受体结合。这是"钥匙-锁"的步骤。
+- **致病变种（pathovar，pv.）** —— 植物病原菌中按"侵染哪种植物"细分的株群。
+- **AUC** —— 0.5（随机）到 1.0（完美）的单一分数，衡量二分类质量。
+- **BLAST** —— 序列相似性搜索。找不到序列已分歧到字母不再相似的同源蛋白。
+- **HMM（隐马尔可夫模型）** —— 学习蛋白质家族"模式"的序列搜索方法，能抓住 BLAST 漏掉的同源蛋白。
+- **TonB / ExbB / ExbD1** —— 细菌外膜上的能量耦合转运复合体；phiL7 的入口（Hung 2003）。
+
 ## *Xanthomonas* —— 是什么、为何重要
 
 - 植物病原性 γ-变形菌属；侵染 >400 种宿主植物（Ryan 2011，*Nat Rev Microbiol*）。
@@ -165,6 +177,18 @@ Best Composite Part      & 注册的 RBP-His6 表达库 \\
 外加：自分离的 *Xanthomonas* + 噬菌体菌株，测序并存入 NCBI。
 
 # 第 2 部分 —— 流程架构 · `[干实验室] [PI]`
+
+## 本部分关键术语
+
+\small
+
+- **模块（Module）** —— 仓库里以数字编号的子目录（`00_…` 到 `08_…`）。每个模块只做一件事；产出供下一个模块消费。
+- **ORF（开放阅读框）** —— DNA 上编码单个蛋白的一段（起始密码子 → 终止密码子）。
+- **gitignored** —— 列在 `.gitignore` 里、git 不跟踪。大体积二进制文件（基因组、模型权重）被排除，但在 `MANIFEST.csv` 里记下，保持可重现。
+- **MANIFEST.csv** —— 每个文件夹的"账本"（文件名 · SHA-256 · 大小 · 记录数），让 gitignore 的产物可验证。
+- **Conda 环境** —— 项目专用 Python 安装，每个库版本固定。`conda activate igem2026`。
+- **Notebook 优先** —— 探索代码先写 `.ipynb`；稳定后冻结为 `.py`。
+- **双语注释** —— 仓库内每条代码注释都同时写英文和中文。
 
 ## 三层架构
 
@@ -305,6 +329,29 @@ EU717894.1\_orf\_00003 & 224 &  56.7 & unknown\_C294 & 1.000 & 3 \\
 
 # 第 3 部分 —— ML 核心 · `[干实验室] [PI]`
 
+## 本部分关键术语 —— 神经网络基础
+
+\small
+
+- **神经网络（neural network）** —— 一串数学函数堆成"层"，把一个数字向量变成另一个。训练时调整每层里的数字，让训练集上的*损失*最小。
+- **MLP（多层感知机）** —— 最简单的结构：若干全连接层，每两层之间夹一个非线性。Module 06 用的就是它。
+- **层 / 隐藏层** —— "层"= 一次矩阵乘法 + 偏置。**隐藏层**就是输出不直接作为最终预测的那种层，是网络学到的中间表示。我们的 MLP 有 3 个隐藏层，宽 256 / 256 / 128。
+- **ReLU** —— 把正数保留、负数变零。没有非线性，叠多层在数学上塌缩成一条直线。
+- **Dropout** —— 训练每一步随机关掉一些连接，迫使信息分散，避免死记训练集。
+- **高斯（Gaussian）** —— 钟形分布，由均值（中心）和 σ（宽度）描述。模型每个输入输出 $(\mu, \sigma)$。
+- **NLL 损失** —— 对真实答案给低概率会惩罚多。"错了承认不确定"比"错了还自信"代价小。
+
+## 本部分关键术语 —— 不确定性 + 主动学习
+
+\small
+
+- **深度集成（deep ensemble）** —— 同一架构、不同随机初始化，独立训练多次。数据充分处成员收敛、数据稀疏处成员分歧。
+- **Epistemic vs aleatoric** —— *epistemic* = 模型无知，可通过更多数据缩小；*aleatoric* = 不可消除的测量噪声（如 ELISA 加样差异）。BALD 只瞄准 epistemic。
+- **校准 / ECE** —— "90 % 置信区间"是不是真有 90 % 的概率覆盖真值？Expected Calibration Error 量化这个偏差。
+- **互信息（mutual information）** —— "知道 $X$ 能告诉我多少关于 $Y$ 的信息"。独立则为零。
+- **BALD** —— 选"测了之后能给模型参数带来最多互信息"的实验。
+- **采集函数（acquisition function）** —— 从候选池里挑下一个该测的样本的规则。BALD 是一种；ALDE 用的 Thompson 采样是另一种。
+
 ## Module 06 —— 深度集成用于预测不确定性
 
 - **Lakshminarayanan 2017**（*NeurIPS*）—— 5 个 MLP，独立训练，输出预测均值 + 不确定性。
@@ -442,7 +489,7 @@ rbp\_03 & rec\_03 & 5.128 & 0.127 & 19 & random\_control \\
 \end{tabular}
 
 \normalsize
-- 4 个 BALD pick + 1 个随机对照（Hie 2022 对照臂设计）。
+- 4 个 BALD pick + 1 个随机对照（Hie 2024 对照臂设计）。
 - 这是**合成占位数据**。真正的 Cycle 1 = rbp_01 variants × TonB（Cycle 0 ELISA 后）。
 
 ## ALDE 警语 —— Yang 2025 不验证 BALD
@@ -453,6 +500,17 @@ rbp\_03 & rec\_03 & 5.128 & 0.127 & 19 & random\_control \\
 - BALD 本身仍需另立引用链（Houlsby 2011 + 我们的延伸）。
 
 # 第 4 部分 —— 当前 Boltz-2 结果
+
+## 本部分关键术语
+
+\small
+
+- **结构预测（structure prediction）** —— 给一段氨基酸序列（或两段），预测蛋白质的 3D 形状 —— 每个原子在哪。把数月的 X 射线晶体学换成"足够好"的起点。
+- **PDB 文件** —— 原子级 3D 结构的标准纯文本格式（每行一个原子）。用 PyMOL（免费）或 ChimeraX（免费）打开。
+- **ipTM** —— interface predicted TM-score（0–1）。对*两条链如何对接*的信心。≥ 0.6 可信；0.4–0.6 模糊；< 0.4 模型基本在猜。
+- **chain pTM** —— 单条链自己的 TM-score。单体结构是否可信，独立于对接。我们的 `chain_A_ptm = 0.808` 说明 rbp_01 单体可信。
+- **PAE（预测对齐误差）** —— 二维矩阵。$[i,j]$ = "对齐到残基 $i$ 时，残基 $j$ 的位置预计偏差多少 Å"。非对角块低值 = 界面信心高。
+- **pLDDT** —— 逐残基的局部骨架几何信心。高 = 模型对该残基的局部位置很确定。
 
 ## 我们跑了什么（job 59986）
 
@@ -514,6 +572,20 @@ EU717894.1\_rbp\_01\_\_GCF\_000007145.1\_tonB/}
 **Boltz-2 提醒：** `predicted_dG = null`，因 affinity head 仅支持小分子。
 
 # 第 5 部分 —— 48 小时循环 · `[湿实验室] [干实验室]`
+
+## 本部分关键术语
+
+\scriptsize
+
+- **Gibson 组装** —— 一管反应（5′ 外切酶 + 聚合酶 + 连接酶），把有重叠序列的 DNA 片段连成环状质粒。Cycle 0 用它克隆。
+- **SDM（定点突变）** —— 在已有质粒上做单点改动（例如 K450A）。~$50 / 4 天；Cycle 1+ 用它。
+- **BL21(DE3) / pET-28a / IPTG** —— 大肠杆菌表达菌株 + 质粒骨架 + 启动基因表达的诱导剂。
+- **His6 + Ni-NTA** —— N 端的 6 个组氨酸结合镍柱 → 一步纯化（IMAC）。
+- **SDS-PAGE** —— 凝胶电泳按大小分离蛋白；查纯度。
+- **EC50 / 4PL 拟合** —— 把结合曲线拟合成四参数 logistic；EC50 = 信号达半值最大时的浓度，是模型的目标变量。
+- **噬斑 / PFU** —— 细菌草坪上一个清亮斑 = 一个有侵染力的噬菌体；PFU/mL = 储液浓度。
+- **pK18mobsacB / sacB 反选** —— 在 Xanthomonas 里做无标记敲除的"自杀"质粒；`sacB` 使细胞在蔗糖里死，所以可筛出*丢掉*质粒（第二次重组）的克隆。
+- **电转化** —— 短电脉冲让细菌膜暂时通透，质粒 DNA 进入。
 
 ## 循环结构
 
@@ -626,6 +698,18 @@ Calibration ECE $> 0.1$ & 下次 BALD 前做 temperature scaling \\
 \end{tabular}
 
 # 第 6 部分 —— 复现与演示 · `[干实验室] [湿实验室]`
+
+## 本部分关键术语
+
+\small
+
+- **分支（branch）** —— git 历史的平行线。代码全在 `active-learning-pipeline`；`main` 故意留空。
+- **Conda 环境** —— 固定版本的 Python 安装。运行任何命令前先 `conda activate igem2026`，否则会 import 失败。
+- **pytest** —— Python 标准测试运行器。每个模块自带一小套测试；通过 = 契约不破。
+- **JupyterLab** —— 浏览器内打开 `.ipynb` notebook 的界面。
+- **Laguna（CARC）** —— USC 的 GPU 集群。跑笔记本电脑跑不动的活（Boltz-2、ESM-2 650M、AF3）。
+- **SLURM** —— Laguna 的任务调度器。`sbatch script.slurm` 提交给空闲 GPU 节点。
+- **CUDA** —— Nvidia GPU 计算平台。固定 CUDA 12.1 / `torch==2.5.1+cu121` 以匹配集群驱动。
 
 ## 快速开始
 
@@ -896,6 +980,71 @@ Aleatoric  & 不可约的测量噪声 \\
 
 \vspace{0.4em}
 \small 完整术语表：`docs/reference/glossary.md`。
+
+## 引用清单 —— 受体生物学 + *Xanthomonas* 病理
+
+\scriptsize
+
+1. **da Silva 2002** —— *Nature* 417:459–463。Xcc ATCC 33913 参考基因组（`GCF_000007145.1` / GenBank `AE008922`）。
+2. **Lee 2009** —— *Appl Environ Microbiol* 75(24):7828–7838。phiL7 基因组（NCBI `EU717894`）。**审计：** 主动搜索却找不到 OP1 ORF25 tail-fiber 同源物。
+3. **Hung 2003** —— *BBRC* 302(4):878–884，PMID 12646254。TonB / ExbB / ExbD1 是 phiL7 必需；ExbD2 **不**必需。**审计：** 此前引用的 "Wang 2003" 为幻觉文献。
+4. **Ryan 2011** —— *Nat Rev Microbiol* 9:344–355。>400 种宿主范围；经济背景。
+5. **Aiello 2019** —— *Plant Dis*。*Xanthomonas* 的铜抗性。
+6. **Iriarte 2018** —— *Front Plant Sci* 9。番茄上的噬菌体生物防治田间试验。
+7. **Holtappels 2022** —— *Microb Biotechnol* 15(3):597–610。噬菌体在整合植物保护中。
+8. **Farquharson 2021** —— T4 × *E. coli*：结合 ≠ 感染（RBP 结合 85 % 菌株，仅 11 % 形成噬斑）。
+
+## 引用清单 —— 宿主范围预测 + 基因组注释
+
+\scriptsize
+
+9. **Boeckaerts 2022** —— *Viruses* 14(6):1329。PhageRBPdetect HMM + XGBoost（precision-recall AUC 93.8 %，F1 84.0 %）。
+10. **Boeckaerts 2024** —— *Nat Commun* 15:4768/48675。PhageHostLearn（菌株级）。**审计：** AUC "0.82" 的准确说法是 100 % identity threshold 下 up to 81.8 %；跨菌株降到约 0.70。
+11. **Mutalik 2025** —— *bioRxiv*（预印本）。PAML benchmark：跨菌属 AUC 0.67–0.70。
+12. **McNair 2019** —— *Bioinformatics* 35(22):4537–4542。PHANOTATE（用动态规划处理重叠 ORF）。
+13. **Hyatt 2010** —— *BMC Bioinformatics* 11:119。Prodigal（通过 pyrodigal 调用）。
+14. **Bouras 2023** —— *Bioinformatics* 39(1):btac776。Pharokka 噬菌体注释流程。
+
+## 引用清单 —— 蛋白语言模型、结构、UQ
+
+\scriptsize
+
+15. **Lin 2023** —— *Science* 379(6637):1123–1130。ESM-2（约 65 M 序列；650M → 1280 维，3B → 2560 维）。
+16. **Liu 2025** —— *Nat Commun* 16:64512，DOI 10.1038/s41467-025-64512-w。PLM-interact PPI 迁移（AUPR +16–28 %）。**审计：** 未在噬菌体-细菌上测试。
+17. **Abramson 2024** —— *Nature* 630:493–500，DOI 10.1038/s41586-024-07487-w。AlphaFold 3。
+18. **Passaro 2025** —— *bioRxiv*（预印本）。Boltz-2。**审计：** affinity head 只支持小分子（PubChem / ChEMBL / BindingDB），对蛋白-蛋白对输出 NaN。用 ipTM 作结构信心 proxy。
+19. **Lakshminarayanan 2017** —— *NeurIPS* 30，arXiv:1612.01474。深度集成 + Gaussian NLL。
+20. **Ovadia 2019** —— *NeurIPS* 32。在分布漂移下评估 UQ。
+21. **Greenman 2025** —— *PLoS Comput Biol* 21(1):e1012639，DOI 10.1371/journal.pcbi.1012639。**审计：** 期刊是 *PLoS Comput Biol*（**不是** *NAR Genomics*）；结论是"无单一最佳 UQ 方法"。
+
+## 引用清单 —— 主动学习 + 湿实验室方法
+
+\scriptsize
+
+22. **Lindley 1956** —— *Ann Math Stat* 27:986–1005。贝叶斯最优实验设计。
+23. **Settles 2009** —— CS Tech Rep 1648，U. Wisconsin–Madison。*Active Learning Literature Survey*。
+24. **Houlsby 2011** —— arXiv:1112.5745。BALD。**审计：** 原文是 GPC 分类；深度集成回归是我们的延伸。
+25. **Hie 2024** —— *Nat Biotechnol* 42:275–283（预印 2022）。**审计：** 使用 ESM-1b/1v（**不是** ESM-2）；每抗体约 20 variant；语言模型 likelihood 过滤，非 BALD 闭环。早期文档中的 "Hie 2022 *Cell*" 指同一篇。
+26. **Yang 2025** —— *Nat Commun* 16:55987，DOI 10.1038/s41467-025-55987-8。ALDE。**审计：** 用 Thompson 采样 + one-hot（**不是** BALD + ESM-2）。
+27. **Wittmann 2021** —— *Cell Syst* 12(11):1026–1045。ML 辅助定向进化；exploration vs exploitation。
+28. **Schäfer 1994** —— *Gene* 145(1):69–73。pK18mobsacB（Addgene #87097）。
+29. **Gibson 2009** —— *Nat Methods* 6:343–345。Gibson 组装。
+30. **Studier & Moffatt 1986** —— *J Mol Biol* 189(1):113–130。pET / BL21(DE3) 表达系统。
+31. **Latka 2021** —— *mBio* 12(6):e02329-21。RBP 模块化 truncation。**审计：** 解聚酶机制；结构原则可迁移，生化机制不可。
+
+## 文档日志
+
+\scriptsize
+
+| 日期 | 改动 |
+|------|------|
+| 2026-05-17 | 初稿：约 71 张 slide + 配套 guide + DEMO + 4 张图。Pandoc + Beamer + xelatex + xeCJK / `Hiragino Sans GB`。 |
+| 2026-05-17 | 路径核查；演示计划加入 Module 04（slide 48 + `DEMO.md`）；修正 `phage_genomes/` → `phage/<acc>/`；HMM 通过 `setup_inputs.sh` 准备。提交为 `5304f69`。 |
+| 2026-05-18 | 第 1–6 部分开头加入"本部分关键术语"slide（第 3 部分两张 —— 神经网络基础 + UQ/AL）。与 `guide_zh.md` 中相应 callout 对齐。 |
+| 2026-05-18 | 顺手修正："Hie 2022" → "Hie 2024"（同一篇）。新增 4 张引用清单（31 条含审计说明）与本日志。 |
+
+\vspace{0.4em}
+\footnotesize 全部由 Claude（入职 agent）撰写，Alex Chen 审阅。完整版日志见 `docs/onboarding/guide_zh.md`。
 
 ## 谢谢 / Thank you
 
